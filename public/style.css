@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Disco 60-s';
+	src: url('../fonts/disco_60-s.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/disco_60-s.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/disco_60-s.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/disco_60-s.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/disco_60-s.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/disco_60-s.svg#disco_60-s') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+	font-family: 'Madrigal';
+	src: url('./fonts/Madrigal-mLJ92.ttf');
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('./fonts/Montserrat-Medium.ttf');
+}

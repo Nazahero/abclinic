@@ -1,0 +1,608 @@
+body
+{
+    overflow: hidden;
+    background-color: black;
+}
+.sidebar_container
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.social_media
+{
+    position: fixed;
+    bottom: 15px;
+    right: 5%;
+    display: flex;
+    z-index: 3;
+    transition: 0.5s;
+}
+.telegram.high
+{
+    right: -78px;
+    bottom: 10px;
+    transition: 0.5s;
+    position: fixed;
+}
+.youtube.high
+{
+    right: -122px;
+    bottom: 65px;
+    transition: 0.5s;
+    position: fixed;
+}
+.insta.high
+{
+    position: fixed;
+    right: -157px;
+    bottom: 120px;
+    transition: 0.5s;
+}
+.social_media
+{
+    
+    bottom: calc(100vh - 93.8%);
+    display: block;
+    height: 25px;
+    margin: 20px 20px;
+    transition: 0.5s;
+}
+.social_media img
+{
+    height: 100%;
+}
+.youtube
+{
+    padding: 1px 0;
+    right: 15%;
+}
+.telegram
+{
+    right: 10%;
+}
+.insta
+{
+    right: 20%;
+}
+.content
+{
+    z-index: 1;
+}
+.name
+{
+    position: absolute;
+    top: 30%;
+    left: 13%;
+    z-index: 1;
+}
+.name .title
+{
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Montserrat";
+
+    letter-spacing: 10px;
+    z-index: 1;
+    transition: 0.8s 1s;
+    transform: translate(0, 70%);
+    opacity: 0;
+}
+.name span
+{
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    transform: scale(0);
+    background-color: white;   
+    transition: 1s; 
+}
+.name .subtitle
+{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Montserrat";
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.73);
+    z-index: 1;
+    transform: translate(0, -100%);
+    opacity: 0;
+    transition: 1s 1.8s;
+}
+
+.name.ready .title
+{
+    transform: translate(0,0);
+    opacity: 1;
+}
+.name.ready span
+{
+    transform: scale(1);
+}
+.name.ready .subtitle {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.arrow
+{
+    display: block;
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    bottom: 25px;
+    left: calc(50% - 30px);
+    transform: translate(0, 0px);
+    z-index: 4;
+    transition: 0.5s;
+    animation-name: move;
+    cursor: pointer;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.arrow::after, .arrow::before
+{
+    content: '';
+    width: 35px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.874);
+    position: absolute;
+    display: block;
+}
+.arrow::after
+{
+    left: -1px;
+    top: calc(50% - 1px);
+    transform: rotate(35deg);
+}
+.arrow::before
+{
+    right: -1px;
+    top: calc(50% - 1px);
+    transform: rotate(-35deg);
+
+    
+}
+.arrow:hover::after , .arrow:hover::before {
+    background-color: rgba(255, 255, 255, 1);
+}
+.shadow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.359);
+}
+.home
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.win_logo
+{
+    width: 150px;
+    height: 150px;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.win_logo img
+{
+    width: 100%;
+    height: 100%;
+}
+/* ---------------- */
+.background img 
+{
+    width: 100%;
+}
+.background#b_home
+{
+    width: 115%;
+    height: 100%;
+    animation-name: action;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    top: -25%;
+    left: -5%;
+}
+.background#b_services
+{
+    width: 115%;
+    animation-name: action;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    top: -10%;
+    left: -10%;
+}
+.background
+{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1s;
+}
+.background.onthis
+{
+    opacity: 1;
+}
+
+/* --- services --- */
+.services .background
+{
+    width: 115%;
+    position: absolute;
+    animation-name: action;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    top: -10%;
+    left: -10%;
+}
+.services
+{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.services_block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.service
+{
+    z-index: 1;
+    height: 280px;
+    margin: 10px 40px;
+    margin-top: 50px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(0,0);
+    transition: 1s 0.2s;
+    opacity: 0.3;
+}
+.title
+{
+    color: rgba(14, 119, 239, 0.501);
+    font-size: 26px;
+    font-family: "Montserrat";
+    text-align: center;
+    margin: 20px 0px;
+}
+.line_x
+{
+    display: block;
+    width: 0%;
+    height: 3px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.886);
+    transition: 1s 1.2s;
+}
+.service .list
+{
+    color: rgba(255, 255, 255, 0.785);
+    padding: 0 30px;
+    opacity: 0;
+    transform: translate(0, -100%);
+    transition: 1s 2.2s;
+}
+.service .list li
+{
+    list-style-type: square;
+    font-family: "Montserrat";
+    letter-spacing: 1px;
+    font-size: 22px;
+    margin: 15px 0;
+
+}
+.services_block.on .service
+{
+    transform: translate(0, -100%);
+    opacity: 1;
+}
+.services_block.on .service span
+{
+    width: 100%;
+}
+.services_block.on .service .list
+{
+    transform: translate(0 ,0 );
+    opacity: 1;
+}
+
+.priceList_table
+{
+    width: 80%;
+    height: 40%;
+    position: absolute;
+    text-align: center;
+    padding: 30px 20px;
+    bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.789);
+    border-top: 3px solid rgba(14, 119, 239, 0.586);
+    border-bottom: 3px solid rgba(14, 119, 239, 0.586);
+    display: flex;
+    transition: 1s;
+    flex-direction: column;
+    justify-content: start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+}
+.priceList_table.openlist
+{
+    height: 90%;
+}
+
+.part
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.t_title
+{
+    color: rgba(14, 119, 239, 0.578);
+    width: 100%;
+    font-size: 28px;
+    font-family: "Montserrat";
+    text-align: center;
+    margin: 20px 0px;
+}
+.line{
+    width: 100%;
+    padding: 0px 20px;
+    font-size: 22px;
+    margin: 15px 0;
+    color: rgba(255, 255, 255, 0.849);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+}
+.l_service
+{
+    white-space: nowrap;
+}
+.price
+{
+    white-space: nowrap;
+}
+.part span
+{
+    overflow: hidden;
+    color: rgba(14, 119, 239, 0.578);
+}
+.priceList_table::-webkit-scrollbar 
+{
+    background-color: rgba(0, 0, 0, 0.386);
+    width: 8px;
+    
+}
+
+.priceList_table::-webkit-scrollbar-button
+{
+    display: none;
+}
+.priceList_table::-webkit-scrollbar-thumb
+{
+    background-color: rgba(14, 119, 239, 0.586);
+
+}
+.open
+{
+    text-align: center;
+    display: inline;
+    font-size: 40px;
+    font-weight: 'Montserrat';
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    margin: 22px;
+    animation: blink 2.5s;
+    text-shadow: 0 3px 4px rgba(14, 119, 239, 0.94);
+    cursor: pointer;
+    animation-iteration-count: infinite;
+}
+.open:hover
+{
+    opacity: 0.8;
+    animation: none;
+}
+
+
+
+/* --- sidebar --- */
+
+.sidebar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    z-index: 3;
+}
+.sidebar_container
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.516);
+    left: 0;
+    top: 0;
+}
+.rightside
+{
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+    top: 0;
+}
+
+
+
+.side_nav
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.side_nav span 
+{
+    position: absolute;
+    left: 0;
+    width: 2px;
+    transition: 0.5s;
+    box-shadow: 1px 0px 5px 0px rgb(0, 0, 0);
+    background-color: rgb(80, 181, 249);
+}
+
+.side_nav .block
+{
+    width: 100%;
+    margin: 10px;
+    padding: 15px 17px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.side_nav .block.active
+{
+    background-color: rgba(0, 0, 0, 0.231);
+}
+/* .side_nav .block.active::before
+{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 1px 0px 5px 0px rgb(0, 0, 0);
+    background-color: rgb(80, 181, 249);
+} */
+.side_nav .block img
+{
+    width: 100%;
+    opacity: 0.85;
+}
+.side_nav .block._1
+{
+    padding: 15px 18px;
+}
+
+.sidebar.off .sidebar_container
+{
+    left: -75%;
+}
+@keyframes blink{
+    0%{
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0.2;
+    }
+}
+@keyframes move{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(0, 8px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes action{
+    0%{
+        /* top: -25%;
+        left: -5%; */
+        transform: scale(1);
+    }
+    10%{
+        /* top: -25%;
+        left: -5%; */
+        transform: scale(1.02);
+    }
+    20%
+    {
+        /* top: -18%;
+        left: -10%; */
+        transform: scale(1.04);
+    }
+    30%{
+        transform: scale(1.06);
+    }
+    40%{
+        transform: scale(1.08);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    60%{
+        transform: scale(1.08);
+    }
+    70%{
+        transform: scale(1.06);
+    }
+    80%{
+        transform: scale(1.04);
+    }
+    90%{
+        transform: scale(1.02);
+    }
+    100%{
+        /* top: -25%;
+        left: -5%; */
+        transform: scale(1);
+    }
+
+}
