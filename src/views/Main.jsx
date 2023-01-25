@@ -12,7 +12,7 @@ function Line(props) {
             <span className="line_x"></span>
         </div>
         
-    )
+    ) 
 }
 
 function Main(props) {
@@ -54,11 +54,11 @@ function Main(props) {
             <div className="container">
                 <div className="background onthis" id="b_home"><img src="./img/big cab.jpg" alt="" /></div>
                 <div className="background" id="b_services"><img src="./img/cutting.jpg" alt="" /></div>
-                <div className="social_media">
-                    <a href="https://instagram.com"><img className="insta" src="./img/Instagram_logo.png" /></a>   
-                    <a href="https://youtube.com"><img className="youtube" src="./img/youtube_logo.png" /></a>
-                    <a href="https://telegram.org"><img className="telegram" src="./img/telegram_logo.png" /></a>
-                </div>
+                
+                    <a href="https://instagram.com" className="insta social_media"><img src="./img/Instagram_logo.png" /></a>   
+                    <a href="https://youtube.com" className="youtube social_media"><img src="./img/youtube_logo.png" /></a>
+                    <a href="https://telegram.org" className="telegram social_media"><img src="./img/telegram_logo.png" /></a>
+               
                 <div className="home" id="1">
                     <div className="content">
                         <div className="name" id="name">

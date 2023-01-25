@@ -12,40 +12,26 @@ body
     left: 0;
     overflow: hidden;
 }
-.social_media
-{
-    position: fixed;
-    bottom: 15px;
-    right: 5%;
-    display: flex;
-    z-index: 3;
-    transition: 0.5s;
-}
+
 .telegram.high
 {
-    right: -78px;
-    bottom: 10px;
-    transition: 0.5s;
-    position: fixed;
+    right: 10px;
 }
 .youtube.high
 {
-    right: -122px;
-    bottom: 65px;
-    transition: 0.5s;
-    position: fixed;
+    right: 10px;
+    bottom: 7.2%;
 }
 .insta.high
 {
-    position: fixed;
-    right: -157px;
-    bottom: 120px;
-    transition: 0.5s;
+    right: 10px;
+    bottom: 13.2%;
 }
 .social_media
 {
     
-    bottom: calc(100vh - 93.8%);
+    bottom: calc(100vh - 98.8%);
+    position: fixed;
     display: block;
     height: 25px;
     margin: 20px 20px;
@@ -58,15 +44,15 @@ body
 .youtube
 {
     padding: 1px 0;
-    right: 15%;
+    right: 12%;
 }
 .telegram
 {
-    right: 10%;
+    right: 8%;
 }
 .insta
 {
-    right: 20%;
+    right: 16.5%;
 }
 .content
 {

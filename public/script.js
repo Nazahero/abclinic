@@ -73,12 +73,18 @@ window.onload = () => {
         
 };
 function iconMove(page){
-    let icons = document.querySelector(".social_media");
-    if (page.id > 1) {
-        icons.classList.add("high");
+    let icons = document.querySelectorAll(".social_media");
+    if (page.id > 1) {  
+        for (let i = 0; i < icons.length; i++){
+                let icon = icons[i];
+                icon.classList.add("high");
+        }
         return;
     }
-    icons.classList.remove("high");
+    for (let i = 0; i < icons.length; i++){
+        let icon = icons[i];
+        icon.classList.remove("high");
+    }
 }
 function setBack(current, arr, page) {
     if (page.id > 1) {
