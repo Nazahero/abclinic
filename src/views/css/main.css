@@ -47,6 +47,16 @@ body
     margin: 20px 20px;
     z-index: 3;
 }
+.social_media.high.paralax
+{
+    right: -100px;
+}
+.social_media.high.hover{
+    right: 10px;
+}
+.youtube.high.hover{
+    right: 8px;
+}
 .social_media img
 {
     height: 100%;
@@ -302,7 +312,7 @@ body
     transform: translate(0, 120%);
     opacity: 0;
     margin: 20px 0px;
-    transition: 1s 0.8s;
+    transition: 1s 1s;
 }
 .line_x
 {
@@ -456,7 +466,14 @@ body
     opacity: 0.8;
     animation: none;
 }
+/* --- staff --- */
 
+.staff 
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
 
 
 /* --- sidebar --- */
@@ -480,6 +497,7 @@ body
     background-color: rgba(0, 0, 0, 0.516);
     left: 0;
     top: 0;
+    transition: 0.5s;
     box-shadow: 0 3px 4px rgba(255, 255, 255, 0.573);
 }
 .rightside
@@ -557,6 +575,14 @@ body
 .sidebar.off .sidebar_container
 {
     left: -75%;
+}
+.sidebar.off .sidebar_container.paralax
+{
+    left: -100%;
+}
+.sidebar_container.hover
+{
+    left: -75% !important;
 }
 @keyframes blink{
     0%{

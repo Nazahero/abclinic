@@ -8,6 +8,9 @@ window.onload = () => {
         let backgrounds = document.querySelectorAll(".background");
         let open = document.querySelector(".open");
         let priceList = document.querySelector(".priceList_table");
+        let sidebar = document.querySelector(".sidebar_container");
+        let social_icons = document.querySelectorAll(".social_media");
+
         
         home.scrollIntoView();
 
@@ -26,11 +29,47 @@ window.onload = () => {
             el.addEventListener("click", () => {
                 if (el.classList.contains("active")) {
                     return;
-                }
+                } 
                 let currentPage = document.querySelector(`.${el.id}`);
                 let background = document.querySelector(`#b_${currentPage.getAttribute("class")}`);
                 let arrow = currentPage.querySelector(".arrow");
-    
+                
+                if (currentPage.id == 3) {
+                    sidebar.classList.add("paralax");
+                    for (let i = 0; i < social_icons.length; i++) {
+                        const element = social_icons[i];
+                        element.classList.add("paralax");
+                    }
+
+                    window.addEventListener("mousemove", function (ev) {
+                        let Y = window.innerHeight;
+                        let X = window.innerWidth;
+                        if (ev.clientX >= 0 && ev.clientX <= 75) {
+                            sidebar.classList.add("hover");
+                        } else {
+                            sidebar.classList.remove("hover");
+                        }
+                        if ((ev.clientY <= Y && ev.clientY >= (Y - 200)) && (ev.clientX <= X && ev.clientX >= (X - 80))) {
+                            for (let i = 0; i < social_icons.length; i++) {
+                                const element = social_icons[i];
+                                element.classList.add("hover");
+                            }
+                        } else {
+                            for (let i = 0; i < social_icons.length; i++) {
+                                const element = social_icons[i];
+                                element.classList.remove("hover");
+                            }
+                        }
+                    })
+                } else {
+                    sidebar.classList.remove("paralax");
+                    for (let i = 0; i < social_icons.length; i++) {
+                        const element = social_icons[i];
+                        element.classList.remove("paralax");
+                    }
+                }
+
+
                 removeClasses(blocks);
                 hiddenArrows(arrows);
                 addON(service_block);
@@ -53,6 +92,7 @@ window.onload = () => {
                 let el = document.getElementById(`${page.getAttribute("class")}`);
                 let background = document.querySelector(`#b_${page.getAttribute("class")}`);
 
+                
                 
                 
                 removeClasses(blocks);

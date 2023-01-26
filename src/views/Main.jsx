@@ -53,6 +53,7 @@ function Main(props) {
             <div className="container">
                 <div className="background onthis" id="b_home"><img src="./img/big cab.jpg" alt="" /></div>
                 <div className="background" id="b_services"><img src="./img/cutting.jpg" alt="" /></div>
+                <div className="background" id="b_staff"><img src="./img/background.jpg" alt="" /></div>
                 
                     <a href="https://instagram.com" className="insta social_media"><img src="./img/Instagram_logo.png" /></a>   
                     <a href="https://youtube.com" className="youtube social_media"><img src="./img/youtube_logo.png" /></a>
@@ -139,7 +140,7 @@ function Main(props) {
                 </div>
 
                 <div className="staff" id="3">
-
+                        <div className="shadow"></div>
                 </div>
 
                 <div className="info" id="4">
