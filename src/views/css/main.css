@@ -27,6 +27,14 @@ body
     right: 10px;
     bottom: 13.2%;
 }
+.social_media.high{
+    height: fit-content;
+    width: 25px ;
+}
+.social_media.high img {
+    height: unset;
+    width: 100%;
+}
 .social_media
 {
     
