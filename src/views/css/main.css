@@ -1,7 +1,7 @@
 body
 {
     overflow: hidden;
-    background-color: black;
+    background-color: rgb(50, 50, 50);
 }
 .sidebar_container
 {
@@ -17,11 +17,7 @@ body
 {
     right: 10px;
 }
-.youtube.high
-{
-    right: 10px;
-    bottom: 7.2%;
-}
+
 .insta.high
 {
     right: 10px;
@@ -29,11 +25,17 @@ body
 }
 .social_media.high{
     height: fit-content;
-    width: 25px ;
+    width: 25px;
 }
 .social_media.high img {
     height: unset;
     width: 100%;
+}
+.youtube.high
+{
+    right: 8px;
+    width: 29px;
+    bottom: 7.2%;
 }
 .social_media
 {
@@ -43,7 +45,7 @@ body
     display: block;
     height: 25px;
     margin: 20px 20px;
-    transition: 0.5s;
+    z-index: 3;
 }
 .social_media img
 {
@@ -52,14 +54,17 @@ body
 .youtube
 {
     padding: 1px 0;
+    transition: 0.8s 0.2s;
     right: 12%;
 }
 .telegram
 {
+    transition: 0.8s 0.4s;
     right: 8%;
 }
 .insta
 {
+    transition: 0.8s;
     right: 16.5%;
 }
 .content
@@ -133,12 +138,17 @@ body
     left: calc(50% - 30px);
     transform: translate(0, 0px);
     z-index: 4;
-    transition: 0.5s;
+    opacity: 1;
+    transition: 0.8s;
     animation-name: move;
     cursor: pointer;
     animation-duration: 1.3s; 
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.arrow.hidden
+{
+    opacity: 0;
 }
 .arrow::after, .arrow::before
 {
@@ -257,8 +267,10 @@ body
     width: 100%;
     position: relative;
     height: 100vh;
+    padding: 0 120px;
+    padding-top: 30px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
 }
@@ -273,31 +285,34 @@ body
     z-index: 1;
     height: 280px;
     margin: 10px 40px;
-    margin-top: 50px;
     width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translate(0,0);
-    transition: 1s 0.2s;
-    opacity: 0.3;
+    opacity: 0;
+    transition: 0.5s;
 }
 .title
 {
     color: rgba(14, 119, 239, 0.501);
     font-size: 26px;
+    white-space: nowrap;
     font-family: "Montserrat";
     text-align: center;
+    transform: translate(0, 120%);
+    opacity: 0;
     margin: 20px 0px;
+    transition: 1s 0.8s;
 }
 .line_x
 {
     display: block;
-    width: 0%;
-    height: 3px;
+    min-height: 3px;
+    width: 100%;
     margin: 10px 0;
     background-color: rgba(255, 255, 255, 0.886);
-    transition: 1s 1.2s;
+    transition: 1s;
+    z-index: 2;
 }
 .service .list
 {
@@ -305,7 +320,7 @@ body
     padding: 0 30px;
     opacity: 0;
     transform: translate(0, -100%);
-    transition: 1s 2.2s;
+    transition: 1s 1.8s;
 }
 .service .list li
 {
@@ -318,17 +333,17 @@ body
 }
 .services_block.on .service
 {
-    transform: translate(0, -100%);
     opacity: 1;
 }
-.services_block.on .service span
+.services_block.on .service .title
 {
-    width: 100%;
+    transform: translate(0, 0);
+    opacity: 1;
 }
 .services_block.on .service .list
 {
-    transform: translate(0 ,0 );
     opacity: 1;
+    transform: translate(0,0);
 }
 
 .priceList_table
@@ -343,12 +358,19 @@ body
     border-top: 3px solid rgba(14, 119, 239, 0.586);
     border-bottom: 3px solid rgba(14, 119, 239, 0.586);
     display: flex;
-    transition: 1s;
     flex-direction: column;
     justify-content: start;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s;
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 2;
+}
+.priceList_table.view
+{
+    opacity: 1;
+    visibility: visible;
 }
 .priceList_table.openlist
 {
@@ -422,10 +444,12 @@ body
     text-transform: uppercase;
     color: white;
     margin: 22px;
+    transition: 1s;
     animation: blink 2.5s;
     text-shadow: 0 3px 4px rgba(14, 119, 239, 0.94);
     cursor: pointer;
     animation-iteration-count: infinite;
+    z-index: 3;
 }
 .open:hover
 {
@@ -444,7 +468,8 @@ body
     left: 0;
     width: 240px;
     height: 100%;
-    z-index: 3;
+    
+    z-index: 5;
 }
 .sidebar_container
 {
@@ -455,6 +480,7 @@ body
     background-color: rgba(0, 0, 0, 0.516);
     left: 0;
     top: 0;
+    box-shadow: 0 3px 4px rgba(255, 255, 255, 0.573);
 }
 .rightside
 {

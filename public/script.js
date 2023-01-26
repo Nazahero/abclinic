@@ -7,6 +7,7 @@ window.onload = () => {
         let blocks = document.querySelectorAll(".side_nav .block");
         let backgrounds = document.querySelectorAll(".background");
         let open = document.querySelector(".open");
+        let priceList = document.querySelector(".priceList_table");
         
         home.scrollIntoView();
 
@@ -28,11 +29,13 @@ window.onload = () => {
                 }
                 let currentPage = document.querySelector(`.${el.id}`);
                 let background = document.querySelector(`#b_${currentPage.getAttribute("class")}`);
+                let arrow = currentPage.querySelector(".arrow");
     
                 removeClasses(blocks);
+                hiddenArrows(arrows);
                 addON(service_block);
                 Nav_span(el, span);
-                iconMove(currentPage);
+                iconMove(currentPage, arrow, priceList);
                 scrolling(currentPage);
                 setBack(background, backgrounds, currentPage);
 
@@ -49,16 +52,17 @@ window.onload = () => {
                 let page = arrow.parentElement.nextSibling;
                 let el = document.getElementById(`${page.getAttribute("class")}`);
                 let background = document.querySelector(`#b_${page.getAttribute("class")}`);
+
                 
-    
+                
                 removeClasses(blocks);
+                
                 addON(service_block);
+                hiddenArrows(arrows);
                 Nav_span(el, span);
-                iconMove(page);
+                iconMove(page, arrow);
                 setBack(background, backgrounds, page);
                 scrolling(page);
-                
-                
                 el.classList.add("active");
             });
         }
@@ -72,19 +76,46 @@ window.onload = () => {
         
         
 };
-function iconMove(page){
+function hiddenArrows(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        element.classList.add("hidden");
+    }
+}
+function iconMove(page, arrow, priceList){
     let icons = document.querySelectorAll(".social_media");
+    // let bool = document.getElementById("1").classList.contains("tried");
     if (page.id > 1) {  
         for (let i = 0; i < icons.length; i++){
                 let icon = icons[i];
                 icon.classList.add("high");
         }
+        if (page.id == 2) {
+            setTimeout(() => {
+                priceList.classList.add("view");
+            }, 3000);
+        }
         return;
     }
-    for (let i = 0; i < icons.length; i++){
-        let icon = icons[i];
-        icon.classList.remove("high");
-    }
+    // if (bool) {
+    //     for (let i = 0; i < icons.length; i++){
+    //         let icon = icons[i];
+    //         icon.classList.remove("high");
+    //     }
+    //     if (arrow) {
+    //         arrow.classList.remove("hidden");
+    //     }
+    // }
+    setTimeout(() => {
+        for (let i = 0; i < icons.length; i++){
+            let icon = icons[i];
+            icon.classList.remove("high");
+            // document.getElementById("1").classList.add("tried");
+        }
+        if (arrow) {
+            arrow.classList.remove("hidden");
+        }
+    }, 400);
 }
 function setBack(current, arr, page) {
     if (page.id > 1) {
