@@ -10,7 +10,8 @@ window.onload = () => {
         let priceList = document.querySelector(".priceList_table");
         let sidebar = document.querySelector(".sidebar_container");
         let social_icons = document.querySelectorAll(".social_media");
-
+        let dentists = document.querySelectorAll(".dentist");
+        let fog = document.querySelectorAll(".fog");
         
         home.scrollIntoView();
 
@@ -36,11 +37,12 @@ window.onload = () => {
                 
                 if (currentPage.id == 3) {
                     sidebar.classList.add("paralax");
+                    off(dentists);
+                    off(fog);
                     for (let i = 0; i < social_icons.length; i++) {
                         const element = social_icons[i];
                         element.classList.add("paralax");
                     }
-
                     window.addEventListener("mousemove", function (ev) {
                         let Y = window.innerHeight;
                         let X = window.innerWidth;
@@ -67,6 +69,7 @@ window.onload = () => {
                         const element = social_icons[i];
                         element.classList.remove("paralax");
                     }
+                    addOff(fog);
                 }
 
 
@@ -107,6 +110,14 @@ window.onload = () => {
             });
         }
 
+        for (let i = 0; i < dentists.length; i++) {
+            const dentist = dentists[i];
+            dentist.addEventListener("transitionend", function (){
+                dentist.classList.add("nameup");
+            })
+        }
+
+
         open.addEventListener("click", () => {
             document.querySelector(".priceList_table").classList.toggle('openlist');
         })
@@ -120,6 +131,18 @@ function hiddenArrows(arr) {
     for (let i = 0; i < arr.length; i++) {
         const element = arr[i];
         element.classList.add("hidden");
+    }
+}
+function off(elems) {
+    for (let i = 0; i < elems.length; i++) {
+        const elem = elems[i];
+        elem.classList.remove("off");
+    }
+}
+function addOff(elems) {
+    for (let i = 0; i < elems.length; i++) {
+        const elem = elems[i];
+        elem.classList.add("off");
     }
 }
 function iconMove(page, arrow, priceList){

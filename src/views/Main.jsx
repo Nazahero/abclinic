@@ -55,10 +55,20 @@ function Main(props) {
                 <div className="background" id="b_services"><img src="./img/cutting.jpg" alt="" /></div>
                 <div className="background" id="b_staff"><img src="./img/background.jpg" alt="" /></div>
                 
-                    <a href="https://instagram.com" className="insta social_media"><img src="./img/Instagram_logo.png" /></a>   
-                    <a href="https://youtube.com" className="youtube social_media"><img src="./img/youtube_logo.png" /></a>
-                    <a href="https://telegram.org" className="telegram social_media"><img src="./img/telegram_logo.png" /></a>
-               
+                <a href="https://instagram.com" className="insta social_media"><img src="./img/Instagram_logo.png" /></a>   
+                <a href="https://youtube.com" className="youtube social_media"><img src="./img/youtube_logo.png" /></a>
+                <a href="https://telegram.org" className="telegram social_media"><img src="./img/telegram_logo.png" /></a>
+            
+                <div className="fog _1 off">
+                    <img src="./img/fog.png" alt="" />
+                </div>
+                <div className="fog _2 off">
+                    <img src="./img/fog.png" alt="" />
+                </div>
+                <div className="fog _3 off">
+                    <img src="./img/fog.png" alt="" />
+                </div>
+
                 <div className="home" id="1">
                     <div className="content">
                         <div className="name" id="name">
@@ -141,6 +151,44 @@ function Main(props) {
 
                 <div className="staff" id="3">
                         <div className="shadow"></div>
+                        
+                        <div className="dentists">
+                            <div className="dentist off _1">
+                                <div className="name">
+                                    <span className="n">Иброхимжон</span>
+                                    <span className="x"></span>
+                                    <div className="y"></div>
+                                </div>
+                                <img src="./img/dentist-1.png" alt="" /></div>
+                            <div className="dentist off _2">
+                                <div className="name">
+                                    <span className="n">Абдухамиджон</span>
+                                    <span className="x"></span>
+                                    <div className="y"></div>
+                                </div>
+                                <img src="./img/dentist-2.png" alt="" /></div>
+                            <div className="dentist off _3">
+                                <div className="name">
+                                    <span className="n">Виктория</span>
+                                    <span className="x"></span>
+                                    <div className="y"></div>
+                                </div>
+                                <img src="./img/dentist-3.png" alt="" /></div>
+                            <div className="dentist off _4">
+                                <div className="name">
+                                    <span className="n">Мансур Анварович</span>
+                                    <span className="x"></span>
+                                    <div className="y"></div>
+                                </div>
+                                <img src="./img/dentist-4.png" alt="" /></div>
+                            <div className="dentist off _5">
+                                <div className="name">
+                                    <span className="n">Татяна Юрьевна</span>
+                                    <span className="x"></span>
+                                    <div className="y"></div>
+                                </div>
+                                <img src="./img/dentist-5.png" alt="" /></div>
+                        </div>
                 </div>
 
                 <div className="info" id="4">

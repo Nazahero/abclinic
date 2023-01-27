@@ -81,14 +81,14 @@ body
 {
     z-index: 1;
 }
-.name
+.home .name
 {
     position: absolute;
     top: 30%;
     left: 13%;
     z-index: 1;
 }
-.name .title
+.home .name .title
 {
     font-size: 100px;
     color: rgba(255, 255, 255, 0.8);
@@ -100,7 +100,7 @@ body
     transform: translate(0, 70%);
     opacity: 0;
 }
-.name span
+.home .name span
 {
     margin-top: 15px;
     display: block;
@@ -110,7 +110,7 @@ body
     background-color: white;   
     transition: 1s; 
 }
-.name .subtitle
+.home .name .subtitle
 {
     font-size: 40px;
     text-align: center;
@@ -124,16 +124,16 @@ body
     transition: 1s 1.8s;
 }
 
-.name.ready .title
+.home .name.ready .title
 {
     transform: translate(0,0);
     opacity: 1;
 }
-.name.ready span
+.home .name.ready span
 {
     transform: scale(1);
 }
-.name.ready .subtitle {
+.home .name.ready .subtitle {
     transform: translate(0,0);
     opacity: 1;
 }
@@ -473,7 +473,193 @@ body
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
+.fog
+{
+    width: 70%;
+    transition-timing-function: ease-in-out;
+    position: fixed;
+    z-index: 6;
+}
+.fog img 
+{
+    width: 100%;
+}
+.fog._1
+{
+    bottom: -38%;
+    transition: 1s;
+    left: -23%;
+}
+.fog._2
+{
+    transition: 1s 0.3s;
+    bottom: -51%;
+    left: 15%;
+}
+.fog._3
+{
+    bottom: -40%;
+    transition: 1s;
+    right: -23%;
+}
+.fog._1.off
+{
+    bottom: -70%;
+    left: -40%
+}
+.fog._2.off
+{
+    bottom: -70%;
+}
+.fog._3.off 
+{
+    bottom: -70%;
+    right: -40%;
+}
+.dentist
+{
+    position: absolute;
+}
+.dentist._4
+{
+    width: 30%;
+    left: 35%;
+    bottom: -29%;
+    transition: 1s 1s;
+    z-index: 4;
+}
+.dentist._4.off
+{
+    bottom: -100%;
+}
+.dentist._3 
+{
+    width: 25%;
+    right: 19%;
+    bottom: -5.5%;
+    transition: 1s 2.5s;
+    opacity: 1;
+    z-index: 3;
+}
+.dentist._2
+{
+    width: 25%;
+    left: 15%;
+    transition: 1s 2.5s;
+    bottom: -5%;
+    z-index: 3;
+}
+.dentist._3.off , .dentist._2.off
+{
+    opacity: 0;
+}
+.dentist._1
+{
+    width: 27.5%;
+    left: -4%;
+    transition: 1s 4s;
+    bottom: -15%;
+    z-index: 2;
+}
+.dentist._1.off
+{
+    left: -30%;
+}
+.dentist._5
+{
+    width: 28%;
+    right: -10%;
+    bottom: -3%;
+    transition: 1s 4s;
+    z-index: 2;
+}
+.dentist._5.off
+{
+    right: -30%;
+}
+.dentist img
+{
+    width: 100%;
+}
+
+.dentist .name {
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    top: -25%;
+}
+.dentist .name .n
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    font-family: "Montserrat";
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.73);
+    display: block;
+    transition: 0.5s 2.1s;
+    transform: translate(0, 110%);
+    opacity: 0;
+    z-index: 6;
+}
+.dentist._3 .name , .dentist._2 .name 
+{
+    height: 28%;
+    top: -33%;
+}
+.dentist .name .x 
+{
+    width: 0%;
+    transition: 0.8s 1.3s;
+    margin-top: 5px;
+    height: 3px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.873);
+}
+.dentist.nameup .name .x 
+{
+    width: 70%;
+}
+.dentist .name .y {
+    display: block;
+    width: 3px;
+    height: 100%;
+    opacity: 1;
+    transition: 0.8s 0.5s;
+    transform: translate(0, 110%);
+    background-color: rgba(255, 255, 255, 0.873);
+}.dentist.nameup .name .y, .dentist.nameup .name .n
+{
+    transform: translate(0,0);
+    opacity: 1;
+}
+.dentist._3 .name 
+{
+    right: -20%;
+}
+.dentist._5 .name 
+{
+    left: -24%;
+}
+.dentist._2 .name .n
+{
+    padding-left: 3%;
+}
+.dentist._1 .name
+{
+    right: -8%;
+}
+
+
 
 
 /* --- sidebar --- */
@@ -486,7 +672,7 @@ body
     width: 240px;
     height: 100%;
     
-    z-index: 5;
+    z-index: 10;
 }
 .sidebar_container
 {
