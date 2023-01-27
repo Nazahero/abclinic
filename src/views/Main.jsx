@@ -155,21 +155,21 @@ function Main(props) {
                         <div className="dentists">
                             <div className="dentist off _1">
                                 <div className="name">
-                                    <span className="n">Иброхимжон</span>
+                                    <span className="n">Азимов Иброхимжон</span>
                                     <span className="x"></span>
                                     <div className="y"></div>
                                 </div>
                                 <img src="./img/dentist-1.png" alt="" /></div>
                             <div className="dentist off _2">
                                 <div className="name">
-                                    <span className="n">Абдухамиджон</span>
+                                    <span className="n">Азимов Абдухамиджон</span>
                                     <span className="x"></span>
                                     <div className="y"></div>
                                 </div>
                                 <img src="./img/dentist-2.png" alt="" /></div>
                             <div className="dentist off _3">
                                 <div className="name">
-                                    <span className="n">Виктория</span>
+                                    <span className="n">Виктория Вадимовна</span>
                                     <span className="x"></span>
                                     <div className="y"></div>
                                 </div>

@@ -600,11 +600,13 @@ body
     top: 0;
     left: 0;
     width: 100%;
-    font-size: 30px;
+    font-size: 26px;
+    margin-bottom: 5px;
     text-align: center;
+    white-space: nowrap;
     font-family: "Montserrat";
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.73);
+    color: rgba(14, 119, 239, 0.501);
     display: block;
     transition: 0.5s 2.1s;
     transform: translate(0, 110%);
@@ -616,6 +618,7 @@ body
     height: 28%;
     top: -33%;
 }
+
 .dentist .name .x 
 {
     width: 0%;
@@ -628,6 +631,10 @@ body
 .dentist.nameup .name .x 
 {
     width: 70%;
+}
+.dentist._3.nameup .name .x , .dentist._2.nameup .name .x
+{
+    width: 85%;
 }
 .dentist .name .y {
     display: block;
