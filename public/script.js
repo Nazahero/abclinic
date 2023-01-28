@@ -44,8 +44,7 @@ window.onload = () => {
             }
         }
         // console.log(lettersF, lettersS);
-        setDelay(lettersF);
-        setDelay(lettersS);
+        setDelay(letters);
 
         for (let i = 0; i < blocks.length; i++) {
             const el = blocks[i];
@@ -59,9 +58,12 @@ window.onload = () => {
                 
                 if (currentPage.id == 3) {
                     sidebar.classList.add("paralax");
-                    for (let i = 0; i < letters.length; i++) {
-                        Visible(letters[i]);
-                    }
+                    setTimeout(() => {
+                        for (let i = 0; i < letters.length; i++) {
+                            Visible(letters[i]);
+                        }
+                    }, 700);
+                    
                     off(fog);
                     for (let i = 0; i < social_icons.length; i++) {
                         const element = social_icons[i];
@@ -151,11 +153,35 @@ window.onload = () => {
         
 };
 function setDelay(letters) {
+    let array = [];
+    var arr = [];
+    for (var i = 0; i < letters.length; i++)
+        array.push(i);
+
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+    
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+    
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+    
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+      
+        
+      
     for (let i = 1; i-1 < letters.length; i++) {
-        const letter = letters[i-1];
-        letter.style.cssText = `transition-delay: ${0.5 * i}s`;        
+        const letter = letters[array[i-1]];
+        letter.style.cssText = `transition-delay: ${0.3 * i }s`;        
     }
 }
+
+
 function hiddenArrows(arr) {
     for (let i = 0; i < arr.length; i++) {
         const element = arr[i];
