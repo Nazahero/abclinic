@@ -518,6 +518,10 @@ body
     bottom: -70%;
     right: -40%;
 }
+.dentists
+{
+    /* visibility: hidden; */
+}
 .dentist
 {
     position: absolute;
@@ -527,7 +531,7 @@ body
     width: 30%;
     left: 35%;
     bottom: -29%;
-    transition: 1s 1s;
+    transition: 1s 0.3s;
     z-index: 4;
 }
 .dentist._4.off
@@ -539,7 +543,7 @@ body
     width: 25%;
     right: 19%;
     bottom: -5.5%;
-    transition: 1s 2.5s;
+    transition: 1s 1.5s;
     opacity: 1;
     z-index: 3;
 }
@@ -547,7 +551,7 @@ body
 {
     width: 25%;
     left: 15%;
-    transition: 1s 2.5s;
+    transition: 1s 1.5s;
     bottom: -5%;
     z-index: 3;
 }
@@ -559,7 +563,7 @@ body
 {
     width: 27.5%;
     left: -4%;
-    transition: 1s 4s;
+    transition: 1s 2.2s;
     bottom: -15%;
     z-index: 2;
 }
@@ -572,7 +576,7 @@ body
     width: 28%;
     right: -10%;
     bottom: -3%;
-    transition: 1s 4s;
+    transition: 1s 2.2s;
     z-index: 2;
 }
 .dentist._5.off
@@ -584,7 +588,7 @@ body
     width: 100%;
 }
 
-.dentist .name {
+/* .dentist .name {
     position: absolute;
     display: flex;
     overflow: hidden;
@@ -593,6 +597,7 @@ body
     align-items: center;
     width: 100%;
     height: 20%;
+    opacity: 0;
     top: -25%;
 }
 .dentist .name .n
@@ -626,7 +631,7 @@ body
     margin-top: 5px;
     height: 3px;
     display: block;
-    background-color: rgba(255, 255, 255, 0.873);
+    background-color: rgba(255, 255, 255, 0.494);
 }
 .dentist.nameup .name .x 
 {
@@ -643,7 +648,7 @@ body
     opacity: 1;
     transition: 0.8s 0.5s;
     transform: translate(0, 110%);
-    background-color: rgba(255, 255, 255, 0.873);
+    background-color: rgba(255, 255, 255, 0.494);
 }.dentist.nameup .name .y, .dentist.nameup .name .n
 {
     transform: translate(0,0);
@@ -664,8 +669,33 @@ body
 .dentist._1 .name
 {
     right: -8%;
+} */
+
+.team
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 4% 3%;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+}
+.letter
+{
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.262);
+    font-family: 'MonserratB';
+    font-size: 280px;
+    margin: 0 12px;   
+    opacity: 0;
+    transition: 0.7s;
 }
 
+.letter.visible
+{
+    opacity: 1;
+}
 
 
 

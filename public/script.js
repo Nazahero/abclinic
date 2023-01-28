@@ -12,7 +12,11 @@ window.onload = () => {
         let social_icons = document.querySelectorAll(".social_media");
         let dentists = document.querySelectorAll(".dentist");
         let fog = document.querySelectorAll(".fog");
+        let letters = document.querySelectorAll(".letter");
+        let lettersF = [];
+        let lettersS = [];
         
+
         home.scrollIntoView();
 
         for (let i = 0; i < blocks.length; i++) {
@@ -24,6 +28,24 @@ window.onload = () => {
         document.querySelector(".name").classList.add("ready"); 
 
         Nav_span(document.querySelector("#home"), span);
+
+        for (let i = 1; document.querySelector(`.f_${i}`) || document.querySelector(`.s_${i}`); i++) {
+            if (i > 10) {
+                console.log("no");
+                break;
+            }
+            const letterF = document.querySelector(`.f_${i}`);
+            const letterS = document.querySelector(`.s_${i}`);
+            if (letterF) {
+                lettersF.push(letterF);
+            }
+            if (letterS) {
+                lettersS.push(letterS);                
+            }
+        }
+        // console.log(lettersF, lettersS);
+        setDelay(lettersF);
+        setDelay(lettersS);
 
         for (let i = 0; i < blocks.length; i++) {
             const el = blocks[i];
@@ -37,12 +59,17 @@ window.onload = () => {
                 
                 if (currentPage.id == 3) {
                     sidebar.classList.add("paralax");
-                    off(dentists);
+                    for (let i = 0; i < letters.length; i++) {
+                        Visible(letters[i]);
+                    }
                     off(fog);
                     for (let i = 0; i < social_icons.length; i++) {
                         const element = social_icons[i];
                         element.classList.add("paralax");
                     }
+                    document.getElementById("last").addEventListener("transitionend", function (){
+                        off(dentists);
+                    })
                     window.addEventListener("mousemove", function (ev) {
                         let Y = window.innerHeight;
                         let X = window.innerWidth;
@@ -63,6 +90,8 @@ window.onload = () => {
                             }
                         }
                     })
+                        
+                        
                 } else {
                     sidebar.classList.remove("paralax");
                     for (let i = 0; i < social_icons.length; i++) {
@@ -110,12 +139,6 @@ window.onload = () => {
             });
         }
 
-        for (let i = 0; i < dentists.length; i++) {
-            const dentist = dentists[i];
-            dentist.addEventListener("transitionend", function (){
-                dentist.classList.add("nameup");
-            })
-        }
 
 
         open.addEventListener("click", () => {
@@ -127,6 +150,12 @@ window.onload = () => {
         
         
 };
+function setDelay(letters) {
+    for (let i = 1; i-1 < letters.length; i++) {
+        const letter = letters[i-1];
+        letter.style.cssText = `transition-delay: ${0.5 * i}s`;        
+    }
+}
 function hiddenArrows(arr) {
     for (let i = 0; i < arr.length; i++) {
         const element = arr[i];
@@ -144,6 +173,9 @@ function addOff(elems) {
         const elem = elems[i];
         elem.classList.add("off");
     }
+}
+function Visible(letter) {
+    letter.classList.add("visible");
 }
 function iconMove(page, arrow, priceList){
     let icons = document.querySelectorAll(".social_media");
