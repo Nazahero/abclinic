@@ -188,7 +188,9 @@ function iconMove(icons){
     }
 }
 function visiblePriceList(priceList) {
-    priceList.classList.add("view");
+    setTimeout(() => {
+        priceList.classList.add("view");        
+    }, 3000);
 }
 function iconMoveTimeOut(icons) {
     setTimeout(() => {
