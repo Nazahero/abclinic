@@ -1,5 +1,5 @@
-window.onload = () => {
-    setTimeout(() => {
+export function jsScript() {
+
         let homePage = document.querySelector(".home");
         let homeButton = document.querySelector("#home");
         let title = document.querySelector(".name");
@@ -60,6 +60,7 @@ window.onload = () => {
 
 
                         // ---- -------------- ---- //
+                        iconMove(social_icons);
                         hiddenElement(arrow);
                         break;
                     case 4:
@@ -89,10 +90,8 @@ window.onload = () => {
 
         openPriceList(open, priceList);      
         
-    }, 1000);
-        
-        
-};
+       
+
 function scrollControl(backgrounds, background , page) {
     setBackgroudImage(background, backgrounds, page);
     scrollIntoPage(page);
@@ -281,6 +280,8 @@ function setDelay(letters) {
     }
     return letters[array[letters.length - 3]];
 }
+}
+
 
 
     
