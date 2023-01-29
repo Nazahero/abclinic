@@ -689,7 +689,7 @@ body
     font-size: 280px;
     margin: 0 12px;   
     opacity: 0;
-    transition: 0.7s;
+    transition: 0.8s;
 }
 
 .letter.visible
