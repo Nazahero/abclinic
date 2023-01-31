@@ -1,5 +1,5 @@
-window.onload = () => {
-    setTimeout(() => {
+export function jsScript() {
+
         let homePage = document.querySelector(".home");
         let homeButton = document.querySelector("#home");
         let title = document.querySelector(".name");
@@ -96,16 +96,8 @@ window.onload = () => {
 
         openPriceList(open, priceList);      
         
-    }, 1000);
-        
-        
-};
-function hiddenDentists(dentists) {
-    for (let i = 0; i < dentists.length; i++) {
-        const element = dentists[i];
-        element.classList.add("outpage")
-    }
-}
+       
+
 function scrollControl(backgrounds, background , page) {
     setBackgroudImage(background, backgrounds, page);
     scrollIntoPage(page);
@@ -397,5 +389,5 @@ function backButtonHidden(button) {
 
 
     
-
+}
 
