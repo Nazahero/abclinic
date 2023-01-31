@@ -63,15 +63,7 @@ function Main(props) {
                 <a href="https://youtube.com" className="youtube social_media"><img src="./img/youtube_logo.png" /></a>
                 <a href="https://telegram.org" className="telegram social_media"><img src="./img/telegram_logo.png" /></a>
             
-                <div className="fog _1 off">
-                    <img src="./img/fog.png" alt="" />
-                </div>
-                <div className="fog _2 off">
-                    <img src="./img/fog.png" alt="" />
-                </div>
-                <div className="fog _3 off">
-                    <img src="./img/fog.png" alt="" />
-                </div>
+                
 
                 <div className="home" id="1">
                     <div className="content">
@@ -155,36 +147,25 @@ function Main(props) {
                 </div>
 
                 <div className="staff" id="3">
-<<<<<<< HEAD
-=======
                         <div className="next_button hidden"><img src="./img/next.png" alt="" /></div>
                         <div className="back_button"><img src="./img/back.png" alt="" /></div>
->>>>>>> main
                         <div className="shadow"></div>
                         <div className="team">
                             <span className="letter first f_1">к</span>
                             <span className="letter second s_3">о</span>
                             <span className="letter second s_1">м</span>
-                            <span className="letter first f_2" id="last">а</span>
+                            <span className="letter first f_2">а</span>
                             <span className="letter first f_3">н</span>
                             <span className="letter second s_2">д</span>
                             <span className="letter first f_4">а</span>
                         </div>
                         <div className="dentists">
-<<<<<<< HEAD
-                            <div className="dentist off _1">
-=======
                             <div className="dentist off prioriti_3 _1 left" id="i_i">
->>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Иброхимжон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-<<<<<<< HEAD
-                                <img src="./img/dentist-1.png" alt="" /></div>
-                            <div className="dentist off _2">
-=======
                                 <img src="./img/dentist-1.png"  alt="" />
                                 <img src="./img/dentist-1.png" className="clone" alt="" />
                                 
@@ -208,16 +189,11 @@ function Main(props) {
                             </div>
                             
                             <div className="dentist off prioriti_2 _2 right">
->>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Абдухамиджон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-<<<<<<< HEAD
-                                <img src="./img/dentist-2.png" alt="" /></div>
-                            <div className="dentist off _3">
-=======
                                 <img src="./img/dentist-2.png" alt="" />
                                 <img src="./img/dentist-2.png" className="clone" alt="" />
                                 
@@ -240,16 +216,11 @@ function Main(props) {
                                         </div>
                                 </div>
                             <div className="dentist off prioriti_2 _3 right">
->>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-<<<<<<< HEAD
-                                <img src="./img/dentist-3.png" alt="" /></div>
-                            <div className="dentist off _4">
-=======
                                 <img src="./img/dentist-3.png" alt="" />
                                 <img src="./img/dentist-3.png" className="clone"  alt="" />
                                 
@@ -272,16 +243,11 @@ function Main(props) {
                                         </div>
                                 </div>
                             <div className="dentist off prioriti_1 _4 right">
->>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-<<<<<<< HEAD
-                                <img src="./img/dentist-4.png" alt="" /></div>
-                            <div className="dentist off _5">
-=======
                                 <img src="./img/dentist-4.png" alt="" />
                                 <img src="./img/dentist-4.png" className="clone" alt="" />
                                 
@@ -304,15 +270,11 @@ function Main(props) {
                                         </div>
                                 </div>
                             <div className="dentist off prioriti_3 _5 left">
->>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Татяна Юрьевна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-<<<<<<< HEAD
-                                <img src="./img/dentist-5.png" alt="" /></div>
-=======
                                 <img src="./img/dentist-5.png" alt="" />
                                 <img src="./img/dentist-5.png" className="clone" alt="" />
                                 
@@ -334,26 +296,29 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
->>>>>>> main
                         </div>
                 </div>
 
                 <div className="info" id="4">
 
                 </div>
-                
+                <div className="fog _1 off">
+                    <img src="./img/fog.png" alt="" />
+                </div>
+                <div className="fog _2 off">
+                    <img src="./img/fog.png" alt="" />
+                </div>
+                <div className="fog _3 off">
+                    <img src="./img/fog.png" alt="" />
+                </div>
             </div>
         </main>
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <script src="./slick.min.js"></script>
-<<<<<<< HEAD
-        <script src="./script.js"></script>
-=======
         
                     
 
 
->>>>>>> main
         </BrowserRouter>
     )
 }
