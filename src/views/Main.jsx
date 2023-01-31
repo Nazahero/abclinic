@@ -245,7 +245,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_1 _4 right">
+                            <div className="dentist off prioriti_1 _4 bottom">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}

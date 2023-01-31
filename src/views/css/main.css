@@ -720,7 +720,7 @@ body
 
 .dentists.alternative .bottom.information
 {
-    bottom: -25% !important;
+    bottom: -5%;
     right: 5% !important;
     transition: 2s;
     transition-delay: 0.3s !important;
