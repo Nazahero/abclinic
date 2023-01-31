@@ -79,7 +79,7 @@ body
 }
 .content
 {
-    z-index: 1;
+    z-index: inherit;
 }
 .home .name
 {
@@ -95,7 +95,7 @@ body
     font-family: "Montserrat";
 
     letter-spacing: 10px;
-    z-index: 1;
+    z-index: 8;
     transition: 0.8s 1s;
     transform: translate(0, 70%);
     opacity: 0;
@@ -201,6 +201,7 @@ body
     height: 100vh;
     position: relative;
     overflow: hidden;
+    z-index: 8;
 }
 
 .win_logo
@@ -518,6 +519,7 @@ body
     bottom: -70%;
     right: -40%;
 }
+/*----- defolt dentists ------*/
 .dentists
 {
     /* visibility: hidden; */
@@ -528,76 +530,95 @@ body
 .dentist
 {
     position: absolute;
+    transition: 1s;
+    bottom: -5%;
 }
 .dentist img {
     width: 100%;
+}
+.dentist.visibled 
+{
+    transition: 1s 0 !important;
 }
 .dentist._4
 {
     width: 30%;
     right: 35%;
-    bottom: -29%;
+    transform: translate(0, 24%);
     transition: 1s 0.3s;
     z-index: 4;
 }
-.dentist._4.off
-{
-    bottom: -100%;
-}
-.dentist._3 
+
+.prioriti_2
 {
     width: 25%;
-    right: 19%;
-    bottom: -5.5%;
-    transition: 1s 0s;
     opacity: 1;
     z-index: 3;
 }
-.dentist._3.gr, .dentist._2.gr 
+
+.prioriti_3
 {
-    transition: 1s 1.5s;
-}
-.dentist._2
-{
-    width: 25%;
-    right: 60%;
-    transition: 1s 0s;
-    bottom: -5%;
-    z-index: 3;
+    width: 28%;
+    z-index: 2;
 }
 
-.dentist._3.off , .dentist._2.off
+.dentist._3 
 {
-    opacity: 0;
+    right: 19%;
+}
+
+.dentist._2
+{
+    right: 60%;
 }
 .dentist._1
 {
-    width: 27.5%;
     left: -4%;
-    transition: 1s 0s;
-    bottom: -15%;
-    z-index: 2;
+    transform: translate(0, 10%);
+}
+.dentist._5
+{
+    left: 82%;
+}
+
+/*---- dentists' CLONE ----*/
+.clone 
+{
+    z-index: 9 !important;
+    opacity: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+/* ----- dentist OFF------*/
+.dentist._4.off
+{
+    bottom: -100%;
 }
 .dentist._1.off
 {
     left: -30%;
 }
-.dentist._1.gr, .dentist._5.gr
+.dentist._3.gr, .dentist._2.gr 
 {
-    transition: 1s 2.2s;
+    transition: 1s 1.5s;
 }
-.dentist._5
+.dentist._3.off , .dentist._2.off
 {
-    width: 28%;
-    right: -11%;
-    bottom: -5%;
-    transition: 1s 2.2s;
-    z-index: 2;
+    opacity: 0;
 }
 .dentist._5.off
 {
     left: 112%;
 }
+.dentist._1.gr, .dentist._5.gr
+{
+    transition: 1s 2.2s;
+}
+/*-- opacity of LETTERS ---*/
+
 .opacityOI{
     opacity: 1 !important;
     transition-delay: 0s !important;
@@ -607,6 +628,8 @@ body
     opacity: 0 !important;
     transition-delay: 0s !important;
 }
+
+/* defolt ALTERNATIVE at all */
 
 .dentists.alternative .left
 {
@@ -620,56 +643,6 @@ body
 {
     bottom: -120%;
 }
-
-.dentists.alternative ._1.animate 
-{
-    animation: dentist1 2s;
-}
-.dentists.alternative ._2.animate
-{
-    animation: dentist2 2s;
-}
-.dentists.alternative ._3.animate
-{
-    animation: dentist3 2s;
-}
-
-.dentists.alternative ._5.animate
-{
-    animation: dentist5 2s;
-}
-
-.dentists ._1.close_animate 
-{
-    animation: close1 3s;
-}
-.dentists ._2.close_animate
-{
-    animation: close2 3s 0s;
-}
-.dentists ._3.close_animate
-{
-    animation: close3 3s 0s;
-}
-.dentists ._4.close_animate 
-{
-    animation: close4 3s;
-}
-.dentists ._5.close_animate
-{
-    animation: close5 3s;
-}
-
-.dentists.alternative .bottom.information
-{
-    bottom: -25% !important;
-    right: 4% !important;
-    transition: 2s;
-    transition-delay: 0.3s !important;
-}
-
-
-
 
 .dentists.alternative .dentist 
 {
@@ -701,6 +674,58 @@ body
     transition: 2.5s ;
 }
 
+/*---- animate dentists GO TO BOTTOM ----*/
+
+.dentists.alternative ._1.animate 
+{
+    animation: dentist1 2s;
+}
+.dentists.alternative ._2.animate
+{
+    animation: dentist2 2s;
+}
+.dentists.alternative ._3.animate
+{
+    animation: dentist3 2s;
+}
+.dentists.alternative ._5.animate
+{
+    animation: dentist5 2s;
+}
+
+/*---- animate dentists GO TO TOP ----*/
+
+.dentists ._1.close_animate 
+{
+    animation: close1 3s;
+}
+.dentists ._2.close_animate
+{
+    animation: close2 3s 0s;
+}
+.dentists ._3.close_animate
+{
+    animation: close3 3s 0s;
+}
+.dentists ._4.close_animate 
+{
+    animation: close4 3s;
+}
+.dentists ._5.close_animate
+{
+    animation: close5 3s;
+}
+
+/*---- alternative when it is INFORMATIONED ----*/
+
+.dentists.alternative .bottom.information
+{
+    bottom: -25% !important;
+    right: 5% !important;
+    transition: 2s;
+    transition-delay: 0.3s !important;
+}
+
 .dentists.alternative .right.information 
 {
     bottom: -25% !important;
@@ -716,6 +741,8 @@ body
     transition-delay: 0.3s !important;
 }
 
+/*---- BACK BUTTON ----*/
+
 .back_button
 {
     width: 40px;
@@ -727,7 +754,7 @@ body
     visibility: hidden;
     top: 3%;
     cursor: pointer;
-    z-index: 6;
+    z-index: 25;
 }
 .back_button.visible
 {
@@ -740,16 +767,7 @@ body
     width: 100%;
     height: 100%;
 }
-.clone 
-{
-    z-index: 9 !important;
-    opacity: 0;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-}
+
 .dentist_information
 {
     width: 33%;
@@ -830,6 +848,34 @@ body
     opacity: 1;
     transition: 0.7s 2s;
 }
+
+.next_button
+{
+    width: 100px;
+    position: absolute;
+    top: calc(50vh - 50px);
+    z-index: 9;
+    right: 0;
+    transition: 1s 0.5s;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 0.8;
+    animation-name: moveX;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.next_button img 
+{
+    width: 100%;
+}
+.next_button.hidden
+{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
 
 /* .dentist .name {
     position: absolute;
@@ -951,7 +997,7 @@ body
     left: 0;
     width: 240px;
     height: 100%;
-    z-index: 5;
+    z-index: 20;
 }
 .sidebar_container
 {
@@ -1086,7 +1132,7 @@ body
     }
     20% {
         opacity: 0; 
-        right: 10%;        
+        right: 19%;        
     }
     100% {
         opacity: 1;
@@ -1121,20 +1167,7 @@ body
         left: 82%;  
     }
 }
-@keyframes main_dentist {
-    0% {
-        right: 4% ;
-        bottom: -25% ;        
-    }
-    50%{
-        right: 4% ;
-        bottom: -120% ;
-    }
-    100% {
-        right: 35% ;
-        bottom: -120% ;
-    }
-}
+
 @keyframes dentist1 {
     0% {
         bottom: -15%;   
@@ -1192,6 +1225,59 @@ body
     }
 }
 
+@keyframes switch_open_main {
+    0% {
+        right: 4% ;
+        bottom: -120% ;        
+    }
+    100% {
+        right: 4% ;
+        bottom: -25% ;
+    }
+}
+@keyframes switch_close_main {
+    0% {
+        right: 4% ;
+        bottom: -120% ;        
+    }
+    100% {
+        right: 4% ;
+        bottom: -25% ;
+    }
+}
+@keyframes switch_open_1 {
+    0% {
+        bottom: -15%;   
+        left: -50%;     
+    }
+    100% {
+        bottom: -15%;
+        left: -4%;        
+    }    
+}
+@keyframes switch_close_1 {
+    0% {
+        bottom: -15%;   
+        left: -4%;     
+    }
+    100% {
+        bottom: -15%;
+        left: -50%;        
+    }    
+}
+
+@keyframes switch_open_2 {
+    0% {
+        bottom: -15%;   
+        left: -4%;     
+    }
+    100% {
+        bottom: -15%;
+        left: -50%;        
+    }    
+}
+
+
 @keyframes blink{
     0%{
         opacity: 0.2;
@@ -1211,10 +1297,20 @@ body
         transform: translate(0, 8px);
     }
     100%{
+        transform: translamovete(0, 0);
+    }
+}
+@keyframes moveX{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(8px, 0px);
+    }
+    100%{
         transform: translate(0, 0);
     }
 }
-
 @keyframes action{
     0%{
         /* top: -25%;

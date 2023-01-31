@@ -27,6 +27,10 @@ function Main(props) {
             }
     }
 
+    
+      
+    
+    console.log("yeh");
 
     return (
         <BrowserRouter>
@@ -151,6 +155,11 @@ function Main(props) {
                 </div>
 
                 <div className="staff" id="3">
+<<<<<<< HEAD
+=======
+                        <div className="next_button hidden"><img src="./img/next.png" alt="" /></div>
+                        <div className="back_button"><img src="./img/back.png" alt="" /></div>
+>>>>>>> main
                         <div className="shadow"></div>
                         <div className="team">
                             <span className="letter first f_1">к</span>
@@ -162,41 +171,170 @@ function Main(props) {
                             <span className="letter first f_4">а</span>
                         </div>
                         <div className="dentists">
+<<<<<<< HEAD
                             <div className="dentist off _1">
+=======
+                            <div className="dentist off prioriti_3 _1 left" id="i_i">
+>>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Иброхимжон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
+<<<<<<< HEAD
                                 <img src="./img/dentist-1.png" alt="" /></div>
                             <div className="dentist off _2">
+=======
+                                <img src="./img/dentist-1.png"  alt="" />
+                                <img src="./img/dentist-1.png" className="clone" alt="" />
+                                
+                            </div>
+                            <div className="dentist_information i_1 t_right">
+                                    <div className="dentist_name">Азимов Абдухамиджон</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                            </div>
+                            
+                            <div className="dentist off prioriti_2 _2 right">
+>>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Абдухамиджон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
+<<<<<<< HEAD
                                 <img src="./img/dentist-2.png" alt="" /></div>
                             <div className="dentist off _3">
+=======
+                                <img src="./img/dentist-2.png" alt="" />
+                                <img src="./img/dentist-2.png" className="clone" alt="" />
+                                
+                            </div>
+                            <div className="dentist_information  i_2 t_left">
+                                    <div className="dentist_name">Азимов Иброхимжон</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                                </div>
+                            <div className="dentist off prioriti_2 _3 right">
+>>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
+<<<<<<< HEAD
                                 <img src="./img/dentist-3.png" alt="" /></div>
                             <div className="dentist off _4">
+=======
+                                <img src="./img/dentist-3.png" alt="" />
+                                <img src="./img/dentist-3.png" className="clone"  alt="" />
+                                
+                            </div>
+                            <div className="dentist_information i_3 t_left">
+                                    <div className="dentist_name">Пак Виктория Вадимовна</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                                </div>
+                            <div className="dentist off prioriti_1 _4 right">
+>>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
+<<<<<<< HEAD
                                 <img src="./img/dentist-4.png" alt="" /></div>
                             <div className="dentist off _5">
+=======
+                                <img src="./img/dentist-4.png" alt="" />
+                                <img src="./img/dentist-4.png" className="clone" alt="" />
+                                
+                            </div>
+                            <div className="dentist_information  i_4 t_left">
+                                    <div className="dentist_name">Аскаров Мансур Анварович</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                                </div>
+                            <div className="dentist off prioriti_3 _5 left">
+>>>>>>> main
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Татяна Юрьевна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
+<<<<<<< HEAD
                                 <img src="./img/dentist-5.png" alt="" /></div>
+=======
+                                <img src="./img/dentist-5.png" alt="" />
+                                <img src="./img/dentist-5.png" className="clone" alt="" />
+                                
+                            </div>
+                            <div className="dentist_information  i_5 t_right">
+                                    <div className="dentist_name">Татяна Юрьевна</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                                </div>
+>>>>>>> main
                         </div>
                 </div>
 
@@ -208,7 +346,14 @@ function Main(props) {
         </main>
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <script src="./slick.min.js"></script>
+<<<<<<< HEAD
         <script src="./script.js"></script>
+=======
+        
+                    
+
+
+>>>>>>> main
         </BrowserRouter>
     )
 }
