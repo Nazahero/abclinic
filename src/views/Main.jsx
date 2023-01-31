@@ -216,11 +216,14 @@ function Main(props) {
                                         </div>
                                 </div>
                             <div className="dentist off prioriti_2 _3 right">
+
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
+                                
+
                                 <img src="./img/dentist-3.png" alt="" />
                                 <img src="./img/dentist-3.png" className="clone"  alt="" />
                                 
