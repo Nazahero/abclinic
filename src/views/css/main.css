@@ -529,6 +529,7 @@ body
 {
     position: fixed;
 }
+
 .dentist img {
     width: 100%;
 }
@@ -537,7 +538,7 @@ body
     width: 30%;
     right: 35%;
     bottom: -29%;
-    transition: 1s 0.3s;
+    transition: 1s 0s;
     z-index: 4;
 }
 .dentist._4.off
@@ -623,20 +624,25 @@ body
 
 .dentists.alternative ._1.animate 
 {
-    animation: dentist1 2s;
+    animation: dentist1 2s 0.2s;
 }
 .dentists.alternative ._2.animate
 {
-    animation: dentist2 2s;
+    animation: dentist2 2s 0.1s;
 }
 .dentists.alternative ._3.animate
 {
-    animation: dentist3 2s;
+    animation: dentist3 2s 0.1s;
+}
+
+.dentists.alternative ._4.animate
+{
+    animation: dentist4 2s;
 }
 
 .dentists.alternative ._5.animate
 {
-    animation: dentist5 2s;
+    animation: dentist5 2s 0.2s;
 }
 
 .dentists ._1.close_animate 
@@ -678,7 +684,7 @@ body
 .dentists.alternative .dentist._1 
 {
     width: 40% !important;
-    transition: 1s ;
+    transition: 0.5s;
 }
 .dentists.alternative .dentist._2 
 {
@@ -714,6 +720,12 @@ body
     left: 0% !important;
     transition: 2s;
     transition-delay: 0.3s !important;
+}
+
+.staff .dentists .dentist.outpage
+{
+    bottom: -120% !important;
+    transition: 1s 0s !important;
 }
 
 .back_button
@@ -1070,7 +1082,7 @@ body
         opacity: 0; 
         right: 60%;        
     }
-    20% {
+    30% {
         opacity: 0; 
         right: 60%;        
     }
@@ -1084,9 +1096,9 @@ body
         opacity: 0; 
         right: 19%;        
     }
-    20% {
+    30% {
         opacity: 0; 
-        right: 10%;        
+        right: 19%;        
     }
     100% {
         opacity: 1;
@@ -1095,10 +1107,6 @@ body
 }
 @keyframes close4 {
     0% {
-        right: 35% ;
-        bottom: -120% ; 
-    }
-    20% {
         right: 35% ;
         bottom: -120% ; 
     }
@@ -1175,6 +1183,16 @@ body
     100% {
         right: -50% ;
         opacity: 0;
+    }
+}
+@keyframes dentist4 {
+    0% {
+        bottom: -29%;
+        right: 35%;
+    }
+    100% {
+        bottom: -120%;
+        right: 35%;
     }
 }
 @keyframes dentist5 {

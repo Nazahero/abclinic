@@ -38,14 +38,17 @@ window.onload = () => {
                     case "1":
                         iconMoveTimeOut(social_icons);
                         removeStaffPage(sidebar, social_icons, fog);
-                        visibleElement(arrow)
+                        visibleElement(arrow);
+                        hiddenDentists(dentists);
+                        removeClassGr(dentists)
                         break;
                     case "2":
                         iconMove(social_icons);
                         addClassOn(service_block);
                         visiblePriceList(priceList);
                         removeStaffPage(sidebar, social_icons, fog);
-
+                        hiddenDentists(dentists);
+                        removeClassGr(dentists)
                         hiddenElement(arrow);
                         break;
                     case "3":
@@ -100,6 +103,24 @@ window.onload = () => {
         
         
 };
+function hiddenDentists(dentists) {
+    for (let i = 0; i < dentists.length; i++) {
+        const element = dentists[i];
+        element.classList.add("outpage");
+    }
+}
+function removeClassOutpage(dentists) {
+    for (let i = 0; i < dentists.length; i++) {
+        const element = dentists[i];
+        element.classList.remove("outpage");
+    }
+}
+function removeClassGr(dentists) {
+    for (let i = 0; i < dentists.length; i++) {
+        const element = dentists[i];
+        element.classList.remove("gr");
+    }
+}
 function scrollControl(backgrounds, background , page) {
     setBackgroudImage(background, backgrounds, page);
     scrollIntoPage(page);
@@ -113,6 +134,7 @@ function visibleDentists(preLetter , dentists) {
     preLetter.addEventListener("transitionend", function (){
         removeClassOff(dentists);
     }, )
+    removeClassOutpage(dentists);
 };
 function visibleToolsWhenHover(sidebar, social_icons) {
     window.addEventListener("mousemove", function (ev) {
@@ -178,7 +200,9 @@ function removeClassOff(elems) {
 function addGr(elems) {
     for (let i = 0; i < elems.length; i++) {
         const elem = elems[i];
-        elem.classList.add("gr");
+        if (elem.classList.contains("off")) {
+            elem.classList.add("gr");
+        }
     }
 }
 function addClassOff(elems) {
