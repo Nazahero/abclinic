@@ -19,8 +19,8 @@ export function jsScript() {
         let preLetter = setDelay(letters);
         let informations = document.querySelectorAll(".dentist_information");
         let backButton = document.querySelector(".back_button");
+        let nextButton = document.querySelector(".staff .next_button");
         
-        welcomePage(homePage, homeButton, navButtons, stick, title);
 
         for (let i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
@@ -56,8 +56,8 @@ export function jsScript() {
                         visibleToolsWhenHover(sidebar, social_icons);
                         addGr(dentists);
                         visibleDentists(preLetter ,dentists);
-                        dentistsControl(dentists, dentistsBox, letters, backButton);
-                        backButtonControl(dentists, dentistsBox, letters, informations, backButton);
+                        dentistsControl(dentists, dentistsBox, letters, backButton, nextButton);
+                        backButtonControl(dentists, dentistsBox, letters, informations, backButton, nextButton);
 
                         // ---- ----------------- ---- //
 
@@ -95,6 +95,8 @@ export function jsScript() {
             });
 
         openPriceList(open, priceList);      
+        welcomePage(homePage, homeButton, navButtons, stick, title);
+
         
        
 
@@ -171,6 +173,7 @@ function removeClassOff(elems) {
     for (let i = 0; i < elems.length; i++) {
         const elem = elems[i];
         elem.classList.remove("off");
+        elem.classList.add("visibled");
     }
 }
 function addGr(elems) {
@@ -264,19 +267,21 @@ function stickControl(active, stick) {
         top: ${active.getBoundingClientRect().top}px;
     `;
 }
-function backButtonControl(dentists, dentistsBox, letters, informations, back) {
+function backButtonControl(dentists, dentistsBox, letters, informations, back, next) {
     back.addEventListener("click", () => {
         backStaff(dentistsBox, dentists ,letters, informations, back)
+        hiddenElement(next);
     })
 }
-function dentistsControl(dentists, dentistsBox, letters, back) {
+function dentistsControl(dentists, dentistsBox, letters, back, next) {
     for (let i = 0; i < dentists.length; i++) {
         const dentist = dentists[i];
         const clone = dentist.querySelector(".clone");
         console.log(clone);
-        let info = dentist.nextSibling;
+        let info = dentist.nextSibling; 
         clone.addEventListener("click", () => {
             infoAnimation(dentist, dentistsBox, dentists, letters, info, back);
+            visibleElement(next)
         })
     }
 }
@@ -390,4 +395,3 @@ function backButtonHidden(button) {
 
     
 }
-
