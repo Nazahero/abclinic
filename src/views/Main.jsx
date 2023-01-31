@@ -160,7 +160,7 @@ function Main(props) {
                             <span className="letter first f_4">а</span>
                         </div>
                         <div className="dentists">
-                            <div className="dentist off prioriti_3 _1 left" id="i_i">
+                            <div className="dentist off prioriti_3 _1 left" id="d_1">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Иброхимжон</span> */}
                                     {/* <span className="x"></span> */}
@@ -188,7 +188,7 @@ function Main(props) {
                                         </div>
                             </div>
                             
-                            <div className="dentist off prioriti_2 _2 right">
+                            <div className="dentist off prioriti_2 _2 right" id="d_2">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Абдухамиджон</span> */}
                                     {/* <span className="x"></span> */}
@@ -198,7 +198,7 @@ function Main(props) {
                                 <img src="./img/dentist-2.png" className="clone" alt="" />
                                 
                             </div>
-                            <div className="dentist_information  i_2 t_left">
+                            <div className="dentist_information  i_2 t_left" >
                                     <div className="dentist_name">Азимов Иброхимжон</div>
                                     <span></span>
                                     <div className="text">
@@ -215,7 +215,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_2 _3 right">
+                            <div className="dentist off prioriti_2 _3 right" id="d_3">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
@@ -242,7 +242,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_1 _4 right">
+                            <div className="dentist off prioriti_1 _4 bottom" id="d_4">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
@@ -269,7 +269,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_3 _5 left">
+                            <div className="dentist off prioriti_3 _5 left" id="d_5">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Татяна Юрьевна</span> */}
                                     {/* <span className="x"></span> */}
