@@ -13,9 +13,12 @@ export function jsScript() {
         let sidebar = document.querySelector(".sidebar_container");
         let social_icons = document.querySelectorAll(".social_media");
         let dentists = document.querySelectorAll(".dentist");
+        let dentistsBox = document.querySelector(".dentists");
         let fog = document.querySelectorAll(".fog");
         let letters = document.querySelectorAll(".letter");
         let preLetter = setDelay(letters);
+        let informations = document.querySelectorAll(".dentist_information");
+        let backButton = document.querySelector(".back_button");
         
         welcomePage(homePage, homeButton, navButtons, stick, title);
 
@@ -51,8 +54,11 @@ export function jsScript() {
                         visible(letters);        
                         toolsParalax(sidebar, fog , social_icons);
                         visibleToolsWhenHover(sidebar, social_icons);
+                        addGr(dentists);
                         visibleDentists(preLetter ,dentists);
-                        
+                        dentistsControl(dentists, dentistsBox, letters, backButton);
+                        backButtonControl(dentists, dentistsBox, letters, informations, backButton);
+
                         // ---- ----------------- ---- //
 
                         // ---- INFO ANIMATION ---- //
@@ -104,7 +110,7 @@ function sidebarControl(navButtons, el, stick) {
 function visibleDentists(preLetter , dentists) {
     preLetter.addEventListener("transitionend", function (){
         removeClassOff(dentists);
-    })
+    }, )
 };
 function visibleToolsWhenHover(sidebar, social_icons) {
     window.addEventListener("mousemove", function (ev) {
@@ -165,6 +171,12 @@ function removeClassOff(elems) {
     for (let i = 0; i < elems.length; i++) {
         const elem = elems[i];
         elem.classList.remove("off");
+    }
+}
+function addGr(elems) {
+    for (let i = 0; i < elems.length; i++) {
+        const elem = elems[i];
+        elem.classList.add("gr");
     }
 }
 function addClassOff(elems) {
@@ -252,6 +264,35 @@ function stickControl(active, stick) {
         top: ${active.getBoundingClientRect().top}px;
     `;
 }
+function backButtonControl(dentists, dentistsBox, letters, informations, back) {
+    back.addEventListener("click", () => {
+        backStaff(dentistsBox, dentists ,letters, informations, back)
+    })
+}
+function dentistsControl(dentists, dentistsBox, letters, back) {
+    for (let i = 0; i < dentists.length; i++) {
+        const dentist = dentists[i];
+        const clone = dentist.querySelector(".clone");
+        console.log(clone);
+        let info = dentist.nextSibling;
+        clone.addEventListener("click", () => {
+            infoAnimation(dentist, dentistsBox, dentists, letters, info, back);
+        })
+    }
+}
+function setOpacityZero(elements) {
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        element.classList.add("opacityZ");
+    }
+}
+function setOpacityOne(elements) {
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        element.classList.add("opacityOI")
+        element.classList.remove("opacityZ");
+    }
+}
 function setDelay(letters) {
     let array = [];
     for (var i = 0; i < letters.length; i++)
@@ -280,10 +321,73 @@ function setDelay(letters) {
     }
     return letters[array[letters.length - 3]];
 }
+function infoAnimation(dentist, dentistBox, dentists ,letters, information, backButton) {
+    setOpacityZero(letters)
+    setDentistsBox(dentistBox);
+    switchDentist(dentists, dentist);
+    openInfo(information);
+    backButtonVisible(backButton);
+}
+function backStaff( dentistBox, dentists ,letters, information, backButton) {
+    let info = document.querySelector(".information");
+    setTimeout(() => {
+        setOpacityOne(letters)
+        removeDentistsBox(dentistBox);
+        closeDentists(dentists, info);
+        backButtonHidden(backButton);
+    }, 2000);
+    closeInfo(information);
+}
+function openInfo(information) {
+    information.classList.add("period");
+}
+function closeInfo(informations) {
+    for (let i = 0; i < informations.length; i++) {
+        const information = informations[i];
+        information.classList.remove("period");
+    }
+}
+function setDentistsBox(dentistsBox) {
+    dentistsBox.classList.add("noinfo", "alternative");
+}
+function removeDentistsBox(dentistsBox) {
+    dentistsBox.classList.remove("noinfo", "alternative");
+}
+function addClassInformation(elem) {
+    elem.classList.add("information");
+}
+function closeDentists(dentists, current) {
+    for (let i = 0; i < dentists.length; i++) {
+        const elem = dentists[i];
+        console.log("zaebal");
+        elem.classList.remove("information");
+        elem.classList.remove("gr");
+        elem.classList.add("close_animate");
+    }
+    current.classList.remove("close_animate");
+}
+
+function removeClassInformation(elem) {
+    elem.classList.remove("information");
+}
+function switchDentist(dentists, dentist) {
+        for (let i = 0; i < dentists.length; i++) {
+            const elem = dentists[i];
+            elem.classList.remove("information");
+            elem.classList.add("animate");
+
+        }
+        dentist.classList.add("information");
+        dentist.classList.remove("animate");
+}
+function backButtonVisible(button) {
+    button.classList.add("visible");
+}
+function backButtonHidden(button) {
+    button.classList.remove("visible");
 }
 
 
-
     
-
+}
 
