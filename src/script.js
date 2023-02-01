@@ -20,7 +20,11 @@ export function jsScript() {
         let informations = document.querySelectorAll(".dentist_information");
         let backButton = document.querySelector(".back_button");
         let nextButton = document.querySelector(".staff .next_button");
-        
+        let lastDentist = {};
+
+        setTimeout(() => {
+            welcomePage(homePage, homeButton, navButtons, stick, title);
+        }, 500);
 
         for (let i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
@@ -58,6 +62,7 @@ export function jsScript() {
                         visibleDentists(preLetter ,dentists);
                         dentistsControl(dentists, dentistsBox, letters, backButton, nextButton);
                         backButtonControl(dentists, dentistsBox, letters, informations, backButton, nextButton);
+                        controlSwitcher(nextButton);
 
                         // ---- ----------------- ---- //
 
@@ -95,10 +100,41 @@ export function jsScript() {
             });
 
         openPriceList(open, priceList);      
-        welcomePage(homePage, homeButton, navButtons, stick, title);
-
         
-       
+        
+function controlSwitcher(button) {
+    button.addEventListener("click", function () {
+        nextDentist();
+    })
+}    
+function nextDentist() {
+    let currentDentist = document.querySelector(".information");
+    let currentInformation = currentDentist.nextElementSibling;
+    let elem_id = currentDentist.id;
+    let id = Number( elem_id.replace(/\D/g , '') );
+    
+    let nextDentist;
+    let nextInformation;
+    
+
+    if (id == 5) {
+        nextDentist = document.getElementById("d_1");
+        nextInformation = nextDentist.nextElementSibling;
+    } else
+    {
+        nextDentist = document.getElementById(`d_${id+1}`);
+        nextInformation = nextDentist.nextElementSibling;
+    }
+    currentInformation.classList.remove("period");
+    currentInformation.addEventListener("transitionend", function () {
+        currentDentist.classList.remove("information", "switched");
+        nextDentist.classList.add("information", "switched");
+        nextInformation.classList.add("period");
+    },{once: true});
+    
+    
+    console.log(currentDentist, id+1);
+}
 
 function scrollControl(backgrounds, background , page) {
     setBackgroudImage(background, backgrounds, page);
@@ -277,7 +313,6 @@ function dentistsControl(dentists, dentistsBox, letters, back, next) {
     for (let i = 0; i < dentists.length; i++) {
         const dentist = dentists[i];
         const clone = dentist.querySelector(".clone");
-        console.log(clone);
         let info = dentist.nextSibling; 
         clone.addEventListener("click", () => {
             infoAnimation(dentist, dentistsBox, dentists, letters, info, back);
@@ -358,9 +393,7 @@ function setDentistsBox(dentistsBox) {
 function removeDentistsBox(dentistsBox) {
     dentistsBox.classList.remove("noinfo", "alternative");
 }
-function addClassInformation(elem) {
-    elem.classList.add("information");
-}
+
 function closeDentists(dentists, current) {
     for (let i = 0; i < dentists.length; i++) {
         const elem = dentists[i];
@@ -372,9 +405,7 @@ function closeDentists(dentists, current) {
     current.classList.remove("close_animate");
 }
 
-function removeClassInformation(elem) {
-    elem.classList.remove("information");
-}
+
 function switchDentist(dentists, dentist) {
         for (let i = 0; i < dentists.length; i++) {
             const elem = dentists[i];
