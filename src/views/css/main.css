@@ -3,6 +3,78 @@ body
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
+.loading
+{
+    position: absolute;
+    width: 5%;
+    opacity: 0;
+    visibility: hidden;
+}
+.loading.on 
+{
+    opacity: 1;
+    visibility: hidden;
+}
+.loading img 
+{
+    width: 100%;
+}
+.blocking 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 50px;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56, 56, 56);
+}
+.blocking.on
+{
+    visibility: visible;
+    opacity: 1;
+}
+.blocking.off
+{
+    visibility: hidden;
+    opacity: 0;
+}
+.lock {
+    max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 20px;
+}
+.lock img 
+{
+    width: 100%;
+    height: 100%;
+}
+.blocking .massage
+{
+    font-size: 1.04vw;
+    font-family: "Montserrat";
+    color: rgba(255, 255, 255, 0.857);
+    text-align: center;
+}
+.blocked 
+{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.blocked.disable 
+{
+    opacity: 0;
+    visibility: hidden;
+}
 .sidebar_container
 {
     width: 100%;
@@ -15,17 +87,18 @@ body
 
 .telegram.high
 {
-    right: 10px;
+    right: 0.52vw;
 }
 
 .insta.high
 {
-    right: 10px;
+    right: 0.52vw;
     bottom: 13.2%;
 }
 .social_media.high{
     height: fit-content;
-    width: 25px;
+
+    width: 1.3vw;
 }
 .social_media.high img {
     height: unset;
@@ -33,8 +106,8 @@ body
 }
 .youtube.high
 {
-    right: 8px;
-    width: 29px;
+    right: 0.416vw;
+    width: 1.508vw;
     bottom: 7.2%;
 }
 .social_media
@@ -43,19 +116,35 @@ body
     bottom: calc(100vh - 98.8%);
     position: fixed;
     display: block;
-    height: 25px;
-    margin: 20px 20px;
-    z-index: 3;
+    height: 1.3vw;
+    margin: 1.04vw;
+    z-index: 20;
+}
+.social_media img 
+{
+    opacity: 0.8;
+    transform: scale(1);
+    transition: 0.2s;
+}
+.social_media:hover img
+{
+    transform: scale(1.1);
+    opacity: 1;
+}
+.social_media:active img
+{
+    transform: scale(1);
+    opacity: 0.8;
 }
 .social_media.high.paralax
 {
     right: -100px;
 }
 .social_media.high.hover{
-    right: 10px;
+    right: 0.52vw;
 }
 .youtube.high.hover{
-    right: 8px;
+    right: 0.416vw;
 }
 .social_media img
 {
@@ -63,7 +152,7 @@ body
 }
 .youtube
 {
-    padding: 1px 0;
+    padding: 0.052vw 0;
     transition: 0.8s 0.2s;
     right: 12%;
 }
@@ -90,11 +179,11 @@ body
 }
 .home .name .title
 {
-    font-size: 100px;
+    font-size: 5.2vw;
     color: rgba(255, 255, 255, 0.8);
     font-family: "Montserrat";
 
-    letter-spacing: 10px;
+    letter-spacing: 0.52vw;
     z-index: 8;
     transition: 0.8s 1s;
     transform: translate(0, 70%);
@@ -102,21 +191,21 @@ body
 }
 .home .name span
 {
-    margin-top: 15px;
+    margin-top: 0.78vw;
     display: block;
     width: 100%;
-    height: 2px;
+    height: 0.104vw;
     transform: scale(0);
     background-color: white;   
     transition: 1s; 
 }
 .home .name .subtitle
 {
-    font-size: 40px;
+    font-size: 2.08vw;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.04vw;
     font-family: "Montserrat";
-    letter-spacing: 2px;
+    letter-spacing: 0.104vw;
     color: rgba(255, 255, 255, 0.73);
     z-index: 1;
     transform: translate(0, -100%);
@@ -141,11 +230,11 @@ body
 .arrow
 {
     display: block;
-    width: 60px;
-    height: 30px;
+    width: 3.12vw;
+    height: 1.56vw;
     position: absolute;
-    bottom: 25px;
-    left: calc(50% - 30px);
+    bottom: 1.3vw;
+    left: calc(50% - 1.3vw);
     transform: translate(0, 0px);
     z-index: 4;
     opacity: 1;
@@ -163,8 +252,8 @@ body
 .arrow::after, .arrow::before
 {
     content: '';
-    width: 35px;
-    height: 4px;
+    width: 1.82vw;
+    height: 0.208vw;
     background-color: rgba(255, 255, 255, 0.874);
     position: absolute;
     display: block;
@@ -172,19 +261,28 @@ body
 .arrow::after
 {
     left: -1px;
-    top: calc(50% - 1px);
-    transform: rotate(35deg);
+    top: calc(50% - 0.052vw);
+    transform: rotate(35deg) scale(1);
 }
 .arrow::before
 {
     right: -1px;
-    top: calc(50% - 1px);
-    transform: rotate(-35deg);
+    top: calc(50% - 0.052vw);
+    transform: rotate(-35deg) scale(1);
 
     
 }
 .arrow:hover::after , .arrow:hover::before {
     background-color: rgba(255, 255, 255, 1);
+}
+.arrow:hover::after 
+{
+    transform: scale(1.06) rotate(35deg) ;
+
+}
+.arrow:hover::before
+{
+    transform: scale(1.06) rotate(-35deg) ;
 }
 .shadow
 {
@@ -193,7 +291,7 @@ body
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.359);
+    background-color: rgba(0, 0, 0, 0.42);
 }
 .home
 {
@@ -206,9 +304,9 @@ body
 
 .win_logo
 {
-    width: 150px;
-    height: 150px;
-    padding: 30px;
+    width: 7.8vw;
+    height: 7.8vw;
+    padding: 1.56vw;
     position: fixed;
     top: 0;
     right: 0;
@@ -219,6 +317,65 @@ body
     width: 100%;
     height: 100%;
 }
+
+.location
+{
+    bottom: 3.3vh;
+    left: 8%;
+    color: white;
+    position: absolute;
+    opacity: 0.7;
+    font-size: 1.144vw;
+    align-items: center;
+    z-index: 18;
+    display: inline-flex;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.3s;
+    text-decoration: none;
+}
+.location span 
+{
+    font-size: 1.56vw;
+    padding-bottom: 0.208vw;
+    margin-right: 0.156vw;
+    text-decoration: none;
+}
+.location:hover
+{
+    opacity: 1;
+    transform: scale(1.04);
+}
+.location:active
+{
+    opacity: 0.7;
+    transform: scale(1);
+}
+.location.hidden
+{
+    opacity: 0;
+}
+
+/*----- UNIVERSAL ----- */
+
+.clickable 
+{
+    opacity: 0.7;
+    transform: scale(1);
+    transition: 0.2s;
+}
+.clickable:hover
+{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.clickable:active
+{
+    transform: scale(1);
+    opacity: 0.7;
+
+}
+
 /* ---------------- */
 .background img 
 {
@@ -226,50 +383,53 @@ body
 }
 .background#b_home
 {
-    width: 115%;
-    height: 100%;
+    min-width: 115%;
+    min-height: 105%;
     animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear;
     top: -25%;
+    opacity: 0;
     left: -5%;
 }
 .background#b_services
 {
-    width: 115%;
-    animation-name: action;
+    min-width: 115%;
+    min-height: 105%;
+    /* animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
     top: -10%;
+    opacity: 1;
     left: -10%;
 }
-.background
+.background 
 {
-    opacity: 0;
     position: fixed;
-    top: 0;
-    left: 0;
+    min-width: 110%;
+    min-height: 105%;
     transition: 1s;
+    opacity: 0;
 }
 .background.onthis
 {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 /* --- services --- */
 .services .background
 {
     width: 115%;
-    position: absolute;
-    animation-name: action;
+    /* animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
+    z-index: -1;
     top: -10%;
     left: -10%;
 }
@@ -278,8 +438,8 @@ body
     width: 100%;
     position: relative;
     height: 100vh;
-    padding: 0 120px;
-    padding-top: 30px;
+    padding: 0 6.24vw;
+    padding-top: 1.56vw;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -294,9 +454,9 @@ body
 .service
 {
     z-index: 1;
-    height: 280px;
-    margin: 10px 40px;
-    width: 450px;
+    height: 14.56vw;
+    margin: 0.52vw 2.08vw;
+    width: 23.4vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,40 +466,40 @@ body
 .title
 {
     color: rgba(14, 119, 239, 0.501);
-    font-size: 26px;
+    font-size: 1.352vw;
     white-space: nowrap;
     font-family: "Montserrat";
     text-align: center;
     transform: translate(0, 120%);
     opacity: 0;
-    margin: 20px 0px;
-    transition: 1s 1s;
+    margin: 1.04vw 0px;
+    transition: 0.8s 2s;
 }
 .line_x
 {
     display: block;
-    min-height: 3px;
-    width: 100%;
-    margin: 10px 0;
+    min-height: 0.156vw;
+    width: 0%;
+    margin: 0.52vw 0;
     background-color: rgba(255, 255, 255, 0.886);
-    transition: 1s;
+    transition: 1s 1s;
     z-index: 2;
 }
 .service .list
 {
     color: rgba(255, 255, 255, 0.785);
-    padding: 0 30px;
+    padding: 0 1.56vw;
     opacity: 0;
     transform: translate(0, -100%);
-    transition: 1s 1.8s;
+    transition: 1s 2.8s;
 }
 .service .list li
 {
     list-style-type: square;
     font-family: "Montserrat";
     letter-spacing: 1px;
-    font-size: 22px;
-    margin: 15px 0;
+    font-size: 1.144vw;
+    margin: 0.78vw 0;
 
 }
 .services_block.on .service
@@ -350,6 +510,10 @@ body
 {
     transform: translate(0, 0);
     opacity: 1;
+}
+.services_block.on .service .line_x
+{
+    width: 100%;
 }
 .services_block.on .service .list
 {
@@ -363,14 +527,15 @@ body
     height: 40%;
     position: absolute;
     text-align: center;
-    padding: 30px 20px;
-    bottom: 50px;
+    padding: 1.56vw 1.04vw;
+    bottom: 2.6vw;
     background-color: rgba(0, 0, 0, 0.789);
-    border-top: 3px solid rgba(14, 119, 239, 0.586);
-    border-bottom: 3px solid rgba(14, 119, 239, 0.586);
+    border-top: 0.156vw solid rgba(14, 119, 239, 0.586);
+    border-bottom: 0.156vw solid rgba(14, 119, 239, 0.586);
     display: flex;
     flex-direction: column;
     justify-content: start;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
     transition: 0.7s;
@@ -400,16 +565,16 @@ body
 {
     color: rgba(14, 119, 239, 0.578);
     width: 100%;
-    font-size: 28px;
+    font-size: 1.456vw;
     font-family: "Montserrat";
     text-align: center;
-    margin: 20px 0px;
+    margin: 1.04vw 0px;
 }
 .line{
     width: 100%;
-    padding: 0px 20px;
-    font-size: 22px;
-    margin: 15px 0;
+    padding: 0px 1.04vw;
+    font-size: 1.144vw;
+    margin: 0.78vw 0;
     color: rgba(255, 255, 255, 0.849);
     display: flex;
     justify-content: space-between;
@@ -432,7 +597,7 @@ body
 .priceList_table::-webkit-scrollbar 
 {
     background-color: rgba(0, 0, 0, 0.386);
-    width: 8px;
+    width: 0.416vw;
     
 }
 
@@ -449,15 +614,18 @@ body
 {
     text-align: center;
     display: inline;
-    font-size: 40px;
-    font-weight: 'Montserrat';
-    letter-spacing: 1.5px;
+    width: min-content;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 2.08vw;
+    font-family: 'Montserrat';
+    letter-spacing: 0.078vw;
     text-transform: uppercase;
     color: white;
-    margin: 22px;
+    margin: 1.144vw;
     transition: 1s;
     animation: blink 2.5s;
-    text-shadow: 0 3px 4px rgba(14, 119, 239, 0.94);
+    text-shadow: 0 0.156vw 0.208vw  rgba(14, 119, 239, 0.94);
     cursor: pointer;
     animation-iteration-count: infinite;
     z-index: 3;
@@ -531,6 +699,7 @@ body
 {
     position: absolute;
     transition: 1.5s 0.4s;
+    max-height: 100% !important;
     bottom: -5%;
 }
 .dentist img {
@@ -542,7 +711,7 @@ body
     width: 30%;
     right: 35%;
     bottom: -5%;
-    transform: translate(0, 21%);
+    transform: translate(0, 7%);
     transition: 1.5s 0.2s ;
     z-index: 4;
 }
@@ -634,44 +803,48 @@ body
 .dentists.alternative .left
 {
     left: -50%;
+    bottom: -10%;
 }
 .dentists.alternative .right 
 {
     right: -50%;
+    bottom: -5%;
 }
-.dentists.alternative .bottom
+.dentists.alternative .bottom, .dentists.alternative .dentist._5
 {
     right: -50%;
+    bottom: -5%;
 }
 
 .dentists.alternative .dentist 
 {
     transition-delay: 0.5s !important;
+    transform: translate(0, 0);
 }
 .dentists.alternative .dentist._1 
 {
-    width: 40% !important;
-    transition: 1s 1.5s;
+    width: 40%;
+    transition: 2s 0s !important;
 }
 .dentists.alternative .dentist._2 
 {
-    width: 40% !important;
-    transition: 1.5s 1.5s;
+    width: 40%;
+    transition: 1.5s 0s !important;
 }
 .dentists.alternative .dentist._3
 {
-    width: 40% !important;
-    transition: 1.5s 1.5s;
+    width: 40%;
+    transition: 1.5s 0s !important;
 }
 .dentists.alternative .dentist._4 
 {
-    width: 35% !important;
+    width: 35%;
     transition: 1.7s 0s ease-out !important;
 }
 .dentists.alternative .dentist._5
 {
-    width: 35% !important;
-    transition: 2.5s 1.5s;
+    width: 35%;
+    transition: 2.5s 0s !important;
 }
 /*---- animate SWITCH ----*/
 
@@ -742,11 +915,7 @@ body
 
 .dentists.alternative .bottom.information
 {
-<<<<<<< HEAD
-    bottom: -5%;
-=======
     bottom: -5% !important;
->>>>>>> lox
     right: 5% !important;
     transition: 2s;
     transition-delay: 0.3s !important;
@@ -754,7 +923,7 @@ body
 
 .dentists.alternative .right.information 
 {
-    bottom: -25% !important;
+    bottom: -5% !important;
     right: 0% !important; 
     transition: 2s;
     transition-delay: 0.3s !important;
@@ -762,25 +931,40 @@ body
 .dentists.alternative .left.information 
 {
     bottom: -10% !important;
-    left: 5% !important;
-    transition: 2s;
-    transition-delay: 00.3s !important;
+    left: 15% !important;
+    transition: 2s !important;
+    transition-delay: 0.3s !important;
 }
 .dentists.alternative .dentist._5.information 
 {
     bottom: -5% !important;
+}
+.dentists.alternative .dentist._1.information 
+{
+    left: 5% !important;
+}
+.dentists.alternative .dentist.right._3.information
+{
+    right: 7% !important; 
+}
+
+/*--- switched transition ---*/
+
+.dentists.alternative .dentist.switched 
+{
+    transition: 2s 0.5s ease-out !important;
 }
 
 /*---- BACK BUTTON ----*/
 
 .back_button
 {
-    width: 40px;
-    height: 40px;
+    width: 2.08vw;
+    height: 2.08vw;
     position: absolute;
     opacity: 0;
     transition: 1s 0s;
-    left: 90px;
+    left: 4.68vw;
     visibility: hidden;
     top: 3%;
     cursor: pointer;
@@ -801,7 +985,7 @@ body
 .dentist_information
 {
     width: 33%;
-    max-height: 70%;
+    min-height: 80%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -812,8 +996,8 @@ body
 .dentist_information > span
 {
     width: 0%;
-    min-height: 3px;
-    margin: 15px 0;
+    min-height: 0.156vw;
+    margin: 0.78vw 0;
     transition: 0.5s 0s;
     background-color: rgba(255, 255, 255, 0.663);
 }
@@ -823,25 +1007,25 @@ body
     text-align: center;
     transform: translate(0, 100%);
     transition: 0.5s 0.5s;
-    font-size: 35px;
+    font-size: 1.82vw;
     opacity: 0;
     color: rgba(255, 255, 255, 0.855);
-    letter-spacing: 3px;
+    letter-spacing: 0.156vw;
     font-family: "MonserratB";
 }
 .dentist_information .text 
 {
     width: 100%;
-    padding: 10px 20px;
+    padding: 0.52vw 0.78vw;
     overflow: hidden;
     
 }
 .dentist_information .text > span
 {
     width: 100%;
-    line-height: 27px;
+    line-height: 1.404vw;
     display: block;
-    font-size: 22px;
+    font-size: 1.144vw;
     text-align: center;
 	font-family: 'Montserrat';
     color: rgba(255, 255, 255, 0.795);
@@ -852,12 +1036,12 @@ body
 }
 .t_left
 {
-    left: 10%;
+    left: 15%;
     top: 10%;
 }
 .t_right
 {
-    right: 10%;
+    right: 12%;
     top: 10%;
 }
 .dentist_information.period 
@@ -881,15 +1065,15 @@ body
 
 .next_button
 {
-    width: 100px;
+    width: 5.2vw;
     position: absolute;
-    top: calc(50vh - 50px);
+    top: calc(50vh - 2.6vw);
     z-index: 9;
     right: 0;
-    transition: 1s 0.5s;
+    transition: 1s 0.3s;
     cursor: pointer;
     visibility: visible;
-    opacity: 0.8;
+    opacity: 1;
     animation-name: moveX;
     animation-duration: 1.3s; 
     animation-iteration-count: infinite;
@@ -898,14 +1082,61 @@ body
 .next_button img 
 {
     width: 100%;
+    transform: scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
 }
 .next_button.hidden
 {
     opacity: 0;
     visibility: hidden;
 }
+.next_button:hover img {
+    opacity: 1;
+}
 
+.prev_button
+{
+    width: 5.2vw;
+    position: absolute;
+    top: calc(50vh - 2.6vw);
+    z-index: 16;
+    left: 4%;
+    transition: 1s 0.3s;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    animation-name: moveXLeft;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.prev_button img 
+{
+    width: 100%;
+    transform: rotate(180deg) scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.prev_button.hidden
+{
+    opacity: 0;
+    visibility: hidden;
+}
+.prev_button:hover img {
+    opacity: 1;
+}
 
+.prev_button:active img 
+{
+    opacity: 0.8;
+    transform: scale(0.9) rotate(180deg);
+}
+.next_button:active img
+{
+    opacity: 0.8;
+    transform: scale(0.9);
+}
 
 
 
@@ -1007,8 +1238,8 @@ body
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.262);
     font-family: 'MonserratB';
-    font-size: 280px;
-    margin: 0 12px;   
+    font-size: 14.56vw;
+    margin: 0 0.624vw;   
     opacity: 0;
     transition: 0.7s;
 }
@@ -1022,38 +1253,19 @@ body
 
 /* --- sidebar --- */
 
+
 .sidebar
 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
-    height: 100%;
-    z-index: 20;
-}
-.sidebar_container
-{
-    width: 100%;
+    width: 3.1vw;
     height: 100%;
     display: flex;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.516);
     left: 0;
     top: 0;
-    transition: 0.5s;
-    z-index: 10;
-    box-shadow: 0 3px 4px rgba(255, 255, 255, 0.573);
-}
-.rightside
-{
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    right: 0;
-    top: 0;
+    transition: 0.8s;
+    z-index: 20;
+    box-shadow: 0 0.156vw 0.208vw rgba(255, 255, 255, 0.573);
 }
 
 
@@ -1068,11 +1280,11 @@ body
     align-items: center;
     position: relative;
 }
-.side_nav span 
+.side_nav > span 
 {
     position: absolute;
     left: 0;
-    width: 2px;
+    width: 0.104vw;
     transition: 0.5s;
     box-shadow: 1px 0px 5px 0px rgb(0, 0, 0);
     background-color: rgb(80, 181, 249);
@@ -1081,9 +1293,9 @@ body
 .side_nav .block
 {
     width: 100%;
-    height: 6%;
-    margin: 10px;
-    padding: 15px 17px;
+    min-height: 6%;
+    margin: 0.52vw;
+    padding: 0.78vw 0.884vw;
     position: relative;
     display: flex;
     align-items: center;
@@ -1110,64 +1322,171 @@ body
 .side_nav .block img
 {
     width: 100%;
-    opacity: 0.85;
-}
-.side_nav .block._1
-{
-    padding: 15px 18px;
+    transition: 0.2s;
+    opacity: 0.6;
+    transform: scale(1);
 }
 
-.sidebar.off .sidebar_container
+.side_nav .block:hover img
 {
-    left: -75%;
+    opacity: 0.8;
+    transform: scale(1.1);
 }
-.sidebar.off .sidebar_container.paralax
+.side_nav .block:active img
 {
-    left: -100%;
+    opacity: 0.6;
+    transform: scale(1);
 }
-.sidebar_container.hover
+
+.side_nav .block.active img {
+    opacity: 1;
+    transform: scale(1.2) ;
+}
+
+.side_nav .block._1.active img {
+    opacity: 1;
+    transform: scale(1.15) ;
+}
+
+.side_nav .block._1
 {
-    left: -75% !important;
+    padding: 0.78vw 0.936vw;
 }
+
+
+.sidebar.paralax
+{
+    left: -3.1vw;
+}
+.sidebar.hover
+{
+    left: 0% !important;
+}
+
+
+.lang
+{
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    bottom: 4%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+}
+.lang > span 
+{
+    color: white;
+    opacity: 0.6;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 1.456vw;
+    transform: scale(1);
+}
+.lang > span:hover
+{
+    opacity: 1;
+}
+.lang.active > span
+{
+    opacity: 1;
+    transform: scale(1.08);
+}
+.lang_list
+{
+    position: absolute;
+    left: 102%;
+    min-height: 100%;
+    width: 180px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+.lang_line
+{
+    max-width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.953);
+    transform: translate(0, 0);
+    transition: 0.7s;
+    display: block;
+}
+
+.lang_block
+{
+    list-style: none;
+    color: rgba(255, 255, 255, 0.866);
+    min-height: 50%;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.402);
+    font-family: "Montserrat";
+    font-size: 17px;
+    letter-spacing: 1px;
+    transform: translate(0, 0);
+    transition: 0.7s;
+    cursor: pointer;
+
+}
+.lang_list.hidden .lang_block , .lang_list.hidden .lang_line
+{
+    transform: translate(-100%, 0);
+}
+.lang_block.active 
+{
+    background-color: rgba(0, 0, 0, 0.832);
+}
+
+
+
 @keyframes close1 {
     0% {
         bottom: -120%;
+        width: 28%;
         left: -4%;        
     }
-    20% {
+    50% {
         bottom: -120%;
+        width: 28%;
         left: -4%;        
     }
     100% {
         bottom: -5%;   
+        width: 28%;
         left: -4%;     
     }
 }
 @keyframes close2 {
     0% {
+        width: 25%;    
         opacity: 0; 
         right: 60%;        
     }
     40% {
         opacity: 0; 
+        width: 25%;    
         right: 60%;        
     }
     100% {
         opacity: 1;
+        width: 25%;    
         right: 60%;   
     }
 }
 @keyframes close3 {
     0% {
         opacity: 0; 
+        width: 25%;    
         right: 19%;        
     }
     40% {
         opacity: 0; 
+        width: 25%;    
         right: 19%;        
     }
     100% {
         opacity: 1;
+        width: 25%;    
         right: 19%;   
     }
 }
@@ -1184,14 +1503,17 @@ body
 @keyframes close5 {
     0% {
         bottom: -120%; 
+        width: 28%;
         left: 82%;
     }
-    20% {
+    50% {
         bottom: -120%; 
+        width: 28%;
         left: 82%;
     }
     100% {
         bottom: -5%;  
+        width: 28%;
         left: 82%;  
     }
 }
@@ -1199,43 +1521,52 @@ body
 @keyframes dentist1 {
     0% {
         bottom: -5%;   
+        width: 28%;
         left: -4%;     
     }
     50% {
         bottom: -120%;
+        width: 28%;
         left: -4%;        
     }
     100% {
         left: -50% ;
+        width: 28%;
         bottom: -120% ;
     }
 }
 @keyframes dentist2 {
     0% {
         opacity: 1;
-        right: 60%;      
+        right: 60%; 
+        width: 25%;    
     }
     50% {
         opacity: 0; 
-        right: 60%;       
+        right: 60%;    
+        width: 25%;  
     }
     100% {
         right: -50% ;
         opacity: 0;
+        width: 25%;
     }
 }
 @keyframes dentist3 {
     0% {
         opacity: 1;
-        right: 19%;      
-    }
+        right: 19%;  
+        width: 25%;
+}
     50% {
         opacity: 0;
-        right: 19%;       
+        right: 19%;  
+        width: 25%;     
     }
     100% {
         right: -50% ;
         opacity: 0;
+        width: 25%;
     }
 }
 @keyframes dentist4 {
@@ -1256,13 +1587,16 @@ body
 @keyframes dentist5 {
     0% {
         bottom: -5%;  
+        width: 28%;
         left: 82%;      
     }
     50% {
+        width: 28%;
         bottom: -120%; 
         left: 82%;       
     }
     100% {
+        width: 28%;
         left: -50% ;
         bottom: -120% ;
     }
@@ -1312,13 +1646,13 @@ body
 
 @keyframes blink{
     0%{
-        opacity: 0.2;
-    }
-    50%{
         opacity: 0.8;
     }
-    100%{
+    50%{
         opacity: 0.2;
+    }
+    100%{
+        opacity: 0.8;
     }
 }
 @keyframes move{
@@ -1338,6 +1672,17 @@ body
     }
     50%{
         transform: translate(8px, 0px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+@keyframes moveXLeft{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(-8px, 0px);
     }
     100%{
         transform: translate(0, 0);

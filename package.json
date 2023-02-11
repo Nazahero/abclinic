@@ -1,5 +1,6 @@
 {
   "name": "abclinic.uz",
+  "homepage": "https://abclinic.uz/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
