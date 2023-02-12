@@ -29,6 +29,7 @@ window.onload = () => {
         document.querySelector(".loading").classList.remove("on");
         checkSize()
         window.addEventListener("resize", () => {checkSize()});
+        letters = document.querySelectorAll(".letter");
         function checkSize() {
           var X = window.innerWidth;
           var Y = window.innerHeight;
@@ -52,7 +53,7 @@ window.onload = () => {
         }, 500);
 
         openPriceList(open, priceList);  
-        openLanguage(language, lang_list);    
+        openLanguage(language, lang_list, letters);    
 
         for (var i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
@@ -130,10 +131,36 @@ window.onload = () => {
             hiddenElement(arrow);
             sidebarControl(navButtons, el, stick, backgrounds, background , page);
         });
+
+
+        noDelayArr(letters)
+        noDelay(title.querySelector(".title"))
+        noDelay(title.querySelector(".subtitle"))
+        window.addEventListener("resize", () => {
+            var active = document.querySelector(".block.active");
+            setTimeout(() => {
+                stickControl(active, stick);
+            }, 700);
+            scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`));
+        })
+
 }
 
+function noDelay(elem) {
+    elem.addEventListener("transitionend", function() {
+        this.style.cssText = `transition-delay: 0s;`;
+    })
+}
+function noDelayArr(array) {
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        element.addEventListener("transitionend", function() {
+            element.style.cssText = `transition-delay: 0s;`;
+        })
+    }    
+}
 
-function openLanguage(language, lang_list) {
+function openLanguage(language, lang_list, letters) {
     language.addEventListener("click" , function () {
         if (lang_list.classList.contains("hidden")) {
             visibleElement(lang_list);
@@ -142,6 +169,19 @@ function openLanguage(language, lang_list) {
         }
         hiddenElement(lang_list);
         language.classList.remove("active");
+        for (let i = 0; i < letters.length; i++) {
+            letters[i].style.cssText = `transition-duration: 0s;`;
+            letters[i].classList.remove("visible");
+        }
+        setTimeout(() => {
+            let lettersT = document.querySelectorAll(".letter");
+            noDelayArr(lettersT);
+            for (let i = 0; i < lettersT.length; i++) {
+                lettersT[i].style.cssText = `transition-duration: 1s;`;
+                lettersT[i].classList.add("visible");
+            }
+        }, 500);
+        
     })
 }
         
@@ -437,10 +477,12 @@ function dentistsControl(dentists, dentistsBox, letters, back, next, dentistClon
     }
 }
 function setOpacityZero(elements) {
-    for (var i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        element.classList.add("opacityZ");
-    }
+    setTimeout(() => {
+        for (var i = 0; i < elements.length; i++) {
+            const element = elements[i];
+            element.classList.add("opacityZ");
+        }
+    }, 700);    
 }
 function setOpacityOne(elements) {
     for (var i = 0; i < elements.length; i++) {
