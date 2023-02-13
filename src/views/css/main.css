@@ -10,10 +10,10 @@ body
     opacity: 0;
     visibility: hidden;
 }
-.loading.on 
+.loading.on
 {
     opacity: 1;
-    visibility: hidden;
+    visibility: visible;
 }
 .loading img 
 {
@@ -304,8 +304,8 @@ body
 
 .win_logo
 {
-    width: 7.8vw;
-    height: 7.8vw;
+    width: 9.2vw;
+    height: 9.2vw;
     padding: 1.56vw;
     position: fixed;
     top: 0;
