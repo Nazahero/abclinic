@@ -1,4 +1,4 @@
-window.onload = () => {
+function start(){
 
         const homePage = document.querySelector(".home");
         const homeButton = document.querySelector("#home");
@@ -705,6 +705,7 @@ function backButtonHidden(button, clones) {
     })
 }
 
-
-    
+setTimeout(() => {
+    start();  
+}, 1500);
 
