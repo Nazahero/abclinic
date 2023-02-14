@@ -1,33 +1,36 @@
 window.onload = () => {
 
-        var homePage = document.querySelector(".home");
-        var homeButton = document.querySelector("#home");
-        var title = document.querySelector(".name");
-        var stick = document.querySelector(".side_nav > span");
-        var arrow = document.querySelector(".arrow");
-        var service_block = document.querySelector(".services_block");
-        var navButtons = document.querySelectorAll(".side_nav .block");
-        var backgrounds = document.querySelectorAll(".background");
-        var open = document.querySelector(".open");
-        var priceList = document.querySelector(".priceList_table");
-        var sidebar = document.querySelector(".sidebar");
-        var social_icons = document.querySelectorAll(".social_media");
-        var dentists = document.querySelectorAll(".dentist");
-        var dentistsBox = document.querySelector(".dentists");
-        var fog = document.querySelectorAll(".fog");
-        let letters = document.querySelectorAll(".letter");
-        var lettersObj = {};
-        let delay = [];
-        var preLetter = setDelay(letters);
-        var informations = document.querySelectorAll(".dentist_information");
-        var backButton = document.querySelector(".back_button");
-        var nextButton = document.querySelector(".staff .next_button");
-        var prevButton = document.querySelector(".staff .prev_button");
-        var dentistClones = document.querySelectorAll(".clone");
-        var location = document.querySelector(".location");
-        var language = document.getElementById("language");
-        var lang_list = document.querySelector(".lang_list");
-        let detect = new MobileDetect(window.navigator.userAgent);
+        const homePage = document.querySelector(".home");
+        const homeButton = document.querySelector("#home");
+        const title = document.querySelector(".name");
+        const stick = document.querySelector(".side_nav > span");
+        const arrow = document.querySelector(".arrow");
+        const service_block = document.querySelector(".services_block");
+        const navButtons = document.querySelectorAll(".side_nav .block");
+        const backgrounds = document.querySelectorAll(".background");
+        const open = document.querySelector(".open");
+        const priceList = document.querySelector(".priceList_table");
+        const sidebar = document.querySelector(".sidebar");
+        const social_icons = document.querySelectorAll(".social_media");
+        const dentists = document.querySelectorAll(".dentist");
+        const dentistsBox = document.querySelector(".dentists");
+        const fog = document.querySelectorAll(".fog");
+        var letters = document.querySelectorAll(".letter");
+        const lettersObj = {};
+        const delay = [];
+        const preLetter = {};
+        const informations = document.querySelectorAll(".dentist_information");
+        const backButton = document.querySelector(".back_button");
+        const nextButton = document.querySelector(".staff .next_button");
+        const prevButton = document.querySelector(".staff .prev_button");
+        const dentistClones = document.querySelectorAll(".clone");
+        const location = document.querySelector(".location");
+        const language = document.getElementById("language").querySelector("span");
+        const lang_list = document.querySelector(".lang_list");
+        const detect = new MobileDetect(window.navigator.userAgent);
+        const elementHints = document.querySelectorAll("[data-hint]");
+        const hint = document.getElementById("hint");
+        const langs = document.querySelectorAll(".lang_block");
         
         for (let i = 0; i < letters.length; i++) {
             const element = letters[i];
@@ -66,14 +69,39 @@ window.onload = () => {
         }
         
 
-        console.log(service_block);
+        for (let i = 0; i < elementHints.length; i++) {
+            const element = elementHints[i];
+            element.addEventListener("mouseover", function () {
+                if (!hint.classList.contains("hovered")) {
+                    hint.classList.add("hovered");
+                    addClassOn(hint);
+                    const Y = element.getBoundingClientRect().top + element.clientHeight * 0.4 - hint.clientHeight;
+                    const X = element.getBoundingClientRect().left + element.clientWidth * 0.8;
+                    hint.innerText = `${element.getAttribute("data-hint")}`;
+                    if (X + hint.clientWidth < window.innerWidth) {
+                        hint.style.left = `${X}px`;
+                    } else {
+                        hint.style.left = `${element.getBoundingClientRect().left - element.clientWidth - hint.clientWidth * 0.7}px`;
+                    }
+                    hint.style.top = `${Y}px`;
+                }                             
+            });
+            element.addEventListener("mouseout", function (event) {
+                if (hint.classList.contains("hovered")) {
+                        hint.classList.remove("hovered");
+                        hint.classList.remove("on");
+                }                
+            });
+        }
 
         setTimeout(() => {
             welcomePage(homePage, homeButton, navButtons, stick, title, location);
         }, 500);
 
+        changeLanguage(langs ,lettersObj, delay, preLetter)
+        setDelay(letters, preLetter);
         openPriceList(open, priceList);  
-        openLanguage(language, lang_list, letters);    
+        openLanguage(language, lang_list);    
 
         for (var i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
@@ -186,34 +214,63 @@ function noDelayArr(array, delay) {
     }        
 }
 
-function openLanguage(language, lang_list, letters) {
+function openLanguage(language, lang_list) {
     language.addEventListener("click" , function () {
         if (lang_list.classList.contains("hidden")) {
             visibleElement(lang_list);
-            addClassActive(language)
+            addClassActive(language.parentElement)
             return;
         }
         hiddenElement(lang_list);
-        language.classList.remove("active");
+        language.parentElement.classList.remove("active");
 
         
-        // for (let i = 0; i < letters.length; i++) {
-        //     letters[i].style.cssText = `transition-duration: 0s;`;
-        //     letters[i].classList.remove("visible");
-        // }
+        
         
         // let lettersT = document.querySelectorAll(".letter");
-        // noDelayArr(lettersT);
-        // for (let i = 0; i < lettersT.length; i++) {
-        //     lettersT[i].style.cssText = `transition-duration: 1s;`;
-        //     lettersT[i].classList.add("visible");
-        // }
+        
         // setDelay(lettersT);
         
         
     })
 }
-        
+function changeLanguage(langs ,lettersObj, delay, preLetter) {
+
+    for (let i = 0; i < langs.length; i++) {
+        const element = langs[i];
+        element.addEventListener("click", function () {
+            removeClassActive(langs);
+            addClassActive(element);
+
+            /*--------------------------*/
+
+            let letters = document.querySelectorAll(".letter");
+            console.log(letters);
+            for (let i = 0; i < letters.length; i++) {
+                letters[i].style.cssText = `transition-duration: 0s;`;
+                letters[i].classList.remove("visible");
+            }
+
+            setTimeout(() => {
+                let newLetters = document.querySelectorAll(".letter");
+                for (let i = 0; i < newLetters.length; i++) {
+                    const element = newLetters[i];
+                    lettersObj[`${i}`] = element;
+                }
+                noDelayArr(newLetters, delay);
+                for (let i = 0; i < newLetters.length; i++) {
+                    newLetters[i].style.cssText = `transition-duration: 1s;`;
+                    if (document.querySelector("#staff").classList.contains("active")) {
+                        newLetters[i].classList.add("visible");
+                    }
+                }
+                if (!document.querySelector("#staff").classList.contains("active")) {
+                    setDelay(newLetters, preLetter);
+                }
+        }, 200);
+        });
+    }
+}
 function controlSwitcher(nextbutton, backButton, prevButton) {
     nextbutton.addEventListener("click", function () {
         if (!nextbutton.classList.contains("disable")) {
@@ -316,7 +373,7 @@ function sidebarControl(navButtons, el, stick, backgrounds, background , page) {
     addDisableToElement(stick);
 }
 function visibleDentists(preLetter , dentists) {
-    preLetter.addEventListener("transitionend", function (){
+    preLetter["letter"].addEventListener("transitionend", function (){
         removeClassOff(dentists);
     }, )
 };
@@ -465,7 +522,7 @@ function addClassActive(elem) {
         elem.classList.add("active");    
 }
 function removeClassActive(arr) {
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         const elem = arr[i];
         elem.classList.remove("active");
     }
@@ -528,7 +585,7 @@ function setOpacityOne(elements) {
         }
     }
 }
-function setDelay(letters) {
+function setDelay(letters, preLetter) {
     var array = [];
     for (var i = 0; i < letters.length; i++)
         array.push(i);
@@ -554,7 +611,7 @@ function setDelay(letters) {
         const letter = letters[array[i-1]];
         letter.style.cssText = `transition-delay: ${0.4 * i }s`;        
     }
-    return letters[array[letters.length - 3]];
+    preLetter["letter"] = letters[array[letters.length - 3]];
 }
 function infoAnimation(dentist, dentistBox, dentists ,letters, information, backButton, clones) {
     setOpacityZero(letters)
