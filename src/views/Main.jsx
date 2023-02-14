@@ -273,8 +273,8 @@ function Main(props) {
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist4.png" alt="" />
-                                <img src="./img/dentist4.png" className="clone" alt="" />
+                                <img src="./img/dentist-4.png" alt="" />
+                                <img src="./img/dentist-4.png" className="clone" alt="" />
                                 
                             </div>
                             <div className="dentist_information  i_4 t_left">

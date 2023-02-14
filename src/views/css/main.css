@@ -699,26 +699,36 @@ body
 {
     position: absolute;
     transition: 1.5s 0.4s;
-    max-height: 100% !important;
-    bottom: -5%;
+    height: 120% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    bottom: -50%;
 }
 .dentist img {
-    width: 100%;
+    height: 100%;
 }
 
 .dentist._4
 {
-    width: 30%;
-    right: 35%;
-    bottom: -5%;
-    transform: translate(0, 7%);
+    /* width: 30%; */
+    right: 30%;
     transition: 1.5s 0.2s ;
     z-index: 4;
+}
+.dentist._4 img 
+{
+    height: 120%;
+}
+.prioriti_2 img 
+{
+    height: 110%;
 }
 
 .prioriti_2
 {
-    width: 25%;
+    /* width: 25%; */
     opacity: 1;
     z-index: 3;
     transition: 1.5s 0s;
@@ -726,28 +736,32 @@ body
 
 .prioriti_3
 {
-    width: 28%;
     z-index: 2;
 }
 
 .dentist._3 
 {
-    right: 19%;
+    right: 10%;
 }
 
 .dentist._2
 {
-    right: 60%;
+    right: 50%;
+    align-items: start;
+    transform: translate(0, -5%);
 }
+.dentist._2 img 
+{
+    height: 88%;
+}
+
 .dentist._1
 {
-    left: -4%;
-    transform: translate(0, 10%);
+    left: -10%;
 }
 .dentist._5
 {
-    left: 82%;
-    transform: translate(0, -2%);
+    left: 70%;
 }
 
 /*---- dentists' CLONE ----*/
@@ -803,47 +817,41 @@ body
 .dentists.alternative .left
 {
     left: -50%;
-    bottom: -10%;
+    bottom: -30%;
 }
 .dentists.alternative .right 
 {
     right: -50%;
-    bottom: -5%;
+    bottom: -30%;
 }
 .dentists.alternative .bottom, .dentists.alternative .dentist._5
 {
     right: -50%;
-    bottom: -5%;
+    bottom: -30%;
 }
 
 .dentists.alternative .dentist 
 {
     transition-delay: 0.5s !important;
-    transform: translate(0, 0);
 }
 .dentists.alternative .dentist._1 
 {
-    width: 40%;
     transition: 2s 0s !important;
 }
 .dentists.alternative .dentist._2 
 {
-    width: 40%;
     transition: 1.5s 0s !important;
 }
 .dentists.alternative .dentist._3
 {
-    width: 40%;
     transition: 1.5s 0s !important;
 }
 .dentists.alternative .dentist._4 
 {
-    width: 35%;
     transition: 1.7s 0s ease-out !important;
 }
 .dentists.alternative .dentist._5
 {
-    width: 35%;
     transition: 2.5s 0s !important;
 }
 /*---- animate SWITCH ----*/
@@ -915,7 +923,7 @@ body
 
 .dentists.alternative .bottom.information
 {
-    bottom: -5% !important;
+    bottom: -30% !important;
     right: 5% !important;
     transition: 2s;
     transition-delay: 0.3s !important;
@@ -923,30 +931,19 @@ body
 
 .dentists.alternative .right.information 
 {
-    bottom: -5% !important;
+    bottom: -30% !important;
     right: 0% !important; 
     transition: 2s;
     transition-delay: 0.3s !important;
 }
 .dentists.alternative .left.information 
 {
-    bottom: -10% !important;
+    bottom: -30% !important;
     left: 15% !important;
     transition: 2s !important;
     transition-delay: 0.3s !important;
 }
-.dentists.alternative .dentist._5.information 
-{
-    bottom: -5% !important;
-}
-.dentists.alternative .dentist._1.information 
-{
-    left: 5% !important;
-}
-.dentists.alternative .dentist.right._3.information
-{
-    right: 7% !important; 
-}
+
 
 /*--- switched transition ---*/
 
@@ -1443,140 +1440,117 @@ body
     0% {
         bottom: -120%;
         width: 28%;
-        left: -4%;        
-    }
-    50% {
-        bottom: -120%;
-        width: 28%;
-        left: -4%;        
+        left: -10%;        
     }
     100% {
-        bottom: -5%;   
+        bottom: -50%;   
         width: 28%;
-        left: -4%;     
+        left: -10%;     
     }
 }
 @keyframes close2 {
-    0% {
-        width: 25%;    
+    0% {   
         opacity: 0; 
-        right: 60%;        
+        right: 50%;        
     }
     40% {
-        opacity: 0; 
-        width: 25%;    
-        right: 60%;        
+        opacity: 0;    
+        right: 50%;        
     }
     100% {
-        opacity: 1;
-        width: 25%;    
-        right: 60%;   
+        opacity: 1;   
+        right: 50%;   
     }
 }
 @keyframes close3 {
     0% {
         opacity: 0; 
-        width: 25%;    
-        right: 19%;        
+        right: 10%;        
     }
     40% {
         opacity: 0; 
-        width: 25%;    
-        right: 19%;        
+        right: 10%;        
     }
     100% {
         opacity: 1;
-        width: 25%;    
-        right: 19%;   
+        right: 10%;   
     }
 }
 @keyframes closeMain {
     0% {
-        right: 35% ;
+        right: 30% ;
         bottom: -120% ; 
     }
     100% {
-        right: 35%;
-        bottom: -5%;   
+        right: 30%;
+        bottom: -50%;   
     }
 }
 @keyframes close5 {
     0% {
         bottom: -120%; 
-        width: 28%;
-        left: 82%;
+        left: 70%;
     }
     50% {
         bottom: -120%; 
-        width: 28%;
-        left: 82%;
+        left: 70%;
     }
     100% {
-        bottom: -5%;  
-        width: 28%;
-        left: 82%;  
+        bottom: -50%;  
+        left: 70%;  
     }
 }
 
 @keyframes dentist1 {
     0% {
-        bottom: -5%;   
-        width: 28%;
-        left: -4%;     
+        bottom: -50%;   
+        left: -10%;     
     }
     50% {
         bottom: -120%;
-        width: 28%;
-        left: -4%;        
+        left: -10%;        
     }
     100% {
         left: -50% ;
-        width: 28%;
         bottom: -120% ;
     }
 }
 @keyframes dentist2 {
     0% {
         opacity: 1;
-        right: 60%; 
-        width: 25%;    
+        right: 50%; 
     }
     50% {
         opacity: 0; 
-        right: 60%;    
-        width: 25%;  
+        right: 50%;    
     }
     100% {
         right: -50% ;
         opacity: 0;
-        width: 25%;
-    }
+}
 }
 @keyframes dentist3 {
     0% {
         opacity: 1;
-        right: 19%;  
-        width: 25%;
+        right: 10%;  
 }
     50% {
         opacity: 0;
-        right: 19%;  
-        width: 25%;     
+        right: 10%;  
     }
     100% {
-        right: -50% ;
+        right: -50%;
         opacity: 0;
-        width: 25%;
     }
 }
 @keyframes dentist4 {
     0% {
-        bottom: -5%;  
-        right: 35%;      
+        bottom: -50%;  
+        right: 30%;      
     }
     50% {
         bottom: -120%; 
-        right: 35%;       
+        right: 30%;       
     }
     100% {
         right: -50%;
@@ -1586,29 +1560,26 @@ body
 
 @keyframes dentist5 {
     0% {
-        bottom: -5%;  
-        width: 28%;
-        left: 82%;      
+        bottom: -30%;  
+        left: 70%;      
     }
     50% {
-        width: 28%;
         bottom: -120%; 
-        left: 82%;       
+        left: 70%;       
     }
     100% {
-        width: 28%;
-        left: -50% ;
-        bottom: -120% ;
+        left: -50%;
+        bottom: -120%;
     }
 }
 
 @keyframes switch_open_left {
     0% {
-        bottom: -5%;   
+        bottom: -50%;   
         left: -50%;     
     }
     100% {
-        bottom: -5%;
+        bottom: -50%;
         left: -4%;        
     }    
 }
