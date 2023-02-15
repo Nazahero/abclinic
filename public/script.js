@@ -31,7 +31,10 @@ function start(){
         const elementHints = document.querySelectorAll("[data-hint]");
         const hint = document.getElementById("hint");
         const langs = document.querySelectorAll(".lang_block");
+        const clones = document.querySelectorAll(".clone");
         
+        // --------------------- SET LETTERS ---------------------- //
+
         for (let i = 0; i < letters.length; i++) {
             const element = letters[i];
             lettersObj[`${i}`] = element;
@@ -48,9 +51,12 @@ function start(){
         console.log("OS: " + detect.os());               // операционная система
         console.log("userAgent: " + detect.userAgent()); // userAgent
 
+        // ------------------------- CHECKING SIZE ---------------------------- //
+
         checkSize()
         window.addEventListener("resize", () => {checkSize()});
         letters = document.querySelectorAll(".letter");
+
         function checkSize() {
           var X = window.innerWidth;
           var Y = window.innerHeight;
@@ -63,11 +69,24 @@ function start(){
           {
               document.querySelector(".blocking").classList.add("off")
               document.querySelector(".blocking").classList.remove("on")
-              document.querySelector(".loading").classList.add("on");
               addDisableToElement(document.querySelector(".blocked"))
           }
         }
+
+        // ---------------------------- EVENTS ------------------------------ //
+        for (let i = 0; i < dentists.length; i++) {
+            const den = dentists[i];
+            const cl = clones[i];
+            den.addEventListener("transitionstart", function() {
+                cl.classList.remove("on")
+            })
+            den.addEventListener("transitionend", function() {
+                trimClone(den, cl);
+                cl.classList.add("on");
+            })
+        }
         
+        // -------------------------- HINT EVENTS ---------------------------- //
 
         for (let i = 0; i < elementHints.length; i++) {
             const element = elementHints[i];
@@ -94,14 +113,34 @@ function start(){
             });
         }
 
+        // --------------------- FIRST FUNCTIONS ------------------------ //
         setTimeout(() => {
             welcomePage(homePage, homeButton, navButtons, stick, title, location);
         }, 500);
 
+        trimClones(clones);
         changeLanguage(langs ,lettersObj, delay, preLetter)
         setDelay(letters, preLetter);
         openPriceList(open, priceList);  
-        openLanguage(language, lang_list);    
+        openLanguage(language, lang_list); 
+        
+        setTimeout(() => {
+            welcomePage(homePage, homeButton, navButtons, stick, title, location);
+        }, 500);
+
+        window.addEventListener("resize", () => {
+            var active = document.querySelector(".block.active");
+            
+            trimClones(clones);
+            scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`));
+            noDelayArr(letters, delay)
+            
+            setTimeout(() => {
+                stickControl(active, stick);
+            }, 700);
+        })
+
+        // -------------------- NAVIGATION BUTTON EVENTS ----------------------- //
 
         for (var i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
@@ -133,7 +172,8 @@ function start(){
                     case "3":
                         // ---- WELCOME ANIMATION ---- //
                         
-                        visible(lettersObj);        
+                        visible(lettersObj);     
+                        dentistHover(dentists , clones); 
                         toolsParalax(sidebar, fog , social_icons);
                         visibleToolsWhenHover(sidebar, social_icons);
                         addGr(dentists);
@@ -166,7 +206,8 @@ function start(){
             });
         }
 
-            
+        // -------------------------- ARROW EVENTS ----------------------------- //
+
         arrow.addEventListener("click", () => {
             var page = arrow.parentElement.nextSibling;
             var el = document.getElementById(`${page.getAttribute("class")}`);
@@ -179,21 +220,46 @@ function start(){
             hiddenElement(arrow);
             sidebarControl(navButtons, el, stick, backgrounds, background , page);
         });
+
+        // ------------------ LAST FUNCTIONS --------------------- //
         noDelay(title.querySelector(".title"))
         noDelay(title.querySelector(".subtitle"))
+        // -------------------------------------------------------- //
 
-        
-        window.addEventListener("resize", () => {
-            var active = document.querySelector(".block.active");
-            
-            setTimeout(() => {
-                stickControl(active, stick);
-            }, 700);
-            scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`));
-            noDelayArr(letters, delay)
-            
+}
+function trimClone(dentist, clone) {
+    clone.style.cssText = `
+            width: ${dentist.clientWidth}px;
+            height: ${dentist.clientHeight}px;
+            top: ${dentist.getBoundingClientRect().top}px;
+            left: ${dentist.getBoundingClientRect().bottom}px;
+        `;
+}
+function trimClones(clones) {
+    for (let i = 0; i < clones.length; i++) {
+        const clone = clones[i];
+        const dentist = document.querySelector(`.${clone.id} img`);
+        clone.style.cssText = `
+            width: ${dentist.clientWidth}px;
+            height: ${dentist.clientHeight}px;
+            top: ${dentist.getBoundingClientRect().top}px;
+            left: ${dentist.getBoundingClientRect().left}px;
+        `;
+    }
+}
+function dentistHover (dentists, clones) {
+    for (let i = 0; i < clones.length; i++) {
+        const clone = clones[i];
+        const dentist = dentists[i].querySelector("img");
+        clone.addEventListener("mouseover", function () {
+            clone.classList.add("hovered");
+            dentist.classList.add("hovered");
+        });
+        clone.addEventListener("mouseout", function () {
+            clone.classList.remove("hovered");
+            dentist.classList.remove("hovered");
         })
-
+    }
 }
 
 function noDelay(elem) {
@@ -551,9 +617,8 @@ function backButtonControl(dentists, dentistsBox, letters, informations, back, n
 function dentistsControl(dentists, dentistsBox, letters, back, next, dentistClones, prev) {
     for (let i = 0; i < dentists.length; i++) {
         const dentist = dentists[i];
-        const clone = dentist.querySelector(".clone");
+        const clone = document.getElementById(`${dentist.getAttribute("data-clone")}`);
         const info = dentist.nextSibling; 
-        console.log(dentist, info);
         clone.addEventListener("click", () => {
             if (!clone.classList.contains("disable")) {
                 infoAnimation(dentist, dentistsBox, dentists, letters, info, back, dentistClones);
@@ -707,5 +772,5 @@ function backButtonHidden(button, clones) {
 
 setTimeout(() => {
     start();  
-}, 1500);
+}, 1000);
 

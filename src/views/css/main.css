@@ -34,6 +34,7 @@ body
     width: 5%;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
 .loading.on
 {
@@ -43,6 +44,7 @@ body
 .loading img 
 {
     width: 100%;
+    visibility: inherit;
 }
 .blocking 
 {
@@ -675,7 +677,8 @@ body
     width: 70%;
     transition-timing-function: ease-in-out;
     position: fixed;
-    z-index: 6;
+    z-index: 15;
+    pointer-events: none;
 }
 .fog img 
 {
@@ -724,7 +727,7 @@ body
 .dentist
 {
     position: absolute;
-    transition: 2s 0.4s;
+    transition: 1s 0s;
     height: 120% !important;
     display: flex;
     justify-content: center;
@@ -739,7 +742,7 @@ body
 .dentist._4
 {
     right: 30%;
-    transition: 2s 0.2s ;
+    transition: 1.5s 0.2s;
     transition-timing-function: ease-out;
     z-index: 4;
 }
@@ -750,7 +753,7 @@ body
 .prioriti_2 img 
 {
     height: 107%;
-    transition: 2s 0s ease-in-out;
+    transition: 1s 0s ease-out;
 }
 
 .prioriti_2
@@ -781,7 +784,7 @@ body
 .dentist._2 img 
 {
     height: 88%;
-    transition: 2s 0.4s;
+    transition: 1s 0s ease-out;
 }
 
 .dentist._1
@@ -796,12 +799,37 @@ body
 /*---- dentists' CLONE ----*/
 .clone 
 {
-    z-index: 9 !important;
+    z-index: 16 !important;
     opacity: 0;
     position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: 1s 0s ease-out;
+}
+.cloneImg 
+{
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: 1s 0s ease-out;
+}
+.dentist img {
+    transform: scale(1);
+}
+.clone.hovered .cloneImg , .dentist img.hovered 
+{
+    transform: scale(1.01);
+}
+.clone.on 
+{
+    pointer-events: fill;
+}
+.clone.hovered 
+{
+    opacity: 1;
+    transition: 1s 0s ease-out; 
     cursor: pointer;
 }
 /* ----- dentist OFF------*/
