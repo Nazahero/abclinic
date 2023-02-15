@@ -1,0 +1,95 @@
+{
+    "subTitle": "Create history with us",
+    "location": "Nukus St. 88/55, Tashkent 100072",
+    "services": [
+        {
+            "title": "Hygiene and prophylaxis of teeth",
+            "serviceList": [
+                "Check-up",
+                "Integrated Dental Hygiene",
+                "Teeth whitening"
+            ]
+        },
+        {
+            "title": "Dentist",
+            "serviceList": [
+                "Caries treatment",
+                "Restoration of broken teeth"
+            ]
+        },
+        {
+            "title": "Surgical manipulations",
+            "serviceList": [
+                "Tooth Extraction",
+                "Installation of the implant",
+                "Excision of neoplasms",
+                "Gum plastic"
+            ]
+        }
+    ],
+    "priceListTitles": [
+        "Specialist Consulting",
+        "Dental treatment",
+        "Professional hygiene",
+        "Restoration of dentition (Prosthetics of teeth)",
+        "Surgical Dentistry"
+    ],
+    "priceList": {
+        "first": [
+            {"service" : "Dental consultation", "price": "100 000"},
+            {"service" : "Professor's consultation", "price": "300 000"},
+            {"service" : "«Check-up» of the oral cavity", "price": "600,000"}
+        ],
+        "second" : [
+            {"service" : "Treatment of caries by a general practitioner", "price": "300,000"},
+            {"service" : "Deep caries treatment by general practitioner", "price": "400,000"},
+            {"service" : "Local anesthesia 1 cartridge", "price": "30 000"},
+            {"service" : "Working field isolation (Cofferdam, optrageate)", "price": "50 000"},
+            {"service" : "Dental radiography", "price": "50,000"},
+            {"service" : "Treatment of 1 tooth canal", "price": "200 000"}
+        ],
+        "third": [
+            {"service" : "Comprehensive professional oral hygiene", "price": "800 000"},
+            {"service" : "Teeth whitening", "price": "3,300,000"}
+        ],
+        "fourth": [
+            {"service" : "Intraoral jaw scan", "price": "500,000"},
+            {"service" : "Build Up (tooth core restoration)", "price": "500,000"},
+            {"service" : "Implant temporary crown", "price": "800 000"},
+            {"service" : "Temporary crown (straight)", "price": "200,000"},
+            {"service" : "Temporary crown (indirect)", "price": "400,000"},
+            {"service" : "CAD CAM temporary crown (milled)", "price": "1 200 000"},
+            {"service" : "Emax crown", "price": "2 500 000"},
+            {"service" : "Metal-ceramic (CoCr) crown per tooth", "price": "1 500 000"},
+            {"service" : "Zirconium dioxide (ZnO) crown per tooth", "price": "2 500 000"},
+            {"service" : "Implant crown (CoCr)", "price": "2,000,000"},
+            {"service" : "Implant crown zirconia (ZnO)", "price": "3 000 000"},
+            {"service" : "Removable denture Acrylic (one jaw)", "price": "1 300 000"},
+            {"service" : "Removable clasp prosthesis (for one jaw)", "price": "2 500 000"}
+        ],
+        "fifth": [
+            {"service" : "Mobile tooth removal", "price": "200,000"},
+            {"service" : "Easy tooth extraction", "price": "400 000"},
+            {"service" : "Difficult tooth extraction", "price": "600,000"},
+            {"service" : "Removal of an impacted, dystopian tooth", "price": "1,000,000"},
+            {"service" : "Tooth extraction followed by autotransplantation", "price": "2,000,000"},
+            {"service" : "Drainage of inflammation", "price": "300 000"},
+            {"service" : "Excision of neoplasms", "price": "from 1,000,000"},
+            {"service" : "Sinus lift (without material cost)", "price": "2 200 000"},
+            {"service" : "Guided bone regeneration (no material cost)", "price": "4,500,000"},
+            {"service" : "Gumplasty in one segment", "price": "1 500 000"},
+            {"service" : "Implant placement (South Korea)", "price": "4,500,000"},
+            {"service" : "Implant placement (Germany)", "price": "10 000 000"},
+            {"service" : "Installing the Healing Abutment", "price": "600,000"},
+            {"service" : "Orthodontic screw placement", "price": "600,000"}
+        ]
+    },
+    "currency": "sum",
+    "letters" : [
+        "t",
+        "e",
+        "a",
+        "m"
+    ],
+    "errMassage" : "This site is a DEMO version and is still under development. Currently does not support the phone version"
+}

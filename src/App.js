@@ -1,16 +1,18 @@
-import { useEffect } from 'react';
-import { jsScript } from './script';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./views/Main";
 
 function App(props) {
-  useEffect(() => {
-    jsScript();
-  }, []);
 
   return (
+    <BrowserRouter>
       <div className="wrapper">
-        <Main services={props.services} /> 
+          <Routes>
+            <Route path="/" element={<Main pack={props.ru} />} />
+            <Route path="/ru" element={<Main pack={props.ru} />} />
+            <Route path="/en" element={<Main pack={props.en} />} />
+          </Routes>
       </div>
+    </BrowserRouter>
   );
 } 
 
