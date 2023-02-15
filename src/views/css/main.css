@@ -3,12 +3,38 @@ body
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
+.hint 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 20px;
+    padding: 0 10px;
+    min-width: 50px;
+    border: 1px solid rgb(17, 17, 17);
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    visibility: hidden;
+    z-index: 100;
+}
+.hint.on 
+{
+    visibility: visible;
+    pointer-events: none;
+    transition-delay: 1s;
+}
+
 .loading
 {
     position: absolute;
     width: 5%;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
 .loading.on
 {
@@ -18,6 +44,7 @@ body
 .loading img 
 {
     width: 100%;
+    visibility: inherit;
 }
 .blocking 
 {
@@ -149,6 +176,7 @@ body
 .social_media img
 {
     height: 100%;
+    pointer-events: none;
 }
 .youtube
 {
@@ -534,7 +562,7 @@ body
     border-bottom: 0.156vw solid rgba(14, 119, 239, 0.586);
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     opacity: 0;
     visibility: hidden;
@@ -649,7 +677,8 @@ body
     width: 70%;
     transition-timing-function: ease-in-out;
     position: fixed;
-    z-index: 6;
+    z-index: 15;
+    pointer-events: none;
 }
 .fog img 
 {
@@ -698,7 +727,7 @@ body
 .dentist
 {
     position: absolute;
-    transition: 1.5s 0.4s;
+    transition: 1s 0s;
     height: 120% !important;
     display: flex;
     justify-content: center;
@@ -712,9 +741,9 @@ body
 
 .dentist._4
 {
-    /* width: 30%; */
     right: 30%;
-    transition: 1.5s 0.2s ;
+    transition: 1.5s 0.2s;
+    transition-timing-function: ease-out;
     z-index: 4;
 }
 .dentist._4 img 
@@ -723,7 +752,8 @@ body
 }
 .prioriti_2 img 
 {
-    height: 110%;
+    height: 107%;
+    transition: 1s 0s ease-out;
 }
 
 .prioriti_2
@@ -742,6 +772,7 @@ body
 .dentist._3 
 {
     right: 10%;
+   transform: translate(0, 0%);
 }
 
 .dentist._2
@@ -753,6 +784,7 @@ body
 .dentist._2 img 
 {
     height: 88%;
+    transition: 1s 0s ease-out;
 }
 
 .dentist._1
@@ -767,26 +799,51 @@ body
 /*---- dentists' CLONE ----*/
 .clone 
 {
-    z-index: 9 !important;
+    z-index: 16 !important;
     opacity: 0;
     position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: 1s 0s ease-out;
+}
+.cloneImg 
+{
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: 1s 0s ease-out;
+}
+.dentist img {
+    transform: scale(1);
+}
+.clone.hovered .cloneImg , .dentist img.hovered 
+{
+    transform: scale(1.01);
+}
+.clone.on 
+{
+    pointer-events: fill;
+}
+.clone.hovered 
+{
+    opacity: 1;
+    transition: 1s 0s ease-out; 
     cursor: pointer;
 }
 /* ----- dentist OFF------*/
 .dentist._4.off
 {
-    bottom: -100%;
+    bottom: -130%;
 }
 .dentist._1.off
 {
-    left: -30%;
+    left: -70%;
 }
-.dentist._3.gr, .dentist._2.gr 
+.prioriti_2.gr 
 {
-    transition: 1s 1.5s;
+    transition: 1s 1.5s ease;
 }
 .dentist._3.off , .dentist._2.off
 {
@@ -794,11 +851,11 @@ body
 }
 .dentist._5.off
 {
-    left: 112%;
+    left: 130%;
 }
-.dentist._1.gr, .dentist._5.gr
+.prioriti_3.gr
 {
-    transition: 1s 2.2s;
+    transition: 2s 1s ease-out;
 }
 /*-- opacity of LETTERS ---*/
 
@@ -824,11 +881,25 @@ body
     right: -50%;
     bottom: -30%;
 }
-.dentists.alternative .bottom, .dentists.alternative .dentist._5
+.dentists.alternative .bottom
 {
     right: -50%;
-    bottom: -30%;
+    bottom: -40%;
 }
+/*---------------- FOR A TIME -----------------*/
+.dentists.alternative .right._2
+{
+    transform: translate(12%, -5%);
+}
+.dentists.alternative .dentist._3.information
+{
+   transform: translate(0, -5%);
+}
+.dentists.alternative .dentist._3.information img
+{
+    height: 94%;
+}
+/*---------------------------------------------*/
 
 .dentists.alternative .dentist 
 {
@@ -923,7 +994,7 @@ body
 
 .dentists.alternative .bottom.information
 {
-    bottom: -30% !important;
+    bottom: -40% !important;
     right: 5% !important;
     transition: 2s;
     transition-delay: 0.3s !important;
@@ -932,14 +1003,14 @@ body
 .dentists.alternative .right.information 
 {
     bottom: -30% !important;
-    right: 0% !important; 
+    right: 3% !important; 
     transition: 2s;
     transition-delay: 0.3s !important;
 }
 .dentists.alternative .left.information 
 {
     bottom: -30% !important;
-    left: 15% !important;
+    left: 7% !important;
     transition: 2s !important;
     transition-delay: 0.3s !important;
 }
@@ -1087,7 +1158,7 @@ body
 {
     opacity: 0;
     visibility: hidden;
-}
+} 
 .next_button:hover img {
     opacity: 1;
 }
@@ -1322,6 +1393,7 @@ body
     transition: 0.2s;
     opacity: 0.6;
     transform: scale(1);
+    pointer-events: none;
 }
 
 .side_nav .block:hover img
@@ -1399,6 +1471,7 @@ body
     display: flex;
     overflow: hidden;
     flex-direction: column;
+    pointer-events: none;
 }
 .lang_line
 {
@@ -1423,7 +1496,7 @@ body
     transform: translate(0, 0);
     transition: 0.7s;
     cursor: pointer;
-
+    pointer-events: fill;
 }
 .lang_list.hidden .lang_block , .lang_list.hidden .lang_line
 {
@@ -1439,12 +1512,14 @@ body
 @keyframes close1 {
     0% {
         bottom: -120%;
-        width: 28%;
+        left: -10%;        
+    }
+    10% {
+        bottom: -120%;
         left: -10%;        
     }
     100% {
         bottom: -50%;   
-        width: 28%;
         left: -10%;     
     }
 }
@@ -1491,7 +1566,7 @@ body
         bottom: -120%; 
         left: 70%;
     }
-    50% {
+    10% {
         bottom: -120%; 
         left: 70%;
     }
@@ -1518,28 +1593,39 @@ body
 @keyframes dentist2 {
     0% {
         opacity: 1;
-        right: 50%; 
+        right: 50%;
+        bottom: -50%;
+        transform: translate(0, -5%);
     }
-    50% {
+    30% {
         opacity: 0; 
-        right: 50%;    
+        right: 50%;
+        bottom: -50%;
+        transform: translate(0, -5%);  
     }
     100% {
         right: -50% ;
+        bottom: -30%;
+        justify-content: end;
+        transform: translate(12%, -5%);
         opacity: 0;
 }
 }
 @keyframes dentist3 {
     0% {
         opacity: 1;
-        right: 10%;  
+        right: 10%; 
+        bottom: -50%;
+
 }
     50% {
         opacity: 0;
+        bottom: -50%;
         right: 10%;  
     }
     100% {
         right: -50%;
+        bottom: -30%;
         opacity: 0;
     }
 }
@@ -1549,18 +1635,18 @@ body
         right: 30%;      
     }
     50% {
-        bottom: -120%; 
+        bottom: -150%; 
         right: 30%;       
     }
     100% {
         right: -50%;
-        bottom: -120% ;
+        bottom: -150% ;
     }
 }
 
 @keyframes dentist5 {
     0% {
-        bottom: -30%;  
+        bottom: -50%;  
         left: 70%;      
     }
     50% {
