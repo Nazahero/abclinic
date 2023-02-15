@@ -742,11 +742,7 @@ body
 
 .dentists.alternative .bottom.information
 {
-<<<<<<< HEAD
-    bottom: -5%;
-=======
     bottom: -5% !important;
->>>>>>> lox
     right: 5% !important;
     transition: 2s;
     transition-delay: 0.3s !important;

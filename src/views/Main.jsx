@@ -215,12 +215,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-<<<<<<< HEAD
-                            <div className="dentist off prioriti_2 _3 right">
-
-=======
                             <div className="dentist off prioriti_2 _3 right" id="d_3">
->>>>>>> lox
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
@@ -249,11 +244,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-<<<<<<< HEAD
-                            <div className="dentist off prioriti_1 _4 bottom">
-=======
                             <div className="dentist off prioriti_1 _4 bottom" id="d_4">
->>>>>>> lox
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
