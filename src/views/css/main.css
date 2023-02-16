@@ -808,12 +808,16 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
     transition: 1s 0s ease-out;
 }
 .clone.on
 {
     visibility: visible;
+}
+.clone.hidden, .clone.hidden .cloneImg
+{
+    opacity: 0 !important;
+    transition: 0.5s;
 }
 .cloneImg 
 {
@@ -824,16 +828,24 @@ body
     pointer-events: fill;
 }
 .dentist img {
-    transform: scale(1);
+    opacity: 1;
 }
-.clone.hovered .cloneImg 
+.dentist.hovered img
 {
-    pointer-events: fill;
+    opacity: 0;
 }
 .clone.hovered .cloneImg
 {
+    pointer-events: fill;
     transform: scale(1.02) translate(0, 0.5vw);
+    -webkit-filter: drop-shadow(1px 1px 1px #cccccc8a);
+    filter:         drop-shadow(1px 1px 1px #cccccc8a); 
 }
+
+/* .incorrect.hovered .cloneImg
+{
+    transform: scale(1.04) translate(0.3vw, 0.3vw);
+} */
 
 .clone.hovered 
 {

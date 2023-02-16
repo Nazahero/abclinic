@@ -78,13 +78,45 @@ function start(){
             const den = dentists[i];
             const denImg = den.querySelector("img");
             const cl = clones[i];
+            const clImg = cl.querySelector("img");
+            /*------------------- STARTING --------------------*/
             den.addEventListener("transitionstart", function() {
                 cl.classList.remove("on")
+                cl.classList.add('hidden');
             })
+            den.addEventListener("animationstart", function() {
+                cl.classList.remove("on")
+                cl.classList.add('hidden');
+            })
+            /*-------------------- ENDING --------------------*/
             den.addEventListener("transitionend", function() {
                 trimClones(clones);
                 cl.classList.add("on");
+                cl.classList.remove("hovered");
+                setTimeout(() => {
+                    cl.classList.remove("hidden")
+                }, 1000);
             })
+            den.addEventListener("animationend", function() {
+                trimClones(clones);
+                cl.classList.add("on");
+                cl.classList.remove("hovered");
+                setTimeout(() => {
+                    cl.classList.remove("hidden")
+                }, 1000);
+            })
+            /*---------------- INTERATION ------------------*/
+            den.addEventListener("transitionrun", function () {
+                trimClone(den , cl)
+                setTimeout(() => {
+                    cl.classList.remove("hovered");
+                }, 500);
+            })
+            den.addEventListener("animationiteration", function () {
+                trimClone(den ,cl)
+                setTimeout(() => {
+                    cl.classList.remove("hovered");
+                }, 500);            })
         }
         
         // -------------------------- HINT EVENTS ---------------------------- //
@@ -229,7 +261,6 @@ function start(){
 
 }
 function trimClone(dentist, clone) {
-    console.log("yep");
     clone.style.cssText = `
             width: ${dentist.clientWidth}px;
             height: ${dentist.clientHeight}px;
@@ -249,13 +280,16 @@ function trimClones(clones) {
         `;
     }
 }
-function dentistHover (dentists, clones) {
+function dentistHover(dentists, clones) {
     for (let i = 0; i < clones.length; i++) {
         const clone = clones[i];
         const dentist = dentists[i].querySelector("img");
+        console.log(dentist);
         clone.addEventListener("mouseover", function () {
-            clone.classList.add("hovered");
-            dentist.classList.add("hovered");
+            if (!clone.classList.contains("hidden")) {
+                clone.classList.add("hovered");
+                dentist.classList.add("hovered");
+            }
         });
         clone.addEventListener("mouseout", function () {
             clone.classList.remove("hovered");
