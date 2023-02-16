@@ -76,12 +76,13 @@ function start(){
         // ---------------------------- EVENTS ------------------------------ //
         for (let i = 0; i < dentists.length; i++) {
             const den = dentists[i];
+            const denImg = den.querySelector("img");
             const cl = clones[i];
             den.addEventListener("transitionstart", function() {
                 cl.classList.remove("on")
             })
             den.addEventListener("transitionend", function() {
-                trimClone(den, cl);
+                trimClones(clones);
                 cl.classList.add("on");
             })
         }
@@ -228,11 +229,12 @@ function start(){
 
 }
 function trimClone(dentist, clone) {
+    console.log("yep");
     clone.style.cssText = `
             width: ${dentist.clientWidth}px;
             height: ${dentist.clientHeight}px;
             top: ${dentist.getBoundingClientRect().top}px;
-            left: ${dentist.getBoundingClientRect().bottom}px;
+            left: ${dentist.getBoundingClientRect().left}px;
         `;
 }
 function trimClones(clones) {

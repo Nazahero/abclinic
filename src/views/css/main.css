@@ -737,8 +737,11 @@ body
 }
 .dentist img {
     height: 100%;
+    transition: 1s ease;
 }
-
+/* .dentist img.hovered {
+    transform: scale(1.01) translate(-0.3vw, -0.35vw);
+} */
 .dentist._4
 {
     right: 30%;
@@ -753,7 +756,6 @@ body
 .prioriti_2 img 
 {
     height: 107%;
-    transition: 1s 0s ease-out;
 }
 
 .prioriti_2
@@ -799,8 +801,9 @@ body
 /*---- dentists' CLONE ----*/
 .clone 
 {
-    z-index: 16 !important;
+
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     display: flex;
     align-items: center;
@@ -808,29 +811,45 @@ body
     pointer-events: none;
     transition: 1s 0s ease-out;
 }
+.clone.on
+{
+    visibility: visible;
+}
 .cloneImg 
 {
     width: 100%;
     height: 100%;
-    transform: scale(1);
+    transform: scale(1) translate(0,0);
     transition: 1s 0s ease-out;
+    pointer-events: fill;
 }
 .dentist img {
     transform: scale(1);
 }
-.clone.hovered .cloneImg , .dentist img.hovered 
-{
-    transform: scale(1.01);
-}
-.clone.on 
+.clone.hovered .cloneImg 
 {
     pointer-events: fill;
 }
+.clone.hovered .cloneImg
+{
+    transform: scale(1.02) translate(0, 0.5vw);
+}
+
 .clone.hovered 
 {
     opacity: 1;
     transition: 1s 0s ease-out; 
     cursor: pointer;
+}
+.cPrioriti-1
+{
+    z-index: 17;
+}.cPrioriti-2
+{
+    z-index: 16;
+}.cPrioriti-3
+{
+    z-index: 15;
 }
 /* ----- dentist OFF------*/
 .dentist._4.off

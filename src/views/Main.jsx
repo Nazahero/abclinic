@@ -331,19 +331,19 @@ function Main(props) {
                                 </div>
                         </div>
                         {/* ------------------------------- */}
-                        <div className="clone" id="dentist._1">
+                        <div className="clone cPrioriti-3" id="dentist._1">
                             <img src="./img/dentist-1.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone" id="dentist._2">
+                        <div className="clone cPrioriti-2" id="dentist._2">
                             <img src="./img/dentist-2.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone" id="dentist._3">
+                        <div className="clone cPrioriti-2" id="dentist._3">
                             <img src="./img/dentist-3.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone" id="dentist._4">
+                        <div className="clone cPrioriti-1" id="dentist._4">
                             <img src="./img/dentist-4.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone" id="dentist._5">
+                        <div className="clone cPrioriti-3" id="dentist._5">
                             <img src="./img/dentist-5.png" className="cloneImg" alt="dentist" />
                         </div>
                         </div>
