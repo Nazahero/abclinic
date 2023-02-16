@@ -127,7 +127,7 @@ function Main(props) {
                         
                     </div>
                     
-                    <div className="win_logo"><img src="./img/ablogo.png" alt="logo" /></div>
+                    <div className="win_logo" title="abclinic"><img src="./img/ablogo.png" alt="logo" /></div>
 
                     <a href="https://yandex.ru/maps/org/9426831655" target="_blank" rel="noreferrer noopener" className="location hidden">
                         <span class="material-symbols-outlined">location_on</span>
@@ -337,7 +337,7 @@ function Main(props) {
                         <div className="clone cPrioriti-2" id="dentist._2">
                             <img src="./img/dentist-2.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-2" id="dentist._3">
+                        <div className="clone cPrioriti-2 incorrect" id="dentist._3">
                             <img src="./img/dentist-3.png" className="cloneImg" alt="dentist" />
                         </div>
                         <div className="clone cPrioriti-1" id="dentist._4">
