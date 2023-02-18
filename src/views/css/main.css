@@ -813,6 +813,7 @@ body
 .clone.on
 {
     visibility: visible;
+    
 }
 .clone.hidden, .clone.hidden .cloneImg
 {
@@ -840,6 +841,7 @@ body
     transform: scale(1.02) translate(0, 0.5vw);
     -webkit-filter: drop-shadow(1px 1px 1px #cccccc8a);
     filter:         drop-shadow(1px 1px 1px #cccccc8a); 
+    z-index: 20;
 }
 
 /* .incorrect.hovered .cloneImg

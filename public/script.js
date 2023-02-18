@@ -107,13 +107,13 @@ function start(){
             })
             /*---------------- INTERATION ------------------*/
             den.addEventListener("transitionrun", function () {
-                trimClone(den , cl)
+                trimClone(denImg , cl)
                 setTimeout(() => {
                     cl.classList.remove("hovered");
                 }, 500);
             })
             den.addEventListener("animationiteration", function () {
-                trimClone(den ,cl)
+                trimClone(denImg ,cl)
                 setTimeout(() => {
                     cl.classList.remove("hovered");
                 }, 500);            })
