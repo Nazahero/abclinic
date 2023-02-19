@@ -91,15 +91,15 @@ function Main(props) {
                         </div> */}
                         <div className="side_nav">
                             <span></span>
-                            <div className="block _1 active" id="home"><img src="./img/four-boxes.png" alt="" /></div>
-                            <div className="block _2" id="services"><img src="./img/servises.png" alt="" /></div>
-                            <div className="block _3" id="staff"><img src="./img/staff.png" alt="" /></div>
-                            <div className="block _4 disable" id="info"><img src="./img/info.png" alt="" /></div>
-                            <div className="block _5 disable" id="blog"><img src="./img/blog.png" alt="" /></div>
+                            <div className="block _1 active" data-hint="home" id="home"><img src="./img/four-boxes.png" alt="home" /></div>
+                            <div className="block _2" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
+                            <div className="block _3" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
+                            <div className="block _4 disable" data-hint="info" id="info"><img src="./img/info.png" alt="info" /></div>
+                            <div className="block _5 disable" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
                             <div className="lang" id="language">
-                                <span class="material-symbols-outlined clickable">language</span>
+                                <span class="material-symbols-outlined clickable" data-hint="language" >language</span>
                                 <div className="lang_list hidden">
-                                        <NavLink to="/ru" className="lang_block active" id="ru">ru</NavLink>
+                                        <NavLink to="/ru" className="lang_block" id="ru">ru</NavLink>
                                         <span className="lang_line"></span> 
                                         <NavLink to="/en" className="lang_block" id="en">en</NavLink>
                                 </div>
@@ -110,6 +110,7 @@ function Main(props) {
                 <div className="background" id="b_services"><img src="./img/cutting.jpg" alt="" /></div>
                 <div className="background onthis" id="b_home"><img src="./img/big cab.jpg" alt="" /></div>
                 <div className="background" id="b_staff"><img src="./img/background.jpg" alt="" /></div>
+                <div className="hint" id="hint"></div>
                  
                 
             
@@ -126,9 +127,9 @@ function Main(props) {
                         
                     </div>
                     
-                    <div className="win_logo"><img src="./img/ablogo.png" alt="" /></div>
+                    <div className="win_logo" title="abclinic"><img src="./img/ablogo.png" alt="logo" /></div>
 
-                    <a href="https://yandex.ru/maps/org/9426831655" target="_blank" className="location hidden">
+                    <a href="https://yandex.ru/maps/org/9426831655" target="_blank" rel="noreferrer noopener" className="location hidden">
                         <span class="material-symbols-outlined">location_on</span>
                         {props.pack.location} 
                     </a>
@@ -151,7 +152,7 @@ function Main(props) {
                             <div className="t_title">{props.pack.priceListTitles[0]}</div>
                             {services["first"]}
                         </div>
-                        <div className="part second">
+                        <div className="part second"> 
                             <div className="t_title">{props.pack.priceListTitles[1]}</div>
                             {services["second"]}
                         </div>
@@ -180,15 +181,25 @@ function Main(props) {
                         <div className="team">
                             {letters}
                         </div>
+                        {/* ------------------------------- */}
+                        <div className="fog _1 off">
+                            <img src="./img/fog.png" alt="fog" />
+                        </div>
+                        <div className="fog _2 off">
+                            <img src="./img/fog.png" alt="fog" />
+                        </div>
+                        <div className="fog _3 off">
+                            <img src="./img/fog.png" alt="fog" />
+                        </div> 
+                        {/* ------------------------------- */}
                         <div className="dentists">
-                            <div className="dentist off prioriti_3 _1 left" id="d_4">
+                            <div className="dentist off prioriti_3 _1 left" id="d_4" data-clone="dentist._1">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Иброхимжон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
                                 <img src="./img/dentist-1.png"  alt="" />
-                                <img src="./img/dentist-1.png" className="clone" alt="" />
                                 
                             </div>
                             <div className="dentist_information i_1 t_right">
@@ -209,14 +220,13 @@ function Main(props) {
                                         </div>
                             </div>
                             
-                            <div className="dentist off prioriti_2 _2 right" id="d_3">
+                            <div className="dentist off prioriti_2 _2 right" id="d_3" data-clone="dentist._2">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Абдухамиджон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-2.png" alt="" />
-                                <img src="./img/dentist-2.png" className="clone" alt="" />
+                                <img src="./img/dentist-2.png" alt="dentist" />
                                 
                             </div>
                             <div className="dentist_information  i_2 t_left" >
@@ -236,7 +246,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_2 _3 right" id="d_5">
+                            <div className="dentist off prioriti_2 _3 right" id="d_5" data-clone="dentist._3">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
@@ -244,8 +254,7 @@ function Main(props) {
                                 {/* </div> */}
                                 
 
-                                <img src="./img/dentist-3.png" alt="" />
-                                <img src="./img/dentist-3.png" className="clone"  alt="" />
+                                <img src="./img/dentist-3.png" alt="dentist" />
                                 
                             </div>
                             <div className="dentist_information i_3 t_left">
@@ -267,15 +276,13 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_1 _4 bottom" id="d_1">
+                            <div className="dentist off prioriti_1 _4 bottom" id="d_1" data-clone="dentist._4">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-4.png" alt="" />
-                                <img src="./img/dentist-4.png" className="clone" alt="" />
-                                
+                                <img src="./img/dentist-4.png" alt="dentist" />
                             </div>
                             <div className="dentist_information  i_4 t_left">
                                     <div className="dentist_name">Аскаров Мансур Анварович</div>
@@ -294,14 +301,15 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_3 _5 left" id="d_2">
+                            <div className="dentist off prioriti_3 _5 left" id="d_2" data-clone="dentist._5">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Татяна Юрьевна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-5.png" alt="" />
-                                <img src="./img/dentist-5.png" className="clone" alt="" />
+                                <img src="./img/dentist-5.png" alt="dentist" />
+
+                                
                                 
                             </div>
                             <div className="dentist_information  i_5 t_right">
@@ -322,23 +330,35 @@ function Main(props) {
                                         </div>
                                 </div>
                         </div>
-                </div>
+                        {/* ------------------------------- */}
+                        <div className="clone cPrioriti-3" id="dentist._1">
+                            <img src="./img/dentist-1.png" className="cloneImg" alt="dentist" />
+                        </div>
+                        <div className="clone cPrioriti-2" id="dentist._2">
+                            <img src="./img/dentist-2.png" className="cloneImg" alt="dentist" />
+                        </div>
+                        <div className="clone cPrioriti-2 incorrect" id="dentist._3">
+                            <img src="./img/dentist-3.png" className="cloneImg" alt="dentist" />
+                        </div>
+                        <div className="clone cPrioriti-1" id="dentist._4">
+                            <img src="./img/dentist-4.png" className="cloneImg" alt="dentist" />
+                        </div>
+                        <div className="clone cPrioriti-3" id="dentist._5">
+                            <img src="./img/dentist-5.png" className="cloneImg" alt="dentist" />
+                        </div>
+                        </div>
 
                 <div className="info" id="4">
 
                 </div>
-                <div className="fog _1 off">
-                    <img src="./img/fog.png" alt="" />
-                </div>
-                <div className="fog _2 off">
-                    <img src="./img/fog.png" alt="" />
-                </div>
-                <div className="fog _3 off">
-                    <img src="./img/fog.png" alt="" />
-                </div>
-                <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" target="_blank" className="insta social_media"><img src="./img/Instagram_logo.png" /></a>   
-                <a href="https://youtube.com" target="_blank" className="youtube social_media"><img src="./img/youtube_logo.png" /></a>
-                <a href="https://t.me/abclinic_uz" target="_blank" className="telegram social_media"><img src="./img/telegram_logo.png" /></a>
+                
+                
+                
+
+
+                <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" data-hint="instagram" target="_blank" rel="noreferrer noopener" className="insta social_media"><img src="./img/Instagram_logo.png" alt="Instagram" /></a>   
+                <a href="https://youtube.com" data-hint="youtube" target="_blank" rel="noreferrer noopener" className="youtube social_media"><img src="./img/youtube_logo.png" alt="Youtube" /></a>
+                <a href="https://t.me/abclinic_uz" data-hint="telegram" target="_blank" rel="noreferrer noopener" className="telegram social_media"><img src="./img/telegram_logo.png" alt="Telegram" /></a>
             </div>
         </main>
                     
