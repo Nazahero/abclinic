@@ -193,13 +193,13 @@ function Main(props) {
                         </div> 
                         {/* ------------------------------- */}
                         <div className="dentists">
-                            <div className="dentist off prioriti_3 _1 left" id="d_4" data-clone="dentist._1">
+                            <div className="dentist off prioriti_3 _1 left" id="d_4" data-clone="Abdukhamid">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Иброхимжон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-1.png"  alt="" />
+                                <img src="./img/Abdukhamid.png"  alt="" />
                                 
                             </div>
                             <div className="dentist_information i_1 t_right">
@@ -220,13 +220,13 @@ function Main(props) {
                                         </div>
                             </div>
                             
-                            <div className="dentist off prioriti_2 _2 right" id="d_3" data-clone="dentist._2">
+                            <div className="dentist off prioriti_2 _2 right" id="d_3" data-clone="Ibrohim">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Абдухамиджон</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-2.png" alt="dentist" />
+                                <img src="./img/Ibrohim.png" alt="dentist" />
                                 
                             </div>
                             <div className="dentist_information  i_2 t_left" >
@@ -246,7 +246,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_2 _3 right" id="d_5" data-clone="dentist._3">
+                            <div className="dentist off prioriti_2 _3 right" id="d_5" data-clone="Viktoria">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
@@ -254,7 +254,7 @@ function Main(props) {
                                 {/* </div> */}
                                 
 
-                                <img src="./img/dentist-3.png" alt="dentist" />
+                                <img src="./img/Viktoria.png" alt="dentist" />
                                 
                             </div>
                             <div className="dentist_information i_3 t_left">
@@ -276,13 +276,13 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_1 _4 bottom" id="d_1" data-clone="dentist._4">
+                            <div className="dentist off prioriti_1 _4 bottom" id="d_1" data-clone="Mansur">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-4.png" alt="dentist" />
+                                <img src="./img/Mansur.png" alt="dentist" />
                             </div>
                             <div className="dentist_information  i_4 t_left">
                                     <div className="dentist_name">Аскаров Мансур Анварович</div>
@@ -301,13 +301,13 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_3 _5 left" id="d_2" data-clone="dentist._5">
+                            <div className="dentist off prioriti_3 _5 left" id="d_2" data-clone="Tatiana">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Татяна Юрьевна</span> */}
                                     {/* <span className="x"></span> */}
                                     {/* <div className="y"></div> */}
                                 {/* </div> */}
-                                <img src="./img/dentist-5.png" alt="dentist" />
+                                <img src="./img/Tatiana.png" alt="dentist" />
 
                                 
                                 
@@ -331,20 +331,20 @@ function Main(props) {
                                 </div>
                         </div>
                         {/* ------------------------------- */}
-                        <div className="clone cPrioriti-3" id="dentist._1">
-                            <img src="./img/dentist-1.png" className="cloneImg" alt="dentist" />
+                        <div className="clone cPrioriti-3" id="Abdukhamid">
+                            <img src="./img/Abdukhamid.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-2" id="dentist._2">
-                            <img src="./img/dentist-2.png" className="cloneImg" alt="dentist" />
+                        <div className="clone cPrioriti-2" id="Ibrohim">
+                            <img src="./img/Ibrohim.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-2 incorrect" id="dentist._3">
-                            <img src="./img/dentist-3.png" className="cloneImg" alt="dentist" />
+                        <div className="clone cPrioriti-2 incorrect" id="Viktoria">
+                            <img src="./img/Viktoria.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-1" id="dentist._4">
-                            <img src="./img/dentist-4.png" className="cloneImg" alt="dentist" />
+                        <div className="clone cPrioriti-1" id="Mansur">
+                            <img src="./img/Mansur.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-3" id="dentist._5">
-                            <img src="./img/dentist-5.png" className="cloneImg" alt="dentist" />
+                        <div className="clone cPrioriti-3" id="Tatiana">
+                            <img src="./img/Tatiana.png" className="cloneImg" alt="dentist" />
                         </div>
                         </div>
 
