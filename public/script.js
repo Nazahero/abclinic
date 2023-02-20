@@ -77,7 +77,7 @@ function start(){
         for (let i = 0; i < dentists.length; i++) {
             const den = dentists[i];
             const denImg = den.querySelector("img");
-            const cl = clones[i];
+            const cl = document.getElementById(`${den.getAttribute("data-clone")}`);
             const clImg = cl.querySelector("img");
             /*------------------- STARTING --------------------*/
             den.addEventListener("transitionstart", function() {
@@ -271,7 +271,7 @@ function trimClone(dentist, clone) {
 function trimClones(clones) {
     for (let i = 0; i < clones.length; i++) {
         const clone = clones[i];
-        const dentist = document.querySelector(`.${clone.id} img`);
+        const dentist = document.querySelector(`[data-clone="${clone.id}"] img`);
         clone.style.cssText = `
             width: ${dentist.clientWidth}px;
             height: ${dentist.clientHeight}px;
