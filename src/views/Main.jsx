@@ -193,7 +193,7 @@ function Main(props) {
                         </div> 
                         {/* ------------------------------- */}
                         <div className="dentists">
-                            <div className="dentist off prioriti_1 _1 right" id="d_4" data-clone="Abdukhamid">
+                            <div className="dentist off prioriti_2 _1 right" id="d_4" data-clone="Abdukhamid">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Иброхимжон</span> */}
                                     {/* <span className="x"></span> */}
@@ -220,7 +220,7 @@ function Main(props) {
                                         </div>
                             </div>
                             
-                            <div className="dentist off prioriti_1 _2 left" id="d_3" data-clone="Ibrohim">
+                            <div className="dentist off prioriti_1 _2 right" id="d_3" data-clone="Ibrohim">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Азимов Абдухамиджон</span> */}
                                     {/* <span className="x"></span> */}
@@ -229,7 +229,7 @@ function Main(props) {
                                 <img src="./img/Ibrohim.png" alt="dentist" />
                                 
                             </div>
-                            <div className="dentist_information  i_2 t_right" >
+                            <div className="dentist_information  i_2 t_left" >
                                     <div className="dentist_name">Азимов Иброхимжон</div>
                                     <span></span>
                                     <div className="text">
@@ -246,7 +246,7 @@ function Main(props) {
                                             </span>
                                         </div>
                                 </div>
-                            <div className="dentist off prioriti_2 _3 right" id="d_5" data-clone="Viktoria">
+                            <div className="dentist off prioriti_3 _3 left" id="d_5" data-clone="Viktoria">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Виктория Вадимовна</span> */}
                                     {/* <span className="x"></span> */}
@@ -257,7 +257,7 @@ function Main(props) {
                                 <img src="./img/Viktoria.png" alt="dentist" />
                                 
                             </div>
-                            <div className="dentist_information i_3 t_left">
+                            <div className="dentist_information i_3 t_right">
                                     <div className="dentist_name">Пак Виктория Вадимовна</div>
                                     <span></span>
                                     <div className="text">
@@ -284,7 +284,7 @@ function Main(props) {
                                 {/* </div> */}
                                 <img src="./img/Mansur.png" alt="dentist" />
                             </div>
-                            <div className="dentist_information  i_4 t_left">
+                            <div className="dentist_information  i_4 t_right">
                                     <div className="dentist_name">Аскаров Мансур Анварович</div>
                                     <span></span>
                                     <div className="text">
@@ -309,7 +309,24 @@ function Main(props) {
                                 {/* </div> */}
                                 <img src="./img/director.png" alt="dentist" />
                             </div>
-                            <div className="dentist off prioriti_main _7 bottom" id="d_7" data-clone="Xursand">
+                            <div className="dentist_information  i_6 t_right">
+                                    <div className="dentist_name">Аскаров Мансур Анварович</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                                </div>
+                            <div className="dentist off prioriti_1 _7 left" id="d_7" data-clone="Xursand">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Мансур Анварович</span> */}
                                     {/* <span className="x"></span> */}
@@ -317,7 +334,24 @@ function Main(props) {
                                 {/* </div> */}
                                 <img src="./img/Xursand.png" alt="dentist" />
                             </div>
-                            <div className="dentist off prioriti_3 _5 left" id="d_2" data-clone="Tatiana">
+                            <div className="dentist_information  i_7 t_right">
+                                    <div className="dentist_name">Аскаров Мансур Анварович</div>
+                                    <span></span>
+                                    <div className="text">
+                                            <span>
+                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
+                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
+                                                <br />  
+                                                <br />                  
+                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
+                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
+                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
+                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
+                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            </span>
+                                        </div>
+                                </div>
+                            <div className="dentist off prioriti_3 _5 right" id="d_2" data-clone="Tatiana">
                                 {/* <div className="name"> */}
                                     {/* <span className="n">Татяна Юрьевна</span> */}
                                     {/* <span className="x"></span> */}
@@ -328,7 +362,7 @@ function Main(props) {
                                 
                                 
                             </div>
-                            <div className="dentist_information  i_5 t_right">
+                            <div className="dentist_information  i_5 t_left">
                                     <div className="dentist_name">Татяна Юрьевна</div>
                                     <span></span>
                                     <div className="text">
@@ -347,16 +381,16 @@ function Main(props) {
                                 </div>
                         </div>
                         {/* ------------------------------- */}
-                        <div className="clone cPrioriti-3" id="Abdukhamid">
+                        <div className="clone cPrioriti-2" id="Abdukhamid">
                             <img src="./img/Abdukhamid.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-2" id="Ibrohim">
+                        <div className="clone cPrioriti-1" id="Ibrohim">
                             <img src="./img/Ibrohim.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-2 incorrect" id="Viktoria">
+                        <div className="clone cPrioriti-3 incorrect" id="Viktoria">
                             <img src="./img/Viktoria.png" className="cloneImg" alt="dentist" />
                         </div>
-                        <div className="clone cPrioriti-1" id="Mansur">
+                        <div className="clone cPrioriti-2" id="Mansur">
                             <img src="./img/Mansur.png" className="cloneImg" alt="dentist" />
                         </div>
                         <div className="clone cPrioriti-main" id="Director">
