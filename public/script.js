@@ -81,18 +81,24 @@ function start(){
             const clImg = cl.querySelector("img");
             /*------------------- STARTING --------------------*/
             den.addEventListener("transitionstart", function() {
-                cl.classList.remove("on")
-                cl.classList.add('hidden');
+                if (den.classList.contains("alternative")) {
+                    cl.classList.remove("on")
+                    cl.classList.add('hidden');
+                }
             })
             den.addEventListener("animationstart", function() {
-                cl.classList.remove("on")
-                cl.classList.add('hidden');
+                if (den.classList.contains("alternative")) {
+                    cl.classList.remove("on")
+                    cl.classList.add('hidden');
+                }
             })
             /*-------------------- ENDING --------------------*/
             den.addEventListener("transitionend", function() {
                 trimClones(clones);
                 cl.classList.add("on");
-                cl.classList.remove("hovered");
+                if (den.classList.contains("alternative")) {
+                    cl.classList.remove("hovered"); 
+                }
                 setTimeout(() => {
                     cl.classList.remove("hidden")
                 }, 1000);
@@ -100,7 +106,9 @@ function start(){
             den.addEventListener("animationend", function() {
                 trimClones(clones);
                 cl.classList.add("on");
-                cl.classList.remove("hovered");
+                if (den.classList.contains("alternative")) {
+                    cl.classList.remove("hovered"); 
+                }
                 setTimeout(() => {
                     cl.classList.remove("hidden")
                 }, 1000);
@@ -109,14 +117,20 @@ function start(){
             den.addEventListener("transitionrun", function () {
                 trimClone(denImg , cl)
                 setTimeout(() => {
-                    cl.classList.remove("hovered");
+                    if (den.classList.contains("alternative")) {
+                        cl.classList.remove("hovered"); 
+                        console.log("bitches");
+                    }
                 }, 500);
             })
             den.addEventListener("animationiteration", function () {
                 trimClone(denImg ,cl)
                 setTimeout(() => {
-                    cl.classList.remove("hovered");
-                }, 500);            })
+                    if (den.classList.contains("alternative")) {
+                        cl.classList.remove("hovered"); 
+                    }
+                }, 500);            
+            })
         }
         
         // -------------------------- HINT EVENTS ---------------------------- //
@@ -762,6 +776,7 @@ function closeDentists(dentists, current) {
         const elem = dentists[i];
         elem.classList.remove("information");
         elem.classList.remove("gr");
+        elem.classList.remove("animate");
         elem.classList.add("close_animate");
     }
     current.classList.remove("close_animate");
@@ -788,6 +803,7 @@ function switchDentist(dentists, dentist) {
         for (var i = 0; i < dentists.length; i++) {
             const elem = dentists[i];
             elem.classList.remove("information");
+            elem.classList.remove("close_animate");
             elem.classList.add("animate");
         }
         dentist.classList.add("information");
