@@ -1,4 +1,4 @@
-function start(){
+function Main(){
 
         const homePage = document.querySelector(".home");
         const homeButton = document.querySelector("#home");
@@ -80,43 +80,58 @@ function start(){
             const cl = document.getElementById(`${den.getAttribute("data-clone")}`);
             const clImg = cl.querySelector("img");
             /*------------------- STARTING --------------------*/
+            backButton.addEventListener("click", function () {
+                cl.classList.remove("hovered"); 
+                denImg.classList.remove("unhovered");
+            })
+            cl.addEventListener("click", function () {
+                    cl.classList.remove("hovered"); 
+                    denImg.classList.remove("unhovered");
+            })
             den.addEventListener("transitionstart", function() {
-                cl.classList.remove("on")
-                cl.classList.add('hidden');
+                if (den.parentElement.classList.contains("alternative")) {
+                    cl.classList.remove("on")
+                    cl.classList.add('hidden');
+                } else {
+                    trimClone(cl)
+                }
             })
             den.addEventListener("animationstart", function() {
-                cl.classList.remove("on")
-                cl.classList.add('hidden');
+                if (den.parentElement.classList.contains("alternative")) {
+                    cl.classList.remove("on")
+                    cl.classList.add('hidden');
+                } else {
+                    trimClone(cl)
+                }
             })
             /*-------------------- ENDING --------------------*/
             den.addEventListener("transitionend", function() {
                 trimClones(clones);
                 cl.classList.add("on");
-                cl.classList.remove("hovered");
-                setTimeout(() => {
-                    cl.classList.remove("hidden")
-                }, 1000);
+                if (!den.parentElement.classList.contains("alternative")) {
+                    cl.classList.remove("hidden");
+                }
+                if (den.parentElement.classList.contains("alternative")) {
+                    cl.classList.remove("hovered"); 
+                }
             })
             den.addEventListener("animationend", function() {
                 trimClones(clones);
                 cl.classList.add("on");
-                cl.classList.remove("hovered");
-                setTimeout(() => {
-                    cl.classList.remove("hidden")
-                }, 1000);
+                if (!den.parentElement.classList.contains("alternative")) {
+                    cl.classList.remove("hidden");
+                }
+                if (den.parentElement.classList.contains("alternative")) {
+                    cl.classList.remove("hovered"); 
+                }
             })
             /*---------------- INTERATION ------------------*/
             den.addEventListener("transitionrun", function () {
-                trimClone(denImg , cl)
-                setTimeout(() => {
-                    cl.classList.remove("hovered");
-                }, 500);
+                
             })
             den.addEventListener("animationiteration", function () {
-                trimClone(denImg ,cl)
-                setTimeout(() => {
-                    cl.classList.remove("hovered");
-                }, 500);            })
+                            
+            })
         }
         
         // -------------------------- HINT EVENTS ---------------------------- //
@@ -294,6 +309,9 @@ function dentistHover(dentists, clones) {
         clone.addEventListener("mouseout", function () {
             clone.classList.remove("hovered");
             dentist.classList.remove("hovered");
+            if (!clone.classList.contains("hidden")) {
+                dentist.classList.add("unhovered");
+            }
         })
     }
 }
@@ -762,6 +780,7 @@ function closeDentists(dentists, current) {
         const elem = dentists[i];
         elem.classList.remove("information");
         elem.classList.remove("gr");
+        elem.classList.remove("animate");
         elem.classList.add("close_animate");
     }
     current.classList.remove("close_animate");
@@ -788,6 +807,7 @@ function switchDentist(dentists, dentist) {
         for (var i = 0; i < dentists.length; i++) {
             const elem = dentists[i];
             elem.classList.remove("information");
+            elem.classList.remove("close_animate");
             elem.classList.add("animate");
         }
         dentist.classList.add("information");
@@ -805,8 +825,11 @@ function backButtonHidden(button, clones) {
         }, 700);
     })
 }
-
-setTimeout(() => {
-    start();  
-}, 1000);
+while (true) {
+    if (document.querySelector(".blocking")) {
+        console.log("Ready");
+        Main();
+        break;
+    }
+}
 
