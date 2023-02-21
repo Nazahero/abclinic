@@ -737,7 +737,7 @@ body
 }
 .dentist img {
     height: 100%;
-    transition: 1s ease;
+    transition: 3s 0.5s;
 }
 /* .dentist img.hovered {
     transform: scale(1.01) translate(-0.3vw, -0.35vw);
@@ -745,7 +745,6 @@ body
 .dentist._4
 {
     left: 9%;
-    transition: 1.5s 0.2s;
     transition-timing-function: ease-out;
     
 }
@@ -766,7 +765,6 @@ body
 .dentist._6 img 
 {
     height: 65%;
-    
 }
 .dentist._6
 {
@@ -856,7 +854,7 @@ body
 .clone.hidden, .clone.hidden .cloneImg
 {
     opacity: 0 !important;
-    transition: 0.5s;
+    transition: 0.5s 1s;
 }
 .cloneImg 
 {
@@ -869,6 +867,10 @@ body
 .dentist img {
     opacity: 1;
 }
+.dentist img.unhovered
+{
+    transition: 0.5s;
+}
 .dentist img.hovered
 {
     opacity: 0;
@@ -877,7 +879,7 @@ body
 .clone.hovered .cloneImg
 {
     pointer-events: fill;
-    transform: scale(1.08) translate(0, 0.4vw);
+    transform: scale(1.08) translate(0, 1vw);
     -webkit-filter: drop-shadow(0px 0px 9px #cccccc8a);
     filter:         drop-shadow(0px 0px 9px #cccccc8a); 
 }
@@ -1145,29 +1147,34 @@ body
 {
     bottom: -5% !important;
     left: 0% !important;
-    transition: 2s;
+    transition: 2s 1s !important;
     transition-delay: 0.3s !important;
+    opacity: 1;
 }
 
 .dentists.alternative .right.information 
 {
     bottom: -5% !important;
-    right: 3% !important; 
-    transition: 2s;
+    right: 10% !important; 
+    transition: 2s 1s !important;
     transition-delay: 0.3s !important;
+    opacity: 1;
 }
 .dentists.alternative .left.information 
 {
     bottom: -5% !important;
-    left: 7% !important;
-    transition: 2s !important;
+    left: 12% !important;
+    transition: 2s 1s !important;
     transition-delay: 0.3s !important;
+    opacity: 1;
 }
 
 
 .dentists.alternative .dentist.information img 
 {
     height: 100%;
+    transition: 2.5s 0s;
+    opacity: 1;
 }
 
 /*--- switched transition ---*/
