@@ -407,39 +407,43 @@ body
 /* ---------------- */
 .background img 
 {
-    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
 }
+
 .background#b_home
 {
-    min-width: 115%;
-    min-height: 105%;
+    min-width: 115vw;
+    height: 130vh;
     animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear;
-    top: -25%;
     opacity: 0;
-    left: -5%;
+    top: -25vh;
+    left: -5vw;
 }
 .background#b_services
 {
-    min-width: 115%;
-    min-height: 105%;
+    min-width: 115vw;
+    height: 120vh;
     /* animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear; */
-    top: -10%;
+    top: -10vh;
     opacity: 1;
-    left: -10%;
+    left: -10vw;
 }
 .background 
 {
     position: fixed;
-    min-width: 110%;
-    min-height: 105%;
+    min-width: 110vw;
+    min-height: 120vh;
     transition: 1s;
     opacity: 0;
 }
@@ -451,15 +455,14 @@ body
 /* --- services --- */
 .services .background
 {
-    width: 115%;
     /* animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear; */
     z-index: -1;
-    top: -10%;
-    left: -10%;
+    top: -10vh;
+    left: -10vw;
 }
 .services
 {

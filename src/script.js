@@ -1,5 +1,5 @@
-function Main(){
-
+export function MainJs(){
+    function start() {
         const homePage = document.querySelector(".home");
         const homeButton = document.querySelector("#home");
         const title = document.querySelector(".name");
@@ -27,7 +27,7 @@ function Main(){
         const location = document.querySelector(".location");
         const language = document.getElementById("language").querySelector("span");
         const lang_list = document.querySelector(".lang_list");
-        const detect = new MobileDetect(window.navigator.userAgent);
+        // const detect = new MobileDetect(window.navigator.userAgent);
         const elementHints = document.querySelectorAll("[data-hint]");
         const hint = document.getElementById("hint");
         const langs = document.querySelectorAll(".lang_block");
@@ -41,37 +41,21 @@ function Main(){
         }
         for (let i = 0; i < letters.length; i++) {
             const element = letters[i];
-            let elDelay = element.getAttribute("style");
+            const elDelay = element.getAttribute("style");
             delay.push(elDelay);
         }
 
-        console.log("Mobile: " + detect.mobile());       // телефон или планшет
-        console.log("Phone: " + detect.phone());         // телефон
-        console.log("Tablet: " + detect.tablet());       // планшет
-        console.log("OS: " + detect.os());               // операционная система
-        console.log("userAgent: " + detect.userAgent()); // userAgent
+        // console.log("Mobile: " + detect.mobile());       // телефон или планшет
+        // console.log("Phone: " + detect.phone());         // телефон
+        // console.log("Tablet: " + detect.tablet());       // планшет
+        // console.log("OS: " + detect.os());               // операционная система
+        // console.log("userAgent: " + detect.userAgent()); // userAgent
 
         // ------------------------- CHECKING SIZE ---------------------------- //
 
-        checkSize()
-        window.addEventListener("resize", () => {checkSize()});
+        
         letters = document.querySelectorAll(".letter");
 
-        function checkSize() {
-          var X = window.innerWidth;
-          var Y = window.innerHeight;
-          if (X / Y <= 1.6 || X / Y >= 3.4) {
-              document.querySelector(".blocking").classList.add("on")
-              document.querySelector(".blocking").classList.remove("off")
-              removeDisableFromElement(document.querySelector(".blocked"))
-              document.querySelector(".loading").classList.remove("on");
-          } else 
-          {
-              document.querySelector(".blocking").classList.add("off")
-              document.querySelector(".blocking").classList.remove("on")
-              addDisableToElement(document.querySelector(".blocked"))
-          }
-        }
 
         // ---------------------------- EVENTS ------------------------------ //
         for (let i = 0; i < dentists.length; i++) {
@@ -167,7 +151,7 @@ function Main(){
         }, 500);
 
         trimClones(clones);
-        changeLanguage(langs ,lettersObj, delay, preLetter)
+        selectLanguage(langs ,lettersObj, delay, preLetter, lang_list);
         setDelay(letters, preLetter);
         openPriceList(open, priceList);  
         openLanguage(language, lang_list); 
@@ -178,8 +162,9 @@ function Main(){
 
         window.addEventListener("resize", () => {
             var active = document.querySelector(".block.active");
-            
-            trimClones(clones);
+            // if (document.getElementById("staff").classList.contains("active")) {
+            //     trimClones(clones);
+            // }
             scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`));
             noDelayArr(letters, delay)
             
@@ -272,8 +257,41 @@ function Main(){
         // ------------------ LAST FUNCTIONS --------------------- //
         noDelay(title.querySelector(".title"))
         noDelay(title.querySelector(".subtitle"))
+        trimBackground(backgrounds);
+        document.querySelector(".blocking").classList.add("off")
+        document.querySelector(".blocking").classList.remove("on")
+        // checkSize()
+        // window.addEventListener("resize", () => {checkSize()});
+        
         // -------------------------------------------------------- //
 
+    }
+
+function trimBackground(backgrounds) {
+    for (let i = 0; i < backgrounds.length; i++) {
+        const background = backgrounds[i];
+        const X = background.clientWidth;
+        const backgroundImg = background.firstElementChild;
+        console.log(X, backgroundImg.scrollWidth);
+        backgroundImg.style.cssText = `
+            left: ${50 * (X / backgroundImg.clientWidth - 1)}%;
+        `
+    }
+}
+function checkSize() {
+    var X = window.innerWidth;
+    var Y = window.innerHeight;
+    if (X / Y <= 1.6 || X / Y >= 3.4) {
+        document.querySelector(".blocking").classList.add("on")
+        document.querySelector(".blocking").classList.remove("off")
+        removeDisableFromElement(document.querySelector(".blocked"))
+        document.querySelector(".loading").classList.remove("on");
+    } else 
+    {
+        document.querySelector(".blocking").classList.add("off")
+        document.querySelector(".blocking").classList.remove("on")
+        addDisableToElement(document.querySelector(".blocked"))
+    }
 }
 function trimClone(dentist, clone) {
     clone.style.cssText = `
@@ -325,7 +343,7 @@ function noDelayArr(array, delay) {
     if (document.querySelector("#staff").classList.contains("active")) {
         for (let i = 0; i < array.length; i++) {
             const element = array[i];
-            let elemDelay = delay[i];
+            const elemDelay = delay[i];
             element.style.cssText = `transition-delay: 0s;`;
             setTimeout(() => {
                 element.style.cssText = elemDelay;
@@ -354,17 +372,19 @@ function openLanguage(language, lang_list) {
         
     })
 }
-function changeLanguage(langs ,lettersObj, delay, preLetter) {
+function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list) {
 
     for (let i = 0; i < langs.length; i++) {
         const element = langs[i];
         element.addEventListener("click", function () {
             removeClassActive(langs);
             addClassActive(element);
+            hiddenElement(lang_list);
+
 
             /*--------------------------*/
 
-            let letters = document.querySelectorAll(".letter");
+            const letters = document.querySelectorAll(".letter");
             console.log(letters);
             for (let i = 0; i < letters.length; i++) {
                 letters[i].style.cssText = `transition-duration: 0s;`;
@@ -372,7 +392,7 @@ function changeLanguage(langs ,lettersObj, delay, preLetter) {
             }
 
             setTimeout(() => {
-                let newLetters = document.querySelectorAll(".letter");
+                const newLetters = document.querySelectorAll(".letter");
                 for (let i = 0; i < newLetters.length; i++) {
                     const element = newLetters[i];
                     lettersObj[`${i}`] = element;
@@ -825,11 +845,8 @@ function backButtonHidden(button, clones) {
         }, 700);
     })
 }
-while (true) {
-    if (document.querySelector(".blocking")) {
-        console.log("Ready");
-        Main();
-        break;
-    }
+
+    start();
+
 }
 
