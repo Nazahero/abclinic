@@ -162,9 +162,9 @@ export function MainJs(){
 
         window.addEventListener("resize", () => {
             var active = document.querySelector(".block.active");
-            // if (document.getElementById("staff").classList.contains("active")) {
-            //     trimClones(clones);
-            // }
+            if (document.getElementById("staff").classList.contains("active")) {
+                trimClones(clones);
+            }
             scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`));
             noDelayArr(letters, delay)
             
@@ -194,15 +194,6 @@ export function MainJs(){
                         visibleElement(location)
                         break;
                     case "2":
-                        iconMove(social_icons);
-                        addClassOn(service_block);
-                        visiblePriceList(priceList);
-                        removeStaffPage(sidebar, social_icons, fog);
-
-                        hiddenElement(arrow);
-                        hiddenElement(location);
-                        break;
-                    case "3":
                         // ---- WELCOME ANIMATION ---- //
                         
                         visible(lettersObj);     
@@ -223,6 +214,15 @@ export function MainJs(){
 
                         // ---- -------------- ---- //
                         iconMove(social_icons);
+                        hiddenElement(arrow);
+                        hiddenElement(location);
+                        break;
+                    case "3":
+                        iconMove(social_icons);
+                        addClassOn(service_block);
+                        visiblePriceList(priceList);
+                        removeStaffPage(sidebar, social_icons, fog);
+
                         hiddenElement(arrow);
                         hiddenElement(location);
                         break;
@@ -258,10 +258,10 @@ export function MainJs(){
         noDelay(title.querySelector(".title"))
         noDelay(title.querySelector(".subtitle"))
         trimBackground(backgrounds);
-        document.querySelector(".blocking").classList.add("off")
-        document.querySelector(".blocking").classList.remove("on")
-        // checkSize()
-        // window.addEventListener("resize", () => {checkSize()});
+        // document.querySelector(".blocking").classList.add("off")
+        // document.querySelector(".blocking").classList.remove("on")
+        checkSize()
+        window.addEventListener("resize", () => {checkSize()});
         
         // -------------------------------------------------------- //
 
@@ -439,7 +439,7 @@ function nextDentist(button, prev, backButton) {
     var nextInformation;
     
 
-    if (id == 5) {
+    if (id == 7) {
         nextDentist = document.getElementById("d_1");
         nextInformation = nextDentist.nextElementSibling;
     } else
@@ -449,8 +449,9 @@ function nextDentist(button, prev, backButton) {
     }
     currentInformation.classList.remove("period");
     currentInformation.addEventListener("transitionend", function () {
-        currentDentist.classList.remove("information", "switched");
-        nextDentist.classList.add("information", "switched");
+        currentDentist.classList.remove("information");
+        currentDentist.classList.add("switched")
+        nextDentist.classList.add("information");
         nextInformation.classList.add("period");
     },{once: true});
     
@@ -484,8 +485,9 @@ function prevDentist(button, next, backButton) {
     }
     currentInformation.classList.remove("period");
     currentInformation.addEventListener("transitionend", function () {
-        currentDentist.classList.remove("information", "switched");
-        prevDentist.classList.add("information", "switched");
+        currentDentist.classList.remove("information");
+        currentDentist.classList.add("switched")
+        prevDentist.classList.add("information");
         prevInformation.classList.add("period");
     },{once: true});
     
@@ -845,8 +847,8 @@ function backButtonHidden(button, clones) {
         }, 700);
     })
 }
-
-    start();
-
+    window.onload = () => {
+        start();
+    }
 }
 

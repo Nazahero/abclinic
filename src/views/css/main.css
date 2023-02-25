@@ -3,6 +3,17 @@ body
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
+.main_comment
+{
+    position: absolute;
+    top: 0.9vw;
+    left: 8vw;
+    color: rgba(255, 255, 255, 0.719);
+    display: inline-block;
+    font-size: 1.4vw;
+    font-family: "Montserrat";
+    z-index: 50;
+}
 .hint 
 {
     position: fixed;
@@ -689,34 +700,34 @@ body
 }
 .fog._1
 {
-    bottom: -38%;
+    bottom: -23vw;
     transition: 1s;
     left: -23%;
 }
 .fog._2
 {
     transition: 1s 0.3s;
-    bottom: -51%;
+    bottom: -25vw;
     left: 15%;
 }
 .fog._3
 {
-    bottom: -40%;
+    bottom: -25vw;
     transition: 1s;
     right: -23%;
 }
 .fog._1.off
 {
-    bottom: -70%;
+    bottom: -100vh;
     left: -40%
 }
 .fog._2.off
 {
-    bottom: -70%;
+    bottom: -100vh;
 }
 .fog._3.off 
 {
-    bottom: -70%;
+    bottom: -100vh;
     right: -40%;
 }
 /*----- defolt dentists ------*/
@@ -820,7 +831,7 @@ body
 
 .dentist._2
 {
-    right: 21%;
+    right: 22%;
 }
 .dentist._2 img 
 {
@@ -829,11 +840,11 @@ body
 
 .dentist._1
 {
-    right: 8%;
+    right: 10%;
 }
 .dentist._5
 {
-    right: -5%;
+    right: -2%;
 }
 
 
@@ -1182,6 +1193,10 @@ body
 
 /*--- switched transition ---*/
 
+.dentists.alternative .dentist.switched img 
+{
+    transition: 2s 0.5s ease-out;
+}
 .dentists.alternative .dentist.switched 
 {
     transition: 2s 0.5s ease-out !important;
@@ -1705,22 +1720,22 @@ body
 }
 @keyframes openDIbrohim {
     0% {
-        right: 21%;
+        right: 22%;
         bottom: -100%;
     }
     100% {
-        right: 21%;
+        right: 22%;
         bottom: -35%;
     }
 }
 @keyframes openDTatiana {
     0% {
         bottom: -100%;
-        right: -5%;
+        right: -2%;
     }
     100% {
         bottom: -35%;
-        right: -5%;
+        right: -2%;
     }
 }
 @keyframes openDViktoria {
@@ -1735,11 +1750,11 @@ body
 }
 @keyframes openDAbdukhamid {
     0% {
-        right: 8%;
+        right: 10%;
         bottom: -100%;
     }
     100% {
-        right: 8%;
+        right: 10%;
         bottom: -35%;
     }
 }
@@ -1778,22 +1793,22 @@ body
 }
 @keyframes closeDIbrohim {
     0% {
-        right: 21%;
+        right: 22%;
         bottom: -35%;
     }
     100% {
-        right: 21%;
+        right: 22%;
         bottom: -100%;
     }
 }
 @keyframes closeDTatiana {
     0% {
         bottom: -35%;
-        right: -5%;
+        right: -2%;
     }
     100% {
         bottom: -100%;
-        right: -5%;
+        right: -2%;
     }
 }
 @keyframes closeDViktoria {
@@ -1808,16 +1823,33 @@ body
 }
 @keyframes closeDAbdukhamid {
     0% {
-        right: 8%;
+        right: 10%;
         bottom: -35%;
     }
     100% {
-        right: 8%;
+        right: 10%;
         bottom: -100%;
     }
 }
 
 /*------------- ANIMATIONS --------------*/
+
+@keyframes switchLeft {
+    0%{
+
+    }
+    100%{
+
+    }
+}
+@keyframes switchRight {
+    0%{
+        
+    }
+    100%{
+
+    }
+}
 
 @keyframes blink{
     0%{
