@@ -92,8 +92,8 @@ function Main(props) {
                         <div className="side_nav">
                             <span></span>
                             <div className="block _1 active" data-hint="home" id="home"><img src="./img/four-boxes.png" alt="home" /></div>
-                            <div className="block _2" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
-                            <div className="block _3" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
+                            <div className="block _2" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
+                            <div className="block _34" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
                             <div className="block _4 disable" data-hint="info" id="info"><img src="./img/info.png" alt="info" /></div>
                             <div className="block _5 disable" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
                             <div className="lang" id="language">
@@ -111,7 +111,9 @@ function Main(props) {
                 <div className="background onthis" id="b_home"><img src="./img/big cab.jpg" alt="" /></div>
                 <div className="background" id="b_staff"><img src="./img/background.jpg" alt="" /></div>
                 <div className="hint" id="hint"></div>
-                 
+                <div className="main_comment">
+                    {props.pack.comment}
+                </div>
                 
             
                 
@@ -138,42 +140,7 @@ function Main(props) {
                     <div className="shadow"></div>
                 </div>
 
-                <div className="services" id="2">
-                    <div className="shadow"></div>
-                    
-                    <div className="services_block">
-                        {serviceBlocks[0]}
-                        {serviceBlocks[1]}
-                        {serviceBlocks[2]}                        
-                    </div>
-                    <div className="priceList_table">
-                        <div className="open">Price list</div>
-                        <div className="part first">
-                            <div className="t_title">{props.pack.priceListTitles[0]}</div>
-                            {services["first"]}
-                        </div>
-                        <div className="part second"> 
-                            <div className="t_title">{props.pack.priceListTitles[1]}</div>
-                            {services["second"]}
-                        </div>
-                        <div className="part third">
-                            <div className="t_title">{props.pack.priceListTitles[2]}</div>
-                            {services["third"]}
-                        </div>
-                        <div className="part fourth">
-                            <div className="t_title">{props.pack.priceListTitles[3]}</div>
-                            {services["fourth"]}
-                        </div>
-                        <div className="part fifth">
-                            <div className="t_title">{props.pack.priceListTitles[4]}</div>
-                            {services["fifth"]}
-                        </div>
-                    </div>
-                        
-                    
-                </div>
-
-                <div className="staff" id="3">
+                <div className="staff" id="2">
                         <div className="next_button hidden"><img src="./img/next.png" alt="" /></div>
                         <div className="prev_button hidden"><img src="./img/next.png" alt="" /></div>
                         <div className="back_button"><img src="./img/back.png" className="clickable" alt="" /></div>
@@ -234,15 +201,19 @@ function Main(props) {
                                     <span></span>
                                     <div className="text">
                                             <span>
-                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
-                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
-                                                <br />  
-                                                <br />                  
-                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
-                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
-                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
-                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
-                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            2021 - Ташкентский Государственный Стоматологический Институт (стоматолог общей практики)
+                                            2021 - нынешнее время - Магистр кафедры Челюстно-лицевой хирургии (Ташкентский Государственный Стоматологический Институт)
+                                            2022 - нынешнее время - Advanced Master program - Biomimetic dentistry (Los Angeles)
+                                            <br />
+                                            Обладатель Государственной стипендии имени abu Ali ibn Sino
+                                            Обладатель Государственной стипендии имени Yoosik Yang
+                                            <br />                    
+                                            услуги:
+                                            <br /> - лечение кариеса
+                                            <br /> - восстановление сильно разрушенных зубов (основное направление)
+                                            <br /> - композитные и керамические накладки (основное направление)
+                                            <br /> - проф. гигиена
+                                            <br /> - отбеливание
                                             </span>
                                         </div>
                                 </div>
@@ -310,7 +281,7 @@ function Main(props) {
                                 <img src="./img/director.png" alt="dentist" />
                             </div>
                             <div className="dentist_information  i_6 t_right">
-                                    <div className="dentist_name">Аскаров Мансур Анварович</div>
+                                    <div className="dentist_name">профессор Азимов Мухаммаджон Исмаилович</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
@@ -335,7 +306,7 @@ function Main(props) {
                                 <img src="./img/Xursand.png" alt="dentist" />
                             </div>
                             <div className="dentist_information  i_7 t_right">
-                                    <div className="dentist_name">Аскаров Мансур Анварович</div>
+                                    <div className="dentist_name">Дусмухамедова Хурсанд Кучкаровна</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
@@ -363,19 +334,18 @@ function Main(props) {
                                 
                             </div>
                             <div className="dentist_information  i_5 t_left">
-                                    <div className="dentist_name">Татяна Юрьевна</div>
+                                    <div className="dentist_name">Ким Татяна Юрьевна</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
-                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
-                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
-                                                <br />  
-                                                <br />                  
-                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
-                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
-                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
-                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
-                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            2011 – ТМА
+                                            2015 – резидентура в ANDC Корейский центр по направлению ортопедическая стоматология
+                                            Ведет терапевтический и ортопедический прием взрослых. 
+                                            Лечение зубов: профессиональная гигиена, лечение кариеса, эндодонтия, реставрации.
+                                            Несъемное протезирование: металлокремические, циркониевые коронки (одиночные и мостовидные) на зубах и на имплантатах; 
+                                            Эстетика: композитные и керамические виниры
+                                            Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов. 
+                                            Для записи на прием или получение подробной информации: +998 951 22 88 55
                                             </span>
                                         </div>
                                 </div>
@@ -403,6 +373,43 @@ function Main(props) {
                             <img src="./img/Tatiana.png" className="cloneImg" alt="dentist" />
                         </div>
                         </div>
+
+                <div className="services" id="3">
+                    <div className="shadow"></div>
+                    
+                    <div className="services_block">
+                        {serviceBlocks[0]}
+                        {serviceBlocks[1]}
+                        {serviceBlocks[2]}                        
+                    </div>
+                    <div className="priceList_table">
+                        <div className="open">Price list</div>
+                        <div className="part first">
+                            <div className="t_title">{props.pack.priceListTitles[0]}</div>
+                            {services["first"]}
+                        </div>
+                        <div className="part second"> 
+                            <div className="t_title">{props.pack.priceListTitles[1]}</div>
+                            {services["second"]}
+                        </div>
+                        <div className="part third">
+                            <div className="t_title">{props.pack.priceListTitles[2]}</div>
+                            {services["third"]}
+                        </div>
+                        <div className="part fourth">
+                            <div className="t_title">{props.pack.priceListTitles[3]}</div>
+                            {services["fourth"]}
+                        </div>
+                        <div className="part fifth">
+                            <div className="t_title">{props.pack.priceListTitles[4]}</div>
+                            {services["fifth"]}
+                        </div>
+                    </div>
+                        
+                    
+                </div>
+
+                
 
                 <div className="info" id="4">
 

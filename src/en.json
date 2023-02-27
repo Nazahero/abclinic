@@ -1,9 +1,10 @@
 {
     "subTitle": "Create history with us",
     "location": "Nukus St. 88/55, Tashkent 100072",
+    "comment": "Site under development",
     "services": [
         {
-            "title": "Hygiene and prophylaxis of teeth",
+            "title": "Hygiene & prophylaxis of teeth",
             "serviceList": [
                 "Check-up",
                 "Integrated Dental Hygiene",
@@ -11,7 +12,7 @@
             ]
         },
         {
-            "title": "Dentist",
+            "title": "Treatment & Restoration",
             "serviceList": [
                 "Caries treatment",
                 "Restoration of broken teeth"
