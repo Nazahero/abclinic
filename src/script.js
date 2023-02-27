@@ -847,8 +847,7 @@ function backButtonHidden(button, clones) {
         }, 700);
     })
 }
-    window.onload = () => {
+    
         start();
-    }
 }
 
