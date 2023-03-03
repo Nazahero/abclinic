@@ -3,7 +3,7 @@ body
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
-.main_comment
+.root.browser .main_comment
 {
     position: absolute;
     top: 0.9vw;
@@ -14,7 +14,7 @@ body
     font-family: "Montserrat";
     z-index: 50;
 }
-.hint 
+.root.browser .hint 
 {
     position: fixed;
     top: 0;
@@ -32,14 +32,14 @@ body
     visibility: hidden;
     z-index: 100;
 }
-.hint.on 
+.root.browser .hint.on 
 {
     visibility: visible;
     pointer-events: none;
     transition-delay: 1s;
 }
 
-.loading
+.root.browser .loading
 {
     position: absolute;
     width: 5%;
@@ -47,17 +47,17 @@ body
     visibility: hidden;
     pointer-events: none;
 }
-.loading.on
+.root.browser .loading.on
 {
     opacity: 1;
     visibility: visible;
 }
-.loading img 
+.root.browser .loading img 
 {
     width: 100%;
     visibility: inherit;
 }
-.blocking 
+.root.browser .blocking 
 {
     position: fixed;
     top: 0;
@@ -72,34 +72,34 @@ body
     align-items: center;
     background-color: rgb(56, 56, 56);
 }
-.blocking.on
+.root.browser .blocking.on
 {
     visibility: visible;
     opacity: 1;
 }
-.blocking.off
+.root.browser .blocking.off
 {
     visibility: hidden;
     opacity: 0;
 }
-.lock {
+.root.browser .lock {
     max-width: 50%;
     max-height: 50%;
     margin-bottom: 20px;
 }
-.lock img 
+.root.browser .lock img 
 {
     width: 100%;
     height: 100%;
 }
-.blocking .massage
+.root.browser .blocking .massage
 {
     font-size: 1.04vw;
     font-family: "Montserrat";
     color: rgba(255, 255, 255, 0.857);
     text-align: center;
 }
-.blocked 
+.root.browser .blocked 
 {
     opacity: 1;
     visibility: visible;
@@ -108,12 +108,12 @@ body
     justify-content: center;
     align-items: center;
 }
-.blocked.disable 
+.root.browser .blocked.disable 
 {
     opacity: 0;
     visibility: hidden;
 }
-.sidebar_container
+.root.browser .sidebar_container
 {
     width: 100%;
     height: 100%;
@@ -123,32 +123,32 @@ body
     overflow: hidden;
 }
 
-.telegram.high
+.root.browser .telegram.high
 {
     right: 0.52vw;
 }
 
-.insta.high
+.root.browser .insta.high
 {
     right: 0.52vw;
     bottom: 13.2%;
 }
-.social_media.high{
+.root.browser .social_media.high{
     height: fit-content;
 
     width: 1.3vw;
 }
-.social_media.high img {
+.root.browser .social_media.high img {
     height: unset;
     width: 100%;
 }
-.youtube.high
+.root.browser .youtube.high
 {
     right: 0.416vw;
     width: 1.508vw;
     bottom: 7.2%;
 }
-.social_media
+.root.browser .social_media
 {
     
     bottom: calc(100vh - 98.8%);
@@ -158,65 +158,65 @@ body
     margin: 1.04vw;
     z-index: 20;
 }
-.social_media img 
+.root.browser .social_media img 
 {
     opacity: 0.8;
     transform: scale(1);
     transition: 0.2s;
 }
-.social_media:hover img
+.root.browser .social_media:hover img
 {
     transform: scale(1.1);
     opacity: 1;
 }
-.social_media:active img
+.root.browser .social_media:active img
 {
     transform: scale(1);
     opacity: 0.8;
 }
-.social_media.high.paralax
+.root.browser .social_media.high.paralax
 {
     right: -100px;
 }
-.social_media.high.hover{
+.root.browser .social_media.high.hover{
     right: 0.52vw;
 }
-.youtube.high.hover{
+.root.browser .youtube.high.hover{
     right: 0.416vw;
 }
-.social_media img
+.root.browser .social_media img
 {
     height: 100%;
     pointer-events: none;
 }
-.youtube
+.root.browser .youtube
 {
     padding: 0.052vw 0;
     transition: 0.8s 0.2s;
     right: 12%;
 }
-.telegram
+.root.browser .telegram
 {
     transition: 0.8s 0.4s;
     right: 8%;
 }
-.insta
+.root.browser .insta
 {
     transition: 0.8s;
     right: 16.5%;
 }
-.content
+.root.browser .content
 {
     z-index: inherit;
 }
-.home .name
+.root.browser .home .name
 {
     position: absolute;
     top: 30%;
     left: 13%;
     z-index: 1;
 }
-.home .name .title
+.root.browser .home .name .title
 {
     font-size: 5.2vw;
     color: rgba(255, 255, 255, 0.8);
@@ -228,7 +228,7 @@ body
     transform: translate(0, 70%);
     opacity: 0;
 }
-.home .name span
+.root.browser .home .name span
 {
     margin-top: 0.78vw;
     display: block;
@@ -238,7 +238,7 @@ body
     background-color: white;   
     transition: 1s; 
 }
-.home .name .subtitle
+.root.browser .home .name .subtitle
 {
     font-size: 2.08vw;
     text-align: center;
@@ -252,21 +252,21 @@ body
     transition: 1s 1.8s;
 }
 
-.home .name.ready .title
+.root.browser .home .name.ready .title
 {
     transform: translate(0,0);
     opacity: 1;
 }
-.home .name.ready span
+.root.browser .home .name.ready span
 {
     transform: scale(1);
 }
-.home .name.ready .subtitle {
+.root.browser .home .name.ready .subtitle {
     transform: translate(0,0);
     opacity: 1;
 }
 
-.arrow
+.root.browser .arrow
 {
     display: block;
     width: 3.12vw;
@@ -284,11 +284,11 @@ body
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.arrow.hidden
+.root.browser .arrow.hidden
 {
     opacity: 0;
 }
-.arrow::after, .arrow::before
+.root.browser .arrow::after, .root.browser .arrow::before
 {
     content: '';
     width: 1.82vw;
@@ -297,13 +297,13 @@ body
     position: absolute;
     display: block;
 }
-.arrow::after
+.root.browser .arrow::after
 {
     left: -1px;
     top: calc(50% - 0.052vw);
     transform: rotate(35deg) scale(1);
 }
-.arrow::before
+.root.browser .arrow::before
 {
     right: -1px;
     top: calc(50% - 0.052vw);
@@ -311,19 +311,19 @@ body
 
     
 }
-.arrow:hover::after , .arrow:hover::before {
+.root.browser .arrow:hover::after , .arrow:hover::before {
     background-color: rgba(255, 255, 255, 1);
 }
-.arrow:hover::after 
+.root.browser .arrow:hover::after 
 {
     transform: scale(1.06) rotate(35deg) ;
 
 }
-.arrow:hover::before
+.root.browser .arrow:hover::before
 {
     transform: scale(1.06) rotate(-35deg) ;
 }
-.shadow
+.root.browser .shadow
 {
     position: absolute;
     top: 0;
@@ -332,7 +332,7 @@ body
     height: 100%;
     background-color: rgba(0, 0, 0, 0.42);
 }
-.home
+.root.browser .home
 {
     width: 100%;
     height: 100vh;
@@ -341,7 +341,7 @@ body
     z-index: 8;
 }
 
-.win_logo
+.root.browser .win_logo
 {
     width: 9.2vw;
     height: 9.2vw;
@@ -351,13 +351,13 @@ body
     right: 0;
     z-index: 1;
 }
-.win_logo img
+.root.browser .win_logo img
 {
     width: 100%;
     height: 100%;
 }
 
-.location
+.root.browser .location
 {
     bottom: 3.3vh;
     left: 8%;
@@ -373,42 +373,42 @@ body
     transition: 0.3s;
     text-decoration: none;
 }
-.location span 
+.root.browser .location span 
 {
     font-size: 1.56vw;
     padding-bottom: 0.208vw;
     margin-right: 0.156vw;
     text-decoration: none;
 }
-.location:hover
+.root.browser .location:hover
 {
     opacity: 1;
     transform: scale(1.04);
 }
-.location:active
+.root.browser .location:active
 {
     opacity: 0.7;
     transform: scale(1);
 }
-.location.hidden
+.root.browser .location.hidden
 {
     opacity: 0;
 }
 
 /*----- UNIVERSAL ----- */
 
-.clickable 
+.root.browser .clickable 
 {
     opacity: 0.7;
     transform: scale(1);
     transition: 0.2s;
 }
-.clickable:hover
+.root.browser .clickable:hover
 {
     opacity: 1;
     transform: scale(1.1);
 }
-.clickable:active
+.root.browser .clickable:active
 {
     transform: scale(1);
     opacity: 0.7;
@@ -416,7 +416,7 @@ body
 }
 
 /* ---------------- */
-.background img 
+.root.browser .background img 
 {
     min-width: 100%;
     height: 100%;
@@ -424,7 +424,7 @@ body
     position: absolute;
 }
 
-.background#b_home
+.root.browser .background#b_home
 {
     min-width: 115vw;
     height: 130vh;
@@ -437,7 +437,7 @@ body
     top: -25vh;
     left: -5vw;
 }
-.background#b_services
+.root.browser .background#b_services
 {
     min-width: 115vw;
     height: 120vh;
@@ -450,7 +450,7 @@ body
     opacity: 1;
     left: -10vw;
 }
-.background 
+.root.browser .background 
 {
     position: fixed;
     min-width: 110vw;
@@ -458,13 +458,13 @@ body
     transition: 1s;
     opacity: 0;
 }
-.background.onthis
+.root.browser .background.onthis
 {
     opacity: 1 !important;
 }
 
 /* --- services --- */
-.services .background
+.root.browser .services .background
 {
     /* animation-name: action;
     animation-duration: 20s;
@@ -475,7 +475,7 @@ body
     top: -10vh;
     left: -10vw;
 }
-.services
+.root.browser .services
 {
     width: 100%;
     position: relative;
@@ -487,13 +487,13 @@ body
     justify-content: center;
     overflow: hidden;
 }
-.services_block{
+.root.browser .services_block{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
-.service
+.root.browser .service
 {
     z-index: 1;
     height: 14.56vw;
@@ -505,7 +505,7 @@ body
     opacity: 0;
     transition: 0.5s;
 }
-.title
+.root.browser .title
 {
     color: rgba(14, 119, 239, 0.501);
     font-size: 1.352vw;
@@ -517,7 +517,7 @@ body
     margin: 1.04vw 0px;
     transition: 0.8s 2s;
 }
-.line_x
+.root.browser .line_x
 {
     display: block;
     min-height: 0.156vw;
@@ -527,7 +527,7 @@ body
     transition: 1s 1s;
     z-index: 2;
 }
-.service .list
+.root.browser .service .list
 {
     color: rgba(255, 255, 255, 0.785);
     padding: 0 1.56vw;
@@ -535,7 +535,7 @@ body
     transform: translate(0, -100%);
     transition: 1s 2.8s;
 }
-.service .list li
+.root.browser .service .list li
 {
     list-style-type: square;
     font-family: "Montserrat";
@@ -544,26 +544,26 @@ body
     margin: 0.78vw 0;
 
 }
-.services_block.on .service
+.root.browser .services_block.on .service
 {
     opacity: 1;
 }
-.services_block.on .service .title
+.root.browser .services_block.on .service .title
 {
     transform: translate(0, 0);
     opacity: 1;
 }
-.services_block.on .service .line_x
+.root.browser .services_block.on .service .line_x
 {
     width: 100%;
 }
-.services_block.on .service .list
+.root.browser .services_block.on .service .list
 {
     opacity: 1;
     transform: translate(0,0);
 }
 
-.priceList_table
+.root.browser .priceList_table
 {
     width: 80%;
     height: 40%;
@@ -585,17 +585,17 @@ body
     overflow-x: hidden;
     z-index: 2;
 }
-.priceList_table.view
+.root.browser .priceList_table.view
 {
     opacity: 1;
     visibility: visible;
 }
-.priceList_table.openlist
+.root.browser .priceList_table.openlist
 {
     height: 90%;
 }
 
-.part
+.root.browser .part
 {
     position: relative;
     width: 100%;
@@ -603,7 +603,7 @@ body
     flex-direction: column;
     align-items: center;
 }
-.t_title
+.root.browser .t_title
 {
     color: rgba(14, 119, 239, 0.578);
     width: 100%;
@@ -612,7 +612,7 @@ body
     text-align: center;
     margin: 1.04vw 0px;
 }
-.line{
+.root.browser .line{
     width: 100%;
     padding: 0px 1.04vw;
     font-size: 1.144vw;
@@ -623,36 +623,36 @@ body
     font-family: 'Montserrat';
     letter-spacing: 1px;
 }
-.l_service
+.root.browser .l_service
 {
     white-space: nowrap;
 }
-.price
+.root.browser .price
 {
     white-space: nowrap;
 }
-.part span
+.root.browser .part span
 {
     overflow: hidden;
     color: rgba(14, 119, 239, 0.578);
 }
-.priceList_table::-webkit-scrollbar 
+.root.browser .priceList_table::-webkit-scrollbar 
 {
     background-color: rgba(0, 0, 0, 0.386);
     width: 0.416vw;
     
 }
 
-.priceList_table::-webkit-scrollbar-button
+.root.browser .priceList_table::-webkit-scrollbar-button
 {
     display: none;
 }
-.priceList_table::-webkit-scrollbar-thumb
+.root.browser .priceList_table::-webkit-scrollbar-thumb
 {
     background-color: rgba(14, 119, 239, 0.586);
 
 }
-.open
+.root.browser .open
 {
     text-align: center;
     display: inline;
@@ -672,21 +672,21 @@ body
     animation-iteration-count: infinite;
     z-index: 3;
 }
-.open:hover
+.root.browser .open:hover
 {
     opacity: 0.8;
     animation: none;
 }
 /* --- staff --- */
 
-.staff 
+.root.browser .staff 
 {
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
-.fog
+.root.browser .fog
 {
     width: 70%;
     transition-timing-function: ease-in-out;
@@ -694,51 +694,51 @@ body
     z-index: 15;
     pointer-events: none;
 }
-.fog img 
+.root.browser .fog img 
 {
     width: 100%;
 }
-.fog._1
+.root.browser .fog._1
 {
     bottom: -23vw;
     transition: 1s;
     left: -23%;
 }
-.fog._2
+.root.browser .fog._2
 {
     transition: 1s 0.3s;
     bottom: -25vw;
     left: 15%;
 }
-.fog._3
+.root.browser .fog._3
 {
     bottom: -25vw;
     transition: 1s;
     right: -23%;
 }
-.fog._1.off
+.root.browser .fog._1.off
 {
     bottom: -100vh;
     left: -40%
 }
-.fog._2.off
+.root.browser .fog._2.off
 {
     bottom: -100vh;
 }
-.fog._3.off 
+.root.browser .fog._3.off 
 {
     bottom: -100vh;
     right: -40%;
 }
 /*----- defolt dentists ------*/
-.dentists
+.root.browser .dentists
 {
     /* visibility: hidden; */
     z-index: 8;
     width: 100%;
     height: 100%;
 }
-.dentist
+.root.browser .dentist
 {
     position: absolute;
     transition: 3s 0.5s;
@@ -749,107 +749,107 @@ body
     bottom: -35%;
     opacity: 1;
 }
-.dentist img {
+.root.browser .dentist img {
     height: 100%;
     transition: 3s 0.5s;
 }
 /* .dentist img.hovered {
     transform: scale(1.01) translate(-0.3vw, -0.35vw);
 } */
-.dentist._4
+.root.browser .dentist._4
 {
     left: 9%;
     transition-timing-function: ease-out;
     
 }
-.dentist._4 img 
+.root.browser .dentist._4 img 
 {
     transform: translate(0, -7px);
 }
-.prioriti_main 
+.root.browser .prioriti_main 
 {
     z-index: 5;
 }
-.dentist._7
+.root.browser .dentist._7
 {
     left: 22%;
     z-index: 7;
     opacity: 1;
 }
-.dentist._6 img 
+.root.browser .dentist._6 img 
 {
     height: 65%;
 }
-.dentist._6
+.root.browser .dentist._6
 {
     left: 40%;
 }
-.prioriti_1
+.root.browser .prioriti_1
 {
     z-index: 4;
 }
-.prioriti_1 img
+.root.browser .prioriti_1 img
 {
     height: 85%;
     position: relative;
     bottom: -4vh;
 }
 
-.prioriti_1
+.root.browser .prioriti_1
 {
     /* width: 25%; */
     opacity: 1;
     z-index: 4;
     transition: 1.5s 0s;
 }
-.prioriti_2 
+.root.browser .prioriti_2 
 {
     z-index: 3;
 }
-.prioriti_2 img 
+.root.browser .prioriti_2 img 
 {
     height: 75%;
     position: relative;
     bottom: -8vh;
 }
 
-.prioriti_3
+.root.browser .prioriti_3
 {
     z-index: 2;
 }
-.prioriti_3 img 
+.root.browser .prioriti_3 img 
 {
     height: 70%;
     position: relative;
     bottom: -11vh;
 }
 
-.dentist._3 
+.root.browser .dentist._3 
 {
     left: -5%;
 }
 
-.dentist._2
+.root.browser .dentist._2
 {
     right: 22%;
 }
-.dentist._2 img 
+.root.browser .dentist._2 img 
 {
     transition: 1s 0s ease-out;
 }
 
-.dentist._1
+.root.browser .dentist._1
 {
     right: 10%;
 }
-.dentist._5
+.root.browser .dentist._5
 {
     right: -2%;
 }
 
 
 /*---- dentists' CLONE ----*/
-.clone 
+.root.browser .clone 
 {
 
     opacity: 0;
@@ -860,17 +860,17 @@ body
     justify-content: center;
     transition: 1s 0s ease-out;
 }
-.clone.on
+.root.browser .clone.on
 {
     visibility: visible;
     
 }
-.clone.hidden, .clone.hidden .cloneImg
+.root.browser .clone.hidden, .clone.hidden .cloneImg
 {
     opacity: 0 !important;
     transition: 0.5s 1s;
 }
-.cloneImg 
+.root.browser .cloneImg 
 {
     width: 100%;
     height: 100%;
@@ -878,19 +878,19 @@ body
     transition: 1s 0s ease-out;
     pointer-events: fill;
 }
-.dentist img {
+.root.browser .dentist img {
     opacity: 1;
 }
-.dentist img.unhovered
+.root.browser .dentist img.unhovered
 {
     transition: 0.5s;
 }
-.dentist img.hovered
+.root.browser .dentist img.hovered
 {
     opacity: 0;
     transition: 0.6s 0.5s;
 }
-.clone.hovered .cloneImg
+.root.browser .clone.hovered .cloneImg
 {
     pointer-events: fill;
     transform: scale(1.08) translate(0, 1vw);
@@ -903,47 +903,47 @@ body
     transform: scale(1.04) translate(0.3vw, 0.3vw);
 } */
 
-.clone.hovered 
+.root.browser .clone.hovered 
 {
     opacity: 1;
     transition: 1s 0s ease-out; 
     cursor: pointer;
     z-index: 20;
 }
-.cPrioriti-main
+.root.browser .cPrioriti-main
 {
     z-index: 18;
 }
-.cPrioriti-1
+.root.browser .cPrioriti-1
 {
     z-index: 17;
-}.cPrioriti-2
+}.root.browser .cPrioriti-2
 {
     z-index: 16;
-}.cPrioriti-3
+}.root.browser .cPrioriti-3
 {
     z-index: 15;
 }
 /* ----- dentist OFF------*/
 
 
-.prioriti_main.gr 
+.root.browser .prioriti_main.gr 
 {
     transition: 1s 0.5s ease;
 }
-.prioriti_1.gr 
+.root.browser .prioriti_1.gr 
 {
     transition: 1s 1s ease;
 }
-.prioriti_2.gr 
+.root.browser .prioriti_2.gr 
 {
     transition: 1s 1.5s ease;
 }
-.prioriti_3.gr
+.root.browser .prioriti_3.gr
 {
     transition: 1s 2s ease-out;
 }
-.dentist.off {
+.root.browser .dentist.off {
     opacity: 0;
 }
 /* .dentist._2.off , .dentist._7.off
@@ -962,11 +962,11 @@ body
 
 /*-- opacity of LETTERS ---*/
 
-.opacityOI{
+.root.browser .opacityOI{
     opacity: 1 !important;
     transition-delay: 0s !important;
 }
-.opacityZ
+.root.browser .opacityZ
 {
     opacity: 0 !important;
     transition-delay: 0s !important;
@@ -974,17 +974,17 @@ body
 
 /* defolt ALTERNATIVE at all */
 
-.dentists.alternative .left
+.root.browser .dentists.alternative .left
 {
     left: -50%;
     bottom: -5%;
 }
-.dentists.alternative .right 
+.root.browser .dentists.alternative .right 
 {
     right: -50%;
     bottom: -5%;
 }
-.dentists.alternative .bottom
+.root.browser .dentists.alternative .bottom
 {
     left: -50%;
     bottom: -5%;
@@ -1049,107 +1049,107 @@ body
 
 /*---- animate dentists GO TO BOTTOM ----*/
 
-.dentists.alternative .dentist.animate
+.root.browser .dentists.alternative .dentist.animate
 {
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     transition-duration: 0s;
 }
-.dentists.alternative .prioriti_3.animate
+.root.browser .dentists.alternative .prioriti_3.animate
 {
     animation-delay: 0.4s;
     transition-delay: 0.4s;
 }
-.dentists.alternative .prioriti_2.animate
+.root.browser .dentists.alternative .prioriti_2.animate
 {
     animation-delay: 0.8s;
     transition-delay: 0.8s;
 }
-.dentists.alternative .prioriti_1.animate
+.root.browser .dentists.alternative .prioriti_1.animate
 {
     animation-delay: 1.2s;
     transition-delay: 1.2s;
 }
 
-.dentists.alternative ._1.animate 
+.root.browser .dentists.alternative ._1.animate 
 {
     animation-name: closeDAbdukhamid;
 }
- .dentists.alternative ._2.animate
+.root.browser  .dentists.alternative ._2.animate
 {
     animation-name: closeDIbrohim;
 }
-.dentists.alternative ._3.animate
+.root.browser .dentists.alternative ._3.animate
 {
     animation-name: closeDViktoria;
 }
-.dentists.alternative ._4.animate
+.root.browser .dentists.alternative ._4.animate
 {
     animation-name: closeDMansur;
 }
-.dentists.alternative ._5.animate
+.root.browser .dentists.alternative ._5.animate
 {
     animation-name: closeDTatiana;
 }
-.dentists.alternative ._6.animate
+.root.browser .dentists.alternative ._6.animate
 {
     animation-name: closeDDirector;
 }
-.dentists.alternative ._7.animate
+.root.browser .dentists.alternative ._7.animate
 {
     animation-name: closeDXursand;
 }
 
 /*---- animate dentists GO TO TOP ----*/
 
-.dentists .dentist.close_animate 
+.root.browser .dentists .dentist.close_animate 
 {
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     transition-duration: 0s;
 }
 
-.dentists .prioriti_1.close_animate
+.root.browser .dentists .prioriti_1.close_animate
 {
     animation-delay: 0.4s;
     transition-delay: 0.4s;
 }
-.dentists .prioriti_2.close_animate
+.root.browser .dentists .prioriti_2.close_animate
 {
     animation-delay: 0.8s;
     transition-delay: 0.8s;
 }
-.dentists .prioriti_3.close_animate
+.root.browser .dentists .prioriti_3.close_animate
 {
     animation-delay: 1.2s;
     transition-delay: 1.2s;
 }
 
-.dentists ._1.close_animate 
+.root.browser .dentists ._1.close_animate 
 {
     animation-name: openDAbdukhamid;
 }
-.dentists ._2.close_animate
+.root.browser .dentists ._2.close_animate
 {
     animation-name: openDIbrohim;
 }
-.dentists ._3.close_animate
+.root.browser .dentists ._3.close_animate
 {
     animation-name: openDViktoria;
 }
-.dentists ._4.close_animate 
+.root.browser .dentists ._4.close_animate 
 {
     animation-name: openDMansur;
 }
-.dentists ._5.close_animate
+.root.browser .dentists ._5.close_animate
 {
     animation-name: openDTatiana;
 } 
-.dentists ._6.close_animate
+.root.browser .dentists ._6.close_animate
 {
     animation-name: openDDirector;
 }
-.dentists ._7.close_animate
+.root.browser .dentists ._7.close_animate
 {
     animation-name: openDXursand;
 }
@@ -1157,7 +1157,7 @@ body
 
 /*---- alternative when it is INFORMATIONED ----*/
 
-.dentists.alternative .bottom.information
+.root.browser .dentists.alternative .bottom.information
 {
     bottom: -5% !important;
     left: 0% !important;
@@ -1166,7 +1166,7 @@ body
     opacity: 1;
 }
 
-.dentists.alternative .right.information 
+.root.browser .dentists.alternative .right.information 
 {
     bottom: -5% !important;
     right: 10% !important; 
@@ -1174,7 +1174,7 @@ body
     transition-delay: 0.3s !important;
     opacity: 1;
 }
-.dentists.alternative .left.information 
+.root.browser .dentists.alternative .left.information 
 {
     bottom: -5% !important;
     left: 12% !important;
@@ -1184,7 +1184,7 @@ body
 }
 
 
-.dentists.alternative .dentist.information img 
+.root.browser .dentists.alternative .dentist.information img 
 {
     height: 100%;
     transition: 2.5s 0s;
@@ -1193,18 +1193,18 @@ body
 
 /*--- switched transition ---*/
 
-.dentists.alternative .dentist.switched img 
+.root.browser .dentists.alternative .dentist.switched img 
 {
     transition: 2s 0.5s ease-out;
 }
-.dentists.alternative .dentist.switched 
+.root.browser .dentists.alternative .dentist.switched 
 {
     transition: 2s 0.5s ease-out !important;
 }
 
 /*---- BACK BUTTON ----*/
 
-.back_button
+.root.browser .back_button
 {
     width: 2.08vw;
     height: 2.08vw;
@@ -1217,19 +1217,19 @@ body
     cursor: pointer;
     z-index: 25;
 }
-.back_button.visible
+.root.browser .back_button.visible
 {
     visibility: visible;
     transition: 1s 2s;
     opacity: 0.8;
 }
-.back_button img
+.root.browser .back_button img
 {
     width: 100%;
     height: 100%;
 }
 
-.dentist_information
+.root.browser .dentist_information
 {
     width: 33%;
     min-height: 80%;
@@ -1240,7 +1240,7 @@ body
     overflow: hidden;
     visibility: hidden;
 }
-.dentist_information > span
+.root.browser .dentist_information > span
 {
     width: 0%;
     min-height: 0.156vw;
@@ -1248,7 +1248,7 @@ body
     transition: 0.5s 0s;
     background-color: rgba(255, 255, 255, 0.663);
 }
-.dentist_information .dentist_name
+.root.browser .dentist_information .dentist_name
 {
     width: 100%;
     text-align: center;
@@ -1260,14 +1260,14 @@ body
     letter-spacing: 0.156vw;
     font-family: "MonserratB";
 }
-.dentist_information .text 
+.root.browser .dentist_information .text 
 {
     width: 100%;
     padding: 0.52vw 0.78vw;
     overflow: hidden;
     
 }
-.dentist_information .text > span
+.root.browser .dentist_information .text > span
 {
     width: 100%;
     line-height: 1.404vw;
@@ -1281,36 +1281,36 @@ body
     transform: translate(0, -110%);
     transition: 1s 1s;
 }
-.t_left
+.root.browser .t_left
 {
     left: 15%;
     top: 10%;
 }
-.t_right
+.root.browser .t_right
 {
     right: 12%;
     top: 10%;
 }
-.dentist_information.period 
+.root.browser .dentist_information.period 
 {
     visibility: visible;
 }
-.dentist_information.period > span 
+.root.browser .dentist_information.period > span 
 {
     width: 100%;
     transition: 0.5s 1.5s;
 }
-.dentist_information.period .text > span {
+.root.browser .dentist_information.period .text > span {
     transform: translate(0,0);
     transition: 1.5s 2.7s;
 } 
-.dentist_information.period .dentist_name {
+.root.browser .dentist_information.period .dentist_name {
     transform: translate(0,0);
     opacity: 1;
     transition: 0.7s 2s;
 }
 
-.next_button
+.root.browser .next_button
 {
     width: 5.2vw;
     position: absolute;
@@ -1326,23 +1326,23 @@ body
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.next_button img 
+.root.browser .next_button img 
 {
     width: 100%;
     transform: scale(1);
     opacity: 0.6;
     transition: 0.3s;
 }
-.next_button.hidden
+.root.browser .next_button.hidden
 {
     opacity: 0;
     visibility: hidden;
 } 
-.next_button:hover img {
+.root.browser .next_button:hover img {
     opacity: 1;
 }
 
-.prev_button
+.root.browser .prev_button
 {
     width: 5.2vw;
     position: absolute;
@@ -1358,28 +1358,28 @@ body
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.prev_button img 
+.root.browser .prev_button img 
 {
     width: 100%;
     transform: rotate(180deg) scale(1);
     opacity: 0.6;
     transition: 0.3s;
 }
-.prev_button.hidden
+.root.browser .prev_button.hidden
 {
     opacity: 0;
     visibility: hidden;
 }
-.prev_button:hover img {
+.root.browser .prev_button:hover img {
     opacity: 1;
 }
 
-.prev_button:active img 
+.root.browser .prev_button:active img 
 {
     opacity: 0.8;
     transform: scale(0.9) rotate(180deg);
 }
-.next_button:active img
+.root.browser .next_button:active img
 {
     opacity: 0.8;
     transform: scale(0.9);
@@ -1470,7 +1470,7 @@ body
     right: -8%;
 } */
 
-.team
+.root.browser .team
 {
     width: 100%;
     height: 100%;
@@ -1480,7 +1480,7 @@ body
     align-items: flex-start;
     position: absolute;
 }
-.letter
+.root.browser .letter
 {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.262);
@@ -1491,7 +1491,7 @@ body
     transition: 0.7s;
 }
 
-.letter.visible
+.root.browser .letter.visible
 {
     opacity: 1;
 }
@@ -1501,7 +1501,7 @@ body
 /* --- sidebar --- */
 
 
-.sidebar
+.root.browser .sidebar
 {
     width: 3.1vw;
     height: 100%;
@@ -1509,7 +1509,7 @@ body
     position: fixed;
     background-color: rgba(0, 0, 0, 0.516);
     left: 0;
-    top: 0;
+    bottom: 0;
     transition: 0.8s;
     z-index: 20;
     box-shadow: 0 0.156vw 0.208vw rgba(255, 255, 255, 0.573);
@@ -1517,7 +1517,7 @@ body
 
 
 
-.side_nav
+.root.browser .side_nav
 {
     width: 100%;
     height: 100%;
@@ -1527,7 +1527,7 @@ body
     align-items: center;
     position: relative;
 }
-.side_nav > span 
+.root.browser .side_nav > span 
 {
     position: absolute;
     left: 0;
@@ -1537,7 +1537,7 @@ body
     background-color: rgb(80, 181, 249);
 }
 
-.side_nav .block
+.root.browser .side_nav .block
 {
     width: 100%;
     min-height: 6%;
@@ -1550,7 +1550,7 @@ body
     cursor: pointer;
     transition: 0.5s;
 }
-.side_nav .block.active
+.root.browser .side_nav .block.active
 {
     background-color: rgba(0, 0, 0, 0.231);
 }
@@ -1566,7 +1566,7 @@ body
     box-shadow: 1px 0px 5px 0px rgb(0, 0, 0);
     background-color: rgb(80, 181, 249);
 } */
-.side_nav .block img
+.root.browser .side_nav .block img
 {
     width: 100%;
     transition: 0.2s;
@@ -1575,44 +1575,44 @@ body
     pointer-events: none;
 }
 
-.side_nav .block:hover img
+.root.browser .side_nav .block:hover img
 {
     opacity: 0.8;
     transform: scale(1.1);
 }
-.side_nav .block:active img
+.root.browser .side_nav .block:active img
 {
     opacity: 0.6;
     transform: scale(1);
 }
 
-.side_nav .block.active img {
+.root.browser .side_nav .block.active img {
     opacity: 1;
     transform: scale(1.2) ;
 }
 
-.side_nav .block._1.active img {
+.root.browser .side_nav .block._1.active img {
     opacity: 1;
     transform: scale(1.15) ;
 }
 
-.side_nav .block._1
+.root.browser .side_nav .block._1
 {
     padding: 0.78vw 0.936vw;
 }
 
 
-.sidebar.paralax
+.root.browser .sidebar.paralax
 {
     left: -3.1vw;
 }
-.sidebar.hover
+.root.browser .sidebar.hover
 {
     left: 0% !important;
 }
 
 
-.lang
+.root.browser .lang
 {
     width: 100%;
     height: 8%;
@@ -1623,7 +1623,7 @@ body
     align-items: center;
     left: 0;
 }
-.lang > span 
+.root.browser .lang > span 
 {
     color: white;
     opacity: 0.6;
@@ -1632,16 +1632,16 @@ body
     font-size: 1.456vw;
     transform: scale(1);
 }
-.lang > span:hover
+.root.browser .lang > span:hover
 {
     opacity: 1;
 }
-.lang.active > span
+.root.browser .lang.active > span
 {
     opacity: 1;
     transform: scale(1.08);
 }
-.lang_list
+.root.browser .lang_list
 {
     position: absolute;
     left: 102%;
@@ -1652,7 +1652,7 @@ body
     flex-direction: column;
     pointer-events: none;
 }
-.lang_line
+.root.browser .lang_line
 {
     max-width: 100%;
     height: 2px;
@@ -1662,7 +1662,7 @@ body
     display: block;
 }
 
-.lang_block
+.root.browser .lang_block
 {
     list-style: none;
     color: rgba(255, 255, 255, 0.866);
@@ -1677,13 +1677,62 @@ body
     cursor: pointer;
     pointer-events: fill;
 }
-.lang_list.hidden .lang_block , .lang_list.hidden .lang_line
+.root.browser .lang_list.hidden .lang_block , .lang_list.hidden .lang_line
 {
     transform: translate(-100%, 0);
 }
-.lang_block.active 
+.root.browser .lang_block.active 
 {
     background-color: rgba(0, 0, 0, 0.832);
+}
+
+/**/
+
+@media (max-width: 1000px) {
+    /* body 
+    {
+        padding-bottom: 5vh;
+    }
+    .sidebar
+    {
+        width: 100vw;
+        height: 5vh;
+        display: flex;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.516);
+        left: 0;
+        bottom: 0;
+        transition: 0.8s;
+        z-index: 20;
+        box-shadow: 0 0.156vw 0.208vw rgba(255, 255, 255, 0.573);
+    }
+    .side_nav
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .side_nav .block
+    {
+        width: 8%;
+        height: 100%;
+        margin: 0.52vw;
+        padding: 2.5vw;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .side_nav .block._1
+    {
+        padding: 2.5vw 2.7vw;
+    } */
 }
 
 /*------------- OPEN -------------*/

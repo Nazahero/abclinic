@@ -1,28 +1,38 @@
+import { BrowserView, MobileView } from "react-device-detect";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useLayoutEffect , useState } from 'react'
-import Main from "./views/Main";
-import {MainJs} from "./script";
+import BrowserMain from "./browser/views/Main";
+import MobileMain from "./mobile/views/Main";
+
 
 function App(props) {
-    const [count, setCount] = useState(0);
-    useLayoutEffect(() => { 
-      console.log('effect')
-      if (count < 1) {
-        MainJs();
-        setCount(2);
-      }
-    }, []);
-  return (
-    <BrowserRouter>
-      <div className="wrapper">
-          <Routes>
-            <Route path="/" element={<Main pack={props.ru} />} />
-            <Route path="/ru" element={<Main pack={props.ru} />} />
-            <Route path="/en" element={<Main pack={props.en} />} />
-          </Routes>
-      </div>
-    </BrowserRouter>
-  );
+  console.log("pid");
+
+    return (
+      <BrowserRouter>
+
+        <MobileView>
+          <div className="wrapper">
+              <Routes>
+                <Route path="/" element={<MobileMain pack={props.ru} />} />
+                <Route path="/ru" element={<MobileMain pack={props.ru} />} />
+                <Route path="/en" element={<MobileMain pack={props.en} />} />
+              </Routes>
+          </div>
+        </MobileView>
+
+        <BrowserView>
+          <div className="wrapper">
+              <Routes>
+                <Route path="/" element={<BrowserMain pack={props.ru} />} />
+                <Route path="/ru" element={<BrowserMain pack={props.ru} />} />
+                <Route path="/en" element={<BrowserMain pack={props.en} />} />
+              </Routes>
+          </div>
+        </BrowserView>
+
+      </BrowserRouter>
+    );
+  
 } 
 
 export default App;

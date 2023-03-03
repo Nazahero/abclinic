@@ -1,4 +1,5 @@
-export function MainJs(){
+export function BrowserJs(){
+    console.log("browser");
     function start() {
         const homePage = document.querySelector(".home");
         const homeButton = document.querySelector("#home");
@@ -16,6 +17,7 @@ export function MainJs(){
         const dentistsBox = document.querySelector(".dentists");
         const fog = document.querySelectorAll(".fog");
         var letters = document.querySelectorAll(".letter");
+        console.log("mobile");
         const lettersObj = {};
         const delay = [];
         const preLetter = {};
@@ -77,7 +79,7 @@ export function MainJs(){
                     cl.classList.remove("on")
                     cl.classList.add('hidden');
                 } else {
-                    trimClone(cl)
+                    trimClone(denImg, cl)
                 }
             })
             den.addEventListener("animationstart", function() {
@@ -85,7 +87,7 @@ export function MainJs(){
                     cl.classList.remove("on")
                     cl.classList.add('hidden');
                 } else {
-                    trimClone(cl)
+                    trimClone(denImg, cl)
                 }
             })
             /*-------------------- ENDING --------------------*/
@@ -114,7 +116,7 @@ export function MainJs(){
                 
             })
             den.addEventListener("animationiteration", function () {
-                            
+                toolsParalax(sidebar, fog , social_icons);
             })
         }
         
@@ -146,9 +148,7 @@ export function MainJs(){
         }
 
         // --------------------- FIRST FUNCTIONS ------------------------ //
-        setTimeout(() => {
             welcomePage(homePage, homeButton, navButtons, stick, title, location);
-        }, 500);
 
         trimClones(clones);
         selectLanguage(langs ,lettersObj, delay, preLetter, lang_list);
@@ -258,10 +258,10 @@ export function MainJs(){
         noDelay(title.querySelector(".title"))
         noDelay(title.querySelector(".subtitle"))
         trimBackground(backgrounds);
-        // document.querySelector(".blocking").classList.add("off")
-        // document.querySelector(".blocking").classList.remove("on")
-        checkSize()
-        window.addEventListener("resize", () => {checkSize()});
+        document.querySelector(".blocking").classList.add("off")
+        document.querySelector(".blocking").classList.remove("on")
+        // checkSize()
+        // window.addEventListener("resize", () => {checkSize()});
         
         // -------------------------------------------------------- //
 
@@ -333,7 +333,6 @@ function dentistHover(dentists, clones) {
         })
     }
 }
-
 function noDelay(elem) {
     elem.addEventListener("transitionend", function() {
         this.style.cssText = `transition-delay: 0s;`;
@@ -351,7 +350,6 @@ function noDelayArr(array, delay) {
         }
     }        
 }
-
 function openLanguage(language, lang_list) {
     language.addEventListener("click" , function () {
         if (lang_list.classList.contains("hidden")) {
@@ -464,7 +462,6 @@ function nextDentist(button, prev, backButton) {
         removeDisableFromElement(backButton)
     }, 5000);
 }
-
 function prevDentist(button, next, backButton) {
     var currentDentist = document.querySelector(".information");
     var currentInformation = currentDentist.nextElementSibling;
@@ -500,7 +497,6 @@ function prevDentist(button, next, backButton) {
         removeDisableFromElement(backButton)
     }, 5000);
 }
-
 function scrollControl(backgrounds, background , page) {
     setBackgroudImage(background, backgrounds, page);
     scrollIntoPage(page);
@@ -752,7 +748,7 @@ function setDelay(letters, preLetter) {
         const letter = letters[array[i-1]];
         letter.style.cssText = `transition-delay: ${0.4 * i }s`;        
     }
-    preLetter["letter"] = letters[array[letters.length - 3]];
+    preLetter["letter"] = letters[array[letters.length - 4]];
 }
 function infoAnimation(dentist, dentistBox, dentists ,letters, information, backButton, clones) {
     setOpacityZero(letters)
@@ -847,7 +843,19 @@ function backButtonHidden(button, clones) {
         }, 700);
     })
 }
-    
-        start();
+// const homePage = document.querySelector(".home");
+// const homeButton = document.querySelector("#home");
+// const title = document.querySelector(".name");
+// const stick = document.querySelector(".side_nav > span");
+// const location = document.querySelector(".location");
+// const navButtons = document.querySelectorAll(".side_nav .block");
+
+
+//     document.querySelector(".blocking").classList.add("off");
+//     document.querySelector(".blocking").classList.remove("on");
+//     welcomePage(homePage, homeButton, navButtons, stick, title, location);
+
+    start();
+
 }
 

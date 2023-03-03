@@ -1,0 +1,1529 @@
+body
+{
+    overflow: hidden;
+    background-color: rgb(50, 50, 50);
+}
+.root.mobile .container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.root.mobile .page {
+    position: absolute;
+    transition: 1s;
+    top: 0;
+}
+.root.mobile .page.this_page {
+    left: 0;
+    opacity: 1;
+}
+.root.mobile .page.page.page_left
+{
+    left: -100vw;
+}
+.root.mobile .page.page_right
+{
+    left: 100vw;
+}
+.root.mobile .main_comment
+{
+    position: absolute;
+    top: 2vh;
+    left: 32vw;
+    color: rgba(255, 255, 255, 0.719);
+    display: inline-block;
+    font-size: 1.8vmax;
+    font-family: "Montserrat";
+    z-index: 50;
+    visibility: hidden;
+}
+.root.mobile .loading
+{
+    position: absolute;
+    width: 5%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.root.mobile .loading.on
+{
+    opacity: 1;
+    visibility: visible;
+}
+.root.mobile .loading img 
+{
+    width: 100%;
+    visibility: inherit;
+}
+.root.mobile .blocking 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 50px;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56, 56, 56);
+}
+.root.mobile .blocking.on
+{
+    visibility: visible;
+    opacity: 1;
+}
+.root.mobile .blocking.off
+{
+    visibility: hidden;
+    opacity: 0;
+}
+.root.mobile .lock {
+    max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 20px;
+}
+.root.mobile .lock img 
+{
+    width: 100%;
+    height: 100%;
+}
+.root.mobile .blocking .massage
+{
+    font-size: 1.04vmax;
+    font-family: "Montserrat";
+    color: rgba(255, 255, 255, 0.857);
+    text-align: center;
+}
+.root.mobile .blocked 
+{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.root.mobile .blocked.disable 
+{
+    opacity: 0;
+    visibility: hidden;
+}
+.root.mobile .sidebar_container
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.root.mobile .telegram.high
+{
+    right: 4vw;
+}
+
+.root.mobile .insta.high
+{
+    right: 4vw;
+    top: 14.2%;
+}
+.root.mobile .social_media.high{
+    height: fit-content;
+
+    width: 2.5vmax;
+}
+.root.mobile .social_media.high img {
+    height: unset;
+    width: 100%;
+}
+.root.mobile .youtube.high
+{
+    right: 3.8vw;
+    width: 2.7vmax;
+    top: 8.2%;
+}
+.root.mobile .social_media
+{
+    
+    top: calc(100vh - 97.8%);
+    position: fixed;
+    display: block;
+    width: 2.5vmax;
+    margin: 1.04vmax;
+    z-index: 20;
+}
+.root.mobile .social_media img 
+{
+    opacity: 0.8;
+    transform: scale(1);
+    transition: 0.2s;
+}
+.root.mobile .social_media:active img
+{
+    transform: scale(1);
+    opacity: 0.8;
+}
+.root.mobile .social_media img
+{
+    width: 100%;
+    pointer-events: none;
+}
+
+.root.mobile .youtube
+{
+    padding: 0.04vw 0;
+    width: 3.2vmax;
+    transition: 0.8s 0.2s;
+    right: 17.5vw;
+}
+.root.mobile .telegram
+{
+    transition: 0.8s 0.4s;
+    right: 6vw;
+}
+.root.mobile .insta
+{
+    transition: 0.8s;
+    right: 30.5vw;
+}
+.root.mobile .content
+{
+    z-index: inherit;
+}
+.root.mobile .home .name
+{
+    position: absolute;
+    top: 28%;
+    left: 12%;
+    z-index: 1;
+}
+.root.mobile .home .name .title
+{
+    font-size: 4.8vmax;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Montserrat";
+
+    letter-spacing: 0.42vmax;
+    z-index: 8;
+    transition: 0.8s 1s;
+    transform: translate(0, 70%);
+    opacity: 0;
+}
+.root.mobile .home .name span
+{
+    margin-top: 0.48vmax;
+    display: block;
+    width: 100%;
+    height: 0.104vmax;
+    transform: scale(0);
+    background-color: white;   
+    transition: 1s; 
+}
+.root.mobile .home .name .subtitle
+{
+    font-size: 1.88vmax;
+    text-align: center;
+    margin-top: 0.84vmax;
+    font-family: "Montserrat";
+    letter-spacing: 0.104vmax;
+    color: rgba(255, 255, 255, 0.73);
+    z-index: 1;
+    transform: translate(0, -100%);
+    opacity: 0;
+    transition: 1s 1.8s;
+}
+
+.root.mobile .home .name.ready .title
+{
+    transform: translate(0,0);
+    opacity: 1;
+}
+.root.mobile .home .name.ready span
+{
+    transform: scale(1);
+}
+.root.mobile .home .name.ready .subtitle {
+    transform: translate(0,0);
+    opacity: 1;
+}
+.root.mobile .shadow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+.root.mobile .home
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: 8;
+}
+
+.root.mobile .win_logo
+{
+    width: 12.3vmax;
+    height: 12.3vmax;
+    padding: 1.26vmax;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.root.mobile .win_logo img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.root.mobile .location
+{
+    bottom: 6.5vh;
+    right: 5%;
+    color: white;
+    position: absolute;
+    opacity: 0.7;
+    font-size: 1.5vmax;
+    align-items: center;
+    z-index: 18;
+    display: inline-flex;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.3s;
+    text-decoration: none;
+}
+.root.mobile .location span 
+{
+    font-size: 1.56vmax;
+    padding-bottom: 0.208vw;
+    margin-right: 0.156vw;
+    text-decoration: none;
+}
+.root.mobile .location:active
+{
+    opacity: 0.7;
+    transform: scale(1);
+}
+.root.mobile .location.hidden
+{
+    opacity: 0;
+}
+
+/*----- UNIVERSAL ----- */
+
+.root.mobile .clickable 
+{
+    opacity: 0.7;
+    transform: scale(1);
+    transition: 0.2s;
+}
+.root.mobile .clickable:hover
+{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.root.mobile .clickable:active
+{
+    transform: scale(1);
+    opacity: 0.7;
+
+}
+
+/* ---------------- */
+.root.mobile .background img 
+{
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: -70vmin;
+}
+
+.root.mobile .background#b_home
+{
+    min-width: 115vw;
+    height: 130vh;
+    animation-name: action;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    position: absolute;
+    top: -25vh;
+    left: -5vw;
+    z-index: -1;
+}
+.root.mobile .background#b_services
+{
+    min-width: 115vw;
+    height: 120vh;
+    position: absolute;
+    top: -10vh;
+    opacity: 1;
+    left: -10vw;
+}
+
+/* --- services --- */
+
+.root.mobile .services
+{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    padding: 0 6.24vw;
+    padding-top: 1.56vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+.root.mobile .services_block{
+    width: 95%;
+    height: 30%;
+    text-align: center;
+    display: flex;
+    position: absolute;
+    top: 15%;
+    justify-content: center;
+    align-items: flex-start;
+}
+.root.mobile .service
+{
+    z-index: 1;
+    height: 100%;
+    margin: 0.52vw 2.08vw;
+    width: 100%;
+    padding: 2vh 15%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.root.mobile .title
+{
+    color: rgba(14, 119, 239, 0.501);
+    font-size: 1.8vmax;
+    white-space: nowrap;
+    font-family: "Montserrat";
+    text-align: center;
+    transform: translate(0, 120%);
+    opacity: 0;
+    margin: 1.04vw 0px;
+    transition: 0.8s 2s;
+}
+.root.mobile .line_x
+{
+    display: block;
+    min-height: 0.156vmax;
+    width: 0%;
+    margin: 1.5vmax 0;
+    background-color: rgba(255, 255, 255, 0.886);
+    transition: 1s 1s;
+    z-index: 2;
+}
+.root.mobile .service .list
+{
+    color: rgba(255, 255, 255, 0.785);
+    padding: 0 1.56vmax;
+    opacity: 0;
+    text-align: start;
+    transform: translate(0, -100%);
+    transition: 1s 2.8s;
+}
+.root.mobile .service .list li
+{
+    list-style-type: square;
+    font-family: "Montserrat";
+    letter-spacing: 1px;
+    font-size: 1.344vmax;
+    margin: 1.3vmax 0;
+
+}
+.next_button_s
+{
+    width: 8.2vw;
+    position: absolute;
+    top: calc(50% - 2.6vw);
+    z-index: 25;
+    right: 2vw;
+    transition: 1s 0.3s;
+    cursor: pointer;
+    opacity: 1;
+    animation-name: moveX;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.root.mobile .next_button_s img 
+{
+    width: 100%;
+    transform: scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.prev_button_s
+{
+    width: 8.2vmin;
+    position: absolute;
+    top: calc(50% - 2.6vw);
+    z-index: 25;
+    left: 2vw;
+    transition: 1s 0.3s;
+    cursor: pointer;
+    opacity: 1;
+    animation-name: moveXLeft;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.root.mobile .service.on
+{
+    opacity: 1;
+    visibility: visible;
+}
+.root.mobile .service.on .title
+{
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.root.mobile .service.on .line_x
+{
+    width: 100%;
+}
+.root.mobile .service.on .list
+{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.root.mobile .priceList_table
+{
+    width: 90%;
+    height: 40%;
+    position: absolute;
+    text-align: center;
+    padding: 1.56vmax 0.54vmax;
+    bottom: 8vh;
+    background-color: rgba(0, 0, 0, 0.789);
+    border-top: 0.156vmax solid rgba(14, 119, 239, 0.586);
+    border-bottom: 0.156vmax solid rgba(14, 119, 239, 0.586);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+}
+.root.mobile .prev_button_s img 
+{
+    width: 100%;
+    transform: rotate(180deg) scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.root.mobile .priceList_table.view
+{
+    opacity: 1;
+    visibility: visible;
+}
+.root.mobile .priceList_table.openlist
+{
+    height: 78%;
+}
+
+.root.mobile .part
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.root.mobile .t_title
+{
+    color: rgba(14, 119, 239, 0.578);
+    width: 100%;
+    font-size: 1.456vmax;
+    font-family: "Montserrat";
+    text-align: center;
+    margin: 1.04vmax 0px;
+}
+.root.mobile .line{
+    width: 100%;
+    padding: 0px 1.04vmax;
+    font-size: 1.04vmax;
+    margin: 0.78vmax 0;
+    color: rgba(255, 255, 255, 0.849);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+.root.mobile .l_service > span 
+{
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.root.mobile .l_service
+{
+    z-index: 1;
+    max-width: 70%;
+}
+.root.mobile .price
+{
+    white-space: nowrap;
+    z-index: 1;
+}
+.root.mobile .line > span
+{
+    overflow: hidden;
+    color: rgba(14, 119, 239, 0.578);
+    text-overflow: clip;
+    display: block;
+    min-width: 5%;
+}
+.root.mobile .priceList_table::-webkit-scrollbar 
+{
+    background-color: rgba(0, 0, 0, 0.386);
+    width: 0.416vmax;
+    
+}
+
+.root.mobile .priceList_table::-webkit-scrollbar-button
+{
+    display: none;
+}
+.root.mobile .priceList_table::-webkit-scrollbar-thumb
+{
+    background-color: rgba(14, 119, 239, 0.586);
+
+}
+.root.mobile .open
+{
+    text-align: center;
+    display: inline;
+    width: min-content;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 2.08vmax;
+    font-family: 'Montserrat';
+    letter-spacing: 0.078vmax;
+    text-transform: uppercase;
+    color: white;
+    margin: 1.144vmax;
+    transition: 1s;
+    animation: blink 2.5s;
+    text-shadow: 0 0.156vmax 0.208vmax  rgba(14, 119, 239, 0.94);
+    cursor: pointer;
+    animation-iteration-count: infinite;
+    z-index: 3;
+}
+/* --- staff --- */
+
+.root.mobile .staff 
+{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.root.mobile .fog
+{
+    width: 70%;
+    transition-timing-function: ease-in-out;
+    position: fixed;
+    z-index: 15;
+    pointer-events: none;
+}
+.root.mobile .fog img 
+{
+    width: 100%;
+}
+.root.mobile .fog._1
+{
+    bottom: -23vw;
+    transition: 1s;
+    left: -23%;
+}
+.root.mobile .fog._2
+{
+    transition: 1s 0.3s;
+    bottom: -25vw;
+    left: 15%;
+}
+.root.mobile .fog._3
+{
+    bottom: -25vw;
+    transition: 1s;
+    right: -23%;
+}
+.root.mobile .fog._1.off
+{
+    bottom: -100vh;
+    left: -40%
+}
+.root.mobile .fog._2.off
+{
+    bottom: -100vh;
+}
+.root.mobile .fog._3.off 
+{
+    bottom: -100vh;
+    right: -40%;
+}
+/*----- defolt dentists ------*/
+.root.mobile .dentists
+{
+    /* visibility: hidden; */
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+}
+.root.mobile .dentist
+{
+    position: absolute;
+    transition: 3s 0.5s;
+    height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    bottom: -35%;
+    opacity: 1;
+}
+.root.mobile .dentist img {
+    height: 100%;
+    transition: 3s 0.5s;
+}
+/* .dentist img.hovered {
+    transform: scale(1.01) translate(-0.3vw, -0.35vw);
+} */
+.root.mobile .dentist._4
+{
+    left: 9%;
+    transition-timing-function: ease-out;
+    
+}
+.root.mobile .dentist._4 img 
+{
+    transform: translate(0, -7px);
+}
+.root.mobile .prioriti_main 
+{
+    z-index: 5;
+}
+.root.mobile .dentist._7
+{
+    left: 22%;
+    z-index: 7;
+    opacity: 1;
+}
+.root.mobile .dentist._6 img 
+{
+    height: 65%;
+}
+.root.mobile .dentist._6
+{
+    left: 40%;
+}
+.root.mobile .prioriti_1
+{
+    z-index: 4;
+}
+.root.mobile .prioriti_1 img
+{
+    height: 85%;
+    position: relative;
+    bottom: -4vh;
+}
+
+.root.mobile .prioriti_1
+{
+    /* width: 25%; */
+    opacity: 1;
+    z-index: 4;
+    transition: 1.5s 0s;
+}
+.root.mobile .prioriti_2 
+{
+    z-index: 3;
+}
+.root.mobile .prioriti_2 img 
+{
+    height: 75%;
+    position: relative;
+    bottom: -8vh;
+}
+
+.root.mobile .prioriti_3
+{
+    z-index: 2;
+}
+.root.mobile .prioriti_3 img 
+{
+    height: 70%;
+    position: relative;
+    bottom: -11vh;
+}
+
+.root.mobile .dentist._3 
+{
+    left: -5%;
+}
+
+.root.mobile .dentist._2
+{
+    right: 22%;
+}
+.root.mobile .dentist._2 img 
+{
+    transition: 1s 0s ease-out;
+}
+
+.root.mobile .dentist._1
+{
+    right: 10%;
+}
+.root.mobile .dentist._5
+{
+    right: -2%;
+}
+
+/* ----- dentist OFF------*/
+
+
+.root.mobile .prioriti_main.gr 
+{
+    transition: 1s 0.5s ease;
+}
+.root.mobile .prioriti_1.gr 
+{
+    transition: 1s 1s ease;
+}
+.root.mobile .prioriti_2.gr 
+{
+    transition: 1s 1.5s ease;
+}
+.root.mobile .prioriti_3.gr
+{
+    transition: 1s 2s ease-out;
+}
+.root.mobile .dentist.off {
+    opacity: 0;
+}
+/* .dentist._2.off , .dentist._7.off
+{
+    opacity: 0;
+}
+.dentist._3.off , .dentist._4.off
+{
+    left: -50%;
+}
+.dentist._5.off, .dentist._1.off
+{
+    right: -50%;
+} */
+
+
+/*-- opacity of LETTERS ---*/
+
+.root.mobile .opacityOI{
+    opacity: 1 !important;
+    transition-delay: 0s !important;
+}
+.root.mobile .opacityZ
+{
+    opacity: 0 !important;
+    transition-delay: 0s !important;
+}
+
+/* defolt ALTERNATIVE at all */
+
+.root.mobile .dentists.alternative .left
+{
+    left: -50%;
+    bottom: -5%;
+}
+.root.mobile .dentists.alternative .right 
+{
+    right: -50%;
+    bottom: -5%;
+}
+.root.mobile .dentists.alternative .bottom
+{
+    left: -50%;
+    bottom: -5%;
+}
+
+.root.mobile .dentists.alternative .bottom.information
+{
+    bottom: -5% !important;
+    left: 0% !important;
+    transition: 2s 1s !important;
+    transition-delay: 0.3s !important;
+    opacity: 1;
+}
+
+.root.mobile .dentists.alternative .right.information 
+{
+    bottom: -5% !important;
+    right: 10% !important; 
+    transition: 2s 1s !important;
+    transition-delay: 0.3s !important;
+    opacity: 1;
+}
+.root.mobile .dentists.alternative .left.information 
+{
+    bottom: -5% !important;
+    left: 12% !important;
+    transition: 2s 1s !important;
+    transition-delay: 0.3s !important;
+    opacity: 1;
+}
+
+
+.root.mobile .dentists.alternative .dentist.information img 
+{
+    height: 100%;
+    transition: 2.5s 0s;
+    opacity: 1;
+}
+
+/*--- switched transition ---*/
+
+.root.mobile .dentists.alternative .dentist.switched img 
+{
+    transition: 2s 0.5s ease-out;
+}
+.root.mobile .dentists.alternative .dentist.switched 
+{
+    transition: 2s 0.5s ease-out !important;
+}
+
+/*---- BACK BUTTON ----*/
+
+
+.root.mobile .dentist_information
+{
+    width: 33%;
+    min-height: 80%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    visibility: hidden;
+}
+.root.mobile .dentist_information > span
+{
+    width: 0%;
+    min-height: 0.156vw;
+    margin: 0.78vw 0;
+    transition: 0.5s 0s;
+    background-color: rgba(255, 255, 255, 0.663);
+}
+.root.mobile .dentist_information .dentist_name
+{
+    width: 100%;
+    text-align: center;
+    transform: translate(0, 100%);
+    transition: 0.5s 0.5s;
+    font-size: 1.82vw;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.855);
+    letter-spacing: 0.156vw;
+    font-family: "MonserratB";
+}
+.root.mobile .dentist_information .text 
+{
+    width: 100%;
+    padding: 0.52vw 0.78vw;
+    overflow: hidden;
+    
+}
+.root.mobile .dentist_information .text > span
+{
+    width: 100%;
+    line-height: 1.404vw;
+    display: block;
+    font-size: 1.144vw;
+    text-align: center;
+	font-family: 'Montserrat';
+    color: rgba(255, 255, 255, 0.795);
+    height: 100%;
+    opacity: 1;
+    transform: translate(0, -110%);
+    transition: 1s 1s;
+}
+.root.mobile .t_left
+{
+    left: 15%;
+    top: 10%;
+}
+.root.mobile .t_right
+{
+    right: 12%;
+    top: 10%;
+}
+.root.mobile .dentist_information.period 
+{
+    visibility: visible;
+}
+.root.mobile .dentist_information.period > span 
+{
+    width: 100%;
+    transition: 0.5s 1.5s;
+}
+.root.mobile .dentist_information.period .text > span {
+    transform: translate(0,0);
+    transition: 1.5s 2.7s;
+} 
+.root.mobile .dentist_information.period .dentist_name {
+    transform: translate(0,0);
+    opacity: 1;
+    transition: 0.7s 2s;
+}
+
+.root.mobile .next_button
+{
+    width: 5.2vw;
+    position: absolute;
+    top: calc(50vh - 2.6vw);
+    z-index: 25;
+    right: 0;
+    transition: 1s 0.3s;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    animation-name: moveX;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.root.mobile .next_button img 
+{
+    width: 100%;
+    transform: scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.root.mobile .next_button.hidden
+{
+    opacity: 0;
+    visibility: hidden;
+} 
+.root.mobile .next_button:hover img {
+    opacity: 1;
+}
+
+.root.mobile .prev_button
+{
+    width: 5.2vw;
+    position: absolute;
+    top: calc(50vh - 2.6vw);
+    z-index: 25;
+    left: 4%;
+    transition: 1s 0.3s;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    animation-name: moveXLeft;
+    animation-duration: 1.3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.root.mobile .prev_button img 
+{
+    width: 100%;
+    transform: rotate(180deg) scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.root.mobile .prev_button.hidden
+{
+    opacity: 0;
+    visibility: hidden;
+}
+.root.mobile .prev_button:hover img {
+    opacity: 1;
+}
+
+.root.mobile .prev_button:active img 
+{
+    opacity: 0.8;
+    transform: scale(0.9) rotate(180deg);
+}
+.root.mobile .next_button:active img
+{
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+
+/* --- sidebar --- */
+
+
+.root.mobile .sidebar
+{
+    width: 100%;
+    height: 5.1vh;
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.516);
+    left: 0;
+    bottom: 0;
+    transition: 0.8s;
+    z-index: 20;
+    box-shadow: 0 0.156vmax 0.208vmax rgba(255, 255, 255, 0.573);
+}
+
+
+
+.root.mobile .side_nav
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.root.mobile .side_nav > span 
+{
+    position: absolute;
+    bottom: 0;
+    height: 0.254vh;
+    transition: 0.5s;
+    box-shadow: 1px 0px 5px 0px rgb(0, 0, 0);
+    background-color: rgb(80, 181, 249);
+}
+
+.root.mobile .side_nav .block
+{
+    width: 15%;
+    height: 100%;
+    margin: 0.52vw;
+    padding: 1.4vmax 1vmax;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.root.mobile .side_nav .block.active
+{
+    background-color: rgba(0, 0, 0, 0.231);
+}
+.root.mobile .side_nav .block img
+{
+    height: 100%;
+    transition: 0.2s;
+    opacity: 0.6;
+    transform: scale(1);
+    pointer-events: none;
+}
+
+.root.mobile .side_nav .block:hover img
+{
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+.root.mobile .side_nav .block:active img
+{
+    opacity: 0.6;
+    transform: scale(1);
+}
+
+.root.mobile .side_nav .block.active img {
+    opacity: 1;
+    transform: scale(1.2) ;
+}
+
+.root.mobile .side_nav .block._1.active img {
+    opacity: 1;
+    transform: scale(1.15) ;
+}
+
+.root.mobile .side_nav .block._1
+{
+    padding: 1.35vmax 1vmax;
+}
+
+
+.root.mobile .sidebar.paralax
+{
+    left: -3.1vw;
+}
+.root.mobile .sidebar.hover
+{
+    left: 0% !important;
+}
+
+
+.root.mobile .lang
+{
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    bottom: 4%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+}
+.root.mobile .lang > span 
+{
+    color: white;
+    opacity: 0.6;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 1.456vw;
+    transform: scale(1);
+}
+.root.mobile .lang > span:hover
+{
+    opacity: 1;
+}
+.root.mobile .lang.active > span
+{
+    opacity: 1;
+    transform: scale(1.08);
+}
+.root.mobile .lang_list
+{
+    position: absolute;
+    left: 102%;
+    min-height: 100%;
+    width: 180px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    pointer-events: none;
+}
+.root.mobile .lang_line
+{
+    max-width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.953);
+    transform: translate(0, 0);
+    transition: 0.7s;
+    display: block;
+}
+
+.root.mobile .lang_block
+{
+    list-style: none;
+    color: rgba(255, 255, 255, 0.866);
+    min-height: 50%;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.402);
+    font-family: "Montserrat";
+    font-size: 17px;
+    letter-spacing: 1px;
+    transform: translate(0, 0);
+    transition: 0.7s;
+    cursor: pointer;
+    pointer-events: fill;
+}
+.root.mobile .lang_list.hidden .lang_block , .lang_list.hidden .lang_line
+{
+    transform: translate(-100%, 0);
+}
+.root.mobile .lang_block.active 
+{
+    background-color: rgba(0, 0, 0, 0.832);
+}
+
+@media (max-width: 1000px) {
+    /* body 
+    {
+        padding-bottom: 5vh;
+    }
+    .sidebar
+    {
+        width: 100vw;
+        height: 5vh;
+        display: flex;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.516);
+        left: 0;
+        bottom: 0;
+        transition: 0.8s;
+        z-index: 20;
+        box-shadow: 0 0.156vw 0.208vw rgba(255, 255, 255, 0.573);
+    }
+    .side_nav
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .side_nav .block
+    {
+        width: 8%;
+        height: 100%;
+        margin: 0.52vw;
+        padding: 2.5vw;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .side_nav .block._1
+    {
+        padding: 2.5vw 2.7vw;
+    } */
+}
+
+/*------------- OPEN -------------*/
+
+@keyframes openDMansur {
+    0% {
+        left: 9%;
+        bottom: -100%;
+    }
+    100% {
+        left: 9%;
+        bottom: -35%;
+    }
+}
+@keyframes openDDirector {
+    0% {
+        bottom: -100%;
+        left: 40%;
+    }
+    100% {
+        bottom: -35%;
+        left: 40%;
+    }
+}
+@keyframes openDXursand {
+    0% {
+        left: 22%;
+        bottom: -100%;
+    }
+    100% {
+        left: 22%;
+        bottom: -35%;
+    }
+}
+@keyframes openDIbrohim {
+    0% {
+        right: 22%;
+        bottom: -100%;
+    }
+    100% {
+        right: 22%;
+        bottom: -35%;
+    }
+}
+@keyframes openDTatiana {
+    0% {
+        bottom: -100%;
+        right: -2%;
+    }
+    100% {
+        bottom: -35%;
+        right: -2%;
+    }
+}
+@keyframes openDViktoria {
+    0% {
+        bottom: -100%;
+        left: -5%;
+    }
+    100% {
+        bottom: -35%;
+        left: -5%;
+    }
+}
+@keyframes openDAbdukhamid {
+    0% {
+        right: 10%;
+        bottom: -100%;
+    }
+    100% {
+        right: 10%;
+        bottom: -35%;
+    }
+}
+
+/*------------- CLOSE -------------*/
+
+@keyframes closeDMansur {
+    0% {
+        left: 9%;
+        bottom: -35%;
+    }
+    100% {
+        left: 9%;
+        bottom: -100%;
+    }
+}
+@keyframes closeDDirector {
+    0% {
+        bottom: -35%;
+        left: 40%;
+    }
+    100% {
+        bottom: -100%;
+        left: 40%;
+    }
+}
+@keyframes closeDXursand {
+    0% {
+        left: 22%;
+        bottom: -35%;
+    }
+    100% {
+        left: 22%;
+        bottom: -100%;
+    }
+}
+@keyframes closeDIbrohim {
+    0% {
+        right: 22%;
+        bottom: -35%;
+    }
+    100% {
+        right: 22%;
+        bottom: -100%;
+    }
+}
+@keyframes closeDTatiana {
+    0% {
+        bottom: -35%;
+        right: -2%;
+    }
+    100% {
+        bottom: -100%;
+        right: -2%;
+    }
+}
+@keyframes closeDViktoria {
+    0% {
+        bottom: -35%;
+        left: -5%;
+    }
+    100% {
+        bottom: -100%;
+        left: -5%;
+    }
+}
+@keyframes closeDAbdukhamid {
+    0% {
+        right: 10%;
+        bottom: -35%;
+    }
+    100% {
+        right: 10%;
+        bottom: -100%;
+    }
+}
+
+/*------------- ANIMATIONS --------------*/
+
+@keyframes switchLeft {
+    0%{
+
+    }
+    100%{
+
+    }
+}
+@keyframes switchRight {
+    0%{
+        
+    }
+    100%{
+
+    }
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
+@keyframes move{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(0, 8px);
+    }
+    100%{
+        transform: translamovete(0, 0);
+    }
+}
+@keyframes moveX{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(0.5vw, 0px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+@keyframes moveXLeft{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(-0.5vw, 0px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+@keyframes action{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+
+}

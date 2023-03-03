@@ -1,6 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./css/main.css";
+import css from "./css/main.css";
+import Start from "../../start";
+
+
 
 function Line(props) {
     return (
@@ -49,7 +52,7 @@ function Main(props) {
     let services = {};
     let serviceBlocks = [];
 
-    console.log(props.pack.priceList);
+    console.log("why");
 
     
 
@@ -93,7 +96,7 @@ function Main(props) {
                             <span></span>
                             <div className="block _1 active" data-hint="home" id="home"><img src="./img/four-boxes.png" alt="home" /></div>
                             <div className="block _2" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
-                            <div className="block _34" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
+                            <div className="block _3" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
                             <div className="block _4 disable" data-hint="info" id="info"><img src="./img/info.png" alt="info" /></div>
                             <div className="block _5 disable" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
                             <div className="lang" id="language">
@@ -108,7 +111,7 @@ function Main(props) {
             </div>
             <div className="container">
                 <div className="background" id="b_services"><img src="./img/cutting.jpg" alt="" /></div>
-                <div className="background onthis" id="b_home"><img src="./img/big cab.jpg" alt="" /></div>
+                <div className="background onthis" id="b_home"><img onLoad={Start()} src="./img/big cab.jpg" alt="" /></div>
                 <div className="background" id="b_staff"><img src="./img/background.jpg" alt="" /></div>
                 <div className="hint" id="hint"></div>
                 <div className="main_comment">
