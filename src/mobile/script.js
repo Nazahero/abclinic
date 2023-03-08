@@ -36,7 +36,11 @@ export function MobileJs(){
 
         // selectLanguage(langs ,lettersObj, delay, preLetter, lang_list);
         // setDelay(letters, preLetter);
-        openPriceList(open, priceList);  
+        openPriceList(open, priceList);
+        window.onload = () => {
+            console.log("loaded");
+            trimBackgrounds(backgrounds);
+        }  
         addClassOn(services[0]);
         serviseSwitcher(sNext, sPrev, services);
         // openLanguage(language, lang_list); 
@@ -49,7 +53,7 @@ export function MobileJs(){
 
         window.addEventListener("resize", () => {
             var active = document.querySelector(".block.active");
-            
+            trimBackgrounds(backgrounds);
             setTimeout(() => {
                 stickControl(active, stick);
             }, 700);
@@ -60,10 +64,15 @@ export function MobileJs(){
         for (var i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
             el.addEventListener("click", () => {
-                if ((el.classList.contains("active")) || (el.classList.contains("disable"))) {
+                if ((el.classList.contains("active")) || (el.classList.contains("stopped")) || (el.classList.contains("disable"))) {
                     return;
                 } 
-                var currentPage = document.querySelector(`.${el.id}`);
+
+                const currentPage = document.querySelector(`.${el.id}`);
+                
+                stopping(navButtons);
+
+                trimBackgrounds(backgrounds);
 
                 sidebarControl(navButtons, el, stick, currentPage);
 
@@ -71,6 +80,7 @@ export function MobileJs(){
                     case "3":
                         iconMoveTimeOut(social_icons);
                         visibleElement(location);
+                        addClassOff(fog);
                         break;
                     case "2":
                         // ---- WELCOME ANIMATION ---- //
@@ -78,12 +88,14 @@ export function MobileJs(){
                         // dentistHover(dentists , clones); 
                         // dentistsControl(dentists, dentistsBox, lettersObj, backButton, nextButton, dentistClones, prevButton);
                         // controlSwitcher(nextButton, backButton, prevButton);
-
+                        dentistSwitcher(nextButton, prevButton)
+                        removeClassOff(fog);
+                        iconMove(social_icons);
                         hiddenElement(location);
                         break;
                     case "4":
                         iconMove(social_icons);
-                        // addClassOff(fog);
+                        addClassOff(fog);
 
                         hiddenElement(location);
                         break;
@@ -96,8 +108,14 @@ export function MobileJs(){
                         break;
                 }
 
+                setTimeout(() => {
+                    removeStopping(navButtons);
+                }, 1600);
                 
             });
+
+            
+
         }
 
         // ------------------ LAST FUNCTIONS --------------------- //
@@ -109,6 +127,36 @@ export function MobileJs(){
 
     }
 
+function stopping(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        element.classList.add("stopped")
+    }
+}
+function removeStopping(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        element.classList.remove("stopped")
+    }
+}
+
+function trimBackgrounds(backgrounds) {
+    for (let i = 0; i < backgrounds.length; i++) {
+        const background = backgrounds[i];
+        const X = background.clientWidth;
+        const backgroundImg = background.firstElementChild;
+        backgroundImg.style.cssText = `
+            left: ${50 * (X / backgroundImg.clientWidth - 1)}%;
+        `;
+    }
+}
+function trimBackground(background) {
+        const X = background.clientWidth;
+        const backgroundImg = background.firstElementChild;
+        backgroundImg.style.cssText = `
+            left: ${50 * (X / backgroundImg.clientWidth - 1)}%;
+        `;
+}
 
 // function openLanguage(language, lang_list) {
 //     language.addEventListener("click" , function () {
@@ -262,7 +310,6 @@ function nextServ(services) {
     if (Number(curService) < services.length) {
         nextService = document.querySelector(`[data-service="${Number(curService) + 1}"]`);
     } else {
-        console.log("yy")
         nextService = document.querySelector(`[data-service="${1}"]`);
     }
     for (let i = 0; i < services.length; i++) {
@@ -274,7 +321,7 @@ function nextServ(services) {
 function prevServ(services) {
     const curService = document.querySelector(".service.on").getAttribute("data-service");
     var prevService;
-    if (Number(curService) > 1) {
+    if (Number(curService) > 1) { 
         prevService = document.querySelector(`[data-service="${Number(curService)-1}"]`);
     } else {
         prevService = document.querySelector(`[data-service="${3}"]`);
@@ -340,11 +387,6 @@ function iconMove(icons){
             icon.classList.remove("high");
     }
 }
-function visiblePriceList(priceList) {
-    setTimeout(() => {
-        priceList.classList.add("view");        
-    }, 3000);
-}
 function iconMoveTimeOut(icons) {
     setTimeout(() => {
         for (var i = 0; i < icons.length; i++){
@@ -385,6 +427,82 @@ function pageScroll(page) {
         element.classList.add("page_right");
     }
     page.classList.add("this_page");
+    page.classList.remove("hidden");
+
+    page.addEventListener("transitionend" ,function () {
+        if (!page.classList.contains("this_page")) {
+            setTimeout(() => {
+                page.classList.add("hidden");
+            }, 200);
+        }
+    })
+}
+
+// ------------------------------------------------ //
+
+function dentistSwitcher(nextButton, prevButton) {
+    nextButton.addEventListener("click", function () {
+        if (!nextButton.classList.contains("stopped")) {
+            nextButton.classList.add("stopped");
+            nextDentist(nextButton)
+        }
+    })
+    prevButton.addEventListener("click", function () {
+        if (!prevButton.classList.contains("stopped")) {
+            prevButton.classList.add("stopped");
+            nextDentist(prevButton)
+        }
+    })
+}
+
+function nextDentist(nextButton) {
+    const curDen = document.querySelector(".dentist.on");
+    const curInf = document.querySelector(`[data-information="${curDen.id}"]`);
+    var nextDen;
+    var nextInf;
+    if (curDen.nextElementSibling) {
+        nextDen = curDen.nextElementSibling;
+    } else
+    {
+        nextDen = document.getElementById("d_1");
+    }
+    nextInf = document.querySelector(`[data-information="${nextDen.id}"]`);
+
+    curDen.classList.remove("on");
+    nextDen.classList.add("on");
+    
+    curInf.classList.remove("period");
+    openInfo(nextInf);
+
+    setTimeout(() => {
+        nextButton.classList.remove("stopped")
+    }, 4000);
+
+}
+
+function prevDentist(prevButton) {
+    const curDen = document.querySelector(".dentist.on");
+    const curInf = document.querySelector(`[data-information="${curDen.id}"]`);
+    var prevDen;
+    var prevInf;
+    if (curDen.previousElementSibling) {
+        prevDen = curDen.previousElementSibling;
+    } else
+    {
+        prevDen = document.getElementById("d_1");
+    }
+    prevInf = document.querySelector(`[data-information="${prevDen.id}"]`);
+
+    curDen.classList.remove("on");
+    prevDen.classList.add("on");
+    
+    curInf.classList.remove("period");
+    openInfo(prevInf);
+
+    setTimeout(() => {
+        prevButton.classList.remove("stopped")
+    }, 4000);
+
 }
 
 // ------------------------------------------------ //
@@ -413,87 +531,10 @@ function stickControl(active, stick) {
         }, 500);
     })
 }
-function backButtonControl(dentists, dentistsBox, letters, informations, back, next, clones, prev) {
-    back.addEventListener("click", () => {
-        backStaff(dentistsBox, dentists ,letters, informations, back, clones, next, prev)
-    })
-}
-function dentistsControl(dentists, dentistsBox, letters, back, next, dentistClones, prev) {
-    for (let i = 0; i < dentists.length; i++) {
-        const dentist = dentists[i];
-        const clone = document.getElementById(`${dentist.getAttribute("data-clone")}`);
-        const info = dentist.nextSibling; 
-        clone.addEventListener("click", () => {
-            if (!clone.classList.contains("disable")) {
-                infoAnimation(dentist, dentistsBox, dentists, letters, info, back, dentistClones);
-                setTimeout(() => {
-                    visibleElement(next);
-                    visibleElement(prev);
-                }, 700);
-            }            
-        })
-    }
-}
-function setOpacityOne(elements) {
-    for (const key in elements) {
-        if (Object.hasOwnProperty.call(elements, key)) {
-            const element = elements[key];
-            element.classList.remove("opacityZ");
-            element.classList.add("opacityOI")
-        }
-    }
-}
-function infoAnimation(dentist, dentistBox, dentists ,letters, information, backButton, clones) {
-    setDentistsBox(dentistBox);
-    switchDentist(dentists, dentist);
-    console.log(information);
-    openInfo(information);
-    addDisableToArray(clones);
-    setTimeout(() => {
-        backButtonVisible(backButton);
-    }, 1000);
-}
-function backStaff( dentistBox, dentists ,letters, information, backButton, clones, next, prev) {
-    var info = document.querySelector(".information");
-    if (!backButton.classList.contains("disable")) {
-        hiddenElement(next);
-        hiddenElement(prev);
-        setTimeout(() => {
-            setOpacityOne(letters)
-            removeDentistsBox(dentistBox);
-            closeDentists(dentists, info);
-            backButtonHidden(backButton, clones);
-        }, 2000);
-        closeInfo(information);
-    }
-    addDisableToElement(backButton);
-}
+
 function openInfo(information) {
     console.log(information);
     information.classList.add("period");
-}
-function closeInfo(informations) {
-    for (var i = 0; i < informations.length; i++) {
-        const information = informations[i];
-        information.classList.remove("period");
-    }
-}
-function setDentistsBox(dentistsBox) {
-    dentistsBox.classList.add("noinfo", "alternative");
-}
-function removeDentistsBox(dentistsBox) {
-    dentistsBox.classList.remove("noinfo", "alternative");
-}
-
-function closeDentists(dentists, current) {
-    for (var i = 0; i < dentists.length; i++) {
-        const elem = dentists[i];
-        elem.classList.remove("information");
-        elem.classList.remove("gr");
-        elem.classList.remove("animate");
-        elem.classList.add("close_animate");
-    }
-    current.classList.remove("close_animate");
 }
 function addDisableToElement(el) {
     el.classList.add("disable");
@@ -513,28 +554,7 @@ function removeDisableFromArray(arr) {
         el.classList.remove("disable");
     }
 }
-function switchDentist(dentists, dentist) {
-        for (var i = 0; i < dentists.length; i++) {
-            const elem = dentists[i];
-            elem.classList.remove("information");
-            elem.classList.remove("close_animate");
-            elem.classList.add("animate");
-        }
-        dentist.classList.add("information");
-        dentist.classList.remove("animate");
-}
-function backButtonVisible(button) {
-    button.classList.add("visible");
-}
-function backButtonHidden(button, clones) {
-    button.classList.remove("visible");
-    button.addEventListener("transitionend", () => {
-        setTimeout(() => {
-            removeDisableFromElement(button);
-            removeDisableFromArray(clones);
-        }, 700);
-    })
-}
+
 
 start();
 

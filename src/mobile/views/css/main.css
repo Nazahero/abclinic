@@ -17,11 +17,16 @@ body
 .root.mobile .page {
     position: absolute;
     transition: 1s;
+    opacity: 1;
     top: 0;
+}
+.root.mobile .page.hidden {
+    opacity: 0;
 }
 .root.mobile .page.this_page {
     left: 0;
     opacity: 1;
+    animation: visible 2s;
 }
 .root.mobile .page.page.page_left
 {
@@ -135,7 +140,7 @@ body
 .root.mobile .insta.high
 {
     right: 4vw;
-    top: 14.2%;
+    top: 14.2vmax;
 }
 .root.mobile .social_media.high{
     height: fit-content;
@@ -148,9 +153,9 @@ body
 }
 .root.mobile .youtube.high
 {
-    right: 3.8vw;
-    width: 2.7vmax;
-    top: 8.2%;
+    right: 3.7vw;
+    width: 2.9vmax;
+    top: 8vmax;
 }
 .root.mobile .social_media
 {
@@ -283,7 +288,7 @@ body
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 20;
 }
 .root.mobile .win_logo img
 {
@@ -293,7 +298,7 @@ body
 
 .root.mobile .location
 {
-    bottom: 6.5vh;
+    bottom: 6.5vmax;
     right: 5%;
     color: white;
     position: absolute;
@@ -369,7 +374,24 @@ body
     left: -5vw;
     z-index: -1;
 }
+.root.mobile .background#b_services img {
+    transform: rotateY(180deg);
+}
+.root.mobile .background#b_services img 
+{
+    left: -100vmin;
+
+}
 .root.mobile .background#b_services
+{
+    min-width: 115vw;
+    height: 120vh;
+    position: absolute;
+    top: -10vh;
+    opacity: 1;
+    left: -10vw;
+}
+.root.mobile .background#b_staff
 {
     min-width: 115vw;
     height: 120vh;
@@ -394,12 +416,12 @@ body
     overflow: hidden;
 }
 .root.mobile .services_block{
-    width: 95%;
+    width: 95vmin;
     height: 30%;
     text-align: center;
     display: flex;
     position: absolute;
-    top: 15%;
+    top: 15vh;
     justify-content: center;
     align-items: flex-start;
 }
@@ -459,7 +481,7 @@ body
 }
 .next_button_s
 {
-    width: 8.2vw;
+    width: 8.2vmin;
     position: absolute;
     top: calc(50% - 2.6vw);
     z-index: 25;
@@ -494,6 +516,13 @@ body
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
+.root.mobile .prev_button_s img 
+{
+    width: 100%;
+    transform: scale(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
 .root.mobile .service.on
 {
     opacity: 1;
@@ -521,7 +550,7 @@ body
     position: absolute;
     text-align: center;
     padding: 1.56vmax 0.54vmax;
-    bottom: 8vh;
+    bottom: 8vmax;
     background-color: rgba(0, 0, 0, 0.789);
     border-top: 0.156vmax solid rgba(14, 119, 239, 0.586);
     border-bottom: 0.156vmax solid rgba(14, 119, 239, 0.586);
@@ -534,7 +563,7 @@ body
     transition: 0.7s;
     overflow-y: scroll;
     overflow-x: hidden;
-    z-index: 2;
+    z-index: 50;
 }
 .root.mobile .prev_button_s img 
 {
@@ -654,295 +683,116 @@ body
 }
 .root.mobile .fog
 {
-    width: 70%;
+    height: 70vmax;
+    opacity: 0.4;
     transition-timing-function: ease-in-out;
-    position: fixed;
+    position: absolute;
     z-index: 15;
     pointer-events: none;
 }
 .root.mobile .fog img 
 {
-    width: 100%;
+    height: 100%;
 }
 .root.mobile .fog._1
 {
-    bottom: -23vw;
+    top: 60vh;
     transition: 1s;
-    left: -23%;
+    left: -90vmax;
 }
 .root.mobile .fog._2
 {
     transition: 1s 0.3s;
-    bottom: -25vw;
-    left: 15%;
+    top: 70vh;
+    left: calc(50% - 70vmax);
 }
 .root.mobile .fog._3
 {
-    bottom: -25vw;
+    top: 55vh;
     transition: 1s;
-    right: -23%;
+    right: -80vmax;
 }
 .root.mobile .fog._1.off
 {
-    bottom: -100vh;
+    top: 120vh;
     left: -40%
 }
 .root.mobile .fog._2.off
 {
-    bottom: -100vh;
+    top: 120vh;
 }
 .root.mobile .fog._3.off 
 {
-    bottom: -100vh;
+    top: 120vh;
     right: -40%;
 }
 /*----- defolt dentists ------*/
+
 .root.mobile .dentists
 {
-    /* visibility: hidden; */
     z-index: 8;
     width: 100%;
-    height: 100%;
-}
-.root.mobile .dentist
-{
+    height: 100%; 
     position: absolute;
-    transition: 3s 0.5s;
-    height: 100% !important;
+    left: 0;
+    top: 0;
+}
+.root.mobile .dentists_photos 
+{
+    z-index: 8;
+    width: 100%;
+    height: 60%; 
     display: flex;
     justify-content: center;
-    align-items: start;
-    bottom: -35%;
-    opacity: 1;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
+
+.root.mobile .dentist
+{
+    transition: 1s 0.5s;
+    height: 100% !important;
+    position: absolute;
+    opacity: 1;
+    transform: translate(0, 100%);
+}
+.root.mobile .dentist.on 
+{
+    transform: translate(0, 0);
+}
+
 .root.mobile .dentist img {
     height: 100%;
-    transition: 3s 0.5s;
-}
-/* .dentist img.hovered {
-    transform: scale(1.01) translate(-0.3vw, -0.35vw);
-} */
-.root.mobile .dentist._4
-{
-    left: 9%;
-    transition-timing-function: ease-out;
-    
-}
-.root.mobile .dentist._4 img 
-{
-    transform: translate(0, -7px);
-}
-.root.mobile .prioriti_main 
-{
-    z-index: 5;
-}
-.root.mobile .dentist._7
-{
-    left: 22%;
-    z-index: 7;
-    opacity: 1;
-}
-.root.mobile .dentist._6 img 
-{
-    height: 65%;
-}
-.root.mobile .dentist._6
-{
-    left: 40%;
-}
-.root.mobile .prioriti_1
-{
-    z-index: 4;
-}
-.root.mobile .prioriti_1 img
-{
-    height: 85%;
-    position: relative;
-    bottom: -4vh;
 }
 
-.root.mobile .prioriti_1
-{
-    /* width: 25%; */
-    opacity: 1;
-    z-index: 4;
-    transition: 1.5s 0s;
-}
-.root.mobile .prioriti_2 
-{
-    z-index: 3;
-}
-.root.mobile .prioriti_2 img 
-{
-    height: 75%;
-    position: relative;
-    bottom: -8vh;
-}
-
-.root.mobile .prioriti_3
-{
-    z-index: 2;
-}
-.root.mobile .prioriti_3 img 
-{
-    height: 70%;
-    position: relative;
-    bottom: -11vh;
-}
-
-.root.mobile .dentist._3 
-{
-    left: -5%;
-}
-
-.root.mobile .dentist._2
-{
-    right: 22%;
-}
-.root.mobile .dentist._2 img 
-{
-    transition: 1s 0s ease-out;
-}
-
-.root.mobile .dentist._1
-{
-    right: 10%;
-}
-.root.mobile .dentist._5
-{
-    right: -2%;
-}
-
-/* ----- dentist OFF------*/
-
-
-.root.mobile .prioriti_main.gr 
-{
-    transition: 1s 0.5s ease;
-}
-.root.mobile .prioriti_1.gr 
-{
-    transition: 1s 1s ease;
-}
-.root.mobile .prioriti_2.gr 
-{
-    transition: 1s 1.5s ease;
-}
-.root.mobile .prioriti_3.gr
-{
-    transition: 1s 2s ease-out;
-}
-.root.mobile .dentist.off {
-    opacity: 0;
-}
-/* .dentist._2.off , .dentist._7.off
-{
-    opacity: 0;
-}
-.dentist._3.off , .dentist._4.off
-{
-    left: -50%;
-}
-.dentist._5.off, .dentist._1.off
-{
-    right: -50%;
-} */
-
-
-/*-- opacity of LETTERS ---*/
-
-.root.mobile .opacityOI{
-    opacity: 1 !important;
-    transition-delay: 0s !important;
-}
-.root.mobile .opacityZ
-{
-    opacity: 0 !important;
-    transition-delay: 0s !important;
-}
-
-/* defolt ALTERNATIVE at all */
-
-.root.mobile .dentists.alternative .left
-{
-    left: -50%;
-    bottom: -5%;
-}
-.root.mobile .dentists.alternative .right 
-{
-    right: -50%;
-    bottom: -5%;
-}
-.root.mobile .dentists.alternative .bottom
-{
-    left: -50%;
-    bottom: -5%;
-}
-
-.root.mobile .dentists.alternative .bottom.information
-{
-    bottom: -5% !important;
-    left: 0% !important;
-    transition: 2s 1s !important;
-    transition-delay: 0.3s !important;
-    opacity: 1;
-}
-
-.root.mobile .dentists.alternative .right.information 
-{
-    bottom: -5% !important;
-    right: 10% !important; 
-    transition: 2s 1s !important;
-    transition-delay: 0.3s !important;
-    opacity: 1;
-}
-.root.mobile .dentists.alternative .left.information 
-{
-    bottom: -5% !important;
-    left: 12% !important;
-    transition: 2s 1s !important;
-    transition-delay: 0.3s !important;
-    opacity: 1;
-}
-
-
-.root.mobile .dentists.alternative .dentist.information img 
-{
-    height: 100%;
-    transition: 2.5s 0s;
-    opacity: 1;
-}
-
-/*--- switched transition ---*/
-
-.root.mobile .dentists.alternative .dentist.switched img 
-{
-    transition: 2s 0.5s ease-out;
-}
-.root.mobile .dentists.alternative .dentist.switched 
-{
-    transition: 2s 0.5s ease-out !important;
-}
 
 /*---- BACK BUTTON ----*/
 
 
 .root.mobile .dentist_information
 {
-    width: 33%;
-    min-height: 80%;
+    width: 100%;
     position: absolute;
+    padding: 0.1vmax 3vw;
+    top: 13%;
+    left: 0;
+    max-height: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: start;
     visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
 }
 .root.mobile .dentist_information > span
 {
     width: 0%;
-    min-height: 0.156vw;
-    margin: 0.78vw 0;
+    min-height: 0.156vmax;
+    margin: 0.78vmax 0;
     transition: 0.5s 0s;
     background-color: rgba(255, 255, 255, 0.663);
 }
@@ -950,71 +800,82 @@ body
 {
     width: 100%;
     text-align: center;
-    transform: translate(0, 100%);
-    transition: 0.5s 0.5s;
-    font-size: 1.82vw;
+    transform: translate(0, -50%);
     opacity: 0;
+    transition: 0.5s 0.5s;
+    font-size: 1.52vmax;
     color: rgba(255, 255, 255, 0.855);
-    letter-spacing: 0.156vw;
+    letter-spacing: 0.156vmax;
+    visibility: hidden;
     font-family: "MonserratB";
 }
 .root.mobile .dentist_information .text 
 {
     width: 100%;
-    padding: 0.52vw 0.78vw;
-    overflow: hidden;
+    overflow-y: scroll;
+    visibility: hidden;
+
+    padding: 0.52vmax 0.78vmax;
     
 }
 .root.mobile .dentist_information .text > span
 {
     width: 100%;
-    line-height: 1.404vw;
+    max-height: 100%;
+    line-height: 1.8vmax;
     display: block;
-    font-size: 1.144vw;
-    text-align: center;
+    font-size: 1.3vmax;
+    text-align: left;
 	font-family: 'Montserrat';
     color: rgba(255, 255, 255, 0.795);
     height: 100%;
     opacity: 1;
     transform: translate(0, -110%);
     transition: 1s 1s;
+    overflow: hidden;
+    visibility: hidden;
+    text-overflow: ellipsis;
 }
-.root.mobile .t_left
+.root.mobile .dentist_information .text > span static 
 {
-    left: 15%;
-    top: 10%;
+    text-align: left;
 }
-.root.mobile .t_right
-{
-    right: 12%;
-    top: 10%;
-}
-.root.mobile .dentist_information.period 
+
+.root.mobile .dentist_information.period
 {
     visibility: visible;
+    pointer-events: fill;
+    z-index: 5;
 }
 .root.mobile .dentist_information.period > span 
 {
     width: 100%;
     transition: 0.5s 1.5s;
 }
-.root.mobile .dentist_information.period .text > span {
+.root.mobile .dentist_information.period .text
+{
+    visibility: visible;
+}
+.root.mobile .dentist_information.period .text > span
+{
     transform: translate(0,0);
+    visibility: visible;
     transition: 1.5s 2.7s;
 } 
 .root.mobile .dentist_information.period .dentist_name {
     transform: translate(0,0);
+    visibility: visible;
     opacity: 1;
     transition: 0.7s 2s;
 }
 
 .root.mobile .next_button
 {
-    width: 5.2vw;
+    width: 8.2vmin;
     position: absolute;
-    top: calc(50vh - 2.6vw);
+    top: calc(50vh - 2.6vmin);
     z-index: 25;
-    right: 0;
+    right: 3%;
     transition: 1s 0.3s;
     cursor: pointer;
     visibility: visible;
@@ -1028,7 +889,7 @@ body
 {
     width: 100%;
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: 0.3s;
 }
 .root.mobile .next_button.hidden
@@ -1036,17 +897,14 @@ body
     opacity: 0;
     visibility: hidden;
 } 
-.root.mobile .next_button:hover img {
-    opacity: 1;
-}
 
 .root.mobile .prev_button
 {
-    width: 5.2vw;
+    width: 8.2vmin;
     position: absolute;
-    top: calc(50vh - 2.6vw);
+    top: calc(50vh - 2.6vmin);
     z-index: 25;
-    left: 4%;
+    left: 3%;
     transition: 1s 0.3s;
     cursor: pointer;
     visibility: visible;
@@ -1060,7 +918,7 @@ body
 {
     width: 100%;
     transform: rotate(180deg) scale(1);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: 0.3s;
 }
 .root.mobile .prev_button.hidden
@@ -1068,18 +926,15 @@ body
     opacity: 0;
     visibility: hidden;
 }
-.root.mobile .prev_button:hover img {
-    opacity: 1;
-}
 
 .root.mobile .prev_button:active img 
 {
-    opacity: 0.8;
+    opacity: 1;
     transform: scale(0.9) rotate(180deg);
 }
 .root.mobile .next_button:active img
 {
-    opacity: 0.8;
+    opacity: 1;
     transform: scale(0.9);
 }
 
@@ -1090,7 +945,7 @@ body
 .root.mobile .sidebar
 {
     width: 100%;
-    height: 5.1vh;
+    height: 5.1vmax;
     display: flex;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.516);
@@ -1526,4 +1381,12 @@ body
         transform: scale(1);
     }
 
+}
+@keyframes visible {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }

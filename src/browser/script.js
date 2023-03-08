@@ -257,7 +257,6 @@ export function BrowserJs(){
         // ------------------ LAST FUNCTIONS --------------------- //
         noDelay(title.querySelector(".title"))
         noDelay(title.querySelector(".subtitle"))
-        trimBackground(backgrounds);
         document.querySelector(".blocking").classList.add("off")
         document.querySelector(".blocking").classList.remove("on")
         // checkSize()
@@ -267,17 +266,7 @@ export function BrowserJs(){
 
     }
 
-function trimBackground(backgrounds) {
-    for (let i = 0; i < backgrounds.length; i++) {
-        const background = backgrounds[i];
-        const X = background.clientWidth;
-        const backgroundImg = background.firstElementChild;
-        console.log(X, backgroundImg.scrollWidth);
-        backgroundImg.style.cssText = `
-            left: ${50 * (X / backgroundImg.clientWidth - 1)}%;
-        `
-    }
-}
+
 function checkSize() {
     var X = window.innerWidth;
     var Y = window.innerHeight;
