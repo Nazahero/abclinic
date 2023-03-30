@@ -76,7 +76,7 @@ function Main(props) {
 
     return (
         
-        <main>
+        <div className="wrapper">
             <div className="blocking on">
                 <div className="loading on"><img src="./img/loading.gif" alt="loading..." /></div>
                 <div className="blocked disable">
@@ -101,8 +101,17 @@ function Main(props) {
                 
                 <div className="win_logo" title="abclinic"><img src="./img/ablogo.png" alt="logo" /></div>
                 
+                
+                
+                
      
                 <div className="home page this_page" id="3">
+                    {/* <div className="location hidden">
+                        <a href="https://yandex.ru/maps/org/9426831655" target="_blank" rel="noreferrer noopener" className="location_link">
+                            <span class="material-symbols-outlined">location_on</span>
+                            {props.pack.location} 
+                        </a>
+                    </div> */}
                     <div className="content">
                         <div className="name" id="name">
                             <div className="title">abclinic.uz</div>
@@ -115,10 +124,11 @@ function Main(props) {
                         </div>                        
                     </div>
                     
-                    <a href="https://yandex.ru/maps/org/9426831655" target="_blank" rel="noreferrer noopener" className="location hidden">
-                        <span class="material-symbols-outlined">location_on</span>
-                        {props.pack.location} 
-                    </a>
+                    <div className="feedbacks">
+                        <a href="https://yandex.uz/maps/org/9426831655/reviews/?ll=69.271993%2C41.288301&tab=reviews&z=15">
+                            <img src="./img/feedbacks.png" alt="feedbacks" />
+                        </a>
+                    </div>
 
                     <div className="shadow"></div>
                 </div>
@@ -139,27 +149,25 @@ function Main(props) {
                         <div className="next_button"><img src="./img/next.png" alt="" /></div>
                         <div className="prev_button"><img src="./img/next.png" alt="" /></div>
                           
-                            <div className="dentist_information" data-information="d_1">
-                                    <div className="dentist_name">Азимов Абдухамиджон</div>
+                            <div className="dentist_information" data-information="d_4">
+                                    <div className="dentist_name">Азимов Абдухамиджон Мухамаджон угли</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
-                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
-                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
-                                                <br />  
-                                                <br />                  
-                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
-                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
-                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
-                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
-                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                            С 2023 года является учредителем клиники «Azimov Brothers» <br /> 
+                                            В 2018 году поступил на стоматологический факультет в Волгоградский Медицинский Университет – Россия. <br />
+                                            В 2019 году стал обладателем «Ректорской Стипендии-ТГСИ» <br />
+                                            В 2021 году стажировался в отделении Хирургической Стоматологии в городе Стамбул в клинике «Medipol University Dental Hospital» - Турция. <br />
+                                            В 2022 году стал президентом Ассоциации Молодых Стоматологов <br />
+                                            В 2022-2023 году обучался и стажировался в университете «ADEMA» на острове Пальма де Майорка в Королевстве Испания в рамках гранта «ERASMUS - 2022» <br />
+                                            В 2023 году окончил Ташкентский Государственный Стоматологический Институт <br />
                                             </span>
                                         </div>
                                 </div>
                             
                             
-                            <div className="dentist_information" data-information="d_2">
-                                    <div className="dentist_name">Азимов Иброхимжон</div>
+                            <div className="dentist_information" data-information="d_3">
+                                    <div className="dentist_name">Азимов Иброхимжон Мухамаджон угли</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
@@ -183,7 +191,7 @@ function Main(props) {
                                 </div>
 
                             
-                            <div className="dentist_information" data-information="d_3">
+                            <div className="dentist_information" data-information="d_6">
                                     <div className="dentist_name">Пак Виктория Вадимовна</div>
                                     <span></span>
                                     <div className="text">
@@ -204,7 +212,7 @@ function Main(props) {
                                 </div>
 
                             
-                            <div className="dentist_information" data-information="d_4">
+                            <div className="dentist_information" data-information="d_5">
                                     <div className="dentist_name">Аскаров Мансур Анварович</div>
                                     <span></span>
                                     <div className="text">
@@ -223,39 +231,35 @@ function Main(props) {
                                 </div> 
                             
                             
-                            <div className="dentist_information period" data-information="d_5">
+                            <div className="dentist_information period" data-information="d_1">
                                     <div className="dentist_name">Профессор Азимов Мухаммаджон Исмаилович</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
-                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
-                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
-                                                <br />  
-                                                <br />                  
-                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
-                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
-                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
-                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
-                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                                • Признанный академик Всемирной Ассоциации стоматологов FDI<br />
+                                                                    <br />
+                                                •Действительный член - Академик всемирной академии стоматологов ADI<br />
+                                                                    <br />
+                                                • Признанный Академик Российской академии РТТФА<br />
+                                                                    <br />
+                                                • Профессор кафедры "Детская Челюстно-Лицевая хирургия"<br />
+                                                                    <br />
+                                                • Автор: 7 учебников, 4 монографий, более 250 научных публикаций, 15 учебно-методических пособий <br />
+                                                                    <br />
+                                                • Выпустил  21 д.м.н., 40 к.м.н.<br />
+                                                                    <br />
+                                                • Стаж работы: 53 года<br />
                                             </span>
                                         </div>
                                 </div>
 
                         
-                            <div className="dentist_information" data-information="d_6">
+                            <div className="dentist_information" data-information="d_2">
                                     <div className="dentist_name">Дусмухамедова Хурсанд Кучкаровна</div>
                                     <span></span>
                                     <div className="text">
                                             <span>
-                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
-                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
-                                                <br />  
-                                                <br />                  
-                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
-                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
-                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
-                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
-                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
+                                                empty
                                             </span>
                                         </div>
                                 </div>
@@ -279,23 +283,23 @@ function Main(props) {
                             </div>
 
                             <div className="dentists_photos">
-                                <div className="dentist" id="d_1" data-clone="Abdukhamid">
-                                    <img src="./img/Abdukhamid.png"  alt="" />
-                                </div>
-                                <div className="dentist" id="d_2" data-clone="Ibrohim">
-                                    <img src="./img/Ibrohim.png" alt="dentist" />
-                                </div>
-                                <div className="dentist" id="d_3" data-clone="Viktoria">
-                                    <img src="./img/Viktoria.png" alt="dentist" />
-                                </div>
-                                <div className="dentist" id="d_4" data-clone="Mansur">
-                                    <img src="./img/Mansur.png" alt="dentist" />
-                                </div>
-                                <div className="dentist on" id="d_5" data-clone="Director">
+                                <div className="dentist on" id="d_1" data-clone="Director">
                                     <img src="./img/director.png" alt="dentist" />
                                 </div>
-                                <div className="dentist" id="d_6" data-clone="Xursand">
+                                <div className="dentist" id="d_2" data-clone="Xursand">
                                     <img src="./img/Xursand.png" alt="dentist" />
+                                </div>
+                                <div className="dentist" id="d_3" data-clone="Ibrohim">
+                                    <img src="./img/Ibrohim.png" alt="dentist" />
+                                </div>
+                                <div className="dentist" id="d_4" data-clone="Abdukhamid">
+                                    <img src="./img/Abdukhamid.png"  alt="" />
+                                </div>
+                                <div className="dentist" id="d_5" data-clone="Mansur">
+                                    <img src="./img/Mansur.png" alt="dentist" />
+                                </div>
+                                <div className="dentist" id="d_6" data-clone="Viktoria">
+                                    <img src="./img/Viktoria.png" alt="dentist" />
                                 </div>
                                 <div className="dentist" id="d_7" data-clone="Tatiana">
                                     <img src="./img/Tatiana.png" alt="dentist" />
@@ -318,30 +322,32 @@ function Main(props) {
                         {serviceBlocks[1]}
                         {serviceBlocks[2]}                        
                     </div>
-
-                    <div className="priceList_table view">
-                        <div className="open">Price list</div>
-                        <div className="part first">
-                            <div className="t_title">{props.pack.priceListTitles[0]}</div>
-                            {services["first"]}
-                        </div>
-                        <div className="part second"> 
-                            <div className="t_title">{props.pack.priceListTitles[1]}</div>
-                            {services["second"]}
-                        </div>
-                        <div className="part third">
-                            <div className="t_title">{props.pack.priceListTitles[2]}</div>
-                            {services["third"]}
-                        </div>
-                        <div className="part fourth">
-                            <div className="t_title">{props.pack.priceListTitles[3]}</div>
-                            {services["fourth"]}
-                        </div>
-                        <div className="part fifth">
-                            <div className="t_title">{props.pack.priceListTitles[4]}</div>
-                            {services["fifth"]}
+                    <div className="priceList_container">
+                        <div className="priceList_table view">
+                            <div className="open">Price list</div>
+                            <div className="part first">
+                                <div className="t_title">{props.pack.priceListTitles[0]}</div>
+                                {services["first"]}
+                            </div>
+                            <div className="part second"> 
+                                <div className="t_title">{props.pack.priceListTitles[1]}</div>
+                                {services["second"]}
+                            </div>
+                            <div className="part third">
+                                <div className="t_title">{props.pack.priceListTitles[2]}</div>
+                                {services["third"]}
+                            </div>
+                            <div className="part fourth">
+                                <div className="t_title">{props.pack.priceListTitles[3]}</div>
+                                {services["fourth"]}
+                            </div>
+                            <div className="part fifth">
+                                <div className="t_title">{props.pack.priceListTitles[4]}</div>
+                                {services["fifth"]}
+                            </div>
                         </div>
                     </div>
+                    
                     <div className="background" id="b_services">
                         <img src="./img/cutting.jpg" alt="" />
                     </div>    
@@ -363,9 +369,11 @@ function Main(props) {
                 <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" data-hint="instagram" target="_blank" rel="noreferrer noopener" className="insta social_media high"><img src="./img/Instagram_logo.png" alt="Instagram" /></a>   
                 <a href="https://youtube.com" data-hint="youtube" target="_blank" rel="noreferrer noopener" className="youtube social_media high"><img src="./img/youtube_logo.png" alt="Youtube" /></a>
                 <a href="https://t.me/abclinic_uz" data-hint="telegram" target="_blank" rel="noreferrer noopener" className="telegram social_media high"><img src="./img/telegram_logo.png" alt="Telegram" /></a>
+                <a href="https://yandex.ru/maps/org/9426831655" data-hint="location" target="_blank" rel="noreferrer noopener" className="location social_media high"><img src="./img/location.png" alt="Location" /></a>
+
             </div>
           
-        </main>
+        </div>
                     
 
     )

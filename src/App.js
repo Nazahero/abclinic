@@ -11,23 +11,23 @@ function App(props) {
       <BrowserRouter>
 
         <MobileView>
-          <div className="wrapper">
+          
               <Routes>
                 <Route path="/" element={<MobileMain pack={props.ru} />} />
                 <Route path="/ru" element={<MobileMain pack={props.ru} />} />
                 <Route path="/en" element={<MobileMain pack={props.en} />} />
               </Routes>
-          </div>
+      
         </MobileView>
 
         <BrowserView>
-          <div className="wrapper">
+   
               <Routes>
                 <Route path="/" element={<BrowserMain pack={props.ru} />} />
                 <Route path="/ru" element={<BrowserMain pack={props.ru} />} />
                 <Route path="/en" element={<BrowserMain pack={props.en} />} />
               </Routes>
-          </div>
+              
         </BrowserView>
 
       </BrowserRouter>

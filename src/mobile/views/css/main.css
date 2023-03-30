@@ -3,19 +3,43 @@ body
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
+.root.mobile * {
+    box-sizing: border-box;
+}
+.root.mobile
+{
+    width: 100vw;
+    height: 100%;
+}
+.root.mobile > div 
+{
+    width: 100vw;
+    height: 100%;
+}
+.root.mobile .wrapper
+{
+    width: 100vw;
+    height: 100%;
+}
+.root.mobile img {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently                         not supported by any browser */
+}
 .root.mobile .container
 {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    text-align: center;
 }
 .root.mobile .page {
     position: absolute;
+    height: 100%;
     transition: 1s;
     opacity: 1;
     top: 0;
@@ -153,14 +177,20 @@ body
 }
 .root.mobile .youtube.high
 {
-    right: 3.7vw;
+    right: 3.5vw;
     width: 2.9vmax;
     top: 8vmax;
+}
+.root.mobile .location.high 
+{
+    top: 20.2vmax;
+    right: 4vw;
+
 }
 .root.mobile .social_media
 {
     
-    top: calc(100vh - 97.8%);
+    top: 2.2vmax;
     position: fixed;
     display: block;
     width: 2.5vmax;
@@ -188,23 +218,31 @@ body
 {
     padding: 0.04vw 0;
     width: 3.2vmax;
-    transition: 0.8s 0.2s;
+    transition: 0.8s 0.4s;
     right: 17.5vw;
+}
+.root.mobile .location 
+{
+    right: 41.8vw;
+    transition: 0.8s;
+    top: 2vmax;
+    width: 2.3vmax;
 }
 .root.mobile .telegram
 {
-    transition: 0.8s 0.4s;
+    transition: 0.8s 0.6s;
     right: 6vw;
 }
 .root.mobile .insta
 {
-    transition: 0.8s;
+    transition: 0.8s 0.2s;
     right: 30.5vw;
 }
 .root.mobile .content
 {
     z-index: inherit;
 }
+
 .root.mobile .home .name
 {
     position: absolute;
@@ -273,13 +311,24 @@ body
 .root.mobile .home
 {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     overflow: hidden;
     z-index: 8;
 }
-
+.root.mobile .feedbacks 
+{
+    position: absolute;
+    bottom: 6%;
+    left: 4%;
+    width: 8vmax;
+    z-index: 10;
+}
+.root.mobile .feedbacks img 
+{
+    width: 100%;
+}
 .root.mobile .win_logo
 {
     width: 12.3vmax;
@@ -296,30 +345,37 @@ body
     height: 100%;
 }
 
-.root.mobile .location
+/* .root.mobile .location
 {
-    bottom: 6.5vmax;
-    right: 5%;
-    color: white;
+    bottom: 6.3%;
+    left: 0;
+    width: 100%;
+    padding: 0 5vw;
+    text-align: end;
     position: absolute;
-    opacity: 0.7;
+    opacity: 0.7; 
+    z-index: 18;
+        document.querySelector(".root").style.cssText = `height: ${window.innerHeight}px`;
+    cursor: pointer; 
+    transition: 0.3s 1.5s;
+}
+.location_link 
+{
+    display: inline-flex;
     font-size: 1.5vmax;
     align-items: center;
-    z-index: 18;
-    display: inline-flex;
-    cursor: pointer;
+    color: white;
     transform: scale(1);
-    transition: 0.3s;
     text-decoration: none;
 }
-.root.mobile .location span 
+.root.mobile .location_link span 
 {
     font-size: 1.56vmax;
     padding-bottom: 0.208vw;
     margin-right: 0.156vw;
     text-decoration: none;
 }
-.root.mobile .location:active
+.root.mobile .location_link:active
 {
     opacity: 0.7;
     transform: scale(1);
@@ -327,7 +383,8 @@ body
 .root.mobile .location.hidden
 {
     opacity: 0;
-}
+    transition: 0.3s 0s;
+} */
 
 /*----- UNIVERSAL ----- */
 
@@ -376,6 +433,8 @@ body
 }
 .root.mobile .background#b_services img {
     transform: rotateY(180deg);
+    min-width: 130%;
+    height: 130%;
 }
 .root.mobile .background#b_services img 
 {
@@ -384,12 +443,13 @@ body
 }
 .root.mobile .background#b_services
 {
-    min-width: 115vw;
-    height: 120vh;
+    min-width: 100vw;
+    height: 100vh;
     position: absolute;
-    top: -10vh;
+    overflow: hidden;
+    top: 0;
     opacity: 1;
-    left: -10vw;
+    left: 0;
 }
 .root.mobile .background#b_staff
 {
@@ -406,10 +466,8 @@ body
 .root.mobile .services
 {
     width: 100%;
-    position: relative;
-    height: 100vh;
-    padding: 0 6.24vw;
-    padding-top: 1.56vw;
+    padding: 0 2.25vw;
+    padding-bottom: 6.5vmax;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -499,7 +557,13 @@ body
     width: 100%;
     transform: scale(1);
     opacity: 0.6;
-    transition: 0.3s;
+    transition: 0.3s 0.2s;
+}
+.root.mobile .next_button_s img:active
+{
+    transform: scale(1.1);
+    opacity: 1;
+    transition: 0.3s 0s;
 }
 .prev_button_s
 {
@@ -519,10 +583,17 @@ body
 .root.mobile .prev_button_s img 
 {
     width: 100%;
-    transform: scale(1);
+    transform: rotate(180deg) scale(1);
     opacity: 0.6;
-    transition: 0.3s;
+    transition: 0.3s 0.2s;
 }
+.root.mobile .prev_button_s img:active 
+{
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+    transition: 0.3s 0s;
+}
+
 .root.mobile .service.on
 {
     opacity: 1;
@@ -542,15 +613,32 @@ body
     opacity: 1;
     transform: translate(0,0);
 }
+.root.mobile .priceList_container
+{
+    width: 100%;
+    height: 42%;
+    position: absolute;
+    text-align: center;
+    transition: 0.7s;
+    bottom: 9vh;
+    left: 0;
+    overflow: hidden;
+}
+
+.root.mobile.ios .priceList_container
+{
+    bottom: 15vh;
+}
 
 .root.mobile .priceList_table
 {
     width: 90%;
-    height: 40%;
-    position: absolute;
+    height: 100%;
     text-align: center;
+    position: absolute;
+    top: 0;
+    left: 5%;
     padding: 1.56vmax 0.54vmax;
-    bottom: 8vmax;
     background-color: rgba(0, 0, 0, 0.789);
     border-top: 0.156vmax solid rgba(14, 119, 239, 0.586);
     border-bottom: 0.156vmax solid rgba(14, 119, 239, 0.586);
@@ -562,24 +650,20 @@ body
     visibility: hidden;
     transition: 0.7s;
     overflow-y: scroll;
-    overflow-x: hidden;
     z-index: 50;
-}
-.root.mobile .prev_button_s img 
-{
-    width: 100%;
-    transform: rotate(180deg) scale(1);
-    opacity: 0.6;
-    transition: 0.3s;
 }
 .root.mobile .priceList_table.view
 {
     opacity: 1;
     visibility: visible;
 }
-.root.mobile .priceList_table.openlist
+.root.mobile .priceList_container.openlist
 {
-    height: 78%;
+    height: 87%;
+}
+.root.mobile.ios .priceList_container.openlist
+{
+    height: 83%;
 }
 
 .root.mobile .part
@@ -952,7 +1036,7 @@ body
     left: 0;
     bottom: 0;
     transition: 0.8s;
-    z-index: 20;
+    z-index: 100;
     box-shadow: 0 0.156vmax 0.208vmax rgba(255, 255, 255, 0.573);
 }
 
@@ -1003,11 +1087,6 @@ body
     pointer-events: none;
 }
 
-.root.mobile .side_nav .block:hover img
-{
-    opacity: 0.8;
-    transform: scale(1.1);
-}
 .root.mobile .side_nav .block:active img
 {
     opacity: 0.6;

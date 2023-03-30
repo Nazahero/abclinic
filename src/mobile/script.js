@@ -33,10 +33,29 @@ export function MobileJs(){
 
             
         // --------------------- FIRST FUNCTIONS ------------------------ //
-
         // selectLanguage(langs ,lettersObj, delay, preLetter, lang_list);
         // setDelay(letters, preLetter);
         openPriceList(open, priceList);
+        var prevPosition = priceList.scrollTop;
+        var curPosition;
+        priceList.addEventListener("scroll", function (){
+            priceList.ontouchend = () => {
+                curPosition = priceList.scrollTop;
+                if (!priceList.scrollTop == prevPosition) {
+                    if (curPosition > prevPosition ) {
+                      priceList.parentElement.classList.add("openlist");
+                      prevPosition = curPosition;
+                      return;
+                    }        
+                }
+                if (curPosition == 0 && curPosition < prevPosition) {
+                    priceList.parentElement.classList.remove("openlist");
+                    prevPosition = curPosition;
+                }
+            }         
+        })
+
+        document.querySelector(".root").style.cssText = `height: ${window.innerHeight}px`;
         window.onload = () => {
             console.log("loaded");
             trimBackgrounds(backgrounds);
@@ -53,6 +72,7 @@ export function MobileJs(){
 
         window.addEventListener("resize", () => {
             var active = document.querySelector(".block.active");
+            document.querySelector(".root").style.cssText = `height: ${window.innerHeight}px`;
             trimBackgrounds(backgrounds);
             setTimeout(() => {
                 stickControl(active, stick);
@@ -365,7 +385,7 @@ function welcomePage(homePage, homeButton, navButtons, stick, title, location) {
 function openPriceList(open, priceList) {
     open.addEventListener("click", () => {
         console.log("fu");
-        priceList.classList.toggle('openlist');
+        priceList.parentElement.classList.toggle('openlist');
     })
 }
 function removeClassOff(elems) {
@@ -450,7 +470,7 @@ function dentistSwitcher(nextButton, prevButton) {
     prevButton.addEventListener("click", function () {
         if (!prevButton.classList.contains("stopped")) {
             prevButton.classList.add("stopped");
-            nextDentist(prevButton)
+            prevDentist(prevButton)
         }
     })
 }
@@ -489,7 +509,7 @@ function prevDentist(prevButton) {
         prevDen = curDen.previousElementSibling;
     } else
     {
-        prevDen = document.getElementById("d_1");
+        prevDen = document.getElementById("d_7");
     }
     prevInf = document.querySelector(`[data-information="${prevDen.id}"]`);
 
