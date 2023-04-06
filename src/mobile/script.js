@@ -12,7 +12,7 @@ export function MobileJs(){
         const open = document.querySelector(".open");
         const priceList = document.querySelector(".priceList_table");
         const sidebar = document.querySelector(".sidebar");
-        const social_icons = document.querySelectorAll(".social_media");
+        const social_icons = document.querySelectorAll(".social_media"); 
         const dentists = document.querySelectorAll(".dentist");
         const dentistsBox = document.querySelector(".dentists");
         const fog = document.querySelectorAll(".fog");
@@ -119,10 +119,12 @@ export function MobileJs(){
 
                         hiddenElement(location);
                         break;
-                    case 4:
+                    case "1":
                         return;
                         break;
-                
+                    case "5":
+
+                        break;
                     default:
                         return;
                         break;
@@ -434,6 +436,13 @@ function pageScroll(page) {
         }else if(pageEl.id > page.id) {
             high.push(pageEl);
         }
+        if (pageEl.classList.contains("this_page")) {
+            setTimeout(() => {
+                pageEl.classList.add("hidden"); 
+            }, 1000);
+        } else {
+            pageEl.classList.add("hidden"); 
+        }
         pageEl.classList.remove("this_page");
         pageEl.classList.remove("page_right");
         pageEl.classList.remove("page_left");
@@ -449,13 +458,17 @@ function pageScroll(page) {
     page.classList.add("this_page");
     page.classList.remove("hidden");
 
-    page.addEventListener("transitionend" ,function () {
-        if (!page.classList.contains("this_page")) {
-            setTimeout(() => {
-                page.classList.add("hidden");
-            }, 200);
-        }
-    })
+    for (let i = 0; i < pages.length; i++) {
+        const p = pages[i];
+        p.addEventListener("transitionend" ,function () {
+            if (!page.classList.contains("this_page")) {
+                setTimeout(() => {
+                    page.classList.add("hidden");
+                }, 200);
+            }
+        })
+    }
+    
 }
 
 // ------------------------------------------------ //

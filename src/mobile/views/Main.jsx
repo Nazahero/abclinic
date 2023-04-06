@@ -9,7 +9,7 @@ function Line(props) {
         <div className="line">
             <div className="l_service"><span>{props.service}</span></div>
             <span>............................................................................................................................................................................................................................................................................................................................................................................</span>
-            <div className="price">{props.price + " " + props.currency}</div>
+            <div className="price">{props.price + " " + props.currency}</div> 
         </div>
         
     ) 
@@ -91,7 +91,7 @@ function Main(props) {
                             <div className="block _2" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
                             <div className="block _1 active" data-hint="home" id="home"><img src="./img/four-boxes.png" alt="home" /></div>
                             <div className="block _3" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
-                            <div className="block _5 disable" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
+                            <div className="block _5" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
                         </div>
             </div>
             <div className="container">
@@ -358,8 +358,13 @@ function Main(props) {
                 </div>
 
                 <div className="blog page page_right" id="5">
-                    
-                    
+                    <div className="back_photo">
+                        <img src="./img/blog_photo.jpg" alt="clinic" />
+                        <div className="shadow"></div>
+                    </div>
+                    <div className="blog_list">
+                        
+                    </div>
                 </div>
                 
                 
