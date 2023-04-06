@@ -360,7 +360,7 @@ function Main(props) {
                 <div className="blog page page_right" id="5">
                     <div className="back_photo">
                         <img src="./img/blog_photo.jpg" alt="clinic" />
-                        <div className="shadow"></div>
+                        <div className="shadow da"></div>
                     </div>
                     <div className="blog_list">
                         
