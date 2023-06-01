@@ -23,14 +23,29 @@ export function MobileJs(){
         const sNext = document.querySelector(".next_button_s");
         const sPrev = document.querySelector(".prev_button_s");
         const location = document.querySelector(".location");
-        // const language = document.getElementById("language").querySelector("span");
-        // const lang_list = document.querySelector(".lang_list");
+        const contact = document.querySelector(".contact");
+        const language = document.getElementById("language");
+        const lang_list = document.querySelector(".lang_list");
         // const langs = document.querySelectorAll(".lang_block");
         
+        // setTimeout(() => {
+        //     window.history.pushState("", "regenerate", "/photos");
+        // }, 5000);
 
+        // --------------------- LANGUAGE -------------------- //
 
-
-
+        language.addEventListener("click", function () {
+            if (!lang_list.classList.contains("visible")) {
+                lang_list.classList.add("visible");
+            }
+        })
+        window.addEventListener("touchstart", function () {
+            if (lang_list.classList.contains("visible")) {
+            setTimeout(() => {
+                    lang_list.classList.remove("visible");
+            }, 200);
+            } 
+        })
             
         // --------------------- FIRST FUNCTIONS ------------------------ //
         // selectLanguage(langs ,lettersObj, delay, preLetter, lang_list);
@@ -64,7 +79,63 @@ export function MobileJs(){
         serviseSwitcher(sNext, sPrev, services);
         // openLanguage(language, lang_list); 
 
+        // --------------------- CATEGORY --------------------- //
+
+        const categories = document.querySelectorAll(".category");
+        var pub_back = document.querySelectorAll(".pub_back");
+        let prevUrl = undefined;
+        const content = document.querySelector(".blog .content"); 
         
+        for (let k = 0; k < pub_back.length; k++) {
+            const back = pub_back[k];
+            back.addEventListener("click", function() {
+                content.classList.remove("on");
+            }) 
+        };
+            
+        for (let i = 0; i < categories.length; i++) {
+            const category = categories[i];
+            category.addEventListener("click", function() {          
+                content.classList.add("on");
+            });
+        } 
+        // ---------------------- INFO ----------------------- //
+
+        const infoImg = document.querySelector(".info_back img");
+        const info = document.querySelector(".info");
+
+        infoImg.style.top = `${info.scrollTop}px`;
+        info.addEventListener("scroll", function () {
+            infoImg.style.top = `${info.scrollTop}px`;
+        })
+
+        // --------------------- CONTACTS --------------------- //
+
+        contact.firstElementChild.addEventListener("click", function () {
+            contact.classList.toggle("opened");
+        })
+
+        // --------------------- COPY FUNCTIONS ----------------------- //
+
+            var copy_button = document.getElementById("copy");
+            copy_button.addEventListener("click", function (){
+                const copyText = copy_button.previousElementSibling.innerHTML;
+                const sysInput = document.createElement("input");
+                sysInput.setAttribute("value", copyText); 
+
+                document.body.appendChild(sysInput);
+
+                sysInput.select();
+
+                document.execCommand("copy");
+
+                copy_button.parentElement.classList.add("copied");
+                document.body.removeChild(sysInput)
+            });
+            
+            
+
+        // -------------------------------------------- //
         
         setTimeout(() => {
             welcomePage(homePage, homeButton, navButtons, stick, title, location);
@@ -120,10 +191,17 @@ export function MobileJs(){
                         hiddenElement(location);
                         break;
                     case "1":
-                        return;
+                        iconMove(social_icons);
+                        addClassOff(fog);
+
+                        hiddenElement(location);
+
                         break;
                     case "5":
+                        iconMove(social_icons);
+                        addClassOff(fog);
 
+                        hiddenElement(location);
                         break;
                     default:
                         return;
@@ -167,16 +245,28 @@ function trimBackgrounds(backgrounds) {
         const background = backgrounds[i];
         const X = background.clientWidth;
         const backgroundImg = background.firstElementChild;
+        if (background.id == "b_services") {
+            backgroundImg.style.cssText = `
+                left: ${209 * (X / backgroundImg.clientWidth - 1)}%;
+            `; 
+            break;
+        }
         backgroundImg.style.cssText = `
-            left: ${50 * (X / backgroundImg.clientWidth - 1)}%;
+            left: ${80 * (X / backgroundImg.clientWidth - 1)}%;
         `;
     }
 }
 function trimBackground(background) {
         const X = background.clientWidth;
         const backgroundImg = background.firstElementChild;
+        if (background.id == "b_services") {
+            backgroundImg.style.cssText = `
+                left: ${209 * (X / backgroundImg.clientWidth - 1)}%;
+            `; 
+            return;
+        }
         backgroundImg.style.cssText = `
-            left: ${50 * (X / backgroundImg.clientWidth - 1)}%;
+            left: ${80 * (X / backgroundImg.clientWidth - 1)}%;
         `;
 }
 

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from "react-router-dom";
 import css from "./css/main.css";
 import Start from "../../start";
+import 'swiper/css';
+import Swiper from "swiper";
+
+
 
 
 
@@ -45,25 +49,113 @@ function Letter(props) {
         <span className="letter">{props.letter}</span>
     )
 }
+function Dentist(props) {
+    return (
+        <div className={"dentist off prioriti_" + props.priority + " _" + props.num + " " + props.side} id={"d_" + props.id} data-clone={props.clone}>
+            <img src={props.img}  alt="" />                                
+        </div>
+    )
+}
+function Br(props) {
+    return (
+        <br />        
+    )
+}
+
+function Part(props) {
+    return (
+        <div className="part">
+            <div className="t_title">{props.title}</div>
+            {props.services}
+        </div>
+    )
+}
+
+function DentistInfo(props) {
+    
+    let text = [""];
+    let found = 0;
+    let information = [];
+
+    for (let i = 0; i < props.info.length; i++) {
+        const element = props.info[i];
+        let pre_text = text[text.length-1];
+        if (element == "<") {
+            found = 1;
+            continue;
+        } else if (found == 1 && element == "n") {
+            text.push("");
+            found = 0;
+            continue;
+        }
+        found = 0;
+        text[text.length-1] = pre_text + element;
+    }
+
+    for (let i = 0; i < text.length; i++) {
+        const element = text[i];
+        information.push(element);
+        information.push(<Br />);
+    }
+
+    if (props.side == "right") {
+        return (
+            <div className={"dentist_information i_"+ props.num +" t_left"}>
+                <div className="dentist_name">{props.name}</div>
+                <span></span>
+                <div className="text">
+                    <span>
+                        {information}
+                    </span>
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className={"dentist_information i_"+ props.num +" t_right"}>
+                <div className="dentist_name">{props.name}</div>
+                <span></span>
+                <div className="text">
+                    <span>
+                        {information}
+                    </span>
+                </div>
+            </div>
+        )
+    }
+    
+}
+
 
 function Main(props) {
     const currency = props.pack.currency;
-    let letters = [];
-    let services = {};
-    let serviceBlocks = [];
-
-    console.log("why");
+    const letters = [];
+    const services = [];
+    const serviceBlocks = [];
+    const dentists = [];
+    const priceList = [];
 
     
+    
+    
+    
 
-    for (const key in props.pack.priceList) {      
-            const element = props.pack.priceList[key];
-            services[key] = [];
-            for (let i = 0; i < element.length; i++) {
-                const obj = element[i];
-                services[key].push(<Line service={obj["service"]} price={obj["price"]} currency={currency} />)
+    for (let i = 0; i < props.pack.priceList.length; i++) {      
+            const element = props.pack.priceList[i];
+            services[i] = [];
+            for (let k = 0; k < element.length; k++) {
+                const obj = element[k];
+                services[i].push(<Line service={obj["service"]} price={obj["price"]} currency={currency} />)
             }
     }
+
+    for (let i = 0; i < services.length; i++) {
+        const serv = services[i];
+        const el_title = props.pack.priceListTitles[i];
+
+        priceList.push(<Part title={el_title} services={serv} />);
+    }
+    
 
     for (let i = 0; i < props.pack.letters.length; i++) {
         const element = props.pack.letters[i];
@@ -74,15 +166,21 @@ function Main(props) {
         const element = props.pack.services[i];
         serviceBlocks.push(<ServiceBlock title={element.title} list={element.serviceList} />);
     }
+
+    for (let i = 0; i < props.pack.dentists.length; i++) {
+        const den_obj = props.pack.dentists[i];
+        dentists.push(<Dentist id={den_obj.id} clone={den_obj.cloneName} priority={den_obj.priority} num={i+1} side={den_obj.side} img={den_obj.img} />);
+        dentists.push(<DentistInfo info={den_obj.info} name={den_obj.name} num={i+1} side={den_obj.side} />);
+    }
     
 
+
     return (
-        
         <main>
             <div className="blocking on">
-                <div className="loading on"><img src="./img/loading.gif" alt="loading..." /></div>
+                <div className="loading on"><img src="/img/loading.gif" alt="loading..." /></div>
                 <div className="blocked disable">
-                    <div className="lock"><img src="./img/lock.png" alt="lock" /></div>
+                    <div className="lock"><img src="/img/lock.png" alt="lock" /></div>
                     <div className="massage">{props.pack.errMassage}</div>
                 </div>
             </div>
@@ -94,25 +192,27 @@ function Main(props) {
                         </div> */}
                         <div className="side_nav">
                             <span></span>
-                            <div className="block _1 active" data-hint="home" id="home"><img src="./img/four-boxes.png" alt="home" /></div>
-                            <div className="block _2" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
-                            <div className="block _3" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
-                            <div className="block _4" data-hint="info" id="info"><img src="./img/info.png" alt="info" /></div>
-                            <div className="block _5 disable" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
+                            <div className="block _1 active" data-hint="home" id="home"><img src="/img/four-boxes.png" alt="home" /></div>
+                            <div className="block _2" data-hint="staff" id="staff"><img src="/img/staff.png" alt="staff" /></div>
+                            <div className="block _3" data-hint="services" id="services"><img src="/img/servises.png" alt="services" /></div>
+                            <div className="block _4" data-hint="info" id="info"><img src="/img/info.png" alt="info" /></div>
+                            <div className="block _5" data-hint="blogs" id="blog"><img src="/img/blog.png" alt="blog" /></div>
                             <div className="lang" id="language">
                                 <span class="material-symbols-outlined clickable" data-hint="language" >language</span>
                                 <div className="lang_list hidden">
                                         <NavLink to="/ru" className="lang_block" id="ru">ru</NavLink>
                                         <span className="lang_line"></span> 
                                         <NavLink to="/en" className="lang_block" id="en">en</NavLink>
+                                        <span className="lang_line"></span> 
+                                        <NavLink to="/uz" className="lang_block" id="uz">uz</NavLink>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
             </div>
             <div className="container">
-                <div className="background" id="b_services"><img src="./img/cutting.jpg" alt="" /></div>
-                <div className="background onthis" id="b_home"><img onLoad={Start()} src="./img/big cab.jpg" alt="" /></div>
-                <div className="background" id="b_staff"><img src="./img/background.jpg" alt="" /></div>
+                <div className="background" id="b_services"><img src="/img/services.jpg" alt="" /></div>
+                <div className="background onthis" id="b_home"><img onLoad={Start()} src="/img/big cab.jpg" alt="" /></div>
+                <div className="background" id="b_staff"><img src="/img/background.jpg" alt="" /></div>
                 <div className="hint" id="hint"></div>
                 <div className="main_comment">
                     {props.pack.comment}
@@ -132,7 +232,7 @@ function Main(props) {
                         
                     </div>
                     
-                    <div className="win_logo" title="abclinic"><img src="./img/ablogo.png" alt="logo" /></div>
+                    <div className="win_logo" title="abclinic"><img src="/img/ablogo.png" alt="logo" /></div>
 
                     <a href="https://yandex.ru/maps/org/9426831655" target="_blank" rel="noreferrer noopener" className="location hidden">
                         <span class="material-symbols-outlined">location_on</span>
@@ -143,233 +243,53 @@ function Main(props) {
                     <div className="shadow"></div>
                 </div>
 
+
                 <div className="staff" id="2">
-                        <div className="next_button hidden"><img src="./img/next.png" alt="" /></div>
-                        <div className="prev_button hidden"><img src="./img/next.png" alt="" /></div>
-                        <div className="back_button"><img src="./img/back.png" className="clickable" alt="" /></div>
+                        <div className="next_button hidden"><img src="/img/next.png" alt="" /></div>
+                        <div className="prev_button hidden"><img src="/img/next.png" alt="" /></div>
+                        <div className="back_button"><img src="/img/back.png" className="clickable" alt="" /></div>
                         <div className="shadow"></div>
                         <div className="team">
                             {letters}
                         </div>
                         {/* ------------------------------- */}
                         <div className="fog _1 off">
-                            <img src="./img/fog.png" alt="fog" />
+                            <img src="/img/fog.png" alt="fog" />
                         </div>
                         <div className="fog _2 off">
-                            <img src="./img/fog.png" alt="fog" />
+                            <img src="/img/fog.png" alt="fog" />
                         </div>
                         <div className="fog _3 off">
-                            <img src="./img/fog.png" alt="fog" />
+                            <img src="/img/fog.png" alt="fog" />
                         </div> 
                         {/* ------------------------------- */}
                         <div className="dentists">
-                            <div className="dentist off prioriti_2 _1 right" id="d_4" data-clone="Abdukhamid">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Азимов Иброхимжон</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                <img src="./img/Abdukhamid.png"  alt="" />
-                                
-                            </div>
-                            <div className="dentist_information i_1 t_left">
-                                    <div className="dentist_name">Азимов Абдухамиджон</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                                С 2023 года является учредителем клиники «Azimov Brothers» <br /> 
-                                                В 2018 году поступил на стоматологический факультет в Волгоградский Медицинский Университет – Россия. <br />
-                                                В 2019 году стал обладателем «Ректорской Стипендии-ТГСИ» <br />
-                                                В 2021 году стажировался в отделении Хирургической Стоматологии в городе Стамбул в клинике «Medipol University Dental Hospital» - Турция. <br />
-                                                В 2022 году стал президентом Ассоциации Молодых Стоматологов <br />
-                                                В 2022-2023 году обучался и стажировался в университете «ADEMA» на острове Пальма де Майорка в Королевстве Испания в рамках гранта «ERASMUS - 2022» <br />
-                                                В 2023 году окончил Ташкентский Государственный Стоматологический Институт <br />
-                                            </span>
-                                        </div>
-                            </div>
-                            
-                            <div className="dentist off prioriti_1 _2 right" id="d_3" data-clone="Ibrohim">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Азимов Абдухамиджон</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                <img src="./img/Ibrohim.png" alt="dentist" />
-                                
-                            </div>
-                            <div className="dentist_information  i_2 t_left" >
-                                    <div className="dentist_name">Азимов Иброхимжон</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                            2021 - Ташкентский Государственный Стоматологический Институт (стоматолог общей практики)
-                                            2021 - нынешнее время - Магистр кафедры Челюстно-лицевой хирургии (Ташкентский Государственный Стоматологический Институт)
-                                            2022 - нынешнее время - Advanced Master program - Biomimetic dentistry (Los Angeles)
-                                            <br />
-                                            Обладатель Государственной стипендии имени abu Ali ibn Sino
-                                            Обладатель Государственной стипендии имени Yoosik Yang
-                                            <br />                    
-                                            услуги:
-                                            <br /> - лечение кариеса
-                                            <br /> - восстановление сильно разрушенных зубов (основное направление)
-                                            <br /> - композитные и керамические накладки (основное направление)
-                                            <br /> - проф. гигиена
-                                            <br /> - отбеливание
-                                            </span>
-                                        </div>
-                                </div>
-                            <div className="dentist off prioriti_3 _3 left" id="d_5" data-clone="Viktoria">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Виктория Вадимовна</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                
-
-                                <img src="./img/Viktoria.png" alt="dentist" />
-                                
-                            </div>
-                            <div className="dentist_information i_3 t_right">
-                                    <div className="dentist_name">Пак Виктория Вадимовна</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                            В 2001 году закончила стоматологический факультет Бух.МИ, далее с 2004 г. закончила  ICD Корейский центр по направлению терапевтическая стоматология.
-                                            Ведет терапевтический и ортопедический прием взрослых. 
-                                            Лечение зубов: профессиональная гигиена, лечение кариеса, эндодонтия, реставрации и т.д.
-                                            Съемное протезирование: пластинчатые, бьюгельные и иммидиат протезы и т.д.
-                                            <br />
-                                            Несъемное протезирование: металлокремические, циркониевые коронки (одиночные и мостовидные) на зубах и на имплантатах; 
-                                            <br />
-                                            Эстетика: композитные и керамические виниры
-                                            <br />
-                                            Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов. 
-                                            Для записи на прием или получение подробной информации: +998 951 22 88 55
-                                            </span>
-                                        </div>
-                                </div>
-                            <div className="dentist off prioriti_2 _4 left" id="d_1" data-clone="Mansur">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Мансур Анварович</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                <img src="./img/Mansur.png" alt="dentist" />
-                            </div>
-                            <div className="dentist_information  i_4 t_right">
-                                    <div className="dentist_name">Аскаров Мансур Анварович</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                                В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. 
-                                                В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого. 
-                                                <br />  
-                                                <br />                  
-                                                В настоящее время ассистент кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института.
-                                                Ведет узкоспециализированный прием, оказывая весь спектр хирургических услуг взрослым и детям.
-                                                Основное направление <b>дентальная имплантология</b> и <b>лазерная хирургия. </b>
-                                                 Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов.
-                                                Помимо клинического приема на базе <b>abclinic.uz</b> проводят мастер-классы по имплантологии.
-                                            </span>
-                                        </div>
-                                </div>
-                            <div className="dentist off prioriti_main _6 bottom" id="d_6" data-clone="Director">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Мансур Анварович</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                <img src="./img/director.png" alt="dentist" />
-                            </div>
-                            <div className="dentist_information  i_6 t_right">
-                                    <div className="dentist_name">профессор Азимов Мухаммаджон Исмаилович</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                            • Признанный академик Всемирной Ассоциации стоматологов FDI<br />
-                                                                <br />
-                                            •Действительный член - Академик всемирной академии стоматологов ADI<br />
-                                                                <br />
-                                            • Признанный Академик Российской академии РТТФА<br />
-                                                                <br />
-                                            • Профессор кафедры "Детская Челюстно-Лицевая хирургия"<br />
-                                                                <br />
-                                            • Автор: 7 учебников, 4 монографий, более 250 научных публикаций, 15 учебно-методических пособий <br />
-                                                                <br />
-                                            • Выпустил  21 д.м.н., 40 к.м.н.<br />
-                                                                <br />
-                                            • Стаж работы: 53 года<br />
-                                            </span>
-                                        </div>
-                                </div>
-                            <div className="dentist off prioriti_1 _7 left" id="d_7" data-clone="Xursand">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Мансур Анварович</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                <img src="./img/Xursand.png" alt="dentist" />
-                            </div>
-                            <div className="dentist_information  i_7 t_right">
-                                    <div className="dentist_name">Дусмухамедова Хурсанд Кучкаровна</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                                empty
-                                            </span>
-                                        </div>
-                                </div>
-                            <div className="dentist off prioriti_3 _5 right" id="d_2" data-clone="Tatiana">
-                                {/* <div className="name"> */}
-                                    {/* <span className="n">Татяна Юрьевна</span> */}
-                                    {/* <span className="x"></span> */}
-                                    {/* <div className="y"></div> */}
-                                {/* </div> */}
-                                <img src="./img/Tatiana.png" alt="dentist" />
-
-                                
-                                
-                            </div>
-                            <div className="dentist_information  i_5 t_left">
-                                    <div className="dentist_name">Ким Татяна Юрьевна</div>
-                                    <span></span>
-                                    <div className="text">
-                                            <span>
-                                            2011 – ТМА
-                                            2015 – резидентура в ANDC Корейский центр по направлению ортопедическая стоматология
-                                            Ведет терапевтический и ортопедический прием взрослых. 
-                                            Лечение зубов: профессиональная гигиена, лечение кариеса, эндодонтия, реставрации.
-                                            Несъемное протезирование: металлокремические, циркониевые коронки (одиночные и мостовидные) на зубах и на имплантатах; 
-                                            Эстетика: композитные и керамические виниры
-                                            Ежегодно повышает квалификацию на конференциях, мастер-классах с участием международных лекторов. 
-                                            Для записи на прием или получение подробной информации: +998 951 22 88 55
-                                            </span>
-                                        </div>
-                                </div>
+                            {dentists}
                         </div>
                         {/* ------------------------------- */}
                         <div className="clone cPrioriti-2" id="Abdukhamid">
-                            <img src="./img/Abdukhamid.png" className="cloneImg" alt="dentist" />
+                            <img src="/img/Abdukhamid.png" className="cloneImg" alt="dentist" />
                         </div>
                         <div className="clone cPrioriti-1" id="Ibrohim">
-                            <img src="./img/Ibrohim.png" className="cloneImg" alt="dentist" />
+                            <img src="/img/Ibrohim.png" className="cloneImg" alt="dentist" />
                         </div>
                         <div className="clone cPrioriti-3 incorrect" id="Viktoria">
-                            <img src="./img/Viktoria.png" className="cloneImg" alt="dentist" />
+                            <img src="/img/Viktoria.png" className="cloneImg" alt="dentist" />
                         </div>
                         <div className="clone cPrioriti-2" id="Mansur">
-                            <img src="./img/Mansur.png" className="cloneImg" alt="dentist" />
-                        </div>
-                        <div className="clone cPrioriti-main" id="Director">
-                            <img src="./img/director.png" className="cloneImg" alt="dentist" />
-                        </div>
-                        <div className="clone cPrioriti-main" id="Xursand">
-                            <img src="./img/Xursand.png" className="cloneImg" alt="dentist" />
+                            <img src="/img/Mansur.png" className="cloneImg" alt="dentist" />
                         </div>
                         <div className="clone cPrioriti-3" id="Tatiana">
-                            <img src="./img/Tatiana.png" className="cloneImg" alt="dentist" />
+                            <img src="/img/Tatiana.png" className="cloneImg" alt="dentist" />
                         </div>
+                        <div className="clone cPrioriti-main" id="Director">
+                            <img src="/img/director.png" className="cloneImg" alt="dentist" />
                         </div>
+                        <div className="clone cPrioriti-main" id="Xursand">
+                            <img src="/img/Xursand.png" className="cloneImg" alt="dentist" />
+                        </div>
+                        
+                </div>
 
                 <div className="services" id="3">
                     <div className="shadow"></div>
@@ -381,44 +301,83 @@ function Main(props) {
                     </div>
                     <div className="priceList_table">
                         <div className="open">Price list</div>
-                        <div className="part first">
-                            <div className="t_title">{props.pack.priceListTitles[0]}</div>
-                            {services["first"]}
-                        </div>
-                        <div className="part second"> 
-                            <div className="t_title">{props.pack.priceListTitles[1]}</div>
-                            {services["second"]}
-                        </div>
-                        <div className="part third">
-                            <div className="t_title">{props.pack.priceListTitles[2]}</div>
-                            {services["third"]}
-                        </div>
-                        <div className="part fourth">
-                            <div className="t_title">{props.pack.priceListTitles[3]}</div>
-                            {services["fourth"]}
-                        </div>
-                        <div className="part fifth">
-                            <div className="t_title">{props.pack.priceListTitles[4]}</div>
-                            {services["fifth"]}
-                        </div>
+                        {priceList}
                     </div>
                         
                     
                 </div>
 
                 
-
                 <div className="info" id="4">
-
+                    <div className="info_back">
+                        <img src="/img/info.jpg" alt="info"/>
+                        <div className="shadow"></div>
+                        <div className="back_title">
+                            <div className="main_t">Welcome to abclinic.uz</div>
+                        </div>
+                    </div>
+                    <div className="information">
+                        {/* <div className="theme">
+                            <div className="theme_title">О нас</div>
+                            <div className="article">
+                                <div className="article_title">Открытие</div>
+                                <div className="article_content">
+                                    <div className="atext"></div>
+                                    <div className="article_img"></div>
+                                </div>
+                            </div>
+                        </div> */}
+                    </div>
                 </div>
                 
-                
+                <div className="blog" id="5">
+                    <div className="blog_sidebar">
+                        <div className="blog_list">
+                            <div className="btitle">BLOGS</div>
+                            <div className="blog_container">
+                                <NavLink to={"/"+ `${props.pack.lang}` +"/beforeafter"}  className="category">
+                                    <div className="category_photo">
+                                        <img src="/img/BeAfter.jpg" alt="Before/After" />
+                                        <div className="category_sahdow"></div>
+                                        <div className="photo_text">До/После</div>
+                                    </div>
+                                    <div className="description">
+                                        Фотографии работ в виде До/После
+                                    </div>
+                                </NavLink>
+                                <NavLink to={"/"+ `${props.pack.lang}` +"/moments"} className="category">
+                                    <div className="category_photo">
+                                        <img src="/img/oda moments.jpg" alt="ODA" />
+                                        <div className="category_sahdow"></div>
+                                        <div className="photo_text">Moments</div>
+                                    </div>
+                                    <div className="description">
+                                        Бесплатная имплантация 2023 "ORIGIN DENTAL ACADEMY"
+                                    </div>
+                                </NavLink>
+                                {/* <NavLink to={"/"+ `${props.pack.lang}` +"/works"} className="category">
+                                    <div className="category_photo">
+                                        <div className="category_sahdow"></div>
+                                    </div>
+                                    <div className="description">
+                                        Фотографии работ в виде До/После.
+                                    </div>
+                                </NavLink>  */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="content">
+                        <div className="pre_text" data-empty="Пока что пусто">Выберите категорию</div>
+                        {props.blog}
+                    </div>
+                    <div className="background" id="b_blog"></div>
+                </div>
                 
 
 
-                <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" data-hint="instagram" target="_blank" rel="noreferrer noopener" className="insta social_media"><img src="./img/Instagram_logo.png" alt="Instagram" /></a>   
-                <a href="https://youtube.com" data-hint="youtube" target="_blank" rel="noreferrer noopener" className="youtube social_media"><img src="./img/youtube_logo.png" alt="Youtube" /></a>
-                <a href="https://t.me/abclinic_uz" data-hint="telegram" target="_blank" rel="noreferrer noopener" className="telegram social_media"><img src="./img/telegram_logo.png" alt="Telegram" /></a>
+                <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" data-hint="instagram" target="_blank" rel="noreferrer noopener" className="insta social_media"><img src="/img/Instagram_logo.png" alt="Instagram" /></a>   
+                <a href="https://youtube.com" data-hint="youtube" target="_blank" rel="noreferrer noopener" className="youtube social_media"><img src="/img/youtube_logo.png" alt="Youtube" /></a>
+                <a href="https://t.me/abclinic_uz" data-hint="telegram" target="_blank" rel="noreferrer noopener" className="telegram social_media"><img src="/img/telegram_logo.png" alt="Telegram" /></a>
             </div>
         </main>
                     

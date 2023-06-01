@@ -1,0 +1,33 @@
+{
+    "1" : [
+        {
+            "author": {
+                "name": "abclinic.uz",
+                "photo": "/img/ablogo2.png"
+            },
+            "title": "Биомиметика",
+            "description": "Рестоврация с помощю накладки",
+            "like": 0,
+            "type": "swiper",
+            "img": [
+                {
+                    "order": 1,
+                    "url": "/img/job 1_1.jpg"
+                },
+                {
+                    "order": 2,
+                    "url": "/img/job 1_2.jpg"
+                },
+                {
+                    "order": 3,
+                    "url": "/img/job 1_3.jpg"
+                },
+                {
+                    "order": 4,
+                    "url": "/img/job 1_4.jpg"
+                }
+            ]
+        }
+    ]
+}
+

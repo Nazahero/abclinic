@@ -9,25 +9,41 @@
 }
 @font-face {
 	font-family: 'Madrigal';
-	src: url('./fonts/Madrigal-mLJ92.ttf');
+	src: url('/fonts/Madrigal-mLJ92.ttf');
 }
 @font-face {
 	font-family: 'Montserrat';
-	src: url('./fonts/Montserrat-Medium.ttf');
+	src: url('/fonts/Montserrat-Medium.ttf');
 }
 @font-face {
 	font-family: 'MonserratB';
-	src: url('./fonts/Montserrat-Bold.ttf');
+	src: url('/fonts/Montserrat-Bold.ttf');
 }
 @font-face {
 	font-family: 'OrbitronB';
-	src: url("./fonts/Orbitron-Bold.ttf");
+	src: url("/fonts/Orbitron-Bold.ttf");
 }
 @font-face {
 	font-family: 'OrbitronSB';
-	src: url("./fonts/Orbitron-SemiBold.ttf");
+	src: url("/fonts/Orbitron-SemiBold.ttf");
 }
 @font-face {
 	font-family: 'Righteous';
-	src: url("./fonts/Righteous-Regular.ttf");
+	src: url("/fonts/Righteous-Regular.ttf");
+}
+@font-face {
+	font-family: 'MarkScript';
+	src: url("/fonts/MarckScript-Regular.ttf");
+}
+@font-face {
+	font-family: 'Lobster';
+	src: url("/fonts/Lobster-Regular.ttf");
+}
+@font-face {
+	font-family: 'Tenor';
+	src: url("/fonts/TenorSans-Regular.ttf");
+}
+@font-face {
+	font-family: 'Andrika';
+	src: url("/fonts/Andika-Bold.ttf");
 }

@@ -1,3 +1,4 @@
+
 export function BrowserJs(){
     console.log("browser");
     function start() {
@@ -19,7 +20,7 @@ export function BrowserJs(){
         var letters = document.querySelectorAll(".letter");
         console.log("mobile");
         const lettersObj = {};
-        const delay = [];
+        const delay = []; 
         const preLetter = {};
         const informations = document.querySelectorAll(".dentist_information");
         const backButton = document.querySelector(".back_button");
@@ -34,6 +35,7 @@ export function BrowserJs(){
         const hint = document.getElementById("hint");
         const langs = document.querySelectorAll(".lang_block");
         const clones = document.querySelectorAll(".clone");
+        const default_category = document.getElementById("default_category");
         
         // --------------------- SET LETTERS ---------------------- //
 
@@ -60,66 +62,37 @@ export function BrowserJs(){
 
 
         // ---------------------------- EVENTS ------------------------------ //
-        for (let i = 0; i < dentists.length; i++) {
-            const den = dentists[i];
-            const denImg = den.querySelector("img");
-            const cl = document.getElementById(`${den.getAttribute("data-clone")}`);
-            const clImg = cl.querySelector("img");
-            /*------------------- STARTING --------------------*/
-            backButton.addEventListener("click", function () {
-                cl.classList.remove("hovered"); 
-                denImg.classList.remove("unhovered");
-            })
-            cl.addEventListener("click", function () {
-                    cl.classList.remove("hovered"); 
-                    denImg.classList.remove("unhovered");
-            })
-            den.addEventListener("transitionstart", function() {
-                if (den.parentElement.classList.contains("alternative")) {
-                    cl.classList.remove("on")
-                    cl.classList.add('hidden');
-                } else {
-                    trimClone(denImg, cl)
-                }
-            })
-            den.addEventListener("animationstart", function() {
-                if (den.parentElement.classList.contains("alternative")) {
-                    cl.classList.remove("on")
-                    cl.classList.add('hidden');
-                } else {
-                    trimClone(denImg, cl)
-                }
-            })
-            /*-------------------- ENDING --------------------*/
-            den.addEventListener("transitionend", function() {
-                trimClones(clones);
-                cl.classList.add("on");
-                if (!den.parentElement.classList.contains("alternative")) {
-                    cl.classList.remove("hidden");
-                }
-                if (den.parentElement.classList.contains("alternative")) {
-                    cl.classList.remove("hovered"); 
-                }
-            })
-            den.addEventListener("animationend", function() {
-                trimClones(clones);
-                cl.classList.add("on");
-                if (!den.parentElement.classList.contains("alternative")) {
-                    cl.classList.remove("hidden");
-                }
-                if (den.parentElement.classList.contains("alternative")) {
-                    cl.classList.remove("hovered"); 
-                }
-            })
-            /*---------------- INTERATION ------------------*/
-            den.addEventListener("transitionrun", function () {
-                
-            })
-            den.addEventListener("animationiteration", function () {
-                toolsParalax(sidebar, fog , social_icons);
-            })
-        }
         
+
+        // --------------------------- INFO BACK --------------------------------- //
+
+        const infoImg = document.querySelector(".info_back img");
+        const info = document.querySelector(".info");
+
+        infoImg.style.top = `${info.scrollTop - (window.innerHeight * 0.7)}px`;
+        info.addEventListener("scroll", function () {
+            infoImg.style.top = `${info.scrollTop - (window.innerHeight * 0.7)}px`;
+        })
+        
+        // --------------------------- BLOG CATEGORIES --------------------------- //
+        
+        const blog_buttons = document.querySelectorAll(".category");
+        const pre_text = document.querySelector(".content .pre_text");
+        var changed = false;
+
+
+        for (let i = 0; i < blog_buttons.length; i++) {
+            const button = blog_buttons[i];
+            if (button.classList.contains("active") && (!changed)) {
+                pre_text.innerHTML = `${pre_text.getAttribute("data-empty")}`;
+                changed = true;
+            }
+            button.addEventListener("click", function() {
+                pre_text.innerHTML = `${pre_text.getAttribute("data-empty")}`;
+                changed = true;
+            }, ) 
+        }
+
         // -------------------------- HINT EVENTS ---------------------------- //
 
         for (let i = 0; i < elementHints.length; i++) {
@@ -150,8 +123,8 @@ export function BrowserJs(){
         // --------------------- FIRST FUNCTIONS ------------------------ //
             welcomePage(homePage, homeButton, navButtons, stick, title, location);
 
-        trimClones(clones);
-        selectLanguage(langs ,lettersObj, delay, preLetter, lang_list);
+        
+        selectLanguage(langs ,lettersObj, delay, preLetter, lang_list, pre_text, dentistsBox);
         setDelay(letters, preLetter);
         openPriceList(open, priceList);  
         openLanguage(language, lang_list); 
@@ -166,7 +139,9 @@ export function BrowserJs(){
                 trimClones(clones);
             }
             scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`));
-            noDelayArr(letters, delay)
+            noDelayArr(letters, delay);
+            // infoImg.style.top = `${info.}px`;
+
             
             setTimeout(() => {
                 stickControl(active, stick);
@@ -197,6 +172,7 @@ export function BrowserJs(){
                         // ---- WELCOME ANIMATION ---- //
                         
                         visible(lettersObj);     
+                        events(dentists, backButton, clones)
                         dentistHover(dentists , clones); 
                         toolsParalax(sidebar, fog , social_icons);
                         visibleToolsWhenHover(sidebar, social_icons);
@@ -208,8 +184,10 @@ export function BrowserJs(){
 
                         // ---- ----------------- ---- //
 
-                        // ---- INFO ANIMATION ---- //
-
+                        window.addEventListener("scroll", function () {
+                            trimClones(clones);
+                        })
+                       
 
 
                         // ---- -------------- ---- //
@@ -226,10 +204,38 @@ export function BrowserJs(){
                         hiddenElement(arrow);
                         hiddenElement(location);
                         break;
-                    case 4:
+                    case "4":
                         return;
                         break;
-                
+                    case "5":
+                        setTimeout(() => {
+                            for (let i = 0; i < document.querySelectorAll(".swiper-wrapper").length; i++) {
+                                const element = document.querySelectorAll(".swiper-wrapper")[i];
+                                element.classList.add("active");
+                            }
+                            
+                        }, 200);
+                        const sidelist_buttons = document.querySelectorAll(".category");
+                        for (let i = 0; i < sidelist_buttons.length; i++) {
+                            const element = sidelist_buttons[i];
+                            element.addEventListener("click", function () {
+                                setTimeout(() => {
+                                    for (let i = 0; i < document.querySelectorAll(".swiper-wrapper").length; i++) {
+                                        const element = document.querySelectorAll(".swiper-wrapper")[i];
+                                        element.classList.add("active");
+                                    }
+                                    
+                                }, 300);
+                            })
+                        }
+                        
+                        removeStaffPage(sidebar, social_icons, fog);
+                        iconMove(social_icons);
+                        hiddenElement(arrow);
+                        hiddenElement(location);
+
+                        
+                        break;                    
                     default:
                         return;
                         break;
@@ -246,12 +252,27 @@ export function BrowserJs(){
             var el = document.getElementById(`${page.getAttribute("class")}`);
             var background = document.querySelector(`#b_${page.getAttribute("class")}`);
 
-            iconMove(social_icons);
-            addClassOn(service_block);
-            visiblePriceList(priceList);
-            removeStaffPage(sidebar, social_icons, fog);
-            hiddenElement(arrow);
             sidebarControl(navButtons, el, stick, backgrounds, background , page);
+
+            visible(lettersObj);     
+            events(dentists, backButton, clones)
+            dentistHover(dentists , clones); 
+            toolsParalax(sidebar, fog , social_icons);
+            visibleToolsWhenHover(sidebar, social_icons);
+            addGr(dentists);
+            visibleDentists(preLetter ,dentists);
+            dentistsControl(dentists, dentistsBox, lettersObj, backButton, nextButton, dentistClones, prevButton);
+            backButtonControl(dentists, dentistsBox, lettersObj, informations, backButton, nextButton, dentistClones, prevButton);
+            controlSwitcher(nextButton, backButton, prevButton)
+            // ---- ----------------- ---- /
+            window.addEventListener("scroll", function () {
+                trimClones(clones);
+            })
+            
+            // ---- -------------- ---- //
+            iconMove(social_icons);
+            hiddenElement(arrow);
+            hiddenElement(location);
         });
 
         // ------------------ LAST FUNCTIONS --------------------- //
@@ -266,6 +287,69 @@ export function BrowserJs(){
 
     }
 
+function events(dentists, backButton, clones) {
+    for (let i = 0; i < dentists.length; i++) {
+        const den = dentists[i];
+        const denImg = den.querySelector("img");
+        const cl = document.getElementById(`${den.getAttribute("data-clone")}`);
+        const clImg = cl.querySelector("img");
+        /*------------------- STARTING --------------------*/
+        backButton.addEventListener("click", function () {
+            cl.classList.remove("hovered");
+            cl.classList.add("transitting");     
+            denImg.classList.remove("unhovered");
+        })
+        cl.addEventListener("click", function () {
+                cl.classList.remove("hovered"); 
+                denImg.classList.remove("unhovered");
+        })
+        den.addEventListener("transitionstart", function() {
+            if (den.parentElement.classList.contains("alternative")) {
+                cl.classList.remove("on")
+                cl.classList.add('hidden');
+            } else {
+                console.log("trimed");
+                trimClone(denImg, cl)
+            }
+        })
+        den.addEventListener("animationstart", function() {
+            if (den.parentElement.classList.contains("alternative")) {
+                cl.classList.remove("on")
+                cl.classList.add('hidden');
+            } else {
+                console.log("trimed");
+                trimClone(denImg, cl)
+            }
+        })
+        /*-------------------- ENDING --------------------*/
+        den.addEventListener("transitionend", function() {
+            trimClones(clones);
+            cl.classList.add("on");
+            if (!den.parentElement.classList.contains("alternative")) {
+                cl.classList.remove("hidden");
+            }
+            if (den.parentElement.classList.contains("alternative")) {
+                cl.classList.remove("hovered"); 
+            }
+        })
+        den.addEventListener("animationend", function() {
+            trimClones(clones);
+            cl.classList.add("on");
+            if (!den.parentElement.classList.contains("alternative")) {
+                cl.classList.remove("hidden");
+            }
+            if (den.parentElement.classList.contains("alternative")) {
+                cl.classList.remove("hovered"); 
+            }
+        })
+        // cl.addEventListener("transitionstart", function () {
+        //     cl.classList.add("transitting");
+        // })
+        // cl.addEventListener("transitionend", function () {
+        //     cl.classList.remove("transitting");
+        // })
+    }
+}
 
 function checkSize() {
     var X = window.innerWidth;
@@ -288,7 +372,7 @@ function trimClone(dentist, clone) {
             height: ${dentist.clientHeight}px;
             top: ${dentist.getBoundingClientRect().top}px;
             left: ${dentist.getBoundingClientRect().left}px;
-        `;
+    `;
 }
 function trimClones(clones) {
     for (let i = 0; i < clones.length; i++) {
@@ -308,10 +392,10 @@ function dentistHover(dentists, clones) {
         const dentist = dentists[i].querySelector("img");
         console.log(dentist);
         clone.addEventListener("mouseover", function () {
-            if (!clone.classList.contains("hidden")) {
-                clone.classList.add("hovered");
-                dentist.classList.add("hovered");
-            }
+                if (!clone.classList.contains("hidden")) {
+                    clone.classList.add("hovered");
+                    dentist.classList.add("hovered");
+                }            
         });
         clone.addEventListener("mouseout", function () {
             clone.classList.remove("hovered");
@@ -359,7 +443,7 @@ function openLanguage(language, lang_list) {
         
     })
 }
-function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list) {
+function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list, pre_text, dentistsBox) {
 
     for (let i = 0; i < langs.length; i++) {
         const element = langs[i];
@@ -367,15 +451,17 @@ function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list) {
             removeClassActive(langs);
             addClassActive(element);
             hiddenElement(lang_list);
-
+            pre_text.innerHTML = "Выберите категорию";
+        
 
             /*--------------------------*/
-
-            const letters = document.querySelectorAll(".letter");
-            console.log(letters);
-            for (let i = 0; i < letters.length; i++) {
-                letters[i].style.cssText = `transition-duration: 0s;`;
-                letters[i].classList.remove("visible");
+            if (!(dentistsBox.classList.contains("alternative"))) {
+                const letters = document.querySelectorAll(".letter");
+                console.log(letters);
+                for (let i = 0; i < letters.length; i++) {
+                    letters[i].style.cssText = `transition-duration: 0s;`;
+                    letters[i].classList.remove("visible");
+                }
             }
 
             setTimeout(() => {
@@ -387,14 +473,17 @@ function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list) {
                 noDelayArr(newLetters, delay);
                 for (let i = 0; i < newLetters.length; i++) {
                     newLetters[i].style.cssText = `transition-duration: 1s;`;
-                    if (document.querySelector("#staff").classList.contains("active")) {
+                    if (document.querySelector("#staff").classList.contains("active") && (!(dentistsBox.classList.contains("alternative")))) {
+                        console.log("bibi");
                         newLetters[i].classList.add("visible");
                     }
                 }
                 if (!document.querySelector("#staff").classList.contains("active")) {
                     setDelay(newLetters, preLetter);
                 }
-        }, 200);
+            }, 200);
+            
+            
         });
     }
 }

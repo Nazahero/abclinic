@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 import css from  "./css/main.css";   
 import Start from "../../start";
@@ -78,20 +79,22 @@ function Main(props) {
         
         <div className="wrapper">
             <div className="blocking on">
-                <div className="loading on"><img src="./img/loading.gif" alt="loading..." /></div>
+                <div className="loading on"><img src="/mobileImg/loading.gif" alt="loading..." /></div>
                 <div className="blocked disable">
-                    <div className="lock"><img src="./img/lock.png" alt="lock" /></div>
+                    <div className="lock"><img src="/mobileImg/lock.png" alt="lock" /></div>
                     <div className="massage">{props.pack.errMassage}</div>
                 </div>
             </div>
+            
+
             <div className="sidebar off">
                         <div className="side_nav">
                             <span className></span>
-                            <div className="block _4 disable" data-hint="info" id="info"><img src="./img/info.png" alt="info" /></div>
-                            <div className="block _2" data-hint="staff" id="staff"><img src="./img/staff.png" alt="staff" /></div>
-                            <div className="block _1 active" data-hint="home" id="home"><img src="./img/four-boxes.png" alt="home" /></div>
-                            <div className="block _3" data-hint="services" id="services"><img src="./img/servises.png" alt="services" /></div>
-                            <div className="block _5" data-hint="blogs" id="blog"><img src="./img/blog.png" alt="blog" /></div>
+                            <div className="block _4" data-hint="info" id="info"><img src="/mobileImg/info.png" alt="info" /></div>
+                            <div className="block _2" data-hint="staff" id="staff"><img src="/mobileImg/staff.png" alt="staff" /></div>
+                            <div className="block _1 active" data-hint="home" id="home"><img src="/mobileImg/four-boxes.png" alt="home" /></div>
+                            <div className="block _3" data-hint="services" id="services"><img src="/mobileImg/servises.png" alt="services" /></div>
+                            <div className="block _5" data-hint="blogs" id="blog"><img src="/mobileImg/blog.png" alt="blog" /></div>
                         </div>
             </div>
             <div className="container">
@@ -99,7 +102,8 @@ function Main(props) {
                     {props.pack.comment}
                 </div>
                 
-                <div className="win_logo" title="abclinic"><img src="./img/ablogo.png" alt="logo" /></div>
+                <div className="win_logo" title="abclinic"><img src="/mobileImg/ablogo.png" alt="logo" /></div>
+                
                 
                 
                 
@@ -120,14 +124,50 @@ function Main(props) {
                         </div>
                         
                         <div className="background" id="b_home">
-                            <img onLoad={Start()} src="./img/big cab.jpg" alt="homeImg" />
+                            <img onLoad={Start()} src="/mobileImg/big cab.jpg" alt="homeImg" />
                         </div>                        
                     </div>
                     
                     <div className="feedbacks">
                         <a href="https://yandex.uz/maps/org/9426831655/reviews/?ll=69.271993%2C41.288301&tab=reviews&z=15">
-                            <img src="./img/feedbacks.png" alt="feedbacks" />
+                            <img src="/mobileImg/feedbacks.png" alt="feedbacks" />
                         </a>
+                    </div>
+                    <div className="lang">
+                        <span class="material-symbols-outlined clickable" data-hint="language" id="language">language</span>
+                        <div className="lang_list">
+                            <NavLink to="/ru" className="lang_block" id="ru">ru</NavLink> 
+                            <NavLink to="/en" className="lang_block" id="en">en</NavLink>
+                            <NavLink to="/uz" className="lang_block" id="uz">uz</NavLink>
+                        </div>
+                    </div>
+                    <div className="contact">
+                    <img src="/mobileImg/phone.png" alt="" />
+                    <div className="contacts">
+                        <ul className="contact_list">
+                            <li>
+                                <text>+998 95 122 88 55</text>                                 
+                                <span id="copy">
+                                    <img src="/mobileImg/copy.png" className="copy_button" alt="copy" />
+                                    <img src="/mobileImg/copied.png" className="copied_button" alt="copyied" />
+                                </span>
+                            </li>
+                            {/* <li>
+                                +998 93 123 45 67 
+                                <span data-copy="+998 93 123 45 67">
+                                    <img src="/mobileImg/copy.png" className="copy_button" alt="copy" />
+                                    <img src="/mobileImg/copied.png" className="copied_button" alt="copyied" />
+                                </span>
+                            </li>
+                            <li>
+                                +998 93 123 45 67 
+                                <span data-copy="+998 93 123 45 67">
+                                    <img src="/mobileImg/copy.png" className="copy_button" alt="copy" />
+                                    <img src="/mobileImg/copied.png" className="copied_button" alt="copyied" />
+                                </span>
+                            </li> */}
+                        </ul>
+                    </div>
                     </div>
 
                     <div className="shadow"></div>
@@ -136,18 +176,18 @@ function Main(props) {
                 <div className="staff page page_left" id="2">
                     
                     <div className="fog _1 off">
-                        <img src="./img/fog.png" alt="fog" />
+                        <img src="/mobileImg/fog.png" alt="fog" />
                     </div>
                     <div className="fog _2 off">
-                        <img src="./img/fog.png" alt="fog" />
+                        <img src="/mobileImg/fog.png" alt="fog" />
                     </div>
                     <div className="fog _3 off">
-                        <img src="./img/fog.png" alt="fog" />
+                        <img src="/mobileImg/fog.png" alt="fog" />
                     </div> 
 
                     <div className="dentists">
-                        <div className="next_button"><img src="./img/next.png" alt="" /></div>
-                        <div className="prev_button"><img src="./img/next.png" alt="" /></div>
+                        <div className="next_button"><img src="/mobileImg/next.png" alt="" /></div>
+                        <div className="prev_button"><img src="/mobileImg/next.png" alt="" /></div>
                           
                             <div className="dentist_information" data-information="d_4">
                                     <div className="dentist_name">Азимов Абдухамиджон Мухамаджон угли</div>
@@ -259,7 +299,13 @@ function Main(props) {
                                     <span></span>
                                     <div className="text">
                                             <span>
-                                                empty
+                                            Окончила стоматологический факультет ТМА в 1982 году. 
+                                            В 1982-1990 годах вела научно-практическую и педагогическую деятельность на кафедре хирургической стоматологии этого института. 
+                                            Защитила кандидатскую диссертацию в Институте кибернетики Академии Наук Узбекистана.
+                                            С 1990 по 1996 год работала старшим преподавателем кафедры детской хирургической стоматологии. 
+                                            В 2004-2017 годах работала в Центральной стоматологической поликлинике Министерства обороны Республики Узбекистан в должности хирурга-стоматолога. 
+                                            2019: с года работает доцентом кафедры детской челюстно-лицевой хирургии Ташкентского Государственного Стоматологического Института.
+                                            Автор более 20 научных работ. Участник многочисленных научно-практических конференций.
                                             </span>
                                         </div>
                                 </div>
@@ -284,40 +330,40 @@ function Main(props) {
 
                             <div className="dentists_photos">
                                 <div className="dentist on" id="d_1" data-clone="Director">
-                                    <img src="./img/director.png" alt="dentist" />
+                                    <img src="/mobileImg/director.png" alt="dentist" />
                                 </div>
                                 <div className="dentist" id="d_2" data-clone="Xursand">
-                                    <img src="./img/Xursand.png" alt="dentist" />
+                                    <img src="/mobileImg/Xursand.png" alt="dentist" />
                                 </div>
                                 <div className="dentist" id="d_3" data-clone="Ibrohim">
-                                    <img src="./img/Ibrohim.png" alt="dentist" />
+                                    <img src="/mobileImg/Ibrohim.png" alt="dentist" />
                                 </div>
                                 <div className="dentist" id="d_4" data-clone="Abdukhamid">
-                                    <img src="./img/Abdukhamid.png"  alt="" />
+                                    <img src="/mobileImg/Abdukhamid.png"  alt="" />
                                 </div>
                                 <div className="dentist" id="d_5" data-clone="Mansur">
-                                    <img src="./img/Mansur.png" alt="dentist" />
+                                    <img src="/mobileImg/Mansur.png" alt="dentist" />
                                 </div>
                                 <div className="dentist" id="d_6" data-clone="Viktoria">
-                                    <img src="./img/Viktoria.png" alt="dentist" />
+                                    <img src="/mobileImg/Viktoria.png" alt="dentist" />
                                 </div>
                                 <div className="dentist" id="d_7" data-clone="Tatiana">
-                                    <img src="./img/Tatiana.png" alt="dentist" />
+                                    <img src="/mobileImg/Tatiana.png" alt="dentist" />
                                 </div>
                             </div>
 
                     </div>
 
                     <div className="background" id="b_staff">
-                        <img src="./img/background.jpg" alt="" />
+                        <img src="/mobileImg/background.jpg" alt="" />
                     </div>
 
                 </div>
                 <div className="services page page_right" id="4">
                     
                     <div className="services_block">
-                        <div className="next_button_s"><img src="./img/next.png" alt="" /></div>
-                        <div className="prev_button_s"><img src="./img/next.png" alt="" /></div>
+                        <div className="next_button_s"><img src="/mobileImg/next.png" alt="" /></div>
+                        <div className="prev_button_s"><img src="/mobileImg/next.png" alt="" /></div>
                         {serviceBlocks[0]}
                         {serviceBlocks[1]}
                         {serviceBlocks[2]}                        
@@ -345,25 +391,83 @@ function Main(props) {
                                 <div className="t_title">{props.pack.priceListTitles[4]}</div>
                                 {services["fifth"]}
                             </div>
+                            <div className="part sixth">
+                                <div className="t_title">{props.pack.priceListTitles[5]}</div>
+                                {services["sixth"]}
+                            </div>
                         </div>
                     </div>
-                    
                     <div className="background" id="b_services">
-                        <img src="./img/cutting.jpg" alt="" />
+                        <img src="/mobileImg/services.jpg" alt="" />
                     </div>    
+                    <div className="shadow"></div>
                 </div>            
 
                 <div className="info page page_left" id="1">
-
+                    <div className="info_back">
+                        <img src="/mobileImg/info.jpg" alt="info"/>
+                        <div className="shadow"></div>
+                        <div className="back_title">
+                            <div className="main_t">Welcome to abclinic.uz</div>
+                        </div>
+                    </div>
+                    <div className="information">
+                        <div className="theme">
+                            <div className="theme_title">О нас</div>
+                            <div className="article">
+                                <div className="article_title">Открытие</div>
+                                <div className="article_content">
+                                    <div className="atext"></div>
+                                    <div className="article_img"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="blog page page_right" id="5">
                     <div className="back_photo">
-                        <img src="./img/blog_photo.jpg" alt="clinic" />
-                        <div className="shadow da"></div>
+                        <img src="/mobileImg/blog_photo.jpg" alt="clinic" />
+                        <div className="shadow"></div>
                     </div>
                     <div className="blog_list">
-                        
+                        <div className="category_list">
+                            <div className="btitle">BLOGS</div> 
+                            <div className="blog_container">
+                                <NavLink to={"/"+ `${props.pack.lang}` +"/beforeafter"} className="category">
+                                    <div className="category_photo">
+                                        <img src="/mobileImg/BeAfter.jpg" alt="Before/After" />
+                                        <div className="category_sahdow"></div>
+                                        <div className="photo_text">До/После</div>
+                                    </div>
+                                    <div className="description">
+                                        Фотографии работ в виде До/После.
+                                    </div>
+                                </NavLink>
+                                {/* <NavLink to={"/"+ `${props.pack.lang}` +"/photos"} className="category">
+                                    <div className="category_photo">
+                                        <div className="category_sahdow"></div>
+                                    </div>
+                                    <div className="description">
+                                        Фотографии работ в виде До/После.
+                                    </div>
+                                </NavLink>
+                                <NavLink to={"/"+ `${props.pack.lang}` +"/works"} className="category">
+                                    <div className="category_photo">
+                                        <div className="category_sahdow"></div>
+                                    </div>
+                                    <div className="description">
+                                        Фотографии работ в виде До/После.
+                                    </div>
+                                </NavLink> */}
+                            </div>
+                        </div>
+                        <div className="content">
+                            <div className="pub_back"><img src="/mobileImg/back.png" alt="back" /></div>
+                            <div className="pre_text" data-empty="Пока что пусто">Пока что пусто</div>
+                            
+                            {props.blog}
+                        </div>
                     </div>
                 </div>
                 
@@ -371,11 +475,11 @@ function Main(props) {
                 
 
 
-                <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" data-hint="instagram" target="_blank" rel="noreferrer noopener" className="insta social_media high"><img src="./img/Instagram_logo.png" alt="Instagram" /></a>   
-                <a href="https://youtube.com" data-hint="youtube" target="_blank" rel="noreferrer noopener" className="youtube social_media high"><img src="./img/youtube_logo.png" alt="Youtube" /></a>
-                <a href="https://t.me/abclinic_uz" data-hint="telegram" target="_blank" rel="noreferrer noopener" className="telegram social_media high"><img src="./img/telegram_logo.png" alt="Telegram" /></a>
-                <a href="https://yandex.ru/maps/org/9426831655" data-hint="location" target="_blank" rel="noreferrer noopener" className="location social_media high"><img src="./img/location.png" alt="Location" /></a>
-
+                <a href="https://instagram.com/abclinic.uz?igshid=MDM4ZDc5MmU=" data-hint="instagram" target="_blank" rel="noreferrer noopener" className="insta social_media high"><img src="/mobileImg/Instagram_logo.png" alt="Instagram" /></a>   
+                <a href="https://youtube.com" data-hint="youtube" target="_blank" rel="noreferrer noopener" className="youtube social_media high"><img src="/mobileImg/youtube_logo.png" alt="Youtube" /></a>
+                <a href="https://t.me/abclinic_uz" data-hint="telegram" target="_blank" rel="noreferrer noopener" className="telegram social_media high"><img src="/mobileImg/telegram_logo.png" alt="Telegram" /></a>
+                <a href="https://yandex.ru/maps/org/9426831655" data-hint="location" target="_blank" rel="noreferrer noopener" className="location social_media high"><img src="/mobileImg/location.png" alt="Location" /></a>
+                
             </div>
           
         </div>
