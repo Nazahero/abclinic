@@ -28,9 +28,11 @@ function App(props) {
     for (let i = 0; i < categories.length; i++) {
         const categoryPath = categories[i].path;
         let PublicationPack = "";
-        if (publications[categories[i].guid]) {
-            PublicationPack = <Pub pubs={publications[categories[i].guid]} />;
-        }
+        if (publications) {
+            if (publications[categories[i].guid]) {
+                PublicationPack = <Pub pubs={publications[categories[i].guid]} />;
+            }
+        }        
         for (let k = 0; k < langPath.length; k++) {
             const path = langPath[k];
             if (path == "") {

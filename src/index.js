@@ -8,11 +8,25 @@ import packageUz from "./uz.json";
 import categories from "./categories.json";
 import publications from "./publications.json";
 import { isAndroid, isDesktop, isIOS, isMobile, isWindows } from 'react-device-detect';
+import axios from 'axios';
+
+const HOST = "localhost";
+const PORT = 8080;
+async function getData() {
+    try {
+        const pub = (await axios.get("http://localhost:8080/v1/dentists/1")).headers("asadbek: 'gay'");
+        return pub.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getData().then(function (result) {
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App ru={packageRu} en={packageEn} uz={packageUz} categories={categories} dentists={result} />);
+})
 
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App ru={packageRu} en={packageEn} uz={packageUz} categories={categories} publications={publications} />);
 
 if (isMobile) {
     document.getElementById('root').classList.add("mobile");

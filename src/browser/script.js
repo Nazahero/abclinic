@@ -63,7 +63,19 @@ export function BrowserJs(){
 
         // ---------------------------- EVENTS ------------------------------ //
         
-
+        
+        let prevpath = window.location.pathname;
+        
+        
+        setInterval(() => {
+            if (prevpath != window.location.pathname) {
+                console.log("bam");
+                var active = document.querySelector(".block.active");
+                scrollControl(backgrounds, document.querySelector(".background.onthis") , document.querySelector(`.${active.id}`), "instant");
+                prevpath = window.location.pathname; 
+            }
+        }, 100);
+        
         // --------------------------- INFO BACK --------------------------------- //
 
         const infoImg = document.querySelector(".info_back img");
@@ -575,13 +587,13 @@ function prevDentist(button, next, backButton) {
         removeDisableFromElement(backButton)
     }, 5000);
 }
-function scrollControl(backgrounds, background , page) {
+function scrollControl(backgrounds, background , page, ifsmooth) {
     setBackgroudImage(background, backgrounds, page);
-    scrollIntoPage(page);
+    scrollIntoPage(page, ifsmooth);
 }
 function sidebarControl(navButtons, el, stick, backgrounds, background , page) {
     if (!stick.classList.contains("disable")) {
-        scrollControl(backgrounds, background , page);
+        scrollControl(backgrounds, background , page, "smooth");
         removeClassActive(navButtons);                
         stickControl(el, stick);
         addClassActive(el);   
@@ -724,12 +736,12 @@ function setBackgroudImage(current, arr, page) {
         }
         current.classList.add("onthis");
 }
-function scrollIntoPage(element) {
+function scrollIntoPage(element, ifsmooth) {
     setTimeout(() => {
         element.scrollIntoView({
             block: "start",
             inline: "nearest", 
-            behavior: "smooth",
+            behavior: ifsmooth,
         })
     }, 200);
     
