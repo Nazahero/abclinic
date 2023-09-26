@@ -1,45 +1,54 @@
-body
-{
+body {
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
+
 .root.mobile * {
     box-sizing: border-box;
 }
-.root.mobile
-{
-    width: 100vw; 
-    height: 100%;
-}
-.root.mobile > div 
-{
+
+.root.mobile {
     width: 100vw;
     height: 100%;
 }
-.root.mobile .wrapper
-{
+
+.root.mobile>div {
     width: 100vw;
     height: 100%;
 }
+
+.root.mobile .wrapper {
+    width: 100vw;
+    height: 100%;
+}
+
 .root.mobile img {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently                         not supported by any browser */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently                         not supported by any mobile */
 }
+
 .root.mobile a {
     text-decoration: none;
 }
-.root.mobile .container
-{
+
+.root.mobile .container {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100vw;
 }
+
 .root.mobile .page {
     position: absolute;
     height: 100%;
@@ -47,24 +56,26 @@ body
     opacity: 1;
     top: 0;
 }
+
 .root.mobile .page.hidden {
     opacity: 0;
 }
+
 .root.mobile .page.this_page {
     left: 0;
     opacity: 1;
     animation: visible 2s;
 }
-.root.mobile .page.page.page_left
-{
+
+.root.mobile .page.page.page_left {
     left: -100vw;
 }
-.root.mobile .page.page_right
-{
+
+.root.mobile .page.page_right {
     left: 100vw;
 }
-.root.mobile .main_comment
-{
+
+.root.mobile .main_comment {
     position: absolute;
     top: 2vh;
     left: 32vw;
@@ -75,26 +86,26 @@ body
     z-index: 50;
     visibility: hidden;
 }
-.root.mobile .loading
-{
+
+.root.mobile .loading {
     position: absolute;
     width: 5%;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-.root.mobile .loading.on
-{
+
+.root.mobile .loading.on {
     opacity: 1;
     visibility: visible;
 }
-.root.mobile .loading img 
-{
+
+.root.mobile .loading img {
     width: 100%;
     visibility: inherit;
 }
-.root.mobile .blocking 
-{
+
+.root.mobile .blocking {
     position: fixed;
     top: 0;
     left: 0;
@@ -108,35 +119,36 @@ body
     align-items: center;
     background-color: rgb(56, 56, 56);
 }
-.root.mobile .blocking.on
-{
+
+.root.mobile .blocking.on {
     visibility: visible;
     opacity: 1;
 }
-.root.mobile .blocking.off
-{
+
+.root.mobile .blocking.off {
     visibility: hidden;
     opacity: 0;
 }
+
 .root.mobile .lock {
     max-width: 50%;
     max-height: 50%;
     margin-bottom: 20px;
 }
-.root.mobile .lock img 
-{
+
+.root.mobile .lock img {
     width: 100%;
     height: 100%;
 }
-.root.mobile .blocking .massage
-{
+
+.root.mobile .blocking .massage {
     font-size: 1.04vmax;
     font-family: "Montserrat";
     color: rgba(255, 255, 255, 0.857);
     text-align: center;
 }
-.root.mobile .blocked 
-{
+
+.root.mobile .blocked {
     opacity: 1;
     visibility: visible;
     display: flex;
@@ -144,13 +156,13 @@ body
     justify-content: center;
     align-items: center;
 }
-.root.mobile .blocked.disable 
-{
+
+.root.mobile .blocked.disable {
     opacity: 0;
     visibility: hidden;
 }
-.root.mobile .sidebar_container
-{
+
+.root.mobile .sidebar_container {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -159,40 +171,40 @@ body
     overflow: hidden;
 }
 
-.root.mobile .telegram.high
-{
+.root.mobile .telegram.high {
     right: 4vw;
 }
 
-.root.mobile .insta.high
-{
+.root.mobile .insta.high {
     right: 4vw;
     top: 14.2vmax;
 }
-.root.mobile .social_media.high{
+
+.root.mobile .social_media.high {
     height: fit-content;
 
     width: 2.5vmax;
 }
+
 .root.mobile .social_media.high img {
     height: unset;
     width: 100%;
 }
-.root.mobile .youtube.high
-{
+
+.root.mobile .youtube.high {
     right: 3.5vw;
     width: 2.9vmax;
     top: 8vmax;
 }
-.root.mobile .location.high 
-{
+
+.root.mobile .location.high {
     top: 20.2vmax;
     right: 4vw;
 
 }
-.root.mobile .social_media
-{
-    
+
+.root.mobile .social_media {
+
     top: 2.2vmax;
     position: fixed;
     display: block;
@@ -200,61 +212,59 @@ body
     margin: 1.04vmax;
     z-index: 20;
 }
-.root.mobile .social_media img 
-{
+
+.root.mobile .social_media img {
     opacity: 0.8;
     transform: scale(1);
     transition: 0.2s;
 }
-.root.mobile .social_media:active img
-{
+
+.root.mobile .social_media:active img {
     transform: scale(1);
     opacity: 0.8;
 }
-.root.mobile .social_media img
-{
+
+.root.mobile .social_media img {
     width: 100%;
     pointer-events: none;
 }
 
-.root.mobile .youtube
-{
+.root.mobile .youtube {
     padding: 0.04vw 0;
     width: 3.2vmax;
     transition: 0.8s 0.4s;
     right: 17.5vw;
 }
-.root.mobile .location 
-{
+
+.root.mobile .location {
     right: 41.8vw;
     transition: 0.8s;
     top: 2vmax;
     width: 2.3vmax;
 }
-.root.mobile .telegram
-{
+
+.root.mobile .telegram {
     transition: 0.8s 0.6s;
     right: 6vw;
 }
-.root.mobile .insta
-{
+
+.root.mobile .insta {
     transition: 0.8s 0.2s;
     right: 30.5vw;
 }
-.root.mobile .content
-{
+
+.root.mobile .content {
     z-index: inherit;
 }
 
-.root.mobile .home .name
-{
+.root.mobile .home .name {
     position: absolute;
     top: 28%;
     left: 12%;
     z-index: 1;
 }
-.root.mobile .home .name .title
-{
+
+.root.mobile .home .name .title {
     font-size: 4.8vmax;
     color: rgba(255, 255, 255, 0.8);
     font-family: "Montserrat";
@@ -265,18 +275,18 @@ body
     transform: translate(0, 70%);
     opacity: 0;
 }
-.root.mobile .home .name span
-{
+
+.root.mobile .home .name span {
     margin-top: 0.48vmax;
     display: block;
     width: 100%;
     height: 0.104vmax;
     transform: scale(0);
-    background-color: white;   
-    transition: 1s; 
+    background-color: white;
+    transition: 1s;
 }
-.root.mobile .home .name .subtitle
-{
+
+.root.mobile .home .name .subtitle {
     font-size: 1.88vmax;
     text-align: center;
     margin-top: 0.84vmax;
@@ -289,21 +299,21 @@ body
     transition: 1s 1.8s;
 }
 
-.root.mobile .home .name.ready .title
-{
-    transform: translate(0,0);
+.root.mobile .home .name.ready .title {
+    transform: translate(0, 0);
     opacity: 1;
 }
-.root.mobile .home .name.ready span
-{
+
+.root.mobile .home .name.ready span {
     transform: scale(1);
 }
+
 .root.mobile .home .name.ready .subtitle {
-    transform: translate(0,0);
+    transform: translate(0, 0);
     opacity: 1;
 }
-.root.mobile .shadow
-{
+
+.root.mobile .shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -311,8 +321,8 @@ body
     height: 100%;
     background-color: rgba(0, 0, 0, 0.42);
 }
-.root.mobile .home
-{
+
+.root.mobile .home {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -320,20 +330,20 @@ body
     overflow: hidden;
     z-index: 8;
 }
-.root.mobile .feedbacks 
-{
+
+.root.mobile .feedbacks {
     position: absolute;
     bottom: 6%;
     left: 3%;
     width: 13vmax;
     z-index: 10;
 }
-.root.mobile .feedbacks img 
-{
+
+.root.mobile .feedbacks img {
     width: 100%;
 }
-.root.mobile .win_logo
-{
+
+.root.mobile .win_logo {
     width: 12.3vmax;
     height: 12.3vmax;
     padding: 1.26vmax;
@@ -342,14 +352,13 @@ body
     right: 0;
     z-index: 20;
 }
-.root.mobile .win_logo img
-{
+
+.root.mobile .win_logo img {
     width: 100%;
     height: 100%;
 }
 
-.root.mobile .contact
-{
+.root.mobile .contact {
     bottom: 7%;
     right: 4vw;
     position: absolute;
@@ -357,16 +366,16 @@ body
     height: 9vmin;
     z-index: 20;
 }
-.root.mobile .contact img 
-{
+
+.root.mobile .contact img {
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
 }
-.root.mobile .contacts 
-{
+
+.root.mobile .contacts {
     position: absolute;
     width: 58vw;
     font-size: 1.9vmax;
@@ -381,27 +390,26 @@ body
     opacity: 0;
     visibility: hidden;
 }
-.root.mobile .contact.opened .contacts
-{
+
+.root.mobile .contact.opened .contacts {
     opacity: 1;
     visibility: visible;
-} 
+}
 
-.root.mobile .contact_list li 
-{
+.root.mobile .contact_list li {
     margin-bottom: 1.5vmax;
     position: relative;
 }
-.root.mobile .contact_list li input
-{
+
+.root.mobile .contact_list li input {
     display: none;
 }
-.root.mobile .contact_list :last-child
-{
+
+.root.mobile .contact_list :last-child {
     margin-bottom: 0;
 }
-.root.mobile .contact_list li span
-{
+
+.root.mobile .contact_list li span {
     position: absolute;
     top: 0%;
     right: -15%;
@@ -410,8 +418,8 @@ body
     height: 2.1vmax;
     z-index: 5;
 }
-.root.mobile .contact.opened .contact_list li span img.copy_button 
-{
+
+.root.mobile .contact .contact_list li span img.copy_button {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -420,8 +428,8 @@ body
     opacity: 1;
     visibility: visible;
 }
-.root.mobile .contact.opened .contact_list li span img.copied_button 
-{
+
+.root.mobile .contact .contact_list li span img.copied_button {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -430,13 +438,13 @@ body
     opacity: 0;
     visibility: hidden;
 }
-.root.mobile .contact.opened .contact_list li.copied span img.copy_button
-{
+
+.root.mobile .contact .contact_list li.copied span img.copy_button {
     opacity: 0;
     visibility: hidden;
 }
-.root.mobile .contact.opened .contact_list li.copied span img.copied_button
-{
+
+.root.mobile .contact .contact_list li.copied span img.copied_button {
     opacity: 1;
     visibility: visible;
 }
@@ -456,8 +464,7 @@ body
     z-index: 15;
 }
 
-.root.mobile .lang > span 
-{
+.root.mobile .lang>span {
     color: white;
     opacity: 0.7;
     transition: 0.4s;
@@ -466,13 +473,13 @@ body
     transform: scale(1);
 
 }
-.root.mobile .lang.active > span
-{
+
+.root.mobile .lang.active>span {
     opacity: 1;
     transform: scale(1.08);
 }
-.root.mobile .lang_list
-{
+
+.root.mobile .lang_list {
     position: absolute;
     right: 0;
     bottom: 110%;
@@ -486,11 +493,12 @@ body
     color: white;
     visibility: hidden;
 }
+
 .root.mobile .lang_list.visible {
     visibility: visible;
 }
-.root.mobile .lang_block
-{
+
+.root.mobile .lang_block {
     list-style: none;
     color: rgba(255, 255, 255, 0.866);
     min-height: 50%;
@@ -548,8 +556,7 @@ body
 
 /*----- UNIVERSAL ----- */
 
-.root.mobile .clickable 
-{
+.root.mobile .clickable {
     opacity: 0.7;
     transform: scale(1);
     transition: 0.2s;
@@ -558,8 +565,7 @@ body
 
 
 /* ---------------- */
-.root.mobile .background img 
-{
+.root.mobile .background img {
     min-width: 100%;
     height: 100%;
     object-fit: cover;
@@ -568,8 +574,7 @@ body
     left: -70vmin;
 }
 
-.root.mobile .background#b_home
-{
+.root.mobile .background#b_home {
     min-width: 115vw;
     height: 130vh;
     animation-name: action;
@@ -582,18 +587,19 @@ body
     left: -5vw;
     z-index: -1;
 }
+
 .root.mobile .background#b_services img {
     transform: rotateY(180deg);
     min-width: 130%;
     height: 130%;
 }
-.root.mobile .background#b_services img 
-{
+
+.root.mobile .background#b_services img {
     left: -100vmin;
 
 }
-.root.mobile .background#b_services
-{
+
+.root.mobile .background#b_services {
     min-width: 100vw;
     height: 100vh;
     position: absolute;
@@ -602,8 +608,8 @@ body
     opacity: 1;
     left: 0;
 }
-.root.mobile .background#b_staff
-{
+
+.root.mobile .background#b_staff {
     min-width: 115vw;
     height: 120vh;
     position: absolute;
@@ -614,8 +620,7 @@ body
 
 /* --- services --- */
 
-.root.mobile .services
-{
+.root.mobile .services {
     width: 100%;
     padding: 0 2.25vw;
     padding-bottom: 6.5vmax;
@@ -624,8 +629,8 @@ body
     justify-content: center;
     overflow: hidden;
 }
-.root.mobile .services .shadow 
-{
+
+.root.mobile .services .shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -633,7 +638,8 @@ body
     height: 100%;
     background-color: rgba(0, 0, 0, 0.622);
 }
-.root.mobile .services_block{
+
+.root.mobile .services_block {
     width: 95vmin;
     height: 30%;
     text-align: center;
@@ -643,8 +649,8 @@ body
     justify-content: center;
     align-items: flex-start;
 }
-.root.mobile .service
-{
+
+.root.mobile .service {
     z-index: 1;
     height: 100%;
     margin: 0.52vw 2.08vw;
@@ -655,10 +661,10 @@ body
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.2s cubic-bezier(0.35, 1.24, 0, 0.96);
 }
-.root.mobile .title
-{
+
+.root.mobile .title {
     color: rgba(14, 119, 239, 0.501);
     font-size: 1.8vmax;
     white-space: nowrap;
@@ -667,29 +673,29 @@ body
     transform: translate(0, 120%);
     opacity: 0;
     margin: 1.04vw 0px;
-    transition: 0.8s 2s;
+    transition: 0.2s 0.3s cubic-bezier(0.35, 1.24, 0, 0.96);
 }
-.root.mobile .line_x
-{
+
+.root.mobile .line_x {
     display: block;
     min-height: 0.156vmax;
     width: 0%;
     margin: 1.5vh 0;
     background-color: rgba(255, 255, 255, 0.886);
-    transition: 1s 1s;
+    transition: 0.2s 0.2s cubic-bezier(0.35, 1.24, 0, 0.96);
     z-index: 2;
 }
-.root.mobile .service .list
-{
+
+.root.mobile .service .list {
     color: rgba(255, 255, 255, 0.785);
     padding: 0 1.56vmax;
     opacity: 0;
     text-align: start;
     transform: translate(0, -100%);
-    transition: 1s 2.8s;
+    transition: 0.2s 0.4s cubic-bezier(0.35, 1.24, 0, 0.96);
 }
-.root.mobile .service .list li
-{
+
+.root.mobile .service .list li {
     list-style-type: square;
     font-family: "Montserrat";
     letter-spacing: 1px;
@@ -697,8 +703,8 @@ body
     margin: 1.3vh 0;
 
 }
-.next_button_s
-{
+
+.next_button_s {
     width: 8.2vmin;
     position: absolute;
     top: calc(50% - 2.6vw);
@@ -708,25 +714,25 @@ body
     cursor: pointer;
     opacity: 1;
     animation-name: moveX;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.mobile .next_button_s img 
-{
+
+.root.mobile .next_button_s img {
     width: 100%;
     transform: scale(1);
     opacity: 0.6;
     transition: 0.3s 0.2s;
 }
-.root.mobile .next_button_s img:active
-{
+
+.root.mobile .next_button_s img:active {
     transform: scale(1.1);
     opacity: 1;
     transition: 0.3s 0s;
 }
-.prev_button_s
-{
+
+.prev_button_s {
     width: 8.2vmin;
     position: absolute;
     top: calc(50% - 2.6vw);
@@ -736,45 +742,44 @@ body
     cursor: pointer;
     opacity: 1;
     animation-name: moveXLeft;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.mobile .prev_button_s img 
-{
+
+.root.mobile .prev_button_s img {
     width: 100%;
     transform: rotate(180deg) scale(1);
     opacity: 0.6;
     transition: 0.3s 0.2s;
 }
-.root.mobile .prev_button_s img:active 
-{
+
+.root.mobile .prev_button_s img:active {
     transform: rotate(180deg) scale(1.1);
     opacity: 1;
     transition: 0.3s 0s;
 }
 
-.root.mobile .service.on
-{
+.root.mobile .service.on {
     opacity: 1;
     visibility: visible;
 }
-.root.mobile .service.on .title
-{
+
+.root.mobile .service.on .title {
     transform: translate(0, 0);
     opacity: 1;
 }
-.root.mobile .service.on .line_x
-{
+
+.root.mobile .service.on .line_x {
     width: 100%;
 }
-.root.mobile .service.on .list
-{
+
+.root.mobile .service.on .list {
     opacity: 1;
-    transform: translate(0,0);
+    transform: translate(0, 0);
 }
-.root.mobile .priceList_container
-{
+
+.root.mobile .priceList_container {
     width: 100%;
     height: 42%;
     position: absolute;
@@ -785,8 +790,7 @@ body
     overflow: hidden;
 }
 
-.root.mobile .priceList_table
-{
+.root.mobile .priceList_table {
     width: 90%;
     height: 100%;
     text-align: center;
@@ -807,34 +811,34 @@ body
     overflow-y: scroll;
     z-index: 50;
 }
-.root.mobile .priceList_table.view
-{
+
+.root.mobile .priceList_table.view {
     opacity: 1;
     visibility: visible;
 }
-.root.mobile .priceList_container.openlist
-{
+
+.root.mobile .priceList_container.openlist {
     height: 87%;
 }
 
-.root.mobile .part
-{
+.root.mobile .part {
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.root.mobile .t_title
-{
-    color: rgba(14, 119, 239, 0.578);
+
+.root.mobile .t_title {
+    color: rgb(65, 156, 216);
     width: 100%;
     font-size: 1.456vmax;
     font-family: "Montserrat";
     text-align: center;
     margin: 1.04vmax 0px;
 }
-.root.mobile .line{
+
+.root.mobile .line {
     width: 100%;
     padding: 0px 1.04vmax;
     font-size: 1.04vmax;
@@ -846,50 +850,70 @@ body
     letter-spacing: 1px;
     overflow: hidden;
 }
-.root.mobile .l_service > span 
-{
+
+.root.mobile .l_service>span {
     width: 100%;
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.root.mobile .l_service
-{
+
+.root.mobile .l_service {
     z-index: 1;
     max-width: 70%;
 }
-.root.mobile .price
-{
+
+.root.mobile .priceList_table .bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.7vmax 0 1vmax;
+    font-size: 1vmax;
+    font-weight: bold;
+}
+
+.root.mobile .priceList_table .bar :first-child {
+    color: rgb(65, 156, 216);
+}
+
+.root.mobile .priceList_table .bar :last-child {
+    color: rgb(185, 66, 66)
+}
+
+.root.mobile .price {
     white-space: nowrap;
     z-index: 1;
 }
-.root.mobile .line > span
-{
+
+.root.mobile .price.urgent {
+    padding: 0 0.5vmax 0 2vmax;
+}
+
+.root.mobile .line>span {
     overflow: hidden;
     color: rgba(14, 119, 239, 0.578);
     text-overflow: clip;
     display: block;
     min-width: 5%;
 }
-.root.mobile .priceList_table::-webkit-scrollbar 
-{
+
+.root.mobile .priceList_table::-webkit-scrollbar {
     background-color: rgba(0, 0, 0, 0.386);
     width: 0.416vmax;
-    
+
 }
 
-.root.mobile .priceList_table::-webkit-scrollbar-button
-{
+.root.mobile .priceList_table::-webkit-scrollbar-button {
     display: none;
 }
-.root.mobile .priceList_table::-webkit-scrollbar-thumb
-{
+
+.root.mobile .priceList_table::-webkit-scrollbar-thumb {
     background-color: rgba(14, 119, 239, 0.586);
 
 }
-.root.mobile .open
-{
+
+.root.mobile .open {
     text-align: center;
     display: inline;
     width: min-content;
@@ -903,21 +927,21 @@ body
     margin: 1.144vmax;
     transition: 1s;
     animation: blink 2.5s;
-    text-shadow: 0 0.156vmax 0.208vmax  rgba(14, 119, 239, 0.94);
+    text-shadow: 0 0.156vmax 0.208vmax rgba(14, 119, 239, 0.94);
     cursor: pointer;
     animation-iteration-count: infinite;
     z-index: 3;
 }
+
 /* --- staff --- */
 
-.root.mobile .staff 
-{
+.root.mobile .staff {
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
-.root.mobile .fog
-{
+
+.root.mobile .fog {
     height: 70vmax;
     opacity: 0.4;
     transition-timing-function: ease-in-out;
@@ -925,58 +949,58 @@ body
     z-index: 15;
     pointer-events: none;
 }
-.root.mobile .fog img 
-{
+
+.root.mobile .fog img {
     height: 100%;
 }
-.root.mobile .fog._1
-{
+
+.root.mobile .fog._1 {
     top: 60vh;
     transition: 1s;
     left: -90vmax;
 }
-.root.mobile .fog._2
-{
+
+.root.mobile .fog._2 {
     transition: 1s 0.3s;
     top: 70vh;
     left: calc(50% - 70vmax);
 }
-.root.mobile .fog._3
-{
+
+.root.mobile .fog._3 {
     top: 55vh;
     transition: 1s;
     right: -80vmax;
 }
-.root.mobile .fog._1.off
-{
+
+.root.mobile .fog._1.off {
     top: 120vh;
     left: -40%
 }
-.root.mobile .fog._2.off
-{
+
+.root.mobile .fog._2.off {
     top: 120vh;
 }
-.root.mobile .fog._3.off 
-{
+
+.root.mobile .fog._3.off {
     top: 120vh;
     right: -40%;
 }
+
 /*----- defolt dentists ------*/
 
-.root.mobile .dentists
-{
+.root.mobile .dentists {
     z-index: 8;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
 }
-.root.mobile .dentists_photos 
-{
+
+.root.mobile .dentists_photos {
     z-index: 8;
     width: 100%;
-    height: 60%; 
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -986,16 +1010,15 @@ body
     bottom: 0;
 }
 
-.root.mobile .dentist
-{
+.root.mobile .dentist {
     transition: 1s 0.5s;
     height: 100% !important;
     position: absolute;
     opacity: 1;
     transform: translate(0, 100%);
 }
-.root.mobile .dentist.on 
-{
+
+.root.mobile .dentist.on {
     transform: translate(0, 0);
 }
 
@@ -1007,8 +1030,7 @@ body
 /*---- BACK BUTTON ----*/
 
 
-.root.mobile .dentist_information
-{
+.root.mobile .dentist_information {
     width: 100%;
     position: absolute;
     padding: 0.1vmax 3vw;
@@ -1023,16 +1045,16 @@ body
     pointer-events: none;
     z-index: 1;
 }
-.root.mobile .dentist_information > span
-{
+
+.root.mobile .dentist_information>span {
     width: 0%;
     min-height: 0.156vmax;
     margin: 0.78vmax 0;
     transition: 0.5s 0s;
     background-color: rgba(255, 255, 255, 0.663);
 }
-.root.mobile .dentist_information .dentist_name
-{
+
+.root.mobile .dentist_information .dentist_name {
     width: 100%;
     text-align: center;
     transform: translate(0, -50%);
@@ -1044,24 +1066,24 @@ body
     visibility: hidden;
     font-family: "MonserratB";
 }
-.root.mobile .dentist_information .text 
-{
+
+.root.mobile .dentist_information .text {
     width: 100%;
     overflow-y: scroll;
     visibility: hidden;
 
     padding: 0.52vmax 0.78vmax;
-    
+
 }
-.root.mobile .dentist_information .text > span
-{
+
+.root.mobile .dentist_information .text>span {
     width: 100%;
     max-height: 100%;
     line-height: 1.8vmax;
     display: block;
     font-size: 1.3vmax;
     text-align: left;
-	font-family: 'Montserrat';
+    font-family: 'Montserrat';
     color: rgba(255, 255, 255, 0.795);
     height: 100%;
     opacity: 1;
@@ -1071,41 +1093,40 @@ body
     visibility: hidden;
     text-overflow: ellipsis;
 }
-.root.mobile .dentist_information .text > span static 
-{
+
+.root.mobile .dentist_information .text>span static {
     text-align: left;
 }
 
-.root.mobile .dentist_information.period
-{
+.root.mobile .dentist_information.period {
     visibility: visible;
     pointer-events: fill;
     z-index: 5;
 }
-.root.mobile .dentist_information.period > span 
-{
+
+.root.mobile .dentist_information.period>span {
     width: 100%;
     transition: 0.5s 1.5s;
 }
-.root.mobile .dentist_information.period .text
-{
+
+.root.mobile .dentist_information.period .text {
     visibility: visible;
 }
-.root.mobile .dentist_information.period .text > span
-{
-    transform: translate(0,0);
+
+.root.mobile .dentist_information.period .text>span {
+    transform: translate(0, 0);
     visibility: visible;
     transition: 1.5s 2.7s;
-} 
+}
+
 .root.mobile .dentist_information.period .dentist_name {
-    transform: translate(0,0);
+    transform: translate(0, 0);
     visibility: visible;
     opacity: 1;
     transition: 0.7s 2s;
 }
 
-.root.mobile .next_button
-{
+.root.mobile .next_button {
     width: 8.2vmin;
     position: absolute;
     top: calc(50vh - 2.6vmin);
@@ -1116,25 +1137,24 @@ body
     visibility: visible;
     opacity: 1;
     animation-name: moveX;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.mobile .next_button img 
-{
+
+.root.mobile .next_button img {
     width: 100%;
     transform: scale(1);
     opacity: 0.8;
     transition: 0.3s;
 }
-.root.mobile .next_button.hidden
-{
+
+.root.mobile .next_button.hidden {
     opacity: 0;
     visibility: hidden;
-} 
+}
 
-.root.mobile .prev_button
-{
+.root.mobile .prev_button {
     width: 8.2vmin;
     position: absolute;
     top: calc(50vh - 2.6vmin);
@@ -1145,33 +1165,33 @@ body
     visibility: visible;
     opacity: 1;
     animation-name: moveXLeft;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.mobile .prev_button img 
-{
+
+.root.mobile .prev_button img {
     width: 100%;
     transform: rotate(180deg) scale(1);
     opacity: 0.8;
     transition: 0.3s;
 }
-.root.mobile .prev_button.hidden
-{
+
+.root.mobile .prev_button.hidden {
     opacity: 0;
     visibility: hidden;
 }
 
-.root.mobile .prev_button:active img 
-{
+.root.mobile .prev_button:active img {
     opacity: 1;
     transform: scale(0.9) rotate(180deg);
 }
-.root.mobile .next_button:active img
-{
+
+.root.mobile .next_button:active img {
     opacity: 1;
     transform: scale(0.9);
 }
+
 /* ------------- INFO -------------- */
 
 .root.mobile .info {
@@ -1182,19 +1202,19 @@ body
     z-index: 3;
     overflow-y: scroll;
 }
-.root.mobile .info::-webkit-scrollbar 
-{
+
+.root.mobile .info::-webkit-scrollbar {
     width: 0.6vw;
     background-color: rgb(32 32 36);
     z-index: 10;
     display: none;
 }
-.root.mobile .info::-webkit-scrollbar-thumb
-{
+
+.root.mobile .info::-webkit-scrollbar-thumb {
     background-color: rgba(54, 54, 60, 0.737);
 }
-.root.mobile .info .background
-{
+
+.root.mobile .info .background {
     width: 100%;
     height: 100%;
     background-color: rgb(32 32 36);
@@ -1203,24 +1223,23 @@ body
     top: 0;
     left: 0;
 }
-.root.mobile .info .info_back
-{
+
+.root.mobile .info .info_back {
     position: relative;
     overflow: hidden;
     z-index: 3;
     width: 100%;
     height: 45%;
 }
-.root.mobile .info .info_back img
-{
+
+.root.mobile .info .info_back img {
     top: 0;
     left: 0;
     position: absolute;
     width: 100%;
 }
 
-.root.mobile .info .info_back .shadow 
-{
+.root.mobile .info .info_back .shadow {
     width: 100%;
     height: 150%;
     z-index: 2;
@@ -1229,8 +1248,8 @@ body
     left: 0;
     background-color: rgba(18, 27, 30, 0.667);
 }
-.root.mobile .info .main_t
-{
+
+.root.mobile .info .main_t {
     font-size: 4.5vmax;
     color: white;
     font-family: "MarkScript" !important;
@@ -1246,8 +1265,8 @@ body
     padding-bottom: 5%;
     z-index: 3;
 }
-.root.mobile .info .information
-{
+
+.root.mobile .info .information {
     width: 100%;
     position: absolute;
     top: 40%;
@@ -1257,62 +1276,83 @@ body
     border-top-left-radius: 2vmax;
     background-color: rgb(228, 239, 242);
 }
-.root.mobile .info .theme
-{
+
+.root.mobile .info .chapter {
     width: 100%;
-    padding: 2.5vmin 3vmax;
+    padding: 2.5vmax 2vmax;
 }
-.root.mobile .info .theme_title
-{
+
+.root.mobile .info .chapter_title {
     font-family: "Andrika";
     width: 100%;
     padding: 0 0 2vmin;
-    font-size: 4vmax;
+    font-size: 3.2vmax;
     text-align: center;
+    color: rgb(58, 56, 56);
 }
-.root.mobile .info .article 
-{
+
+.root.mobile .info .article {
     width: 100%;
+    margin: 4vw 0;
 }
-.root.mobile .info .article_title 
-{
-    font-size: 2.8vmax;
-    letter-spacing: 0.2vmax;
-    text-align: center;
-    margin-bottom: 2vmin;
+
+.root.mobile .info .article_img {
+    width: 45%;
+    background-color: rgba(31, 7, 7, 0.116);
+    display: flex;
+    align-items: center;
+    margin: 1vw 2vw;
+    border: 1vw solid transparent;
+    border-radius: 1vw;
+    float: left;
 }
+
+.root.mobile .info .article_img img {
+    width: 100%;
+    border-radius: 1vw;
+
+}
+
+.root.mobile .info .article.right .article_img {
+    float: right;
+}
+
+.root.mobile .info .atext {
+    font-size: 1.3vmax;
+    color: rgb(36, 36, 36);
+    letter-spacing: 0.1vmax;
+}
+
 
 /* ------------- BLOG -------------- */
 
-.root.mobile .blog 
-{
+.root.mobile .blog {
     width: 100%;
     height: 100%;
 }
 
-.root.mobile .back_photo
-{
+.root.mobile .back_photo {
     width: 100%;
     position: absolute;
     top: -5%;
     left: 0;
     overflow: hidden;
 }
-.root.mobile .back_photo .shadow
-{
+
+.root.mobile .back_photo .shadow {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.557);
 }
-.root.mobile .back_photo img 
-{
+
+.root.mobile .back_photo img {
     width: 120%;
     transform: translate(-10%, 0);
 }
-.root.mobile .blog_list
-{
+
+.root.mobile .blog_list {
     width: 100%;
     height: 72%;
     background-color: rgb(32 32 36);
@@ -1324,16 +1364,16 @@ body
     border-top-left-radius: 8vw;
     border-top-right-radius: 8vw;
 }
-.root.mobile .blog .btitle 
-{
+
+.root.mobile .blog .btitle {
     padding: 2vh 5vw;
     text-align: center;
     font-size: 4.1vmax;
     color: #fff;
     font-family: "Lobster";
 }
-.category_list
-{
+
+.category_list {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1341,8 +1381,8 @@ body
     transition: 0.7s;
     top: 0;
 }
-.root.mobile .blog_container 
-{
+
+.root.mobile .blog_container {
     width: 100%;
     height: 80%;
     overflow-y: scroll;
@@ -1351,15 +1391,14 @@ body
     align-items: center;
     padding: 1vh 10vw;
 }
-.root.mobile .category 
-{
+
+.root.mobile .category {
     width: 100%;
     margin: 0 0 3vh;
     display: block;
 }
 
-.root.mobile .category_photo 
-{
+.root.mobile .category_photo {
     width: 100%;
     height: 20vh;
     border-radius: 1vh;
@@ -1367,16 +1406,18 @@ body
     background-color: #bfc5d73f;
     margin: 10px 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     transform: scale(1);
     transition: 0.3s;
 }
-.root.mobile .category_photo img
-{
+
+.root.mobile .category_photo img {
     width: 100%;
     min-height: 100%;
 }
-.root.mobile .category_sahdow
-{
+
+.root.mobile .category_sahdow {
     position: absolute;
     top: 0;
     left: 0;
@@ -1386,8 +1427,8 @@ body
     transition: 0.3s;
     z-index: 1;
 }
-.root.mobile .photo_text 
-{
+
+.root.mobile .photo_text {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1402,21 +1443,20 @@ body
     transition: 0.3s;
     pointer-events: none;
 }
-.root.mobile .category_photo:active 
-{
+
+.root.mobile .category_photo:active {
     transform: scale(1.03);
 }
-.root.mobile .category_photo:active .category_sahdow
-{
+
+.root.mobile .category_photo:active .category_sahdow {
     background-color: rgba(0, 0, 0, 0.245);
 }
-.root.mobile .category_photo:active .photo_text 
-{
+
+.root.mobile .category_photo:active .photo_text {
     color: rgba(255, 255, 255, 0.912);
 }
 
-.root.mobile .description 
-{
+.root.mobile .description {
     color: white;
     margin: 15px 5px 0;
     font-size: 1.6vmax;
@@ -1431,50 +1471,51 @@ body
     padding: 1vh 0 5vh;
     transition: 0.7s;
     background-color: rgb(32 32 36);
-    z-index: 5;
+    z-index: 100;
 }
+
 .root.mobile .blog .content.on {
     right: 0;
 }
-.root.mobile .pub_container
-{
+
+.root.mobile .pub_container {
     width: 100%;
     height: 95%;
 }
-.root.mobile .pub_back
-{
+
+.root.mobile .pub_back {
     width: 3.2vmax;
     position: absolute;
     top: 3.52vmax;
     left: 5%;
     z-index: 8;
 }
-.root.mobile .pub_back img
-{
+
+.root.mobile .pub_back img {
     width: 100%;
 }
 
-.root.mobile .sellected_title{
+.root.mobile .sellected_title {
     padding: 2vmax 4vmin;
     text-align: center;
     font-family: "Lobster";
     color: #fff;
     font-size: 3.5vmax;
 }
-.root.mobile .publications
-{
+
+.root.mobile .publications {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    padding: 0 4vw;
+    padding: 6vh 4vw 0;
     display: flex;
     flex-direction: column;
     background-color: rgb(32 32 36);
     position: relative;
     z-index: 1;
 }
-.root.mobile .pub
-{
+
+.root.mobile .pub {
     width: 100%;
     background-color: rgb(27, 27, 31);
     border-radius: 2vmax;
@@ -1485,27 +1526,113 @@ body
     display: flex;
     flex-direction: column;
 }
-.root.mobile .pub_title
-{
+
+.root.mobile .pub_title {
     font-size: 3vmax;
 }
-.root.mobile .pub_photos
-{
+
+.root.mobile .pub_photos[type=video] {
     width: 100%;
-    height: 15vmax;
     background-color: rgb(34, 34, 39);
-    overflow: hidden;
     border-radius: 1.3vmax;
     margin: 4vmin 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
 }
-.root.mobile .pub_text 
-{
+
+.root.mobile .pub_photos[type=video] video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.root.mobile .pub_photos[type=swiper] {
+    width: 100%;
+    background-color: rgb(34, 34, 39);
+    border-radius: 1.3vmax;
+    margin: 4vmin 0;
+    position: relative;
+    overflow: hidden;
+    padding: 3% 0;
+}
+
+.root.mobile .prev_slide {
+    width: 3vmax;
+    position: absolute;
+    top: calc(50% - 1.5vmax);
+    left: 0;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1);
+    margin-left: 1vw;
+    opacity: 0.6;
+}
+
+.root.mobile .prev_slide img {
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+.root.mobile .next_slide {
+    width: 3vmax;
+    position: absolute;
+    top: calc(50% - 1.5vmax);
+    right: 0;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1);
+    margin-right: 1vw;
+    opacity: 0.6;
+}
+
+.root.mobile .next_slide:active,
+.root.mobile .prev_slide:active {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.root.mobile .next_slide img {
+    width: 100%;
+}
+
+.root.mobile .swiper-wrapper {
+    box-sizing: border-box;
+    align-items: center;
+    transition: 0.3s !important;
+    opacity: 1;
+}
+
+.root.mobile .swiper-wrapper .pub_photo {
+    width: 45%;
+    height: auto !important;
+}
+
+.root.mobile .pub_photo {
+    border-radius: 0.7vw;
+    filter: brightness(0.6);
+    transform: scale(0.95);
+}
+
+.root.mobile .swiper-wrapper.active .pub_photo {
+    transition: 0.5s;
+
+}
+
+.root.mobile .pub_photo.active_slide {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.root.mobile .pub_text {
     font-size: 1.2vmax;
     color: rgba(255, 255, 255, 0.718);
-    text-align: justify ;
+    text-align: justify;
 }
-.root.mobile .pub_nav
-{
+
+.root.mobile .pub_nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1513,49 +1640,53 @@ body
     align-items: center;
     margin: 1.2vh 0 0;
 }
+
 .root.mobile .pub_nav .like {
     width: 13%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .root.mobile .pub_nav .like img {
-    width:  2vmax;
+    width: 2vmax;
     padding-bottom: 0.2vh;
     opacity: 0.25;
     transition: 0.2s;
     cursor: pointer;
 }
-.root.mobile .pub_nav .like img[status="on"]
-{
+
+.root.mobile .pub_nav .like img[status="on"] {
     opacity: 0.8;
 
 }
+
 .root.mobile .pub_nav .like img:hover {
     opacity: 0.65;
 }
-.root.mobile .pub_nav .like .count 
-{
+
+.root.mobile .pub_nav .like .count {
     padding-top: 0.4vh;
     color: rgba(241, 250, 255, 0.561);
     font-size: 1.9vmax;
 }
-.root.mobile .pub_nav .comments
-{
+
+.root.mobile .pub_nav .comments {
     height: 100%;
 }
+
 .root.mobile .pub_nav .comments img {
     width: 2vmax;
     transition: 0.2s;
     cursor: pointer;
     opacity: 0.5;
 }
+
 .root.mobile .pub_nav .comments img:hover {
     opacity: 0.8;
 }
 
-.root.mobile .content .pre_text 
-{
+.root.mobile .content .pre_text {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1564,16 +1695,185 @@ body
     align-items: center;
     top: 0;
     left: 0;
-    color: rgba(51, 51, 58, 0.628);;
+    color: rgba(51, 51, 58, 0.628);
+    ;
     font-size: 2.6vmax;
 
+}
+
+.root.mobile .blog_view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.root.mobile .blog_view.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.root.mobile .blog_view .images {
+    display: flex;
+    width: 100%;
+}
+
+.root.mobile .blog_view .prev_slide {
+    width: 8vmax;
+    position: absolute;
+    top: calc(50% - 4vmax);
+    left: 0;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1);
+    margin-left: 1vw;
+    opacity: 0.6;
+}
+
+.root.mobile .blog_view .prev_slide img {
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+.root.mobile .blog_view .next_slide {
+    width: 8vmax;
+    position: absolute;
+    top: calc(50% - 4vmax);
+    right: 0;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1);
+    margin-right: 1vw;
+    opacity: 0.6;
+}
+
+.root.mobile .blog_view .next_slide:active,
+.root.mobile .blog_view .prev_slide:active {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.root.mobile .blog_view .next_slide img {
+    width: 100%;
+}
+
+.root.mobile .blog_view .image {
+    width: 100%;
+    height: 100%;
+    padding: 10% 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.14, 0.88, 0.24, 0.98);
+    top: 0;
+    left: 100%;
+    z-index: 2;
+}
+
+.root.mobile .blog_view .image.before {
+    left: -100%;
+}
+
+.root.mobile .blog_view .image.after {
+    left: 100%;
+}
+
+.root.mobile .blog_view .image.active {
+    left: 0;
+}
+
+.root.mobile .blog_view .image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.root.mobile .view_back {
+    width: 5vmax;
+    height: 5vmax;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 2vmax;
+    top: 2vmax;
+    z-index: 15;
+}
+
+.root.mobile .blog_view .blog_shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.676);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.root.mobile .view_back::before,
+.root.mobile .view_back::after {
+    content: '';
+    width: 110%;
+    height: 0.4vmax;
+    position: absolute;
+    background-color: aliceblue;
+}
+
+.root.mobile .view_back::before {
+    transform: rotate(45deg);
+}
+
+.root.mobile .view_back::after {
+    transform: rotate(-45deg);
+}
+
+.root.mobile .avatar {
+    position: relative;
+    width: 5vh;
+    height: 5vh;
+    overflow: hidden;
+    background-color: rgb(34, 34, 39);
+    border-radius: 50%;
+    float: left;
+    margin: 0vw 1vh 0.5vh 0vw;
+}
+
+.root.mobile .avatar.no_ava {
+    padding-top: 0.5vw;
+}
+
+.root.mobile .avatar.no_ava img {
+    filter: opacity(0.5);
+}
+
+
+.root.mobile .avatar img {
+    width: 100%;
+}
+
+.root.mobile .author_name {
+    color: rgb(135, 139, 139);
+    text-transform: capitalize;
+    font-size: 1.2vh;
+    padding: 2vh 0;
+    margin-bottom: 1vh;
 }
 
 /* --- sidebar --- */
 
 
-.root.mobile .sidebar
-{
+.root.mobile .sidebar {
     width: 100%;
     height: 5.1vmax;
     display: flex;
@@ -1588,8 +1888,7 @@ body
 
 
 
-.root.mobile .side_nav
-{
+.root.mobile .side_nav {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1597,8 +1896,8 @@ body
     align-items: center;
     position: relative;
 }
-.root.mobile .side_nav > span 
-{
+
+.root.mobile .side_nav>span {
     position: absolute;
     bottom: 0;
     height: 0.254vh;
@@ -1607,8 +1906,7 @@ body
     background-color: rgb(80, 181, 249);
 }
 
-.root.mobile .side_nav .block
-{
+.root.mobile .side_nav .block {
     width: 15%;
     height: 100%;
     margin: 0.52vw;
@@ -1620,12 +1918,12 @@ body
     cursor: pointer;
     transition: 0.5s;
 }
-.root.mobile .side_nav .block.active
-{
+
+.root.mobile .side_nav .block.active {
     background-color: rgba(0, 0, 0, 0.231);
 }
-.root.mobile .side_nav .block img
-{
+
+.root.mobile .side_nav .block img {
     height: 100%;
     transition: 0.2s;
     opacity: 0.6;
@@ -1633,34 +1931,31 @@ body
     pointer-events: none;
 }
 
-.root.mobile .side_nav .block:active img
-{
+.root.mobile .side_nav .block:active img {
     opacity: 0.6;
     transform: scale(1);
 }
 
 .root.mobile .side_nav .block.active img {
     opacity: 1;
-    transform: scale(1.2) ;
+    transform: scale(1.2);
 }
 
 .root.mobile .side_nav .block._1.active img {
     opacity: 1;
-    transform: scale(1.15) ;
+    transform: scale(1.15);
 }
 
-.root.mobile .side_nav .block._1
-{
+.root.mobile .side_nav .block._1 {
     padding: 1.35vmax 1vmax;
 }
 
 
-.root.mobile .sidebar.paralax
-{
+.root.mobile .sidebar.paralax {
     left: -3.1vw;
 }
-.root.mobile .sidebar.hover
-{
+
+.root.mobile .sidebar.hover {
     left: 0% !important;
 }
 
@@ -1721,66 +2016,79 @@ body
         left: 9%;
         bottom: -100%;
     }
+
     100% {
         left: 9%;
         bottom: -35%;
     }
 }
+
 @keyframes openDDirector {
     0% {
         bottom: -100%;
         left: 40%;
     }
+
     100% {
         bottom: -35%;
         left: 40%;
     }
 }
+
 @keyframes openDXursand {
     0% {
         left: 22%;
         bottom: -100%;
     }
+
     100% {
         left: 22%;
         bottom: -35%;
     }
 }
+
 @keyframes openDIbrohim {
     0% {
         right: 22%;
         bottom: -100%;
     }
+
     100% {
         right: 22%;
         bottom: -35%;
     }
 }
+
 @keyframes openDTatiana {
     0% {
         bottom: -100%;
         right: -2%;
     }
+
     100% {
         bottom: -35%;
         right: -2%;
     }
 }
+
 @keyframes openDViktoria {
     0% {
         bottom: -100%;
         left: -5%;
     }
+
     100% {
         bottom: -35%;
         left: -5%;
     }
 }
+
 @keyframes openDAbdukhamid {
     0% {
         right: 10%;
         bottom: -100%;
     }
+
     100% {
         right: 10%;
         bottom: -35%;
@@ -1794,66 +2102,79 @@ body
         left: 9%;
         bottom: -35%;
     }
+
     100% {
         left: 9%;
         bottom: -100%;
     }
 }
+
 @keyframes closeDDirector {
     0% {
         bottom: -35%;
         left: 40%;
     }
+
     100% {
         bottom: -100%;
         left: 40%;
     }
 }
+
 @keyframes closeDXursand {
     0% {
         left: 22%;
         bottom: -35%;
     }
+
     100% {
         left: 22%;
         bottom: -100%;
     }
 }
+
 @keyframes closeDIbrohim {
     0% {
         right: 22%;
         bottom: -35%;
     }
+
     100% {
         right: 22%;
         bottom: -100%;
     }
 }
+
 @keyframes closeDTatiana {
     0% {
         bottom: -35%;
         right: -2%;
     }
+
     100% {
         bottom: -100%;
         right: -2%;
     }
 }
+
 @keyframes closeDViktoria {
     0% {
         bottom: -35%;
         left: -5%;
     }
+
     100% {
         bottom: -100%;
         left: -5%;
     }
 }
+
 @keyframes closeDAbdukhamid {
     0% {
         right: 10%;
         bottom: -35%;
     }
+
     100% {
         right: 10%;
         bottom: -100%;
@@ -1863,82 +2184,93 @@ body
 /*------------- ANIMATIONS --------------*/
 
 @keyframes switchLeft {
-    0%{
+    0% {}
 
-    }
-    100%{
-
-    }
+    100% {}
 }
+
 @keyframes switchRight {
-    0%{
-        
-    }
-    100%{
+    0% {}
 
-    }
+    100% {}
 }
 
-@keyframes blink{
-    0%{
+@keyframes blink {
+    0% {
         opacity: 0.8;
     }
-    50%{
+
+    50% {
         opacity: 0.2;
     }
-    100%{
+
+    100% {
         opacity: 0.8;
     }
 }
-@keyframes move{
-    0%{
+
+@keyframes move {
+    0% {
         transform: translate(0, 0);
     }
-    50%{
+
+    50% {
         transform: translate(0, 8px);
     }
-    100%{
+
+    100% {
         transform: translamovete(0, 0);
     }
 }
-@keyframes moveX{
-    0%{
+
+@keyframes moveX {
+    0% {
         transform: translate(0, 0);
     }
-    50%{
+
+    50% {
         transform: translate(0.5vw, 0px);
     }
-    100%{
+
+    100% {
         transform: translate(0, 0);
     }
 }
-@keyframes moveXLeft{
-    0%{
+
+@keyframes moveXLeft {
+    0% {
         transform: translate(0, 0);
     }
-    50%{
+
+    50% {
         transform: translate(-0.5vw, 0px);
     }
-    100%{
+
+    100% {
         transform: translate(0, 0);
     }
 }
-@keyframes action{
-    0%{
+
+@keyframes action {
+    0% {
         transform: scale(1);
     }
-    50%{
+
+    50% {
         transform: scale(1.1);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 
 }
+
 @keyframes visible {
-    0%{
+    0% {
         opacity: 1;
     }
+
     100% {
         opacity: 1;
     }

@@ -3,65 +3,98 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import BrowserMain from "./browser/views/Main";
 import MobileMain from "./mobile/views/Main";
 import { Pub } from "./browser/views/content/Pub";
-import { MobPub } from "./mobile/views/content/Pub";
+import { PubMobile } from "./mobile/views/content/Pub";
+import axios from "./api/api";
+import { usePackage } from "./hooks/usePackage";
+import { useEffect, useState } from "react";
+
 
 
 
 function App(props) {
-    console.log("pid");
-    // var Browser_BeforeAfter = <Browser_BeAfterv />;
-    // var Browser_MomentsComp = <Browser_moments />;
-    // var Mobile_BeforeAfter = <Mobile_BeAfterv title="До/После" />
-    // var Mobile_PhotosComp = <Mobile_Photos />
 
     const langPath = [
         "ru",
         "en",
         "uz",
     ];
-
-    const categories = props.categories;
-    const publications = props.publications;
+    const {info, setInfo} = usePackage();
+    const [categories , setCategories] = useState([]);
+    const [publications, setPublications] = useState([]);
     const Mob_Routes = [];
     const Browser_Routes = [];
 
-    for (let i = 0; i < categories.length; i++) {
-        const categoryPath = categories[i].path;
-        let PublicationPack = "";
+    useEffect(() => {
+        async function getCategories() {
+            try {
+                const {data} = await axios.get("/v1/blogs");
+                return data;
+            } catch (err) {
+                alert(err);
+            }
+        }
+        getCategories().then(async (categories)=>{
+            try {
+                const publications = {};
+                const authors = (await axios.get(`/v1/authors`)).data;
+
+                for (let i = 0; i < categories.length; i++) {
+                    const category = categories[i];
+                    const {data} = await axios.get(`/v1/blogs/${category?.guid}/publication`);
+                    publications[category?.guid] = data;
+                }
+                info["authors"] = authors;
+                setInfo(info);
+                setPublications(publications);
+                setCategories(categories);
+            } catch (err) {
+                console.log(err);
+            }            
+        })
+    }, [])
+
+    for (let i = 0; i < categories?.length; i++) {
+        const categoryPath = categories[i]?.guid;
+        let BrowserPublicationPack = "";
+        let MobilePublicationPack = "";
+        console.log(categories);
         if (publications) {
             if (publications[categories[i].guid]) {
-                PublicationPack = <Pub pubs={publications[categories[i].guid]} />;
+                BrowserPublicationPack = <Pub pubs={publications[categoryPath]} />;
+                MobilePublicationPack = <PubMobile pubs={publications[categoryPath]} />;
             }
         }        
         for (let k = 0; k < langPath.length; k++) {
             const path = langPath[k];
             if (path == "") {
-                Mob_Routes.push(<Route path={"/" + categoryPath} element={<MobileMain blog={PublicationPack} pack={props.ru} />} />);
+                Mob_Routes.push(<Route path={"/" + categoryPath} element={<MobileMain blog={MobilePublicationPack} categories={categories} pack={props.ru} />} />);
                 continue;
             }
-            Mob_Routes.push(<Route path={"/" + path + "/" + categoryPath} element={<MobileMain blog={PublicationPack} pack={props[path]} />} />);
+            Mob_Routes.push(<Route path={"/" + path + "/" + categoryPath} element={<MobileMain blog={MobilePublicationPack} categories={categories} pack={props[path]} />} />);
         }
 
         for (let k = 0; k < langPath.length; k++) {
             const path = langPath[k];
             if (path == "") {
-                Browser_Routes.push(<Route path={"/" + categoryPath} element={<BrowserMain blog={PublicationPack} pack={props.ru} />} />);
+                Browser_Routes.push(<Route path={"/" + categoryPath} element={<BrowserMain blog={BrowserPublicationPack} categories={categories} pack={props.ru} />} />);
                 continue;
             }
-            Browser_Routes.push(<Route path={"/" + path + "/" + categoryPath} element={<BrowserMain blog={PublicationPack} pack={props[path]} />} />);
+            Browser_Routes.push(<Route path={"/" + path + "/" + categoryPath} element={<BrowserMain blog={BrowserPublicationPack} categories={categories} pack={props[path]} />} />);
         }
     }
-  
+
+    console.log(categories);
+
     return (
         <BrowserRouter>
 
             <MobileView>
           
                 <Routes>
-                    <Route path="/" element={<MobileMain pack={props.ru} />} />
-                    <Route path="/ru/" element={<MobileMain pack={props.ru} />} />
-                    <Route path="/en/" element={<MobileMain pack={props.en} />} />
-                    <Route path="/uz/" element={<MobileMain pack={props.uz} />} />
+                    <Route path="/" element={<MobileMain categories={categories} pack={props.ru} />} />
+                    <Route path="/ru/" element={<MobileMain categories={categories} pack={props.ru} />} />
+                    <Route path="/en/" element={<MobileMain categories={categories} pack={props.en} />} />
+                    <Route path="/uz/" element={<MobileMain categories={categories} pack={props.uz} />} />
                     {Mob_Routes}
                 </Routes> 
       
@@ -70,12 +103,14 @@ function App(props) {
             <BrowserView>
    
                 <Routes>
-                    <Route path="/" element={<BrowserMain pack={props.ru} />} />
-                    <Route path="/ru/" element={<BrowserMain pack={props.ru} />} />
-                    <Route path="/en/" element={<BrowserMain pack={props.en} />} />
-                    <Route path="/uz/" element={<BrowserMain pack={props.uz} />} />
+                    <Route path="/" element={<BrowserMain categories={categories} pack={props.ru} />} />
+                    <Route path="/ru/" element={<BrowserMain categories={categories} pack={props.ru} />} />
+                    <Route path="/en/" element={<BrowserMain categories={categories} pack={props.en} />} />
+                    <Route path="/uz/" element={<BrowserMain categories={categories} pack={props.uz} />} />
                     {Browser_Routes}                    
+
                 </Routes>
+              
               
             </BrowserView>
 

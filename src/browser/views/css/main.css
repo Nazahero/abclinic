@@ -1,16 +1,16 @@
-body
-{
+body {
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Tenor", Arial, sans-serif;
 }
-.root.browser .main_comment
-{
+
+.root.browser .main_comment {
     position: absolute;
     top: 0.9vw;
     left: 8vw;
@@ -20,10 +20,10 @@ body
     font-family: "Montserrat";
     z-index: 50;
 }
-.root.browser .hint 
-{
+
+.root.browser .hint {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     height: 20px;
     padding: 0 10px;
@@ -38,33 +38,32 @@ body
     visibility: hidden;
     z-index: 100;
 }
-.root.browser .hint.on 
-{
+
+.root.browser .hint.on {
     visibility: visible;
     pointer-events: none;
     transition-delay: 1s;
 }
 
-.root.browser .loading
-{
+.root.browser .loading {
     position: absolute;
     width: 5%;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-.root.browser .loading.on
-{
+
+.root.browser .loading.on {
     opacity: 1;
     visibility: visible;
 }
-.root.browser .loading img 
-{
+
+.root.browser .loading img {
     width: 100%;
     visibility: inherit;
 }
-.root.browser .blocking 
-{
+
+.root.browser .blocking {
     position: fixed;
     top: 0;
     left: 0;
@@ -78,35 +77,36 @@ body
     align-items: center;
     background-color: rgb(56, 56, 56);
 }
-.root.browser .blocking.on
-{
+
+.root.browser .blocking.on {
     visibility: visible;
     opacity: 1;
 }
-.root.browser .blocking.off
-{
+
+.root.browser .blocking.off {
     visibility: hidden;
     opacity: 0;
 }
+
 .root.browser .lock {
     max-width: 50%;
     max-height: 50%;
     margin-bottom: 20px;
 }
-.root.browser .lock img 
-{
+
+.root.browser .lock img {
     width: 100%;
     height: 100%;
 }
-.root.browser .blocking .massage
-{
+
+.root.browser .blocking .massage {
     font-size: 1.04vw;
     font-family: "Montserrat";
     color: rgba(255, 255, 255, 0.857);
     text-align: center;
 }
-.root.browser .blocked 
-{
+
+.root.browser .blocked {
     opacity: 1;
     visibility: visible;
     display: flex;
@@ -114,13 +114,13 @@ body
     justify-content: center;
     align-items: center;
 }
-.root.browser .blocked.disable 
-{
+
+.root.browser .blocked.disable {
     opacity: 0;
     visibility: hidden;
 }
-.root.browser .sidebar_container
-{
+
+.root.browser .sidebar_container {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -129,34 +129,34 @@ body
     overflow: hidden;
 }
 
-.root.browser .telegram.high
-{
+.root.browser .telegram.high {
     right: 0.52vw;
 }
 
-.root.browser .insta.high
-{
+.root.browser .insta.high {
     right: 0.52vw;
     bottom: 13.2%;
 }
-.root.browser .social_media.high{
+
+.root.browser .social_media.high {
     height: fit-content;
 
     width: 1.3vw;
 }
+
 .root.browser .social_media.high img {
     height: unset;
     width: 100%;
 }
-.root.browser .youtube.high
-{
+
+.root.browser .youtube.high {
     right: 0.416vw;
     width: 1.508vw;
     bottom: 7.2%;
 }
-.root.browser .social_media
-{
-    
+
+.root.browser .social_media {
+
     bottom: calc(100vh - 98.8%);
     position: fixed;
     display: block;
@@ -164,66 +164,68 @@ body
     margin: 1.04vw;
     z-index: 20;
 }
-.root.browser .social_media img 
-{
+
+.root.browser .social_media img {
     opacity: 0.8;
     transform: scale(1);
     transition: 0.2s;
 }
-.root.browser .social_media:hover img
-{
+
+.root.browser .social_media:hover img {
     transform: scale(1.1);
     opacity: 1;
 }
-.root.browser .social_media:active img
-{
+
+.root.browser .social_media:active img {
     transform: scale(1);
     opacity: 0.8;
 }
-.root.browser .social_media.high.paralax
-{
+
+.root.browser .social_media.high.paralax {
     right: -100px;
 }
-.root.browser .social_media.high.hover{
+
+.root.browser .social_media.high.hover {
     right: 0.52vw;
 }
-.root.browser .youtube.high.hover{
+
+.root.browser .youtube.high.hover {
     right: 0.416vw;
 }
-.root.browser .social_media img
-{
+
+.root.browser .social_media img {
     height: 100%;
     pointer-events: none;
 }
-.root.browser .youtube
-{
+
+.root.browser .youtube {
     padding: 0.052vw 0;
     transition: 0.8s 0.2s;
     right: 12%;
 }
-.root.browser .telegram
-{
+
+.root.browser .telegram {
     transition: 0.8s 0.4s;
     right: 8%;
 }
-.root.browser .insta
-{
+
+.root.browser .insta {
     transition: 0.8s;
     right: 16.5%;
 }
-.root.browser .content
-{
+
+.root.browser .content {
     z-index: inherit;
 }
-.root.browser .home .name
-{
+
+.root.browser .home .name {
     position: absolute;
     top: 30%;
     left: 13%;
     z-index: 1;
 }
-.root.browser .home .name .title
-{
+
+.root.browser .home .name .title {
     font-size: 5.2vw;
     color: rgba(255, 255, 255, 0.8);
     font-family: "Montserrat";
@@ -234,18 +236,18 @@ body
     transform: translate(0, 70%);
     opacity: 0;
 }
-.root.browser .home .name span
-{
+
+.root.browser .home .name span {
     margin-top: 0.78vw;
     display: block;
     width: 100%;
     height: 0.104vw;
     transform: scale(0);
-    background-color: white;   
-    transition: 1s; 
+    background-color: white;
+    transition: 1s;
 }
-.root.browser .home .name .subtitle
-{
+
+.root.browser .home .name .subtitle {
     font-size: 2.08vw;
     text-align: center;
     margin-top: 1.04vw;
@@ -258,22 +260,21 @@ body
     transition: 1s 1.8s;
 }
 
-.root.browser .home .name.ready .title
-{
-    transform: translate(0,0);
-    opacity: 1;
-}
-.root.browser .home .name.ready span
-{
-    transform: scale(1);
-}
-.root.browser .home .name.ready .subtitle {
-    transform: translate(0,0);
+.root.browser .home .name.ready .title {
+    transform: translate(0, 0);
     opacity: 1;
 }
 
-.root.browser .arrow
-{
+.root.browser .home .name.ready span {
+    transform: scale(1);
+}
+
+.root.browser .home .name.ready .subtitle {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.root.browser .arrow {
     display: block;
     width: 3.12vw;
     height: 1.56vw;
@@ -286,16 +287,17 @@ body
     transition: 0.8s;
     animation-name: move;
     cursor: pointer;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.browser .arrow.hidden
-{
+
+.root.browser .arrow.hidden {
     opacity: 0;
 }
-.root.browser .arrow::after, .root.browser .arrow::before
-{
+
+.root.browser .arrow::after,
+.root.browser .arrow::before {
     content: '';
     width: 1.82vw;
     height: 0.208vw;
@@ -303,34 +305,36 @@ body
     position: absolute;
     display: block;
 }
-.root.browser .arrow::after
-{
+
+.root.browser .arrow::after {
     left: -1px;
     top: calc(50% - 0.052vw);
     transform: rotate(35deg) scale(1);
 }
-.root.browser .arrow::before
-{
+
+.root.browser .arrow::before {
     right: -1px;
     top: calc(50% - 0.052vw);
     transform: rotate(-35deg) scale(1);
 
-    
-}
-.root.browser .arrow:hover::after , .arrow:hover::before {
-    background-color: rgba(255, 255, 255, 1);
-}
-.root.browser .arrow:hover::after 
-{
-    transform: scale(1.06) rotate(35deg) ;
 
 }
-.root.browser .arrow:hover::before
-{
-    transform: scale(1.06) rotate(-35deg) ;
+
+.root.browser .arrow:hover::after,
+.arrow:hover::before {
+    background-color: rgba(255, 255, 255, 1);
 }
-.root.browser .shadow
-{
+
+.root.browser .arrow:hover::after {
+    transform: scale(1.06) rotate(35deg);
+
+}
+
+.root.browser .arrow:hover::before {
+    transform: scale(1.06) rotate(-35deg);
+}
+
+.root.browser .shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -338,8 +342,8 @@ body
     height: 100%;
     background-color: rgba(0, 0, 0, 0.42);
 }
-.root.browser .home
-{
+
+.root.browser .home {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -347,8 +351,7 @@ body
     z-index: 8;
 }
 
-.root.browser .win_logo
-{
+.root.browser .win_logo {
     width: 9.2vw;
     height: 9.2vw;
     padding: 1.56vw;
@@ -357,14 +360,13 @@ body
     right: 0;
     z-index: 1;
 }
-.root.browser .win_logo img
-{
+
+.root.browser .win_logo img {
     width: 100%;
     height: 100%;
 }
 
-.root.browser .location
-{
+.root.browser .location {
     bottom: 3.3vh;
     left: 8%;
     color: white;
@@ -379,59 +381,56 @@ body
     transition: 0.3s;
     text-decoration: none;
 }
-.root.browser .location span 
-{
+
+.root.browser .location span {
     font-size: 1.56vw;
     padding-bottom: 0.208vw;
     margin-right: 0.156vw;
     text-decoration: none;
 }
-.root.browser .location:hover
-{
+
+.root.browser .location:hover {
     opacity: 1;
     transform: scale(1.04);
 }
-.root.browser .location:active
-{
+
+.root.browser .location:active {
     opacity: 0.7;
     transform: scale(1);
 }
-.root.browser .location.hidden
-{
+
+.root.browser .location.hidden {
     opacity: 0;
 }
 
 /*----- UNIVERSAL ----- */
 
-.root.browser .clickable 
-{
+.root.browser .clickable {
     opacity: 0.7;
     transform: scale(1);
     transition: 0.2s;
 }
-.root.browser .clickable:hover
-{
+
+.root.browser .clickable:hover {
     opacity: 1;
     transform: scale(1.1);
 }
-.root.browser .clickable:active
-{
+
+.root.browser .clickable:active {
     transform: scale(1);
     opacity: 0.7;
 
 }
 
 /* ---------------- */
-.root.browser .background img 
-{
+.root.browser .background img {
     min-width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
 }
 
-.root.browser .background#b_home
-{
+.root.browser .background#b_home {
     min-width: 115vw;
     height: 130vh;
     animation-name: action;
@@ -443,8 +442,8 @@ body
     top: -25vh;
     left: -5vw;
 }
-.root.browser .background#b_services
-{
+
+.root.browser .background#b_services {
     min-width: 115vw;
     height: 120vh;
     /* animation-name: action;
@@ -456,22 +455,117 @@ body
     opacity: 1;
     left: -10vw;
 }
-.root.browser .background 
-{
+
+.root.browser .background {
     position: fixed;
     min-width: 110vw;
     min-height: 120vh;
     transition: 1s;
     opacity: 0;
 }
-.root.browser .background.onthis
-{
+
+.root.browser .background.onthis {
     opacity: 1 !important;
 }
 
+
+.root.browser .contact {
+    bottom: 1.45vw;
+    transition: 0.3s;
+    right: 2vw;
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.root.browser .contact img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.root.browser .contacts {
+    position: absolute;
+    width: 18vw;
+    font-size: 1.1vmax;
+    min-height: 5vh;
+    color: #fff;
+    padding: 1vw 3vw;
+    background-color: rgba(32, 32, 36, 0.809);
+    bottom: 130%;
+    right: 0%;
+    border-radius: 0.6vmax;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.root.browser .contact.opened .contacts {
+    opacity: 1;
+    visibility: visible;
+}
+
+.root.browser .contact_list li {
+    margin-bottom: 1.5vmax;
+    position: relative;
+}
+
+.root.browser .contact_list li input {
+    display: none;
+}
+
+.root.browser .contact_list :last-child {
+    margin-bottom: 0;
+}
+
+.root.browser .contact_list li span {
+    position: absolute;
+    top: 0%;
+    right: -15%;
+    display: block;
+    width: 1.2vw;
+    height: 1.2vw;
+    z-index: 5;
+}
+
+.root.browser .contact .contact_list li span img.copy_button {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.root.browser .contact .contact_list li span img.copied_button {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.root.browser .contact .contact_list li.copied span img.copy_button {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.root.browser .contact .contact_list li.copied span img.copied_button {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
 /* --- services --- */
-.root.browser .services .background
-{
+.root.browser .services .background {
     /* animation-name: action;
     animation-duration: 20s;
     animation-iteration-count: infinite;
@@ -481,13 +575,12 @@ body
     top: -10vh;
     left: -10vw;
 }
-.root.browser .services .shadow 
-{
-    background-color: rgba(0, 0, 0, 0.723);
+
+.root.browser .services .shadow {
+    background-color: rgba(17, 16, 16, 0.723);
 }
 
-.root.browser .services
-{
+.root.browser .services {
     width: 100%;
     position: relative;
     height: 100vh;
@@ -498,14 +591,15 @@ body
     justify-content: center;
     overflow: hidden;
 }
-.root.browser .services_block{
+
+.root.browser .services_block {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
-.root.browser .service
-{
+
+.root.browser .service {
     z-index: 1;
     height: 14.56vw;
     margin: 0.52vw 2.08vw;
@@ -514,11 +608,11 @@ body
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.8s cubic-bezier(0.48, 1.36, 0, 0.9);
 }
-.root.browser .title
-{
-    color: rgba(14, 119, 239, 0.788);
+
+.root.browser .title {
+    color: rgba(41, 146, 216, 0.586);
     font-size: 1.352vw;
     white-space: nowrap;
     font-family: "Montserrat";
@@ -526,28 +620,28 @@ body
     transform: translate(0, 120%);
     opacity: 0;
     margin: 1.04vw 0px;
-    transition: 0.8s 2s;
+    transition: 0.5s 0.5s cubic-bezier(0.48, 1.36, 0, 0.9);
 }
-.root.browser .line_x
-{
+
+.root.browser .line_x {
     display: block;
     min-height: 0.156vw;
     width: 0%;
     margin: 0.52vw 0;
     background-color: rgba(255, 255, 255, 0.886);
-    transition: 1s 1s;
+    transition: 0.5s 0.8s cubic-bezier(0.50, 1, 0, 0.96);
     z-index: 2;
 }
-.root.browser .service .list
-{
+
+.root.browser .service .list {
     color: rgba(255, 255, 255, 0.785);
     padding: 0 1.56vw;
     opacity: 0;
     transform: translate(0, -100%);
-    transition: 1s 2.8s;
+    transition: 0.5s 1s;
 }
-.root.browser .service .list li
-{
+
+.root.browser .service .list li {
     list-style-type: square;
     font-family: "Montserrat";
     letter-spacing: 1px;
@@ -555,75 +649,74 @@ body
     margin: 0.78vw 0;
 
 }
-.root.browser .services_block.on .service
-{
+
+.root.browser .services_block.on .service {
     opacity: 1;
 }
-.root.browser .services_block.on .service .title
-{
+
+.root.browser .services_block.on .service .title {
     transform: translate(0, 0);
     opacity: 1;
 }
-.root.browser .services_block.on .service .line_x
-{
+
+.root.browser .services_block.on .service .line_x {
     width: 100%;
 }
-.root.browser .services_block.on .service .list
-{
+
+.root.browser .services_block.on .service .list {
     opacity: 1;
-    transform: translate(0,0);
+    transform: translate(0, 0);
 }
 
-.root.browser .priceList_table
-{
+.root.browser .priceList_table {
     width: 80%;
     height: 40%;
     position: absolute;
     text-align: center;
     padding: 1.56vw 1.04vw;
     bottom: 2.6vw;
-    background-color: rgba(0, 0, 0, 0.789);
-    border-top: 0.156vw solid rgba(14, 119, 239, 0.586);
-    border-bottom: 0.156vw solid rgba(14, 119, 239, 0.586);
+    background-color: rgba(15, 11, 11, 0.789);
+    border-top: 0.156vw solid rgba(41, 146, 216, 0.586);
+    border-bottom: 0.156vw solid rgba(41, 146, 216, 0.586);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: 0.7s;
+    transition: 0.4s cubic-bezier(0.35, 1.24, 0, 0.96);
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 2;
 }
-.root.browser .priceList_table.view
-{
+
+.root.browser .priceList_table.view {
     opacity: 1;
     visibility: visible;
 }
-.root.browser .priceList_table.openlist
-{
+
+.root.browser .priceList_table.openlist {
     height: 90%;
 }
 
-.root.browser .part
-{
+.root.browser .part {
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.root.browser .t_title
-{
-    color: rgba(14, 119, 239, 0.578);
+
+.root.browser .t_title {
+    color:  rgb(65, 156, 216);
     width: 100%;
     font-size: 1.456vw;
     font-family: "Montserrat";
     text-align: center;
     margin: 1.04vw 0px;
 }
-.root.browser .line{
+
+.root.browser .line {
     width: 100%;
     padding: 0px 1.04vw;
     font-size: 1.144vw;
@@ -634,37 +727,57 @@ body
     font-family: 'Montserrat';
     letter-spacing: 1px;
 }
-.root.browser .l_service
-{
+
+.root.browser .l_service {
     white-space: nowrap;
 }
-.root.browser .price
-{
+
+.root.browser .priceList_table .bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.7vw 0 1vw;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.root.browser .priceList_table .bar :first-child {
+    color: rgb(65, 156, 216);
+}
+
+.root.browser .priceList_table .bar :last-child {
+    color: rgb(185, 66, 66)
+}
+
+.root.browser .price {
     white-space: nowrap;
 }
-.root.browser .part span
-{
+
+.root.browser .price.urgent {
+    padding: 0 0.5vw 0 2vw;
+}
+
+.root.browser .part span {
     overflow: hidden;
-    color: rgba(14, 119, 239, 0.578);
+    color: rgba(41, 146, 216, 0.586);
 }
-.root.browser .priceList_table::-webkit-scrollbar 
-{
+
+.root.browser .priceList_table::-webkit-scrollbar {
     background-color: rgba(0, 0, 0, 0.386);
     width: 0.416vw;
-    
+
 }
 
-.root.browser .priceList_table::-webkit-scrollbar-button
-{
+.root.browser .priceList_table::-webkit-scrollbar-button {
     display: none;
 }
-.root.browser .priceList_table::-webkit-scrollbar-thumb
-{
-    background-color: rgba(14, 119, 239, 0.586);
+
+.root.browser .priceList_table::-webkit-scrollbar-thumb {
+    background-color: rgba(41, 146, 216, 0.586);
 
 }
-.root.browser .open
-{
+
+.root.browser .open {
     text-align: center;
     display: inline;
     width: min-content;
@@ -678,285 +791,211 @@ body
     margin: 1.144vw;
     transition: 1s;
     animation: blink 2.5s;
-    text-shadow: 0 0.156vw 0.208vw  rgba(14, 119, 239, 0.94);
+    text-shadow: 0 0.156vw 0.208vw rgba(41, 146, 216, 0.586);
     cursor: pointer;
     animation-iteration-count: infinite;
     z-index: 3;
 }
-.root.browser .open:hover
-{
+
+.root.browser .open:hover {
     opacity: 0.8;
     animation: none;
 }
+
 /* --- staff --- */
 
-.root.browser .staff 
-{
+.root.browser .staff {
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
-.root.browser .fog
-{
+
+.root.browser .fog {
     width: 70%;
     transition-timing-function: ease-in-out;
     position: fixed;
     z-index: 15;
     pointer-events: none;
 }
-.root.browser .fog img 
-{
+
+.root.browser .fog img {
     width: 100%;
 }
-.root.browser .fog._1
-{
+
+.root.browser .fog._1 {
     bottom: -23vw;
     transition: 1s;
     left: -23%;
 }
-.root.browser .fog._2
-{
+
+.root.browser .fog._2 {
     transition: 1s 0.3s;
     bottom: -25vw;
     left: 15%;
 }
-.root.browser .fog._3
-{
+
+.root.browser .fog._3 {
     bottom: -25vw;
     transition: 1s;
     right: -23%;
 }
-.root.browser .fog._1.off
-{
+
+.root.browser .fog._1.off {
     bottom: -100vmax;
     left: -40%
 }
-.root.browser .fog._2.off
-{
+
+.root.browser .fog._2.off {
     bottom: -100vmax;
 }
-.root.browser .fog._3.off 
-{
+
+.root.browser .fog._3.off {
     bottom: -100vmax;
     right: -40%;
 }
+
 /*----- defolt dentists ------*/
-.root.browser .dentists
-{
-    /* visibility: hidden; */
-    z-index: 8;
-    width: 100%;
-    height: 100%;
-}
-.root.browser .dentist
-{
+
+.root.browser .dentist {
     position: absolute;
-    transition: 3s 0.5s;
+    transition: 0.5s cubic-bezier(0.35, 1.24, 0, 0.96);
     height: 100% !important;
     display: flex;
     justify-content: center;
     align-items: start;
+    transform: scale(1);
     bottom: -35%;
+    cursor: pointer;
     opacity: 1;
 }
+
+.root.browser .dentist.visibled {
+    transition: 0.5s cubic-bezier(0.35, 1.24, 0, 0.96) !important;
+}
+
+.root.browser .dentist.visibled.hover {
+    animation: fronte 0.3s cubic-bezier(0.48, 1.36, 0, 0.9);
+    transform: scale(1.1);
+    z-index: 16 !important;
+    opacity: 1 !important;
+}
+
+.root.browser .staff.alternative .dentist.visibled.hover {
+    animation: none;
+    transform: scale(1);
+    z-index: 14 !important;
+    opacity: 1 !important;
+}
+
 .root.browser .dentist img {
     height: 100%;
-    transition: 3s 0.5s;
+    transition: 0.5s cubic-bezier(0.48, 1.36, 0, 0.9);
 }
+
 /* .dentist img.hovered {
     transform: scale(1.01) translate(-0.3vw, -0.35vw);
 } */
-.root.browser .dentist._4
-{
+.root.browser .dentist._4 {
     left: 9%;
-    transition-timing-function: ease-out;
-    
 }
-.root.browser .dentist._4 img 
-{
+
+.root.browser .dentist._4 img {
     transform: translate(0, -7px);
 }
-.root.browser .prioriti_main 
-{
+
+.root.browser .prioriti_main {
     z-index: 5;
 }
-.root.browser .dentist._7
-{
+
+.root.browser .dentist._7 {
     left: 22%;
     z-index: 7;
-    opacity: 1;
 }
-.root.browser .dentist._6 img 
-{
+
+.root.browser .dentist._6 img {
     height: 65%;
 }
-.root.browser .dentist._6
-{
+
+.root.browser .dentist._6 {
     left: 40%;
 }
-.root.browser .prioriti_1
-{
+
+.root.browser .prioriti_1 {
     z-index: 4;
 }
-.root.browser .prioriti_1 img
-{
+
+.root.browser .prioriti_1 img {
     height: 85%;
     position: relative;
     bottom: -4vh;
 }
 
-.root.browser .prioriti_1
-{
-    /* width: 25%; */
-    opacity: 1;
+.root.browser .prioriti_1 {
     z-index: 4;
-    transition: 1.5s 0s;
 }
-.root.browser .prioriti_2 
-{
+
+.root.browser .prioriti_2 {
     z-index: 3;
 }
-.root.browser .prioriti_2 img 
-{
+
+.root.browser .prioriti_2 img {
     height: 75%;
     position: relative;
     bottom: -8vh;
 }
 
-.root.browser .prioriti_3
-{
+.root.browser .prioriti_3 {
     z-index: 2;
 }
-.root.browser .prioriti_3 img 
-{
+
+.root.browser .prioriti_3 img {
     height: 70%;
     position: relative;
     bottom: -11vh;
 }
 
-.root.browser .dentist._3 
-{
+.root.browser .dentist._3 {
     left: -5%;
 }
 
-.root.browser .dentist._2
-{
+.root.browser .dentist._2 {
     right: 22%;
 }
-.root.browser .dentist._2 img 
-{
-    transition: 1s 0s ease-out;
-}
 
-.root.browser .dentist._1
-{
+.root.browser .dentist._1 {
     right: 10%;
 }
-.root.browser .dentist._5
-{
+
+.root.browser .dentist._5 {
     right: -2%;
 }
 
 
-/*---- dentists' CLONE ----*/
-.root.browser .clone 
-{
-
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 1s 0s ease-out;
-}
-.root.browser .clone.on
-{
-    visibility: visible;
-    
-}
-.root.browser .clone.hidden, .clone.hidden .cloneImg
-{
-    opacity: 0 !important;
-    transition: 0.5s 0.5s;
-}
-.root.browser .cloneImg 
-{
-    width: 100%;
-    height: 100%;
-    transform: scale(1) translate(0,0);
-    transition: 1s 0s ease-out;
-    pointer-events: fill;
-}
-.root.browser .dentist img {
-    opacity: 1;
-}
-.root.browser .dentist img.unhovered
-{
-    transition: 0.5s;
-}
-.root.browser .dentist img.hovered
-{
-    opacity: 0;
-    transition: 0.6s 0.5s;
-}
-.root.browser .clone.hovered .cloneImg
-{
-    pointer-events: fill;
-    transform: scale(1.08) translate(0, 1vw);
-    -webkit-filter: drop-shadow(0px 0px 9px #cccccc8a);
-    filter:         drop-shadow(0px 0px 9px #cccccc8a); 
-}
-
-/* .incorrect.hovered .cloneImg
-{
-    transform: scale(1.04) translate(0.3vw, 0.3vw);
-} */
-
-.root.browser .clone.hovered 
-{
-    opacity: 1;
-    transition: 1s 0s ease-out; 
-    cursor: pointer;
-    z-index: 20;
-}
-.root.browser .cPrioriti-main
-{
-    z-index: 18;
-}
-.root.browser .cPrioriti-1
-{
-    z-index: 17;
-}.root.browser .cPrioriti-2
-{
-    z-index: 16;
-}.root.browser .cPrioriti-3
-{
-    z-index: 15;
-}
 /* ----- dentist OFF------*/
 
 
-.root.browser .prioriti_main.gr 
-{
-    transition: 1s 0.5s ease;
+.root.browser .prioriti_main.gr {
+    transition: 1s 0s;
 }
-.root.browser .prioriti_1.gr 
-{
-    transition: 1s 1s ease;
+
+.root.browser .prioriti_1.gr {
+    transition: 1s 0.25s;
 }
-.root.browser .prioriti_2.gr 
-{
-    transition: 1s 1.5s ease;
+
+.root.browser .prioriti_2.gr {
+    transition: 1s 0.5s;
 }
-.root.browser .prioriti_3.gr
-{
-    transition: 1s 2s ease-out;
+
+.root.browser .prioriti_3.gr {
+    transition: 1s 0.75s;
 }
+
 .root.browser .dentist.off {
     opacity: 0;
+    visibility: hidden;
 }
+
 /* .dentist._2.off , .dentist._7.off
 {
     opacity: 0;
@@ -973,33 +1012,36 @@ body
 
 /*-- opacity of LETTERS ---*/
 
-.root.browser .opacityOI{
+.root.browser .opacityOI {
     opacity: 1 !important;
     transition-delay: 0s !important;
 }
-.root.browser .opacityZ
-{
+
+.root.browser .opacityZ {
     opacity: 0 !important;
     transition-delay: 0s !important;
 }
 
 /* defolt ALTERNATIVE at all */
+.root.browser .staff.alternative .dentist {
+    pointer-events: none;
+}
 
-.root.browser .dentists.alternative .left
-{
+.root.browser .staff.alternative .left {
     left: -50%;
     bottom: -5%;
 }
-.root.browser .dentists.alternative .right 
-{
+
+.root.browser .staff.alternative .right {
     right: -50%;
     bottom: -5%;
 }
-.root.browser .dentists.alternative .bottom
-{
+
+.root.browser .staff.alternative .bottom {
     left: -50%;
     bottom: -5%;
 }
+
 /*---------------- FOR A TIME -----------------*/
 /* .dentists.alternative .right._2
 {
@@ -1060,163 +1102,134 @@ body
 
 /*---- animate dentists GO TO BOTTOM ----*/
 
-.root.browser .dentists.alternative .dentist.animate
-{
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    transition-duration: 0s;
-}
-.root.browser .dentists.alternative .prioriti_3.animate
-{
-    animation-delay: 0.4s;
-    transition-delay: 0.4s;
-}
-.root.browser .dentists.alternative .prioriti_2.animate
-{
-    animation-delay: 0.8s;
-    transition-delay: 0.8s;
-}
-.root.browser .dentists.alternative .prioriti_1.animate
-{
-    animation-delay: 1.2s;
-    transition-delay: 1.2s;
+.root.browser .staff.alternative .dentist.animate {
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.48, 1.36, 0, 0.9);
+    transition-duration: 0s !important;
 }
 
-.root.browser .dentists.alternative ._1.animate 
-{
+.root.browser .staff.alternative ._1.animate {
     animation-name: closeDAbdukhamid;
 }
-.root.browser  .dentists.alternative ._2.animate
-{
+
+.root.browser .staff.alternative ._2.animate {
     animation-name: closeDIbrohim;
 }
-.root.browser .dentists.alternative ._3.animate
-{
+
+.root.browser .staff.alternative ._3.animate {
     animation-name: closeDViktoria;
 }
-.root.browser .dentists.alternative ._4.animate
-{
+
+.root.browser .staff.alternative ._4.animate {
     animation-name: closeDMansur;
 }
-.root.browser .dentists.alternative ._5.animate
-{
+
+.root.browser .staff.alternative ._5.animate {
     animation-name: closeDTatiana;
 }
-.root.browser .dentists.alternative ._6.animate
-{
+
+.root.browser .staff.alternative ._6.animate {
     animation-name: closeDDirector;
 }
-.root.browser .dentists.alternative ._7.animate
-{
+
+.root.browser .staff.alternative ._7.animate {
     animation-name: closeDXursand;
 }
 
 /*---- animate dentists GO TO TOP ----*/
-
-.root.browser .dentists .dentist.close_animate 
+/* 
+.root.browser .dentist.close_animate 
 {
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     transition-duration: 0s;
 }
 
-.root.browser .dentists .prioriti_1.close_animate
+.root.browser .prioriti_1.close_animate
 {
     animation-delay: 0.4s;
     transition-delay: 0.4s;
 }
-.root.browser .dentists .prioriti_2.close_animate
+.root.browser .prioriti_2.close_animate
 {
     animation-delay: 0.8s;
     transition-delay: 0.8s;
 }
-.root.browser .dentists .prioriti_3.close_animate
+.root.browser .prioriti_3.close_animate
 {
     animation-delay: 1.2s;
     transition-delay: 1.2s;
 }
 
-.root.browser .dentists ._1.close_animate 
+.root.browser ._1.close_animate 
 {
     animation-name: openDAbdukhamid;
 }
-.root.browser .dentists ._2.close_animate
+.root.browser ._2.close_animate
 {
     animation-name: openDIbrohim;
 }
-.root.browser .dentists ._3.close_animate
+.root.browser ._3.close_animate
 {
     animation-name: openDViktoria;
 }
-.root.browser .dentists ._4.close_animate 
+.root.browser ._4.close_animate 
 {
     animation-name: openDMansur;
 }
-.root.browser .dentists ._5.close_animate
+.root.browser ._5.close_animate
 {
     animation-name: openDTatiana;
 } 
-.root.browser .dentists ._6.close_animate
+.root.browser ._6.close_animate
 {
     animation-name: openDDirector;
 }
-.root.browser .dentists ._7.close_animate
+.root.browser ._7.close_animate
 {
     animation-name: openDXursand;
-}
+} */
 
 
 /*---- alternative when it is INFORMATIONED ----*/
 
-.root.browser .dentists.alternative .bottom.information
-{
+.root.browser .staff.alternative .bottom.information {
     bottom: -5% !important;
     left: 0% !important;
-    transition: 2s 1s !important;
-    transition-delay: 0.3s !important;
+    transition: 0.5s cubic-bezier(0.48, 1.36, 0, 0.9) !important;
     opacity: 1;
 }
 
-.root.browser .dentists.alternative .right.information 
-{
+.root.browser .staff.alternative .right.information {
     bottom: -5% !important;
-    right: 10% !important; 
-    transition: 2s 1s !important;
-    transition-delay: 0.3s !important;
+    right: 10% !important;
+    transition: 0.5s cubic-bezier(0.48, 1.36, 0, 0.9) !important;
     opacity: 1;
 }
-.root.browser .dentists.alternative .left.information 
-{
+
+.root.browser .staff.alternative .left.information {
     bottom: -5% !important;
     left: 12% !important;
-    transition: 2s 1s !important;
-    transition-delay: 0.3s !important;
+    transition: 0.5s cubic-bezier(0.48, 1.36, 0, 0.9) !important;
     opacity: 1;
 }
 
 
-.root.browser .dentists.alternative .dentist.information img 
-{
+.root.browser .staff.alternative .dentist.information img {
     height: 100%;
-    transition: 2.5s 0s;
+    transition: 0.5s cubic-bezier(0.48, 1.36, 0, 0.9);
     opacity: 1;
 }
 
 /*--- switched transition ---*/
 
-.root.browser .dentists.alternative .dentist.switched img 
-{
-    transition: 2s 0.5s ease-out;
-}
-.root.browser .dentists.alternative .dentist.switched 
-{
-    transition: 2s 0.5s ease-out !important;
+.root.browser .staff.alternative .dentist.switched {
+    transition: 0.8s cubic-bezier(0.35, 1.24, 0, 0.96) !important;
 }
 
 /*---- BACK BUTTON ----*/
 
-.root.browser .back_button
-{
+.root.browser .back_button {
     width: 2.08vw;
     height: 2.08vw;
     position: absolute;
@@ -1228,20 +1241,19 @@ body
     cursor: pointer;
     z-index: 25;
 }
-.root.browser .back_button.visible
-{
+
+.root.browser .back_button.visible {
     visibility: visible;
-    transition: 1s 2s;
+    transition: 0.2s cubic-bezier(0.48, 1.36, 0, 0.9);
     opacity: 0.8;
 }
-.root.browser .back_button img
-{
+
+.root.browser .back_button img {
     width: 100%;
     height: 100%;
 }
 
-.root.browser .dentist_information
-{
+.root.browser .dentist_information {
     width: 33%;
     min-height: 80%;
     position: absolute;
@@ -1251,157 +1263,157 @@ body
     overflow: hidden;
     visibility: hidden;
 }
-.root.browser .dentist_information > span
-{
+
+.root.browser .dentist_information>span {
     width: 0%;
     min-height: 0.156vw;
     margin: 0.78vw 0;
-    transition: 0.5s 0s;
+    transition: 0.2s cubic-bezier(0.48, 1.36, 0, 0.9);
     background-color: rgba(255, 255, 255, 0.663);
 }
-.root.browser .dentist_information .dentist_name
-{
+
+.root.browser .dentist_information .dentist_name {
     width: 100%;
     text-align: center;
     transform: translate(0, 100%);
-    transition: 0.5s 0.5s;
+    transition: 0.2s cubic-bezier(0.48, 1.36, 0, 0.9);
     font-size: 1.82vw;
     opacity: 0;
     color: rgba(255, 255, 255, 0.855);
     letter-spacing: 0.156vw;
     font-family: "MonserratB";
 }
-.root.browser .dentist_information .text 
-{
+
+.root.browser .dentist_information .text {
     width: 100%;
     padding: 0.52vw 0.78vw;
     overflow: auto;
     max-height: 60vh;
 }
-.root.browser .dentist_information .text::-webkit-scrollbar
-{
+
+.root.browser .dentist_information .text::-webkit-scrollbar {
     width: 0.5vmax;
     background-color: rgb(34, 34, 34);
 }
-.root.browser .dentist_information .text::-webkit-scrollbar-thumb
-{
+
+.root.browser .dentist_information .text::-webkit-scrollbar-thumb {
     background-color: rgb(60, 60, 60);
 }
 
-.root.browser .dentist_information .text > span
-{
+.root.browser .dentist_information .text>span {
     width: 100%;
     line-height: 1.404vw;
     display: block;
     font-size: 1.144vw;
     text-align: left;
-	font-family: 'Montserrat';
+    font-family: 'Montserrat';
     color: rgba(255, 255, 255, 0.795);
     height: 100%;
     opacity: 1;
     transform: translate(0, -110%);
-    transition: 1s 1s;
+    transition: 0.5s cubic-bezier(0.48, 1.36, 0, 0.9);
 }
-.root.browser .t_left
-{
+
+.root.browser .t_left {
     left: 15%;
     top: 10%;
 }
-.root.browser .t_right
-{
+
+.root.browser .t_right {
     right: 12%;
     top: 10%;
 }
-.root.browser .dentist_information.period 
-{
+
+.root.browser .dentist_information.period {
     visibility: visible;
 }
-.root.browser .dentist_information.period > span 
-{
+
+.root.browser .dentist_information.period>span {
     width: 100%;
-    transition: 0.5s 1.5s;
-}
-.root.browser .dentist_information.period .text > span {
-    transform: translate(0,0);
-    transition: 1.5s 2.7s;
-} 
-.root.browser .dentist_information.period .dentist_name {
-    transform: translate(0,0);
-    opacity: 1;
-    transition: 0.7s 2s;
+    transition: 0.2s 0.2s cubic-bezier(0.48, 1.36, 0, 0.9);
 }
 
-.root.browser .next_button
-{
+.root.browser .dentist_information.period .text>span {
+    transform: translate(0, 0);
+    transition: 0.5s 0.2s cubic-bezier(0.48, 1.36, 0, 0.9);
+}
+
+.root.browser .dentist_information.period .dentist_name {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.2s 0.2s cubic-bezier(0.48, 1.36, 0, 0.9);
+}
+
+.root.browser .next_button {
     width: 5.2vw;
     position: absolute;
     top: calc(50vh - 2.6vw);
     z-index: 25;
     right: 0;
-    transition: 1s 0.3s;
+    transition: 0.2s;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
     animation-name: moveX;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.browser .next_button img 
-{
+
+.root.browser .next_button img {
     width: 100%;
     transform: scale(1);
     opacity: 0.6;
-    transition: 0.3s;
+    transition: 0.2s;
 }
-.root.browser .next_button.hidden
-{
+
+.root.browser .next_button.hidden {
     opacity: 0;
     visibility: hidden;
-} 
+}
+
 .root.browser .next_button:hover img {
     opacity: 1;
 }
 
-.root.browser .prev_button
-{
+.root.browser .prev_button {
     width: 5.2vw;
     position: absolute;
     top: calc(50vh - 2.6vw);
     z-index: 25;
     left: 4%;
-    transition: 1s 0.3s;
+    transition: 0.2s;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
     animation-name: moveXLeft;
-    animation-duration: 1.3s; 
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-.root.browser .prev_button img 
-{
+
+.root.browser .prev_button img {
     width: 100%;
     transform: rotate(180deg) scale(1);
     opacity: 0.6;
-    transition: 0.3s;
+    transition: 0.2s;
 }
-.root.browser .prev_button.hidden
-{
+
+.root.browser .prev_button.hidden {
     opacity: 0;
     visibility: hidden;
 }
+
 .root.browser .prev_button:hover img {
     opacity: 1;
 }
 
-.root.browser .prev_button:active img 
-{
+.root.browser .prev_button:active img {
     opacity: 0.8;
     transform: scale(0.9) rotate(180deg);
 }
-.root.browser .next_button:active img
-{
+
+.root.browser .next_button:active img {
     opacity: 0.8;
     transform: scale(0.9);
 }
@@ -1491,8 +1503,7 @@ body
     right: -8%;
 } */
 
-.root.browser .team
-{
+.root.browser .team {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1501,19 +1512,18 @@ body
     align-items: flex-start;
     position: absolute;
 }
-.root.browser .letter
-{
+
+.root.browser .letter {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.262);
     font-family: 'MonserratB';
     font-size: 14.56vw;
-    margin: 0 0.624vw;   
+    margin: 0 0.624vw;
     opacity: 0;
-    transition: 0.7s;
+    transition: 0.5s;
 }
 
-.root.browser .letter.visible
-{
+.root.browser .letter.visible {
     opacity: 1;
 }
 
@@ -1522,24 +1532,22 @@ body
 /* --- sidebar --- */
 
 
-.root.browser .sidebar
-{
+.root.browser .sidebar {
     width: 3.1vw;
     height: 100%;
     display: flex;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.516);
+    background-color: rgba(15, 12, 12, 0.516);
     left: 0;
     bottom: 0;
     transition: 0.8s;
     z-index: 20;
-    box-shadow: 0 0.156vw 0.208vw rgba(255, 255, 255, 0.573);
+    /* box-shadow: 0 0.156vw 0.208vw rgba(255, 255, 255, 0.573); */
 }
 
 
 
-.root.browser .side_nav
-{
+.root.browser .side_nav {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1548,8 +1556,8 @@ body
     align-items: center;
     position: relative;
 }
-.root.browser .side_nav > span 
-{
+
+.root.browser .side_nav>span {
     position: absolute;
     left: 0;
     width: 0.104vw;
@@ -1558,8 +1566,7 @@ body
     background-color: rgb(80, 181, 249);
 }
 
-.root.browser .side_nav .block
-{
+.root.browser .side_nav .block {
     width: 100%;
     min-height: 6%;
     margin: 0.52vw;
@@ -1571,10 +1578,11 @@ body
     cursor: pointer;
     transition: 0.5s;
 }
-.root.browser .side_nav .block.active
-{
+
+.root.browser .side_nav .block.active {
     background-color: rgba(0, 0, 0, 0.231);
 }
+
 /* .side_nav .block.active::before
 {
     content: '';
@@ -1587,8 +1595,7 @@ body
     box-shadow: 1px 0px 5px 0px rgb(0, 0, 0);
     background-color: rgb(80, 181, 249);
 } */
-.root.browser .side_nav .block img
-{
+.root.browser .side_nav .block img {
     width: 100%;
     transition: 0.2s;
     opacity: 0.6;
@@ -1596,56 +1603,52 @@ body
     pointer-events: none;
 }
 
-.root.browser .side_nav .block:hover img
-{
+.root.browser .side_nav .block:hover img {
     opacity: 0.8;
     transform: scale(1.1);
 }
-.root.browser .side_nav .block:active img
-{
+
+.root.browser .side_nav .block:active img {
     opacity: 0.6;
     transform: scale(1);
 }
 
 .root.browser .side_nav .block.active img {
     opacity: 1;
-    transform: scale(1.2) ;
+    transform: scale(1.2);
 }
 
 .root.browser .side_nav .block._1.active img {
     opacity: 1;
-    transform: scale(1.15) ;
+    transform: scale(1.15);
 }
 
-.root.browser .side_nav .block._1
-{
+.root.browser .side_nav .block._1 {
     padding: 0.78vw 0.936vw;
 }
 
 
-.root.browser .sidebar.paralax
-{
+.root.browser .sidebar.paralax {
     left: -3.1vw;
 }
-.root.browser .sidebar.hover
-{
+
+.root.browser .sidebar.hover {
     left: 0% !important;
 }
 
 
-.root.browser .lang
-{
+.root.browser .lang {
     width: 100%;
     height: 8%;
     position: absolute;
-    bottom: 4%;   
+    bottom: 4%;
     display: flex;
     justify-content: center;
     align-items: center;
     left: 0;
 }
-.root.browser .lang > span 
-{
+
+.root.browser .lang>span {
     color: white;
     opacity: 0.6;
     transition: 0.4s;
@@ -1653,17 +1656,17 @@ body
     font-size: 1.456vw;
     transform: scale(1);
 }
-.root.browser .lang > span:hover
-{
+
+.root.browser .lang>span:hover {
     opacity: 1;
 }
-.root.browser .lang.active > span
-{
+
+.root.browser .lang.active>span {
     opacity: 1;
     transform: scale(1.08);
 }
-.root.browser .lang_list
-{
+
+.root.browser .lang_list {
     position: absolute;
     left: 102%;
     min-height: 100%;
@@ -1673,8 +1676,8 @@ body
     flex-direction: column;
     pointer-events: none;
 }
-.root.browser .lang_line
-{
+
+.root.browser .lang_line {
     max-width: 100%;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.953);
@@ -1683,8 +1686,7 @@ body
     display: block;
 }
 
-.root.browser .lang_block
-{
+.root.browser .lang_block {
     list-style: none;
     color: rgba(255, 255, 255, 0.866);
     min-height: 50%;
@@ -1698,14 +1700,16 @@ body
     cursor: pointer;
     pointer-events: fill;
 }
-.root.browser .lang_list.hidden .lang_block , .lang_list.hidden .lang_line
-{
+
+.root.browser .lang_list.hidden .lang_block,
+.lang_list.hidden .lang_line {
     transform: translate(-100%, 0);
 }
-.root.browser .lang_block.active 
-{
+
+.root.browser .lang_block.active {
     background-color: rgba(0, 0, 0, 0.832);
 }
+
 /* --------------------------------- INFO ------------------------------------- */
 
 .root.browser .info {
@@ -1715,19 +1719,19 @@ body
     z-index: 3;
     overflow-y: scroll;
 }
-.root.browser .info::-webkit-scrollbar 
-{
+
+.root.browser .info::-webkit-scrollbar {
     width: 0.6vw;
     background-color: rgb(32 32 36);
     z-index: 10;
     display: none;
 }
-.root.browser .info::-webkit-scrollbar-thumb
-{
+
+.root.browser .info::-webkit-scrollbar-thumb {
     background-color: rgba(54, 54, 60, 0.737);
 }
-.root.browser .info .background
-{
+
+.root.browser .info .background {
     width: 100%;
     height: 100%;
     background-color: rgb(32 32 36);
@@ -1736,8 +1740,8 @@ body
     top: 0;
     left: 0;
 }
-.root.browser .info .info_back
-{
+
+.root.browser .info .info_back {
     position: relative;
     overflow: hidden;
     z-index: 3;
@@ -1745,16 +1749,15 @@ body
     height: 50%;
     padding-bottom: 5%;
 }
-.root.browser .info .info_back img
-{
+
+.root.browser .info .info_back img {
     top: -70vmin;
     left: 0;
     position: absolute;
     width: 100%;
 }
 
-.root.browser .info .info_back .shadow 
-{
+.root.browser .info .info_back .shadow {
     width: 100%;
     height: 150%;
     z-index: 2;
@@ -1763,8 +1766,8 @@ body
     left: 0;
     background-color: rgba(18, 27, 30, 0.667);
 }
-.root.browser .info .main_t
-{
+
+.root.browser .info .main_t {
     font-size: 9vmax;
     color: white;
     font-family: "MarkScript" !important;
@@ -1780,15 +1783,14 @@ body
     padding-bottom: 5%;
     z-index: 3;
 }
-.root.browser .info .info_back .back_title .sub_t
-{
+
+.root.browser .info .info_back .back_title .sub_t {
     font-size: 6vmin;
     font-weight: 700;
     margin-top: 2vmin;
 }
 
-.root.browser .info .information
-{
+.root.browser .info .information {
     width: 100%;
     position: absolute;
     top: 45%;
@@ -1798,36 +1800,57 @@ body
     border-top-left-radius: 2vmax;
     background-color: rgb(228, 239, 242);
 }
-.root.browser .info .theme
-{
+
+.root.browser .info .chapter {
     width: 100%;
-    padding: 2.5vmin 8vmax;
+    padding: 2.5vmax 8vmax;
 }
-.root.browser .info .theme_title
-{
+
+.root.browser .info .chapter_title {
     font-family: "Andrika";
     width: 100%;
     padding: 0 0 2vmin;
     font-size: 3.2vmax;
     text-align: center;
+    color: rgb(58, 56, 56);
 }
-.root.browser .info .article 
-{
+
+.root.browser .info .article {
     width: 100%;
+    margin: 4vw 0;
 }
-.root.browser .info .article_title 
-{
-    font-size: 2.3vmax;
-    letter-spacing: 0.2vmax;
-    text-align: center;
-    margin-bottom: 2vmin;
+
+.root.browser .info .article_img {
+    width: 25%;
+    background-color: rgba(31, 7, 7, 0.116);
+    display: flex;
+    align-items: center;
+    margin: 1vw 2vw;
+    border: 1vw solid transparent;
+    border-radius: 1vw;
+    float: left;
+}
+
+.root.browser .info .article_img img {
+    width: 100%;
+    border-radius: 1vw;
+
+}
+
+.root.browser .info .article.right .article_img {
+    float: right;
+}
+
+.root.browser .info .atext {
+    font-size: 1.3vmax;
+    color: rgb(36, 36, 36);
+    letter-spacing: 0.1vmax;
 }
 
 
 /*------------------------------ BLOG ----------------------------------*/
 
-.root.browser .blog 
-{
+.root.browser .blog {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -1835,8 +1858,8 @@ body
     padding-left: 3.1vw;
     padding-right: 9vw;
 }
-.root.browser .blog .background
-{
+
+.root.browser .blog .background {
     opacity: 1 !important;
     width: 100%;
     height: 100%;
@@ -1845,8 +1868,8 @@ body
     top: 0;
     background-color: rgb(32 32 36);
 }
-.root.browser .blog .blog_sidebar 
-{
+
+.root.browser .blog .blog_sidebar {
     position: relative;
     z-index: 3;
     width: 30%;
@@ -1857,20 +1880,20 @@ body
     overflow-y: scroll;
     box-shadow: 0 0.5vw 1vw rgba(63, 63, 63, 0.328);
 }
-.root.browser .blog .blog_sidebar::-webkit-scrollbar
-{
+
+.root.browser .blog .blog_sidebar::-webkit-scrollbar {
     width: 0.5vw;
     background-color: rgb(44, 44, 48);
     display: none;
 }
-.root.browser .blog .content::-webkit-scrollbar
-{
+
+.root.browser .blog .content::-webkit-scrollbar {
     width: 0.5vw;
     background-color: rgb(44, 44, 48);
     display: none;
 }
-.root.browser .blog .btitle
-{
+
+.root.browser .blog .btitle {
     width: 100%;
     text-align: center;
     color: rgba(231, 238, 231, 0.835);
@@ -1878,48 +1901,48 @@ body
     font-size: 2.5vmax;
     margin: 1vh 0 5vh;
 }
-.root.browser .content .pre_text 
-{
+
+.root.browser .content .pre_text {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
     left: 0;
-    color: rgba(51, 51, 58, 0.628);;
+    color: rgba(51, 51, 58, 0.628);
+    ;
     font-size: 2vmax;
 
 }
-.root.browser .category 
-{
+
+.root.browser .category {
     width: 100%;
     padding: 3vh 5vw;
     display: block;
     text-decoration: none;
 }
-.root.browser .category.active, .root.browser .category.default
-{
+
+.root.browser .category.active,
+.root.browser .category.default {
     background-color: rgb(34, 34, 39);
     box-shadow: 0vh 0 2vh rgba(72, 72, 73, 0.374);
 }
-.root.browser .category.active .category_photo
-{
+
+.root.browser .category.active .category_photo {
     transform: scale(1.03);
 }
 
-.root.browser .category.active .category_photo .category_sahdow
-{
+.root.browser .category.active .category_photo .category_sahdow {
     background-color: rgba(0, 0, 0, 0.245);
-} 
-.root.browser .category.active .category_photo .photo_text
-{
+}
+
+.root.browser .category.active .category_photo .photo_text {
     color: rgba(255, 255, 255, 0.912);
 }
 
-.root.browser .category_photo 
-{
+.root.browser .category_photo {
     width: 100%;
     height: 9vmax;
     border-radius: 1vmax;
@@ -1930,9 +1953,11 @@ body
     transform: scale(1);
     transition: 0.3s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
-.root.browser .photo_text 
-{
+
+.root.browser .photo_text {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1947,12 +1972,13 @@ body
     transition: 0.3s;
     pointer-events: none;
 }
+
 .root.browser .blog .category_photo img {
     width: 100%;
     min-height: 100%;
 }
-.root.browser .category_sahdow
-{
+
+.root.browser .category_shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -1962,29 +1988,27 @@ body
     transition: 0.3s;
     z-index: 1;
 }
-.root.browser .description 
-{
+
+.root.browser .description {
     color: white;
     margin: 3vh 0 0;
     font-size: 0.9vmax;
     text-align: center;
 }
 
-.root.browser .category_photo:hover
-{
+.root.browser .category_photo:hover {
     transform: scale(1.03);
 }
-.root.browser .category_photo:hover .category_sahdow
-{
+
+.root.browser .category_photo:hover .category_shadow {
     background-color: rgba(0, 0, 0, 0.245);
 }
-.root.browser .category_photo:hover .photo_text 
-{
+
+.root.browser .category_photo:hover .photo_text {
     color: rgba(255, 255, 255, 0.912);
 }
 
-.root.browser .blog .content 
-{
+.root.browser .blog .content {
     z-index: 3;
     position: relative;
     width: 70%;
@@ -1993,19 +2017,19 @@ body
     padding: 5vh 6vw;
     overflow-y: scroll;
 }
-.root.browser .publications
-{
+
+.root.browser .publications {
     width: 100%;
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     background-color: rgb(32 32 36);
     position: relative;
     z-index: 1;
 }
-.root.browser .pub
-{
+
+.root.browser .pub {
     max-width: 100%;
+    max-height: 80vh;
     background-color: rgb(27, 27, 31);
     border-radius: 2vmax;
     color: rgba(237, 243, 245, 0.769);
@@ -2015,20 +2039,38 @@ body
     display: flex;
     flex-direction: column;
 }
-.root.browser .pub_title
-{
+
+.root.browser .pub_title {
     font-size: 2.2vmax;
     margin: 1vh 0;
 }
-.root.browser .pub_photos
-{
+
+.root.browser .pub_photos[type=video] {
+    width: 100%;
+    background-color: rgb(34, 34, 39);
+    border-radius: 1.3vmax;
+    margin: 4vmin 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.root.browser .pub_photos[type=video] video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.root.browser .pub_photos[type=swiper] {
     width: 100%;
     background-color: rgb(34, 34, 39);
     border-radius: 1.3vmax;
     margin: 4vmin 0;
     padding: 3% 0;
+    overflow: hidden;
     position: relative;
 }
+
 .root.browser .prev_slide {
     width: 4vw;
     position: absolute;
@@ -2040,11 +2082,12 @@ body
     transform: scale(1);
     opacity: 0.6;
 }
-.root.browser .prev_slide img 
-{
+
+.root.browser .prev_slide img {
     width: 100%;
     transform: rotate(180deg);
 }
+
 .root.browser .next_slide {
     width: 4vw;
     position: absolute;
@@ -2056,51 +2099,66 @@ body
     transform: scale(1);
     opacity: 0.6;
 }
-.root.browser .next_slide:hover , .root.browser .prev_slide:hover {
+
+.root.browser .next_slide:hover,
+.root.browser .prev_slide:hover {
     transform: scale(1.05);
     opacity: 0.85;
 }
-.root.browser .next_slide:active , .root.browser .prev_slide:active {
-    transform: scale(0.95   );
+
+.root.browser .next_slide:active,
+.root.browser .prev_slide:active {
+    transform: scale(0.95);
     opacity: 0.9;
 }
-.root.browser .next_slide img 
-{
+
+.root.browser .next_slide img {
     width: 100%;
 }
+
 .root.browser .swiper-wrapper {
     box-sizing: border-box;
+    align-items: center;
     transition: 0.3s !important;
     opacity: 0;
 }
+
+.root.browser .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .root.browser .swiper-wrapper.active {
     opacity: 1;
 }
-.root.browser .swiper-wrapper .pub_photo {
-    width: 45%;
-}
+
 .root.browser .pub_photo {
     border-radius: 0.7vw;
+    max-width: 90%;
+    max-height: 100%;
+    height: auto !important;
     filter: brightness(0.6);
     transform: scale(0.95);
+    cursor: pointer;
 }
+
 .root.browser .swiper-wrapper.active .pub_photo {
     transition: 0.5s;
 
 }
-.root.browser .pub_photo.active_slide 
-{
-    transform: scale(1.05);
+
+.root.browser .swiper-slide.active_slide img {
+    transform: scale(1.0);
     filter: brightness(1);
 }
 
-.root.browser .pub_text 
-{
+.root.browser .pub_text {
     font-size: 1vmax;
 
 }
-.root.browser .pub_nav
-{
+
+.root.browser .pub_nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -2108,45 +2166,178 @@ body
     align-items: center;
     margin: 3vmin 0 0;
 }
+
 .root.browser .pub_nav .like {
     width: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .root.browser .pub_nav .like img {
-    width:  1.7vmax;
+    width: 1.7vmax;
     padding-bottom: 0.2vh;
     opacity: 0.25;
     transition: 0.2s;
     cursor: pointer;
 }
-.root.browser .pub_nav .like img[status="on"]
-{
+
+.root.browser .pub_nav .like img[status="on"] {
     opacity: 0.8;
 
 }
+
 .root.browser .pub_nav .like img:hover {
     opacity: 0.65;
 }
-.root.browser .pub_nav .like .count 
-{
+
+.root.browser .pub_nav .like .count {
     padding-top: 0.6vh;
     color: rgba(241, 250, 255, 0.561);
     font-size: 1.5vmax;
 }
-.root.browser .pub_nav .comments
-{
+
+.root.browser .pub_nav .comments {
     height: 100%;
 }
+
 .root.browser .pub_nav .comments img {
     width: 1.7vmax;
     transition: 0.2s;
     cursor: pointer;
     opacity: 0.5;
 }
+
 .root.browser .pub_nav .comments img:hover {
     opacity: 0.8;
+}
+
+.root.browser .blog_view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.root.browser .blog_view.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.root.browser .blog_view .images {
+    display: flex;
+    width: 100%;
+    padding: 7%;
+}
+
+.root.browser .blog_view .image {
+    width: 100%;
+    height: 100%;
+    padding: 10% 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.14, 0.88, 0.24, 0.98);
+    top: 0;
+    left: 100%;
+    z-index: 2;
+}
+
+.root.browser .blog_view .image.before {
+    left: -100%;
+}
+
+.root.browser .blog_view .image.after {
+    left: 100%;
+}
+
+.root.browser .blog_view .image.active {
+    left: 0;
+}
+
+.root.browser .blog_view .image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.root.browser .view_back {
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 2vw;
+    top: 2vw;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.root.browser .blog_view .blog_shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(15, 12, 11, 0.896);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.root.browser .view_back::before,
+.root.browser .view_back::after {
+    content: '';
+    width: 110%;
+    height: 0.2vw;
+    position: absolute;
+    background-color: aliceblue;
+}
+
+.root.browser .view_back::before {
+    transform: rotate(45deg);
+}
+
+.root.browser .view_back::after {
+    transform: rotate(-45deg);
+}
+
+.root.browser .avatar {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+    overflow: hidden;
+    background-color: rgb(34, 34, 39);
+    border-radius: 50%;
+    float: left;
+    margin: 0vw 1vw 0.5vw 0vw;
+}
+
+.root.browser .avatar.no_ava {
+    padding-top: 0.5vw;
+}
+
+.root.browser .avatar.no_ava img {
+    filter: opacity(0.5);
+}
+
+
+.root.browser .avatar img {
+    width: 100%;
+}
+
+.root.browser .author_name {
+    color: rgb(135, 139, 139);
+    text-transform: capitalize;
+    padding: 1vw 0;
+    margin-bottom: 1vw;
 }
 
 /**/
@@ -2200,71 +2391,98 @@ body
 
 /*------------- OPEN -------------*/
 
+@keyframes fronte {
+    from {
+        z-index: 0;
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    to {
+        z-index: 16;
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
 @keyframes openDMansur {
     0% {
         left: 9%;
         bottom: -100%;
     }
+
     100% {
         left: 9%;
         bottom: -35%;
     }
 }
+
 @keyframes openDDirector {
     0% {
         bottom: -100%;
         left: 40%;
     }
+
     100% {
         bottom: -35%;
         left: 40%;
     }
 }
+
 @keyframes openDXursand {
     0% {
         left: 22%;
         bottom: -100%;
     }
+
     100% {
         left: 22%;
         bottom: -35%;
     }
 }
+
 @keyframes openDIbrohim {
     0% {
         right: 22%;
         bottom: -100%;
     }
+
     100% {
         right: 22%;
         bottom: -35%;
     }
 }
+
 @keyframes openDTatiana {
     0% {
         bottom: -100%;
         right: -2%;
     }
+
     100% {
         bottom: -35%;
         right: -2%;
     }
 }
+
 @keyframes openDViktoria {
     0% {
         bottom: -100%;
         left: -5%;
     }
+
     100% {
         bottom: -35%;
         left: -5%;
     }
 }
+
 @keyframes openDAbdukhamid {
     0% {
         right: 10%;
         bottom: -100%;
     }
+
     100% {
         right: 10%;
         bottom: -35%;
@@ -2278,66 +2496,79 @@ body
         left: 9%;
         bottom: -35%;
     }
+
     100% {
         left: 9%;
         bottom: -100%;
     }
 }
+
 @keyframes closeDDirector {
     0% {
         bottom: -35%;
         left: 40%;
     }
+
     100% {
         bottom: -100%;
         left: 40%;
     }
 }
+
 @keyframes closeDXursand {
     0% {
         left: 22%;
         bottom: -35%;
     }
+
     100% {
         left: 22%;
         bottom: -100%;
     }
 }
+
 @keyframes closeDIbrohim {
     0% {
         right: 22%;
         bottom: -35%;
     }
+
     100% {
         right: 22%;
         bottom: -100%;
     }
 }
+
 @keyframes closeDTatiana {
     0% {
         bottom: -35%;
         right: -2%;
     }
+
     100% {
         bottom: -100%;
         right: -2%;
     }
 }
+
 @keyframes closeDViktoria {
     0% {
         bottom: -35%;
         left: -5%;
     }
+
     100% {
         bottom: -100%;
         left: -5%;
     }
 }
+
 @keyframes closeDAbdukhamid {
     0% {
         right: 10%;
         bottom: -35%;
     }
+
     100% {
         right: 10%;
         bottom: -100%;
@@ -2347,105 +2578,121 @@ body
 /*------------- ANIMATIONS --------------*/
 
 @keyframes switchLeft {
-    0%{
+    0% {}
 
-    }
-    100%{
-
-    }
+    100% {}
 }
+
 @keyframes switchRight {
-    0%{
-        
-    }
-    100%{
+    0% {}
 
-    }
+    100% {}
 }
 
-@keyframes blink{
-    0%{
+@keyframes blink {
+    0% {
         opacity: 0.8;
     }
-    50%{
+
+    50% {
         opacity: 0.2;
     }
-    100%{
+
+    100% {
         opacity: 0.8;
     }
 }
-@keyframes move{
-    0%{
+
+@keyframes move {
+    0% {
         transform: translate(0, 0);
     }
-    50%{
+
+    50% {
         transform: translate(0, 8px);
     }
-    100%{
+
+    100% {
         transform: translamovete(0, 0);
     }
 }
-@keyframes moveX{
-    0%{
+
+@keyframes moveX {
+    0% {
         transform: translate(0, 0);
     }
-    50%{
+
+    50% {
         transform: translate(8px, 0px);
     }
-    100%{
+
+    100% {
         transform: translate(0, 0);
     }
 }
-@keyframes moveXLeft{
-    0%{
+
+@keyframes moveXLeft {
+    0% {
         transform: translate(0, 0);
     }
-    50%{
+
+    50% {
         transform: translate(-8px, 0px);
     }
-    100%{
+
+    100% {
         transform: translate(0, 0);
     }
 }
-@keyframes action{
-    0%{
+
+@keyframes action {
+    0% {
         /* top: -25%;
         left: -5%; */
         transform: scale(1);
     }
-    10%{
+
+    10% {
         /* top: -25%;
         left: -5%; */
         transform: scale(1.02);
     }
-    20%
-    {
+
+    20% {
         /* top: -18%;
         left: -10%; */
         transform: scale(1.04);
     }
-    30%{
+
+    30% {
         transform: scale(1.06);
     }
-    40%{
+
+    40% {
         transform: scale(1.08);
     }
-    50%{
+
+    50% {
         transform: scale(1.1);
     }
-    60%{
+
+    60% {
         transform: scale(1.08);
     }
-    70%{
+
+    70% {
         transform: scale(1.06);
     }
-    80%{
+
+    80% {
         transform: scale(1.04);
     }
-    90%{
+
+    90% {
         transform: scale(1.02);
     }
-    100%{
+
+    100% {
         /* top: -25%;
         left: -5%; */
         transform: scale(1);
