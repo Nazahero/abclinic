@@ -1,5 +1,4 @@
 export function MobileJs() {
-    console.log("mobile");
     function start() {
         const homePage = document.querySelector(".home");
         const homeButton = document.querySelector("#home");
@@ -30,6 +29,8 @@ export function MobileJs() {
         let pub_photos = document.querySelectorAll(".pub_photo");
         const blogView_back = document.querySelector(".blog_shadow");
         const blog_shadow = document.querySelector(".view_back");
+        const win_logo = document.querySelector(".win_logo");
+        const container = document.querySelector(".container");
         // const langs = document.querySelectorAll(".lang_block");
 
         // setTimeout(() => {
@@ -38,39 +39,41 @@ export function MobileJs() {
 
         // --------------------- LANGUAGE -------------------- //
 
-        language.addEventListener("click", function () {
-            if (!lang_list.classList.contains("visible")) {
-                lang_list.classList.add("visible");
-            }
-        })
-        window.addEventListener("touchstart", function () {
-            if (lang_list.classList.contains("visible")) {
-                setTimeout(() => {
-                    lang_list.classList.remove("visible");
-                }, 200);
-            }
-        })
+        pageScroll(document.querySelector(".page." + document.querySelector(".block.active")?.id), social_icons)
+
+        // language?.addEventListener("click", function () {
+        //     if (!lang_list.classList.contains("visible")) {
+        //         lang_list.classList.add("visible");
+        //     }
+        // })
+        // window.addEventListener("touchstart", function () {
+        //     if (lang_list.classList.contains("visible")) {
+        //         setTimeout(() => {
+        //             lang_list.classList.remove("visible");
+        //         }, 200);
+        //     }
+        // })
 
         // --------------------- BLOG VIEW ------------------------- //
 
         const BlogView_next = document.querySelector(".blog_view .next_slide");
-         const BlogView_prev = document.querySelector(".blog_view .prev_slide");
+        const BlogView_prev = document.querySelector(".blog_view .prev_slide");
 
-         BlogView_next?.addEventListener("click", function () {
+        BlogView_next?.addEventListener("click", function () {
             const active_view = document.querySelector(".blog_view .image.active");
             active_view?.nextElementSibling.classList.add("active")
             active_view?.nextElementSibling.classList.remove("after");
             active_view.classList.remove("active");
             active_view.classList.add("before");
-         })
+        })
 
-         BlogView_prev?.addEventListener("click", function () {
+        BlogView_prev?.addEventListener("click", function () {
             const active_view = document.querySelector(".blog_view .image.active");
             active_view?.previousElementSibling.classList.add("active")
             active_view?.previousElementSibling.classList.remove("before");
             active_view?.classList.remove("active");
             active_view?.classList.add("after");
-         })
+        })
 
         BlogView(pub_photos, blog_view)
 
@@ -105,11 +108,11 @@ export function MobileJs() {
             }
         })
 
+
         document.querySelector(".root").style.cssText = `height: ${window.innerHeight}px`;
-        window.onload = () => {
-            console.log("loaded");
-            trimBackgrounds(backgrounds);
-        }
+
+        trimBackgrounds(backgrounds);
+        
         addClassOn(services[0]);
         serviseSwitcher(sNext, sPrev, services);
         // openLanguage(language, lang_list); 
@@ -133,7 +136,6 @@ export function MobileJs() {
                         content.classList.remove("on");
                     })
                 };
-                console.log(categories);
                 for (let i = 0; i < categories.length; i++) {
                     const button = categories[i];
                     if (button.classList.contains("active") && (!changed)) {
@@ -143,14 +145,14 @@ export function MobileJs() {
                         }, 200);
                         changed = true;
                     }
-                    button.addEventListener("click", function() {
+                    button.addEventListener("click", function () {
                         setTimeout(() => {
                             content.classList.add("on")
                             pub_photos = document.querySelectorAll(".pub_photo");
                             BlogView(pub_photos, blog_view);
                         }, 200);
                         changed = true;
-                    }, ) 
+                    },)
                 }
                 clearInterval(interval)
             }
@@ -208,6 +210,9 @@ export function MobileJs() {
             setTimeout(() => {
                 stickControl(active, stick);
             }, 700);
+            pageScroll(document.querySelector(".page." + document.querySelector(".block.active")?.id), social_icons)
+
+
         })
 
         // -------------------- NAVIGATION BUTTON EVENTS ----------------------- //
@@ -215,25 +220,24 @@ export function MobileJs() {
         for (var i = 0; i < navButtons.length; i++) {
             const el = navButtons[i];
             el.addEventListener("click", () => {
-                if ((el.classList.contains("active")) || (el.classList.contains("stopped")) || (el.classList.contains("disable"))) {
+                if ((el.classList.contains("active")) || (el.classList.contains("disable"))) {
                     return;
                 }
 
                 const currentPage = document.querySelector(`.${el.id}`);
 
-                stopping(navButtons);
 
                 trimBackgrounds(backgrounds);
 
-                sidebarControl(navButtons, el, stick, currentPage);
+                sidebarControl(navButtons, el, stick, currentPage, social_icons);
 
                 switch (currentPage.id) {
-                    case "3":
+                    case "2":
                         iconMoveTimeOut(social_icons);
                         visibleElement(location);
                         addClassOff(fog);
                         break;
-                    case "2":
+                    case "1":
                         // ---- WELCOME ANIMATION ---- //
 
                         // dentistHover(dentists , clones); 
@@ -244,24 +248,24 @@ export function MobileJs() {
                         iconMove(social_icons);
                         hiddenElement(location);
                         break;
+                    case "3":
+                        iconMove(social_icons);
+                        addClassOff(fog);
+
+                        hiddenElement(location);
+                        break;
+                    case "0":
+                        iconMove(social_icons);
+                        addClassOff(fog);
+
+                        hiddenElement(location);
+
+                        break;
                     case "4":
                         iconMove(social_icons);
                         addClassOff(fog);
 
-                        hiddenElement(location);
-                        break;
-                    case "1":
-                        iconMove(social_icons);
-                        addClassOff(fog);
 
-                        hiddenElement(location);
-
-                        break;
-                    case "5":
-                        iconMove(social_icons);
-                        addClassOff(fog);
-
-                        
                         hiddenElement(location);
                         break;
                     default:
@@ -280,8 +284,8 @@ export function MobileJs() {
         }
 
         // ------------------ LAST FUNCTIONS --------------------- //
-        document.querySelector(".blocking").classList.add("off")
-        document.querySelector(".blocking").classList.remove("on")
+        document.querySelector(".blocking")?.classList.add("off")
+        document.querySelector(".blocking")?.classList.remove("on")
 
 
         // -------------------------------------------------------- //
@@ -295,20 +299,17 @@ export function MobileJs() {
                 if (!blog_view.classList.contains("show")) {
                     blog_view.querySelector(".images").innerHTML = "";
                     blog_view.classList.add("show");
-                    console.log("beach");
                     let there = false;
 
-                    console.log(el.parentElement.children);
-    
+
                     for (let l = 0; l < el.parentElement.children?.length; l++) {
                         const photo = el.parentElement.children[l];
-                    
+
                         if (el == photo) {
                             there = true;
                         }
 
-                        console.log(photo);
-                        
+
                         blog_view.querySelector(".images").insertAdjacentHTML("beforeend",
                             `
                                 <div class="image ${el == photo ? "active" : there ? "after" : "before"}">
@@ -317,7 +318,7 @@ export function MobileJs() {
                             `
                         );
                     }
-                }                
+                }
             })
         }
     }
@@ -385,7 +386,6 @@ export function MobileJs() {
     //             /*--------------------------*/
 
     //             const letters = document.querySelectorAll(".letter");
-    //             console.log(letters);
     //             for (let i = 0; i < letters.length; i++) {
     //                 letters[i].style.cssText = `transition-duration: 0s;`;
     //                 letters[i].classList.remove("visible");
@@ -513,7 +513,7 @@ export function MobileJs() {
         nextService.classList.add("on");
     }
     function prevServ(services) {
-        const curService = document.querySelector(".service.on").getAttribute("data-service");
+        const curService = document.querySelector(".service.on")?.getAttribute("data-service");
         var prevService;
         if (Number(curService) > 1) {
             prevService = document.querySelector(`[data-service="${Number(curService) - 1}"]`);
@@ -534,17 +534,14 @@ export function MobileJs() {
             prevServ(services);
         })
     }
-    function scrollControl(page) {
-        pageScroll(page);
+    function scrollControl(page, icons) {
+        pageScroll(page, icons);
     }
-    function sidebarControl(navButtons, el, stick, page) {
-        if (!stick.classList.contains("disable")) {
-            scrollControl(page);
-            removeClassActive(navButtons);
-            stickControl(el, stick);
-            addClassActive(el);
-        }
-        addDisableToElement(stick);
+    function sidebarControl(navButtons, el, stick, page, icons) {
+        scrollControl(page, icons);
+        removeClassActive(navButtons);
+        stickControl(el, stick);
+        addClassActive(el);
     }
     function welcomePage(homePage, homeButton, navButtons, stick, title, location) {
         homePage.scrollIntoView();
@@ -558,7 +555,6 @@ export function MobileJs() {
     }
     function openPriceList(open, priceList) {
         open.addEventListener("click", () => {
-            console.log("fu");
             priceList.parentElement.classList.toggle('openlist');
         })
     }
@@ -597,50 +593,18 @@ export function MobileJs() {
     }
     // ------------------------------------------------ //
 
-    function pageScroll(page) {
-        const pages = document.querySelectorAll(".page");
-        const low = [];
-        const high = [];
-        for (let i = 0; i < pages.length; i++) {
-            const pageEl = pages[i];
-            if (pageEl.id < page.id) {
-                low.push(pageEl);
-            } else if (pageEl.id > page.id) {
-                high.push(pageEl);
-            }
-            if (pageEl.classList.contains("this_page")) {
-                setTimeout(() => {
-                    pageEl.classList.add("hidden");
-                }, 1000);
-            } else {
-                pageEl.classList.add("hidden");
-            }
-            pageEl.classList.remove("this_page");
-            pageEl.classList.remove("page_right");
-            pageEl.classList.remove("page_left");
-        }
-        for (let i = 0; i < low.length; i++) {
-            const element = low[i];
-            element.classList.add("page_left");
-        }
-        for (let i = 0; i < high.length; i++) {
-            const element = high[i];
-            element.classList.add("page_right");
-        }
-        page.classList.add("this_page");
-        page.classList.remove("hidden");
+    function pageScroll(page, icons) {
+        const container = document.querySelector(".container");
+        const logo = document.querySelector(".win_logo");
+        const id = page.id;
 
-        for (let i = 0; i < pages.length; i++) {
-            const p = pages[i];
-            p.addEventListener("transitionend", function () {
-                if (!page.classList.contains("this_page")) {
-                    setTimeout(() => {
-                        page.classList.add("hidden");
-                    }, 200);
-                }
-            })
-        }
+        container.style.cssText = `transform: translate( -${window.innerWidth * id}px , 0)`;
+        logo.style.cssText = `transform: translate( ${window.innerWidth * id}px , 0)`;
 
+        for (let i = 0; i < icons.length; i++) {
+            const icon = icons[i];
+            icon.style.cssText = `transform: translate( ${window.innerWidth * (id - 2)}px , 0)`;
+        }
     }
 
     // ------------------------------------------------ //
@@ -736,7 +700,6 @@ export function MobileJs() {
     }
 
     function openInfo(information) {
-        console.log(information);
         information.classList.add("period");
     }
     function addDisableToElement(el) {

@@ -1,36 +1,62 @@
-import React , { useEffect } from "react";
+import React , { useEffect, useRef , useState } from "react";
 import { usePackage } from '../../hooks/usePackage';
-import { NavLink } from "react-router-dom";
 import "./css/main.css";   
 import Start from "../../start";
 import Home from "./components/Home";
 import Staff from "./components/Staff";
 import Services from "./components/Services";
 import Info from "./components/Info";
-import Blogs from "./components/Blogs"
+import Blogs from "./components/Blogs";
+import { PuffLoader } from 'react-spinners';
 
 
 function Main(props) {
     const {info , setInfo} = usePackage();
+    const [loading, setLoading] = useState(true);
+    const Background = useRef(null);
+    const container = useRef(null);
+    const logo = useRef(null);
+    const Js = Start();
 
 
     useEffect(() => {
         info["package"] = props.pack;
         info["categories"] = props.categories;
         setInfo(info);
-    }, [])
+        container.current.setAttribute("style", `transform: translate(-${window.innerWidth * 2 }px, 0)`);
+        logo.current.setAttribute("style", `transform: translate(${window.innerWidth * 2 }px, 0)`);
+    }, []);
+
+    useEffect(() => {
+        let ok = false;
+        setTimeout(() => {
+            ok = true;
+        }, 1000)
+        if (Background.current) {
+            Background.current.onload = function (e) {
+                const wait = setInterval(() => {
+                    if (ok) {
+                        setLoading(false);
+                        Js();
+                        clearInterval(wait);
+                    }
+                }, 100)                                
+            }
+        }
+    }, [Background]);
     
 
     return (
         
         <div className="wrapper">
-            <div className="blocking on">
-                <div className="loading on"><img src="/mobileImg/loading.gif" alt="loading..." /></div>
-                <div className="blocked disable">
-                    <div className="lock"><img src="/mobileImg/lock.png" alt="lock" /></div>
-                    <div className="massage">{props.pack.errMassage}</div>
-                </div>
-            </div>
+            {
+                loading ?
+                    (
+                        <div className="blocking on">
+                            <PuffLoader color='#36d7b7' size={window.innerHeight * 0.15} />
+                        </div>
+                    ) : ""
+            }
             
 
             <div className="sidebar off">
@@ -43,20 +69,14 @@ function Main(props) {
                             <div className="block _5" data-hint="blogs" id="blog"><img src="/mobileImg/blog.png" alt="blog" /></div>
                         </div>
             </div>
-            <div className="container">
-                <div className="main_comment">
-                    {props.pack.comment}
-                </div>
-                
-                <div className="win_logo" title="abclinic"><img src="/mobileImg/ablogo.png" alt="logo" /></div>
+            <div className="container" ref={container}>
+                <div className="win_logo" ref={logo} title="abclinic"><img src="/mobileImg/ablogo.png" alt="logo" /></div>
                 
                 
-                
-                
-                <Home func={Start} />
-                <Staff />
-                <Services />
                 <Info />
+                <Staff />
+                <Home Background={Background} />
+                <Services />
                 <Blogs blog={props.blog} categories={props.categories} lang={props?.pack.lang} />
                 
                 

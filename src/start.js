@@ -4,10 +4,9 @@ import {BrowserJs} from "./browser/script";
 import {MobileJs} from "./mobile/script";
 
 
-function Start() {
+function useStart() {
     const [count, setCount] = useState(0);
-    useLayoutEffect(() => { 
-      console.log('effect')
+    function Js() {
       if (count < 1) {
         if (isMobile) {
           MobileJs();
@@ -16,7 +15,8 @@ function Start() {
         }
         setCount(2);
       }
-    }, []);
+    }
+    return Js;
 }
 
-export default Start;
+export default useStart;

@@ -33,11 +33,13 @@ function ServiceBlock(props) {
 function Line(props) {
     return (
         <div className="line">
-            <div className="l_service">{props.service}</div>
+            <div className="l_service"><span>{props.service}</span></div>
             <span>............................................................................................................................................................................................................................................................................................................................................................................</span>
 
             <div className="price">{props.price}</div>
-            <div className="urgent price">{props.urgent}</div>
+            {
+                props.urgent == 0 ? "" : <div className="urgent price">{props.urgent}</div>
+            }
 
         </div>
 
@@ -102,7 +104,6 @@ const Services = () => {
         })
     }, [])
 
-    console.log(priceListPack);
 
     for (let i = 0; i < priceListPack.length; i++) {
         const element = priceListPack[i];
@@ -126,7 +127,7 @@ const Services = () => {
     }
 
     return (
-        <div className="services page page_right" id="4">
+        <div className="services page" id="3">
 
             <div className="services_block">
                 <div className="next_button_s"><img src="/mobileImg/next.png" alt="" /></div>

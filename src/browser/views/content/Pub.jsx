@@ -80,8 +80,7 @@ export const Pub = props => {
             }
         }
     }
-    console.log(authors);
-    console.log(publications);
+
 
     if (publications) {
         for (let i = 0; i < publications.length; i++) {

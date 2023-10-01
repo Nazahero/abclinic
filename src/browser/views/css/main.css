@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(230, 236, 236);
 }
 
 * {
@@ -75,17 +75,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(247, 255, 255);
 }
 
 .root.browser .blocking.on {
     visibility: visible;
     opacity: 1;
-}
-
-.root.browser .blocking.off {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .root.browser .lock {

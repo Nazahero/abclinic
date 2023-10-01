@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(247, 255, 255);
 }
 
 .root.mobile * {
@@ -43,18 +43,20 @@ body {
 
 .root.mobile .container {
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     height: 100%;
-    width: 100vw;
+    min-width: 100vw;
+    transition: 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .root.mobile .page {
-    position: absolute;
+    position: relative;
     height: 100%;
+    width: 100vw;
     transition: 1s;
     opacity: 1;
-    top: 0;
 }
 
 .root.mobile .page.hidden {
@@ -62,12 +64,11 @@ body {
 }
 
 .root.mobile .page.this_page {
-    left: 0;
     opacity: 1;
     animation: visible 2s;
 }
 
-.root.mobile .page.page.page_left {
+.root.mobile .page.page_left {
     left: -100vw;
 }
 
@@ -117,17 +118,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(247, 255, 255);
+    z-index: 500;
 }
 
 .root.mobile .blocking.on {
     visibility: visible;
     opacity: 1;
-}
-
-.root.mobile .blocking.off {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .root.mobile .lock {
@@ -206,10 +203,12 @@ body {
 .root.mobile .social_media {
 
     top: 2.2vmax;
-    position: fixed;
+    position: absolute;
     display: block;
     width: 2.5vmax;
     margin: 1.04vmax;
+    transition: 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    
     z-index: 20;
 }
 
@@ -232,24 +231,24 @@ body {
 .root.mobile .youtube {
     padding: 0.04vw 0;
     width: 3.2vmax;
-    transition: 0.8s 0.4s;
+    /* transition: 0.8s 0.4s; */
     right: 17.5vw;
 }
 
 .root.mobile .location {
     right: 41.8vw;
-    transition: 0.8s;
+    /* transition: 0.8s; */
     top: 2vmax;
     width: 2.3vmax;
 }
 
 .root.mobile .telegram {
-    transition: 0.8s 0.6s;
+    /* transition: 0.8s 0.6s; */
     right: 6vw;
 }
 
 .root.mobile .insta {
-    transition: 0.8s 0.2s;
+    /* transition: 0.8s 0.2s; */
     right: 30.5vw;
 }
 
@@ -323,17 +322,12 @@ body {
 }
 
 .root.mobile .home {
-    width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    z-index: 8;
 }
 
 .root.mobile .feedbacks {
     position: absolute;
-    bottom: 6%;
+    bottom: 14vmin;
     left: 3%;
     width: 13vmax;
     z-index: 10;
@@ -348,6 +342,8 @@ body {
     height: 12.3vmax;
     padding: 1.26vmax;
     position: fixed;
+    transition: 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+
     left: 0;
     right: 0;
     z-index: 20;
@@ -359,7 +355,7 @@ body {
 }
 
 .root.mobile .contact {
-    bottom: 7%;
+    bottom: 15vmin;
     right: 4vw;
     position: absolute;
     width: 9vmin;
@@ -459,7 +455,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 15%;
+    bottom: 28vmin;
     right: 4.2vw;
     z-index: 15;
 }
@@ -621,7 +617,6 @@ body {
 /* --- services --- */
 
 .root.mobile .services {
-    width: 100%;
     padding: 0 2.25vw;
     padding-bottom: 6.5vmax;
     display: flex;
@@ -861,7 +856,7 @@ body {
 
 .root.mobile .l_service {
     z-index: 1;
-    max-width: 70%;
+    max-width: 50%;
 }
 
 .root.mobile .priceList_table .bar {
@@ -882,6 +877,7 @@ body {
 }
 
 .root.mobile .price {
+    padding: 0 0.5vmax 0 0;
     white-space: nowrap;
     z-index: 1;
 }
@@ -936,9 +932,9 @@ body {
 /* --- staff --- */
 
 .root.mobile .staff {
-    width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
 .root.mobile .fog {
@@ -1195,11 +1191,7 @@ body {
 /* ------------- INFO -------------- */
 
 .root.mobile .info {
-    width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 3;
     overflow-y: scroll;
 }
 
@@ -1325,11 +1317,6 @@ body {
 
 
 /* ------------- BLOG -------------- */
-
-.root.mobile .blog {
-    width: 100%;
-    height: 100%;
-}
 
 .root.mobile .back_photo {
     width: 100%;

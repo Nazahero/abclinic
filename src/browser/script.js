@@ -1,6 +1,5 @@
 
 export function BrowserJs(){
-    console.log("browser");
     function start() {
         const homePage = document.querySelector(".home");
         const homeButton = document.querySelector("#home");
@@ -40,22 +39,6 @@ export function BrowserJs(){
         const blog_shadow = document.querySelector(".blog_shadow");
         const blogView_back = document.querySelector(".view_back");
         
-        // --------------------- SET LETTERS ---------------------- //
-
-
-        
-
-        // console.log("Mobile: " + detect.mobile());       // телефон или планшет
-        // console.log("Phone: " + detect.phone());         // телефон
-        // console.log("Tablet: " + detect.tablet());       // планшет
-        // console.log("OS: " + detect.os());               // операционная система
-        // console.log("userAgent: " + detect.userAgent()); // userAgent
-
-        // ------------------------- CHECKING SIZE ---------------------------- //
-
-        
-
-
         // ---------------------------- EVENTS ------------------------------ //
         
         
@@ -215,7 +198,6 @@ export function BrowserJs(){
             clearTimeout(timeout)
             timeout = setTimeout(() => {
                 curPosition = priceList.scrollTop;
-                console.log(curPosition, prevPosition);
                 if (!priceList.scrollTop == prevPosition) {
                     if (curPosition > prevPosition ) {
                       priceList.classList.add("openlist");
@@ -288,7 +270,6 @@ export function BrowserJs(){
                     case "2":
                         // ---- WELCOME ANIMATION ---- //
 
-                        console.log(dentists);
 
                         
                         visible(lettersObj);     
@@ -393,8 +374,8 @@ export function BrowserJs(){
         // ------------------ LAST FUNCTIONS --------------------- //
         noDelay(title.querySelector(".title"))
         noDelay(title.querySelector(".subtitle"))
-        document.querySelector(".blocking").classList.add("off")
-        document.querySelector(".blocking").classList.remove("on")
+        document.querySelector(".blocking")?.classList.add("off")
+        document.querySelector(".blocking")?.classList.remove("on")
         // checkSize()
         // window.addEventListener("resize", () => {checkSize()});
         
@@ -465,7 +446,6 @@ function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list, pre_text
             /*--------------------------*/
             if (!(dentistsBox.classList.contains("alternative"))) {
                 const letters = document.querySelectorAll(".letter");
-                console.log(letters);
                 for (let i = 0; i < letters.length; i++) {
                     letters[i].style.cssText = `transition-duration: 0s;`;
                     letters[i].classList.remove("visible");
@@ -482,7 +462,6 @@ function selectLanguage(langs ,lettersObj, delay, preLetter, lang_list, pre_text
                 for (let i = 0; i < newLetters.length; i++) {
                     newLetters[i].style.cssText = `transition-duration: 1s;`;
                     if (document.querySelector("#staff").classList.contains("active") && (!(dentistsBox.classList.contains("alternative")))) {
-                        console.log("bibi");
                         newLetters[i].classList.add("visible");
                     }
                 }
@@ -588,7 +567,6 @@ function BlogView(pub_photos, blog_view) {
             if (!blog_view.classList.contains("show")) {
                 blog_view.querySelector(".images").innerHTML = "";
                 blog_view.classList.add("show");
-                console.log("beach");
                 let there = false
 
                 for (let l = 0; l < el.parentElement.parentElement.children?.length; l++) {
@@ -670,7 +648,6 @@ function removeStaffPage(sidebar, social_icons, fog) {
 }
 function openPriceList(open, priceList) {
     open.addEventListener("click", () => {
-        console.log("fu");
         priceList.classList.toggle('openlist');
     })
 }
@@ -694,7 +671,6 @@ function removeClassOff(elems) {
         elem.classList.remove("off");
         setTimeout(() => {
             elem.classList.add("visibled");
-            console.log("cleared");
         }, 1500)
     }
 }
@@ -882,7 +858,6 @@ function backStaff( dentists ,letters, information, backButton, next, prev) {
     addDisableToElement(backButton);
 }
 function openInfo(information) {
-    console.log(information);
     information.classList.add("period");
 }
 function closeInfo(informations) {
@@ -959,7 +934,6 @@ function backButtonHidden(button) {
 //     document.querySelector(".blocking").classList.remove("on");
 //     welcomePage(homePage, homeButton, navButtons, stick, title, location);
     const interval = setInterval(() => {
-        console.log(document.querySelector(".dentist"));
         if (document.querySelector(".dentist")) {
             start();
             clearInterval(interval)

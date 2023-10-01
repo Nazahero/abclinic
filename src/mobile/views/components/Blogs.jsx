@@ -5,7 +5,6 @@ import Swiper, { Navigation }  from "swiper";
 
 function Category(props) {
 
-    console.log(props.lang);
 
     return (
         <NavLink to={"/"+ `${props.lang}` +"/" + props.guid} className="category">
@@ -35,7 +34,7 @@ const Blogs = (props) => {
 
 
     return (
-        <div className="blog page page_right" id="5">
+        <div className="blog page" id="4">
             <div className="back_photo">
                 <img src="/mobileImg/blog_photo.jpg" alt="clinic" />
                 <div className="shadow"></div>

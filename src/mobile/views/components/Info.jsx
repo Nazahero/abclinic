@@ -94,7 +94,7 @@ const Info = () => {
 
 
     return (
-        <div className="info page page_left" id="1">
+        <div className="info page" id="0">
             <div className="info_back">
                 <img src="/img/info.jpg" alt="info"/>
                 <div className="shadow"></div>

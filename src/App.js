@@ -57,7 +57,6 @@ function App(props) {
         const categoryPath = categories[i]?.guid;
         let BrowserPublicationPack = "";
         let MobilePublicationPack = "";
-        console.log(categories);
         if (publications) {
             if (publications[categories[i].guid]) {
                 BrowserPublicationPack = <Pub pubs={publications[categoryPath]} />;
@@ -83,7 +82,6 @@ function App(props) {
         }
     }
 
-    console.log(categories);
 
     return (
         <BrowserRouter>

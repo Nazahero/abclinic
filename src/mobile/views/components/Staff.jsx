@@ -68,7 +68,7 @@ function DentistInfo(props) {
 
 }
 
-const Staff = () => {
+const Staff = (props) => {
     const { info } = usePackage();
     const pack = info?.package;
     const [dentistsPack, setDentists] = useState([]);
@@ -118,7 +118,7 @@ const Staff = () => {
     }
 
     return (
-        <div className="staff page page_left" id="2">
+        <div className="staff page" id="1">
 
             {/* ------------------------------- */}
             <div className="fog _1 off">

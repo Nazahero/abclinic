@@ -4,7 +4,6 @@ const Home = () => {
     const { info } = usePackage();
     const pack = info?.package;
 
-    console.log(pack);
 
     return (
         <div className="home" id="1">
