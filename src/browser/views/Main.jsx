@@ -72,7 +72,7 @@ function Main(props) {
                     <div className="block _3" data-hint="services" id="services"><img src="/img/servises.png" alt="services" /></div>
                     <div className="block _4" data-hint="info" id="info"><img src="/img/info.png" alt="info" /></div>
                     <div className="block _5" data-hint="blogs" id="blog"><img src="/img/blog.png" alt="blog" /></div>
-                    <div className="lang" id="language">
+                    {/* <div className="lang" id="language">
                         <span className="material-symbols-outlined clickable" data-hint="language" >language</span>
                         <div className="lang_list hidden">
                             <NavLink to="/ru" className="lang_block" id="ru">ru</NavLink>
@@ -81,7 +81,7 @@ function Main(props) {
                             <span className="lang_line"></span>
                             <NavLink to="/uz" className="lang_block" id="uz">uz</NavLink>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="container">

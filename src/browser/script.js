@@ -26,11 +26,8 @@ export function BrowserJs(){
         const prevButton = document.querySelector(".staff .prev_button");
         const dentistClones = document.querySelectorAll(".clone");
         const location = document.querySelector(".location");
-        const language = document.getElementById("language").querySelector("span");
-        const lang_list = document.querySelector(".lang_list");
         const elementHints = document.querySelectorAll("[data-hint]");
         const hint = document.getElementById("hint");
-        const langs = document.querySelectorAll(".lang_block");
         const clones = document.querySelectorAll(".clone");
         const contact = document.querySelector(".contact");
         const default_category = document.getElementById("default_category");
@@ -212,7 +209,6 @@ export function BrowserJs(){
             }, 10);
         })
 
-        openLanguage(language, lang_list); 
         
         setTimeout(() => {
             welcomePage(homePage, homeButton, navButtons, stick, title, location);

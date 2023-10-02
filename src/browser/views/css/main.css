@@ -746,6 +746,7 @@ body {
 
 .root.browser .price {
     white-space: nowrap;
+    padding: 0 0.5vw 0 0;
 }
 
 .root.browser .price.urgent {

@@ -14,7 +14,7 @@ function Dentist(props) {
         index = "on";
     }
     return (
-        <div className={"dentist " + index} id={"d_" + props.id} >
+        <div className={"dentist " + index} id={"d_" + props.num} >
             <img src={props.img} alt="dentist" />
         </div>
     )
@@ -106,12 +106,12 @@ const Staff = (props) => {
         }
     }
 
-
     for (let i = 0; i < order.length; i++) {
         const den_obj = order[i]
         if (!den_obj == Object) {
             break
         }
+        console.log(den_obj);
         
         photos.push(<Dentist key={unique.key++} id={den_obj.id} clone={den_obj.cloneName} priority={den_obj.priority} num={i + 1} side={den_obj.side} img={den_obj.img} />);
         informations.push(<DentistInfo key={unique.key++} period={den_obj.priority ? "" : "period"} info={den_obj.info} name={den_obj.name} num={i + 1} />);
