@@ -38,7 +38,7 @@ function Line(props) {
 
             <div className="price">{props.price}</div>
             {
-                props.urgent == 0 ? "" : <div className="urgent price">{props.urgent}</div>
+                props.urgent == 0 ? <div className="urgent price empty">—</div> : <div className="urgent price">{props.urgent}</div>
             }
 
         </div>

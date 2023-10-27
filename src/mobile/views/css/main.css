@@ -863,7 +863,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 1.7vmax 0 1vmax;
+    padding: 0 2.3vmax 0 1vmax;
     font-size: 1vmax;
     font-weight: bold;
 }
@@ -877,13 +877,16 @@ body {
 }
 
 .root.mobile .price {
-    padding: 0 0.5vmax 0 0;
+    padding: 0 0vmax 0 0;
+    min-width: 6vmax;
+    text-align: start;
     white-space: nowrap;
     z-index: 1;
 }
 
 .root.mobile .price.urgent {
-    padding: 0 0.5vmax 0 2vmax;
+    text-align: center;
+    padding: 0 0vmax 0 0vmax;
 }
 
 .root.mobile .line>span {
